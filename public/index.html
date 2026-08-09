@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte de Flota — Budget Perú</title>
+<style>
+  :root {
+    --bg: #f4f5f7; --card: #fff; --ink: #111827; --muted: #6b7280;
+    --line: #e5e7eb; --accent: #1d4ed8; --e1: #1d4ed8; --e7: #0e7490;
+    --limpio: #059669; --sucio: #d97706; --alert: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", system-ui, Arial, sans-serif; background: var(--bg); color: var(--ink); padding: 32px 20px 60px; line-height: 1.5; }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  header { margin-bottom: 24px; }
+  h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.3px; }
+  .sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .badge { display: inline-block; background: #eff6ff; color: var(--accent); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; margin-top: 10px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .kpi .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+  .kpi .value { font-size: 24px; font-weight: 800; margin-top: 4px; }
+  .kpi .hint { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .card h2 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+  .card .note { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); }
+  tbody tr:hover { background: #f8fafc; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .tag.limpio { background: #ecfdf5; color: var(--limpio); }
+  .tag.sucio { background: #fef3c7; color: var(--sucio); }
+  .alerts { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 760px) { .alerts { grid-template-columns: 1fr; } }
+  .alert { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fff; }
+  .alert h3 { font-size: 13px; margin-bottom: 8px; }
+  .alert ul { list-style: none; font-size: 13px; }
+  .alert li { padding: 3px 0; border-bottom: 1px dashed var(--line); }
+  .alert li:last-child { border-bottom: none; }
+  .alert .num { font-weight: 700; }
+  .alert.lavado h3 { color: var(--sucio); }
+  .alert.tanqueo h3 { color: #b45309; }
+  .alert.km h3 { color: var(--alert); }
+  footer { font-size: 11px; color: var(--muted); margin-top: 28px; text-align: center; }
+  .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🚗 Reporte de Flota — Budget Perú</h1>
+    <div class="sub">Estado de la flota extraído de la intranet (hiker)</div>
+    <div class="badge" id="badgeFecha">Cargando…</div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Unidades por ubicación</h2>
+      <div class="note">Distribución de la flota según la sede</div>
+      <div id="chart-ubic"></div>
+    </div>
+    <div class="card">
+      <h2>Estado de limpieza</h2>
+      <div class="note">Listas para entregar vs. pendientes de lavado</div>
+      <div id="chart-estado"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Nivel de combustible</h2>
+    <div class="note">Cantidad de unidades por nivel de tanque</div>
+    <div id="chart-fuel"></div>
+  </div>
+
+  <div class="card">
+    <h2>Kilometraje por unidad</h2>
+    <div class="note">KM actual de cada vehículo</div>
+    <div id="chart-km"></div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Pendientes de atención</h2>
+    <div class="note">Acciones recomendadas según el estado actual</div>
+    <div class="alerts" id="alerts"></div>
+  </div>
+
+  <div class="card">
+    <h2>Flota completa</h2>
+    <div class="note">Las 30 unidades con su estado actual</div>
+    <table id="tabla"></table>
+  </div>
+
+  <footer id="footer">Datos extraídos de la intranet de Budget Perú.</footer>
+
+</div>
+
+<script>
+  const DATA = {"fecha":"9/08/26, 1:54 p. m.","unidades":[{"unidad":"479","ubic":"E1","km":"61991","fuel":"Full","estado":"Sucio"},{"unidad":"255","ubic":"E1","km":"87154","fuel":"Full","estado":"Sucio"},{"unidad":"909","ubic":"E1","km":"71116","fuel":"5/8","estado":"Sucio"},{"unidad":"478","ubic":"E1","km":"76557","fuel":"Full","estado":"Sucio"},{"unidad":"778","ubic":"E1","km":"34356","fuel":"Full","estado":"Limpio"},{"unidad":"101","ubic":"E1","km":"72345","fuel":"Full","estado":"Sucio"},{"unidad":"327","ubic":"E7","km":"75508","fuel":"7/8","estado":"Limpio"},{"unidad":"770","ubic":"E1","km":"59141","fuel":"5/8","estado":"Sucio"},{"unidad":"265","ubic":"E1","km":"47756","fuel":"Full","estado":"Limpio"},{"unidad":"962","ubic":"E7","km":"72913","fuel":"3/4","estado":"Limpio"},{"unidad":"1064","ubic":"E1","km":"48635","fuel":"Full","estado":"Sucio"},{"unidad":"1067","ubic":"E1","km":"16040","fuel":"Full","estado":"Limpio"},{"unidad":"515","ubic":"E1","km":"26264","fuel":"Full","estado":"Limpio"},{"unidad":"471","ubic":"E1","km":"64050","fuel":"Full","estado":"Sucio"},{"unidad":"268","ubic":"E7","km":"45248","fuel":"Full","estado":"Limpio"},{"unidad":"1061","ubic":"E1","km":"63892","fuel":"Full","estado":"Limpio"},{"unidad":"953","ubic":"E7","km":"5467","fuel":"Full","estado":"Limpio"},{"unidad":"782","ubic":"E1","km":"39915","fuel":"Full","estado":"Limpio"},{"unidad":"498","ubic":"E1","km":"54964","fuel":"Full","estado":"Limpio"},{"unidad":"137","ubic":"E1","km":"8046","fuel":"Full","estado":"Limpio"},{"unidad":"102","ubic":"E1","km":"71527","fuel":"Full","estado":"Limpio"},{"unidad":"893","ubic":"E1","km":"47516","fuel":"Full","estado":"Limpio"},{"unidad":"326","ubic":"E1","km":"83723","fuel":"Full","estado":"Limpio"},{"unidad":"134","ubic":"E1","km":"35313","fuel":"Full","estado":"Limpio"},{"unidad":"1065","ubic":"E1","km":"51254","fuel":"Full","estado":"Limpio"},{"unidad":"1081","ubic":"E7","km":"104592","fuel":"Full","estado":"Limpio"},{"unidad":"773","ubic":"E7","km":"63020","fuel":"Full","estado":"Limpio"},{"unidad":"1063","ubic":"E1","km":"63566","fuel":"Full","estado":"Limpio"},{"unidad":"871","ubic":"E7","km":"44195","fuel":"Full","estado":"Limpio"}]};
+  const UNIDADES = DATA.unidades.slice().sort((a, b) => (+a.unidad) - (+b.unidad));
+  const FECHA = DATA.fecha;
+  document.getElementById("badgeFecha").textContent = "Extraído: " + FECHA;
+  document.getElementById("footer").textContent = "Datos extraídos de la intranet de Budget Perú el " + FECHA + " · Generado automáticamente";
+
+  const fmtKm = v => (+v).toLocaleString("es-PE");
+  const kmNum = u => parseInt(u.km, 10) || 0;
+
+  // ---------- KPIs ----------
+  const limpias = UNIDADES.filter(u => /limpio/i.test(u.estado)).length;
+  const sucias = UNIDADES.filter(u => /sucio/i.test(u.estado)).length;
+  const full = UNIDADES.filter(u => /full/i.test(u.fuel)).length;
+  const porUbic = {};
+  UNIDADES.forEach(u => { porUbic[u.ubic] = (porUbic[u.ubic] || 0) + 1; });
+  const ubicKeys = Object.keys(porUbic).sort();
+  const kmMax = Math.max(...UNIDADES.map(kmNum));
+  const kmProm = Math.round(UNIDADES.reduce((s, u) => s + kmNum(u), 0) / (UNIDADES.length || 1));
+  const kpis = [
+    { label: "Unidades", value: UNIDADES.length },
+    { label: "Limpias", value: limpias, hint: "listas para entrega", color: "#059669" },
+    { label: "Sucias", value: sucias, hint: "pendientes de lavado", color: "#d97706" },
+    { label: "Tanque Full", value: full, hint: "de " + UNIDADES.length },
+    { label: "KM máximo", value: fmtKm(kmMax) },
+    { label: "KM promedio", value: fmtKm(kmProm) },
+  ];
+  document.getElementById("kpis").innerHTML = kpis.map(k =>
+    `<div class="kpi"><div class="label">${k.label}</div><div class="value" style="${k.color ? "color:" + k.color : ""}">${k.value}</div>${k.hint ? `<div class="hint">${k.hint}</div>` : ""}</div>`
+  ).join("");
+
+  // ---------- Gráficas ----------
+  function barChart(id, labels, values, colors, opts) {
+    opts = opts || {};
+    const el = document.getElementById(id);
+    const W = opts.wide ? 920 : 470, H = 280, padL = 14, padR = 8, padT = 30, padB = opts.rotate ? 70 : 42;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const maxV = Math.max(...values, 1) * 1.15;
+    const y = v => padT + plotH - (v / maxV) * plotH;
+    let s = `<svg viewBox="0 0 ${W} ${H}" width="100%">`;
+    for (let i = 0; i <= 4; i++) {
+      const v = (maxV / 4) * i, yy = y(v);
+      s += `<line x1="${padL}" y1="${yy}" x2="${W - padR}" y2="${yy}" stroke="#e5e7eb" stroke-width="1"/>`;
+      s += `<text x="${padL + 4}" y="${yy - 5}" font-size="10" fill="#9ca3af">${Math.round(v)}</text>`;
+    }
+    const slot = plotW / values.length, barW = Math.min(opts.wide ? 34 : 60, slot * 0.55);
+    values.forEach((v, i) => {
+      const cx = padL + slot * i + slot / 2;
+      const h = (v / maxV) * plotH, x = cx - barW / 2, yy = y(v);
+      s += `<rect x="${x}" y="${yy}" width="${barW}" height="${Math.max(h, v > 0 ? 2 : 1)}" rx="5" fill="${colors[i] || "#1d4ed8"}" opacity="0.92"/>`;
+      s += `<text x="${cx}" y="${yy - 6}" text-anchor="middle" font-size="11" font-weight="700" fill="#111827">${opts.fmt ? opts.fmt(v) : v}</text>`;
+      if (opts.rotate) {
+        s += `<text x="${cx}" y="${H - 18}" text-anchor="end" font-size="8" fill="#374151" transform="rotate(-60 ${cx} ${H - 18})">${labels[i]}</text>`;
+      } else {
+        s += `<text x="${cx}" y="${H - 22}" text-anchor="middle" font-size="11" fill="#374151">${labels[i]}</text>`;
+      }
+    });
+    s += `</svg>`;
+    el.innerHTML = s;
+  }
+
+  // Por ubicación
+  barChart("chart-ubic", ubicKeys, ubicKeys.map(k => porUbic[k]), ubicKeys.map(k => k === "E1" ? "#1d4ed8" : "#0e7490"));
+  // Estado
+  barChart("chart-estado", ["Limpio", "Sucio"], [limpias, sucias], ["#059669", "#d97706"]);
+  // Combustible
+  const fuelOrder = ["R", "1/8", "1/4", "3/8", "1/2", "5/8", "3/4", "7/8", "Full"];
+  const porFuel = {};
+  UNIDADES.forEach(u => { porFuel[u.fuel] = (porFuel[u.fuel] || 0) + 1; });
+  const fuelLabels = fuelOrder.filter(f => porFuel[f]);
+  barChart("chart-fuel", fuelLabels, fuelLabels.map(f => porFuel[f]), fuelLabels.map(f => f === "Full" ? "#059669" : "#f59e0b"));
+  // KM por unidad
+  barChart("chart-km", UNIDADES.map(u => u.unidad), UNIDADES.map(kmNum), UNIDADES.map(() => "#1d4ed8"), { wide: true, rotate: true, fmt: fmtKm });
+
+  // ---------- Pendientes ----------
+  const listaSucias = UNIDADES.filter(u => /sucio/i.test(u.estado));
+  const listaTanqueo = UNIDADES.filter(u => !/full/i.test(u.fuel));
+  const listaKm = UNIDADES.filter(u => kmNum(u) >= 80000).sort((a, b) => kmNum(b) - kmNum(a));
+  const li = arr => arr.length
+    ? arr.map(u => `<li>${u.unidad} <span style="color:var(--muted)">· ${u.ubic} · ${fmtKm(u.km)} km</span></li>`).join("")
+    : `<li style="color:var(--muted)">Ninguna 🎉</li>`;
+  document.getElementById("alerts").innerHTML = `
+    <div class="alert lavado"><h3>🧼 Para lavar (${listaSucias.length})</h3><ul>${li(listaSucias)}</ul></div>
+    <div class="alert tanqueo"><h3>⛽ Requieren tanqueo (${listaTanqueo.length})</h3><ul>${li(listaTanqueo)}</ul></div>
+    <div class="alert km"><h3>🔧 KM alto ≥ 80,000 (${listaKm.length})</h3><ul>${li(listaKm)}</ul></div>`;
+
+  // ---------- Tabla ----------
+  const tagEstado = e => /limpio/i.test(e) ? '<span class="tag limpio">Limpio</span>' : '<span class="tag sucio">Sucio</span>';
+  document.getElementById("tabla").innerHTML = `
+    <thead><tr><th>Unidad</th><th>Ubicación</th><th>KM</th><th>Combustible</th><th>Estado</th></tr></thead>
+    <tbody>
+      ${UNIDADES.map(u => `<tr>
+        <td><b>${u.unidad}</b></td>
+        <td>${u.ubic}</td>
+        <td>${fmtKm(u.km)}</td>
+        <td>${u.fuel}</td>
+        <td>${tagEstado(u.estado)}</td>
+      </tr>`).join("")}
+    </tbody>`;
+</script>
+</body>
+</html>
