@@ -1,0 +1,75 @@
+name: Reporte de Flota
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  flota:
+    runs-on: ubuntu-latest
+    env:
+      BUDGET_USER: ${{ secrets.BUDGET_USER }}
+      BUDGET_PASS: ${{ secrets.BUDGET_PASS }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Cache de agent-browser y Chrome
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.agent-browser
+            ~/.npm
+          key: agentbrowser-${{ runner.os }}-v1
+          restore-keys: |
+            agentbrowser-${{ runner.os }}-
+
+      - name: Instalar agent-browser
+        run: |
+          npm i -g agent-browser
+          echo "$(npm config get prefix)/bin" >> "$GITHUB_PATH"
+
+      - name: Instalar Chrome
+        run: agent-browser install --with-deps
+
+      - name: Extraer flota y generar reporte
+        run: node extraer_flota.js
+
+      - name: Guardar cambios (si los hay)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/
+          git commit -m "Actualizar flota $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Sin cambios"
+          git push
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir reporte como artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
