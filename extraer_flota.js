@@ -13,7 +13,7 @@
 //   node extraer_flota.js              → extrae + genera + envía Telegram
 //   node extraer_flota.js --mensaje    → prueba el mensaje de Telegram sin enviar
 // ============================================================
-const { execSync } = require('child_process');
+const { execSync, execFileSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -35,7 +35,17 @@ const URL_FLOTA = 'https://intranet.budgetperu.com/hiker/ControlCar/flota';
 
 function ab(args, timeoutMs = 40000) {
   try {
-    return execSync('agent-browser ' + args, { shell: true, encoding: 'utf8', timeout: timeoutMs }).trim();
+    let out;
+    if (process.platform === 'win32') {
+      // Windows: agent-browser es un .cmd y no se lanza directo (EINVAL).
+      // Se usa shell — aquí '#' NO es comentario, por eso no daba error.
+      out = execSync('agent-browser ' + args.join(' '), { shell: true, encoding: 'utf8', timeout: timeoutMs });
+    } else {
+      // Linux (GitHub Actions): sin shell → el '#' de #identity no se come el resto
+      // del comando (bug de bash) y el login funciona.
+      out = execFileSync('agent-browser', args, { encoding: 'utf8', timeout: timeoutMs });
+    }
+    return out.trim();
   } catch (e) {
     const msg = (e.stderr ? e.stderr.toString() : '') || String(e.message || e);
     return '__ERR__' + msg.split('\n')[0];
@@ -48,7 +58,7 @@ async function pollUrl(needle, timeoutMs = 60000) {
   const t0 = Date.now();
   let last = '';
   while (Date.now() - t0 < timeoutMs) {
-    last = ab('get url', 15000);
+    last = ab(['get', 'url'], 15000);
     if (last && !last.startsWith('__ERR__') && last.toLowerCase().includes(needle.toLowerCase())) return last;
     await sleep(2000);
   }
@@ -116,25 +126,25 @@ async function enviarTelegram(texto) {
 // ---------- Extracción ----------
 async function extraerFlota() {
   console.log('[1/5] Lanzando navegador (agent-browser)...');
-  ab('open', 30000);
+  ab(['open'], 30000);
   await sleep(2500);
 
   console.log('[2/5] Navegando al portal...');
-  ab("eval \"location.href='" + URL_LOGIN + "'\"", 20000);
+  ab(['eval', "location.href='" + URL_LOGIN + "'"], 20000);
   await sleep(4000);
-  let url = ab('get url', 15000);
+  let url = ab(['get', 'url'], 15000);
   console.log('    URL actual: ' + url);
 
   if (url.toLowerCase().includes('/hiker/auth/login')) {
     console.log('[3/5] Iniciando sesión...');
     await pollUrl('/hiker/auth/login', 60000);
-    ab('fill #identity ' + USUARIO, 20000);
-    ab('fill #password ' + PASSWORD, 20000);
-    ab("eval \"document.querySelector('form').requestSubmit()\"", 20000);
+    ab(['fill', '#identity', String(USUARIO)], 20000);
+    ab(['fill', '#password', String(PASSWORD)], 20000);
+    ab(['eval', "document.querySelector('form').requestSubmit()"], 20000);
     await sleep(4000);
-    url = ab('get url', 15000);
+    url = ab(['get', 'url'], 15000);
     if (!url.toLowerCase().includes('/hiker/control')) {
-      ab("eval \"document.querySelector('form').submit()\"", 20000);
+      ab(['eval', "document.querySelector('form').submit()"], 20000);
       await sleep(4000);
     }
     url = await pollUrl('/hiker/control', 90000);
@@ -144,12 +154,12 @@ async function extraerFlota() {
   }
 
   console.log('[4/5] Abriendo sección Flota...');
-  ab("eval \"location.href='" + URL_FLOTA + "'\"", 20000);
+  ab(['eval', "location.href='" + URL_FLOTA + "'"], 20000);
   await sleep(4000);
   await pollUrl('/flota', 60000);
 
   console.log('[5/5] Extrayendo datos...');
-  const raw = ab('eval "' + EXTRACT_JS + '"', 30000);
+  const raw = ab(['eval', EXTRACT_JS], 30000);
   if (raw.startsWith('__ERR__')) throw new Error('Error extrayendo: ' + raw);
   let unidades = JSON.parse(raw);
   if (typeof unidades === 'string') unidades = JSON.parse(unidades);
