@@ -223,7 +223,12 @@ async function main() {
     console.log('(TELEGRAM_DRY_RUN activo: no se envió)');
     return;
   }
-  await enviarTelegram(mensaje);
+  try {
+    await enviarTelegram(mensaje);
+  } catch (e) {
+    // Un fallo de Telegram no debe romper el pipeline: el reporte web ya se generó.
+    console.log('⚠️  Telegram falló (el reporte web sí se generó y se publicará): ' + e.message);
+  }
 }
 
 main().catch(err => {
