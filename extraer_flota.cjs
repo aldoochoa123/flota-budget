@@ -170,6 +170,9 @@ async function extraerFlota() {
   let unidades = JSON.parse(raw);
   if (typeof unidades === 'string') unidades = JSON.parse(unidades);
   if (!Array.isArray(unidades) || unidades.length === 0) throw new Error('Sin unidades en la respuesta');
+  // DEBUG: muestra la estructura real de las primeras filas para ajustar el mapeo de columnas.
+  console.log('    DEBUG filas (' + unidades.length + '):');
+  console.log(JSON.stringify(unidades.slice(0, 3), null, 1));
   return unidades;
 }
 
