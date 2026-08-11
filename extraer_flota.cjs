@@ -173,6 +173,8 @@ async function extraerFlota() {
   // DEBUG: muestra la estructura real de las primeras filas para ajustar el mapeo de columnas.
   console.log('    DEBUG filas (' + unidades.length + '):');
   console.log(JSON.stringify(unidades.slice(0, 3), null, 1));
+  const debugHtml = ab(['eval', "JSON.stringify({headers:[...document.querySelectorAll('table')[0].querySelectorAll('thead th,thead td')].map(function(th){return th.innerText.trim()}),rows:[...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].slice(0,2).map(function(tr){return tr.outerHTML})})"], 30000);
+  console.log('    DEBUG html: ' + (debugHtml.startsWith('__ERR__') ? 'ERROR ' + debugHtml : debugHtml));
   return unidades;
 }
 
