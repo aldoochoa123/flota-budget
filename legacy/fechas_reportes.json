@@ -1,0 +1,8916 @@
+{
+ "fecha_generado": "10/08/2026",
+ "unidades": {
+  "1001": [
+   {
+    "unit": "1001",
+    "date": "25/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1001",
+    "date": "18/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1001",
+    "date": "16/07/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1001",
+    "date": "15/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1001",
+    "date": "13/07/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1001",
+    "date": "10/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1002": [
+   {
+    "unit": "1002",
+    "date": "19/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1002",
+    "date": "25/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1002",
+    "date": "14/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1002",
+    "date": "02/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1002",
+    "date": "26/07/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1002",
+    "date": "26/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1003": [
+   {
+    "unit": "1003",
+    "date": "11/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1003",
+    "date": "09/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1003",
+    "date": "02/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1003",
+    "date": "29/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1003",
+    "date": "15/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1003",
+    "date": "12/08/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "1004": [
+   {
+    "unit": "1004",
+    "date": "08/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1004",
+    "date": "06/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1004",
+    "date": "28/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1004",
+    "date": "25/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1004",
+    "date": "16/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1004",
+    "date": "12/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1005": [
+   {
+    "unit": "1005",
+    "date": "07/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1005",
+    "date": "31/12/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1006": [
+   {
+    "unit": "1006",
+    "date": "17/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1006",
+    "date": "11/05/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1006",
+    "date": "06/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1006",
+    "date": "26/04/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1007": [
+   {
+    "unit": "1007",
+    "date": "14/08/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1007",
+    "date": "27/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1007",
+    "date": "22/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1007",
+    "date": "18/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1007",
+    "date": "15/07/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1008": [
+   {
+    "unit": "1008",
+    "date": "08/09/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1008",
+    "date": "19/08/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1008",
+    "date": "13/08/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1008",
+    "date": "05/08/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1008",
+    "date": "30/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1008",
+    "date": "30/07/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1009": [
+   {
+    "unit": "1009",
+    "date": "25/08/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1009",
+    "date": "21/08/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1009",
+    "date": "02/08/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1010": [
+   {
+    "unit": "1010",
+    "date": "16/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1010",
+    "date": "14/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1010",
+    "date": "11/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1010",
+    "date": "23/10/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1010",
+    "date": "15/10/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1010",
+    "date": "28/09/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1023": [
+   {
+    "unit": "1023",
+    "date": "01/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1023",
+    "date": "09/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1023",
+    "date": "03/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1023",
+    "date": "29/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1023",
+    "date": "14/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1023",
+    "date": "12/11/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1026": [
+   {
+    "unit": "1026",
+    "date": "24/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1026",
+    "date": "16/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1026",
+    "date": "09/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1026",
+    "date": "04/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1026",
+    "date": "27/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1026",
+    "date": "17/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1030": [
+   {
+    "unit": "1030",
+    "date": "02/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1030",
+    "date": "30/11/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1030",
+    "date": "30/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1030",
+    "date": "22/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1030",
+    "date": "18/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1030",
+    "date": "12/11/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1031": [
+   {
+    "unit": "1031",
+    "date": "09/01/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "1031",
+    "date": "16/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1031",
+    "date": "07/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1031",
+    "date": "02/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1031",
+    "date": "01/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1031",
+    "date": "17/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "1032": [
+   {
+    "unit": "1032",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1032",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1032",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1032",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1032",
+    "date": "11/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1032",
+    "date": "27/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1033": [
+   {
+    "unit": "1033",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1033",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1033",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1033",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1033",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1033",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1034": [
+   {
+    "unit": "1034",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1034",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1034",
+    "date": "08/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "1034",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1034",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1034",
+    "date": "06/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1035": [
+   {
+    "unit": "1035",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1035",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1035",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1035",
+    "date": "28/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1035",
+    "date": "26/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1035",
+    "date": "23/04/2026",
+    "type": "RT Taller"
+   }
+  ],
+  "1036": [
+   {
+    "unit": "1036",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1036",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1036",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1036",
+    "date": "23/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1036",
+    "date": "07/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1036",
+    "date": "17/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1037": [
+   {
+    "unit": "1037",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1037",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1037",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1037",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1037",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1037",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1038": [
+   {
+    "unit": "1038",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1038",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1038",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1038",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1038",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1038",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1043": [
+   {
+    "unit": "1043",
+    "date": "10/05/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1043",
+    "date": "02/05/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1043",
+    "date": "26/04/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1043",
+    "date": "17/04/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1043",
+    "date": "01/04/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1043",
+    "date": "10/03/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "1051": [
+   {
+    "unit": "1051",
+    "date": "08/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1051",
+    "date": "08/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1051",
+    "date": "04/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1051",
+    "date": "19/10/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1051",
+    "date": "19/10/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1051",
+    "date": "14/10/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "1053": [
+   {
+    "unit": "1053",
+    "date": "04/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1053",
+    "date": "31/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1053",
+    "date": "26/12/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1053",
+    "date": "23/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1053",
+    "date": "05/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1053",
+    "date": "03/11/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "1055": [
+   {
+    "unit": "1055",
+    "date": "01/02/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1055",
+    "date": "08/01/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1055",
+    "date": "02/01/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1055",
+    "date": "30/12/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1055",
+    "date": "27/12/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1055",
+    "date": "23/12/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1060": [
+   {
+    "unit": "1060",
+    "date": "17/01/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "1060",
+    "date": "15/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "1061": [
+   {
+    "unit": "1061",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1061",
+    "date": "23/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1061",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1061",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1061",
+    "date": "09/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1061",
+    "date": "30/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1062": [
+   {
+    "unit": "1062",
+    "date": "01/12/2202",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1062",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1062",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1062",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1062",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1062",
+    "date": "03/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1063": [
+   {
+    "unit": "1063",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1063",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1063",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1063",
+    "date": "11/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1063",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1063",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1064": [
+   {
+    "unit": "1064",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1064",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1064",
+    "date": "01/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1064",
+    "date": "17/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1064",
+    "date": "05/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1064",
+    "date": "23/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1065": [
+   {
+    "unit": "1065",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1065",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1065",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1065",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1065",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1065",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1066": [
+   {
+    "unit": "1066",
+    "date": "22/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1066",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1066",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1066",
+    "date": "06/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1066",
+    "date": "25/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1066",
+    "date": "20/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1067": [
+   {
+    "unit": "1067",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1067",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1067",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1067",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1067",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1067",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1068": [
+   {
+    "unit": "1068",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1068",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1068",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1068",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1068",
+    "date": "06/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1068",
+    "date": "30/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1080": [
+   {
+    "unit": "1080",
+    "date": "20/10/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1080",
+    "date": "27/03/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1080",
+    "date": "26/03/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "1081": [
+   {
+    "unit": "1081",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1081",
+    "date": "03/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1081",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1081",
+    "date": "14/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1081",
+    "date": "12/05/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1081",
+    "date": "27/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1083": [
+   {
+    "unit": "1083",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1083",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1083",
+    "date": "25/06/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "1083",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1083",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1083",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1084": [
+   {
+    "unit": "1084",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1084",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1084",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1084",
+    "date": "28/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1084",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1084",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "1085": [
+   {
+    "unit": "1085",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1085",
+    "date": "22/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "1085",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1085",
+    "date": "17/06/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "1085",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "1085",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0001": [
+   {
+    "unit": "0001",
+    "date": "21/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0001",
+    "date": "19/08/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0001",
+    "date": "16/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0001",
+    "date": "10/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0001",
+    "date": "25/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0001",
+    "date": "24/07/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0002": [
+   {
+    "unit": "0002",
+    "date": "18/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0002",
+    "date": "16/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0002",
+    "date": "14/08/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0002",
+    "date": "12/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0002",
+    "date": "08/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0002",
+    "date": "29/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0003": [
+   {
+    "unit": "0003",
+    "date": "14/03/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0003",
+    "date": "31/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0003",
+    "date": "20/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0003",
+    "date": "17/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0003",
+    "date": "12/07/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0003",
+    "date": "08/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0004": [
+   {
+    "unit": "0004",
+    "date": "11/05/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0004",
+    "date": "20/04/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0004",
+    "date": "15/04/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0004",
+    "date": "19/03/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0004",
+    "date": "18/03/2021",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0004",
+    "date": "06/03/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0005": [
+   {
+    "unit": "0005",
+    "date": "12/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0005",
+    "date": "08/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0005",
+    "date": "06/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0005",
+    "date": "02/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0005",
+    "date": "24/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0005",
+    "date": "21/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0006": [
+   {
+    "unit": "0006",
+    "date": "03/04/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0006",
+    "date": "03/04/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0006",
+    "date": "27/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0006",
+    "date": "25/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0006",
+    "date": "20/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0006",
+    "date": "09/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0007": [
+   {
+    "unit": "0007",
+    "date": "01/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0007",
+    "date": "27/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0007",
+    "date": "26/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0007",
+    "date": "24/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0007",
+    "date": "28/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0007",
+    "date": "15/08/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0008": [
+   {
+    "unit": "0008",
+    "date": "19/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0008",
+    "date": "17/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0008",
+    "date": "05/06/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0008",
+    "date": "18/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0008",
+    "date": "23/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0008",
+    "date": "19/04/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0009": [
+   {
+    "unit": "0009",
+    "date": "08/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0009",
+    "date": "20/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0009",
+    "date": "17/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0009",
+    "date": "14/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0009",
+    "date": "31/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0009",
+    "date": "28/05/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0010": [
+   {
+    "unit": "0010",
+    "date": "06/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0010",
+    "date": "18/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0010",
+    "date": "09/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0010",
+    "date": "30/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0010",
+    "date": "30/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0010",
+    "date": "28/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0011": [
+   {
+    "unit": "0011",
+    "date": "01/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0011",
+    "date": "29/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0011",
+    "date": "28/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0011",
+    "date": "19/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0011",
+    "date": "15/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0011",
+    "date": "31/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0012": [
+   {
+    "unit": "0012",
+    "date": "31/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0012",
+    "date": "29/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0012",
+    "date": "27/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0012",
+    "date": "19/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0012",
+    "date": "07/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0012",
+    "date": "30/12/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0013": [
+   {
+    "unit": "0013",
+    "date": "09/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0013",
+    "date": "25/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0013",
+    "date": "21/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0013",
+    "date": "20/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0013",
+    "date": "18/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0013",
+    "date": "18/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0014": [
+   {
+    "unit": "0014",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0014",
+    "date": "07/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0014",
+    "date": "31/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0014",
+    "date": "25/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0014",
+    "date": "18/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0014",
+    "date": "14/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0015": [
+   {
+    "unit": "0015",
+    "date": "11/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0015",
+    "date": "07/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0015",
+    "date": "04/10/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0015",
+    "date": "02/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0015",
+    "date": "25/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0015",
+    "date": "24/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0016": [
+   {
+    "unit": "0016",
+    "date": "24/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0016",
+    "date": "19/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0016",
+    "date": "11/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0016",
+    "date": "06/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0016",
+    "date": "28/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0016",
+    "date": "22/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0017": [
+   {
+    "unit": "0017",
+    "date": "09/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0017",
+    "date": "27/01/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0017",
+    "date": "23/01/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0017",
+    "date": "21/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0017",
+    "date": "19/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0017",
+    "date": "16/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0018": [
+   {
+    "unit": "0018",
+    "date": "29/09/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0018",
+    "date": "26/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0018",
+    "date": "24/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0018",
+    "date": "22/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0018",
+    "date": "20/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0018",
+    "date": "16/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0019": [
+   {
+    "unit": "0019",
+    "date": "15/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0019",
+    "date": "12/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0019",
+    "date": "30/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0019",
+    "date": "15/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0019",
+    "date": "12/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0019",
+    "date": "07/12/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0020": [
+   {
+    "unit": "0020",
+    "date": "26/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0020",
+    "date": "26/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0020",
+    "date": "25/04/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0020",
+    "date": "19/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0020",
+    "date": "18/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0020",
+    "date": "15/04/2025",
+    "type": "SL Salida"
+   }
+  ],
+  "0021": [
+   {
+    "unit": "0021",
+    "date": "27/09/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0021",
+    "date": "23/09/2021",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0021",
+    "date": "23/09/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0021",
+    "date": "15/09/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0021",
+    "date": "13/09/2021",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0021",
+    "date": "11/09/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0022": [
+   {
+    "unit": "0022",
+    "date": "26/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0022",
+    "date": "26/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0022",
+    "date": "22/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0022",
+    "date": "10/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0022",
+    "date": "05/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0022",
+    "date": "29/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0023": [
+   {
+    "unit": "0023",
+    "date": "31/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0023",
+    "date": "26/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0023",
+    "date": "17/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0023",
+    "date": "10/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0023",
+    "date": "27/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0023",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0024": [
+   {
+    "unit": "0024",
+    "date": "07/12/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0024",
+    "date": "03/12/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0024",
+    "date": "22/11/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0024",
+    "date": "13/11/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0024",
+    "date": "11/11/2022",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0024",
+    "date": "10/11/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0025": [
+   {
+    "unit": "0025",
+    "date": "23/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0025",
+    "date": "31/05/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0025",
+    "date": "27/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0025",
+    "date": "19/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0025",
+    "date": "09/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0025",
+    "date": "05/04/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0030": [
+   {
+    "unit": "0030",
+    "date": "26/10/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0035": [
+   {
+    "unit": "0035",
+    "date": "13/03/2020",
+    "type": "RT Retorno"
+   }
+  ],
+  "0039": [
+   {
+    "unit": "0039",
+    "date": "13/03/2020",
+    "type": "RT Retorno"
+   }
+  ],
+  "0045": [
+   {
+    "unit": "0045",
+    "date": "17/01/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0045",
+    "date": "16/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0045",
+    "date": "16/01/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0045",
+    "date": "16/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0045",
+    "date": "12/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0045",
+    "date": "05/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0046": [
+   {
+    "unit": "0046",
+    "date": "06/02/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0046",
+    "date": "05/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0046",
+    "date": "31/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0046",
+    "date": "22/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0046",
+    "date": "17/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0046",
+    "date": "13/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0047": [
+   {
+    "unit": "0047",
+    "date": "07/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0047",
+    "date": "13/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0047",
+    "date": "10/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0047",
+    "date": "21/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0047",
+    "date": "09/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0047",
+    "date": "05/04/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0048": [
+   {
+    "unit": "0048",
+    "date": "02/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0048",
+    "date": "04/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0048",
+    "date": "18/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0048",
+    "date": "01/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0048",
+    "date": "16/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0048",
+    "date": "11/03/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0049": [
+   {
+    "unit": "0049",
+    "date": "02/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0049",
+    "date": "20/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0049",
+    "date": "14/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0049",
+    "date": "04/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0049",
+    "date": "19/12/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0049",
+    "date": "13/12/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0050": [
+   {
+    "unit": "0050",
+    "date": "02/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0050",
+    "date": "15/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0050",
+    "date": "11/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0050",
+    "date": "20/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0050",
+    "date": "10/04/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0050",
+    "date": "07/04/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0051": [
+   {
+    "unit": "0051",
+    "date": "06/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0051",
+    "date": "06/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0051",
+    "date": "04/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0051",
+    "date": "28/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0051",
+    "date": "14/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0051",
+    "date": "30/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0062": [
+   {
+    "unit": "0062",
+    "date": "23/02/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0072": [
+   {
+    "unit": "0072",
+    "date": "23/02/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0095": [
+   {
+    "unit": "0095",
+    "date": "07/03/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0098": [
+   {
+    "unit": "0098",
+    "date": "09/07/2020",
+    "type": "RT Retorno"
+   }
+  ],
+  "0099": [
+   {
+    "unit": "0099",
+    "date": "06/06/2019",
+    "type": "RT Retorno"
+   }
+  ],
+  "0100": [
+   {
+    "unit": "0100",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0100",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0100",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0100",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0100",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0100",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0101": [
+   {
+    "unit": "0101",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0101",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0101",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0101",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0101",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0101",
+    "date": "06/07/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0102": [
+   {
+    "unit": "0102",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0102",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0102",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0102",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0102",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0102",
+    "date": "15/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0103": [
+   {
+    "unit": "0103",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0103",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0103",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0103",
+    "date": "02/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0103",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0103",
+    "date": "04/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0104": [
+   {
+    "unit": "0104",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0104",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0104",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0104",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0104",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0104",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0105": [
+   {
+    "unit": "0105",
+    "date": "25/07/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0107": [
+   {
+    "unit": "0107",
+    "date": "10/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0107",
+    "date": "06/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0107",
+    "date": "06/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0107",
+    "date": "24/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0107",
+    "date": "11/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0107",
+    "date": "10/06/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0108": [
+   {
+    "unit": "0108",
+    "date": "15/07/2020",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0108",
+    "date": "28/02/2020",
+    "type": "SL Salida"
+   }
+  ],
+  "0111": [
+   {
+    "unit": "0111",
+    "date": "15/07/2020",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0111",
+    "date": "03/03/2020",
+    "type": "SL Salida"
+   }
+  ],
+  "0112": [
+   {
+    "unit": "0112",
+    "date": "06/07/2020",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0112",
+    "date": "04/03/2020",
+    "type": "SL Salida"
+   }
+  ],
+  "0113": [
+   {
+    "unit": "0113",
+    "date": "10/07/2020",
+    "type": "RT Retorno"
+   }
+  ],
+  "0115": [
+   {
+    "unit": "0115",
+    "date": "02/07/2020",
+    "type": "RT Retorno"
+   }
+  ],
+  "0120": [
+   {
+    "unit": "0120",
+    "date": "22/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0120",
+    "date": "19/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0120",
+    "date": "18/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0120",
+    "date": "12/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0120",
+    "date": "09/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0120",
+    "date": "06/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0130": [
+   {
+    "unit": "0130",
+    "date": "22/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0130",
+    "date": "22/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0130",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0130",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0130",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0130",
+    "date": "09/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0131": [
+   {
+    "unit": "0131",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0131",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0131",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0131",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0131",
+    "date": "22/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0131",
+    "date": "17/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0132": [
+   {
+    "unit": "0132",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0132",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0132",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0132",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0132",
+    "date": "30/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0132",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0133": [
+   {
+    "unit": "0133",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0133",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0133",
+    "date": "16/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0133",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0133",
+    "date": "01/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0133",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0134": [
+   {
+    "unit": "0134",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0134",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0134",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0134",
+    "date": "14/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0134",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0134",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0135": [
+   {
+    "unit": "0135",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0135",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0135",
+    "date": "01/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0135",
+    "date": "24/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0135",
+    "date": "21/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0135",
+    "date": "13/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0136": [
+   {
+    "unit": "0136",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0136",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0136",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0136",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0136",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0136",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0137": [
+   {
+    "unit": "0137",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0137",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0137",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0137",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0137",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0137",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0138": [
+   {
+    "unit": "0138",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0138",
+    "date": "25/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0138",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0138",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0138",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0138",
+    "date": "03/07/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0139": [
+   {
+    "unit": "0139",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0139",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0139",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0139",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0139",
+    "date": "22/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0139",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0160": [
+   {
+    "unit": "0160",
+    "date": "03/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0160",
+    "date": "05/02/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0160",
+    "date": "03/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0160",
+    "date": "30/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0160",
+    "date": "27/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0160",
+    "date": "15/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0161": [
+   {
+    "unit": "0161",
+    "date": "02/02/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0161",
+    "date": "28/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0161",
+    "date": "21/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0161",
+    "date": "18/01/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0161",
+    "date": "17/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0161",
+    "date": "16/01/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0162": [
+   {
+    "unit": "0162",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0162",
+    "date": "16/04/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0162",
+    "date": "03/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0162",
+    "date": "31/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0162",
+    "date": "27/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0162",
+    "date": "24/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0163": [
+   {
+    "unit": "0163",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0163",
+    "date": "16/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0163",
+    "date": "15/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0163",
+    "date": "11/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0163",
+    "date": "06/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0163",
+    "date": "30/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0186": [
+   {
+    "unit": "0186",
+    "date": "10/08/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0190": [
+   {
+    "unit": "0190",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0190",
+    "date": "14/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0190",
+    "date": "11/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0190",
+    "date": "01/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0190",
+    "date": "30/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0190",
+    "date": "28/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0191": [
+   {
+    "unit": "0191",
+    "date": "06/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0191",
+    "date": "27/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0191",
+    "date": "22/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0191",
+    "date": "15/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0191",
+    "date": "10/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0191",
+    "date": "07/01/2024",
+    "type": "SL Salida"
+   }
+  ],
+  "0192": [
+   {
+    "unit": "0192",
+    "date": "22/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0192",
+    "date": "17/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0192",
+    "date": "11/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0192",
+    "date": "07/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0192",
+    "date": "28/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0192",
+    "date": "24/03/2025",
+    "type": "SL Salida"
+   }
+  ],
+  "0193": [
+   {
+    "unit": "0193",
+    "date": "06/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0193",
+    "date": "24/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0193",
+    "date": "24/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0193",
+    "date": "21/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0193",
+    "date": "20/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0193",
+    "date": "18/05/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0200": [
+   {
+    "unit": "0200",
+    "date": "15/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0200",
+    "date": "10/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0200",
+    "date": "05/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0200",
+    "date": "29/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0200",
+    "date": "23/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0200",
+    "date": "20/03/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0233": [
+   {
+    "unit": "0233",
+    "date": "18/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0241": [
+   {
+    "unit": "0241",
+    "date": "20/06/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0241",
+    "date": "18/06/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0241",
+    "date": "11/06/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0241",
+    "date": "06/06/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0241",
+    "date": "01/06/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0241",
+    "date": "28/05/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0247": [
+   {
+    "unit": "0247",
+    "date": "06/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0247",
+    "date": "04/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0247",
+    "date": "04/05/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0247",
+    "date": "03/05/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0247",
+    "date": "02/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0247",
+    "date": "29/04/2024",
+    "type": "SL Salida"
+   }
+  ],
+  "0248": [
+   {
+    "unit": "0248",
+    "date": "02/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0248",
+    "date": "12/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0248",
+    "date": "10/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0248",
+    "date": "05/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0248",
+    "date": "31/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0248",
+    "date": "11/01/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0249": [
+   {
+    "unit": "0249",
+    "date": "02/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0249",
+    "date": "01/05/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0249",
+    "date": "30/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0249",
+    "date": "28/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0249",
+    "date": "21/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0249",
+    "date": "18/04/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0250": [
+   {
+    "unit": "0250",
+    "date": "31/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0250",
+    "date": "24/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0250",
+    "date": "17/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0250",
+    "date": "14/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0250",
+    "date": "06/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0250",
+    "date": "05/07/2024",
+    "type": "SL Salida"
+   }
+  ],
+  "0251": [
+   {
+    "unit": "0251",
+    "date": "07/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0251",
+    "date": "18/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0251",
+    "date": "03/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0251",
+    "date": "31/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0251",
+    "date": "29/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0251",
+    "date": "28/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0252": [
+   {
+    "unit": "0252",
+    "date": "20/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0252",
+    "date": "13/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0252",
+    "date": "06/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0252",
+    "date": "18/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0252",
+    "date": "13/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0252",
+    "date": "18/02/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0254": [
+   {
+    "unit": "0254",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0254",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0254",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0254",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0254",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0254",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0255": [
+   {
+    "unit": "0255",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0255",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0255",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0255",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0255",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0255",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0256": [
+   {
+    "unit": "0256",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0256",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0256",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0256",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0256",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0256",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0257": [
+   {
+    "unit": "0257",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0257",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0257",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0257",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0257",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0257",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0258": [
+   {
+    "unit": "0258",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0258",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0258",
+    "date": "12/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0258",
+    "date": "12/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0258",
+    "date": "06/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0258",
+    "date": "05/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0259": [
+   {
+    "unit": "0259",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0259",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0259",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0259",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0259",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0259",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0260": [
+   {
+    "unit": "0260",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0260",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0260",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0260",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0260",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0260",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0261": [
+   {
+    "unit": "0261",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0261",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0261",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0261",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0261",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0261",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0262": [
+   {
+    "unit": "0262",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0262",
+    "date": "23/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0262",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0262",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0262",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0262",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0263": [
+   {
+    "unit": "0263",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0263",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0263",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0263",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0263",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0263",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0264": [
+   {
+    "unit": "0264",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0264",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0264",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0264",
+    "date": "11/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0264",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0264",
+    "date": "12/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0265": [
+   {
+    "unit": "0265",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0265",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0265",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0265",
+    "date": "18/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0265",
+    "date": "22/04/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0265",
+    "date": "24/03/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0266": [
+   {
+    "unit": "0266",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0266",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0266",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0266",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0266",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0266",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0267": [
+   {
+    "unit": "0267",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0267",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0267",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0267",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0267",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0267",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0268": [
+   {
+    "unit": "0268",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0268",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0268",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0268",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0268",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0268",
+    "date": "08/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0300": [
+   {
+    "unit": "0300",
+    "date": "02/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0300",
+    "date": "28/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0300",
+    "date": "23/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0300",
+    "date": "13/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0300",
+    "date": "27/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0300",
+    "date": "11/11/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0301": [
+   {
+    "unit": "0301",
+    "date": "03/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0301",
+    "date": "29/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0301",
+    "date": "14/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0301",
+    "date": "17/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0301",
+    "date": "30/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0301",
+    "date": "11/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0302": [
+   {
+    "unit": "0302",
+    "date": "07/11/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0302",
+    "date": "21/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0302",
+    "date": "24/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0302",
+    "date": "15/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0302",
+    "date": "28/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0302",
+    "date": "22/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0303": [],
+  "0304": [
+   {
+    "unit": "0304",
+    "date": "02/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0304",
+    "date": "27/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0304",
+    "date": "21/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0304",
+    "date": "27/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0304",
+    "date": "15/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0304",
+    "date": "30/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0305": [],
+  "0306": [
+   {
+    "unit": "0306",
+    "date": "21/03/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0306",
+    "date": "19/03/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0306",
+    "date": "02/03/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0306",
+    "date": "01/02/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0306",
+    "date": "28/01/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0306",
+    "date": "25/01/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0307": [
+   {
+    "unit": "0307",
+    "date": "20/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0307",
+    "date": "04/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0307",
+    "date": "23/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0307",
+    "date": "07/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0307",
+    "date": "28/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0307",
+    "date": "09/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0308": [
+   {
+    "unit": "0308",
+    "date": "19/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0308",
+    "date": "01/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0308",
+    "date": "11/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0308",
+    "date": "26/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0308",
+    "date": "25/10/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0308",
+    "date": "22/10/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0309": [
+   {
+    "unit": "0309",
+    "date": "23/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0309",
+    "date": "24/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0309",
+    "date": "14/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0309",
+    "date": "10/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0309",
+    "date": "07/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0309",
+    "date": "21/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0310": [
+   {
+    "unit": "0310",
+    "date": "07/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0310",
+    "date": "28/12/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0310",
+    "date": "27/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0310",
+    "date": "15/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0310",
+    "date": "29/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0310",
+    "date": "13/11/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0311": [
+   {
+    "unit": "0311",
+    "date": "21/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0311",
+    "date": "28/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0311",
+    "date": "25/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0311",
+    "date": "22/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0311",
+    "date": "20/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0311",
+    "date": "25/11/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0312": [
+   {
+    "unit": "0312",
+    "date": "10/04/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0312",
+    "date": "10/04/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0312",
+    "date": "27/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0312",
+    "date": "11/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0312",
+    "date": "11/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0312",
+    "date": "02/12/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0313": [
+   {
+    "unit": "0313",
+    "date": "25/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0313",
+    "date": "20/05/2025",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0313",
+    "date": "12/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0313",
+    "date": "11/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0313",
+    "date": "26/04/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0313",
+    "date": "26/04/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0314": [
+   {
+    "unit": "0314",
+    "date": "30/07/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0314",
+    "date": "21/07/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0314",
+    "date": "05/07/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0314",
+    "date": "26/06/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0314",
+    "date": "23/06/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0314",
+    "date": "19/06/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0315": [
+   {
+    "unit": "0315",
+    "date": "02/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0315",
+    "date": "12/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0315",
+    "date": "09/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0315",
+    "date": "04/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0315",
+    "date": "28/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0315",
+    "date": "21/04/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0316": [
+   {
+    "unit": "0316",
+    "date": "25/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0316",
+    "date": "22/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0316",
+    "date": "19/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0316",
+    "date": "15/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0316",
+    "date": "05/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0316",
+    "date": "01/05/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0317": [
+   {
+    "unit": "0317",
+    "date": "28/06/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0317",
+    "date": "24/06/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0317",
+    "date": "22/06/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0317",
+    "date": "15/06/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0317",
+    "date": "13/06/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0317",
+    "date": "13/06/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0318": [
+   {
+    "unit": "0318",
+    "date": "17/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0318",
+    "date": "11/02/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0318",
+    "date": "09/02/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0318",
+    "date": "21/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0318",
+    "date": "09/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0318",
+    "date": "02/01/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0319": [
+   {
+    "unit": "0319",
+    "date": "12/06/2027",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0319",
+    "date": "06/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0319",
+    "date": "03/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0319",
+    "date": "19/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0319",
+    "date": "16/05/2025",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0319",
+    "date": "10/05/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0320": [
+   {
+    "unit": "0320",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0320",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0320",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0320",
+    "date": "13/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0320",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0320",
+    "date": "07/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0321": [
+   {
+    "unit": "0321",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0321",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0321",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0321",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0321",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0321",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0322": [
+   {
+    "unit": "0322",
+    "date": "17/03/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0322",
+    "date": "11/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0322",
+    "date": "05/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0322",
+    "date": "17/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0322",
+    "date": "13/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0322",
+    "date": "03/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0323": [
+   {
+    "unit": "0323",
+    "date": "12/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0323",
+    "date": "08/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0323",
+    "date": "06/01/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0323",
+    "date": "06/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0323",
+    "date": "29/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0323",
+    "date": "26/12/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0324": [
+   {
+    "unit": "0324",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0324",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0324",
+    "date": "17/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0324",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0324",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0324",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0325": [
+   {
+    "unit": "0325",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0325",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0325",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0325",
+    "date": "10/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0325",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0325",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0326": [
+   {
+    "unit": "0326",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0326",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0326",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0326",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0326",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0326",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0327": [
+   {
+    "unit": "0327",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0327",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0327",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0327",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0327",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0327",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0328": [
+   {
+    "unit": "0328",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0328",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0328",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0328",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0328",
+    "date": "11/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0328",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0418": [
+   {
+    "unit": "0418",
+    "date": "22/04/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0418",
+    "date": "22/04/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0418",
+    "date": "19/04/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0418",
+    "date": "17/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0418",
+    "date": "18/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0418",
+    "date": "15/03/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0419": [
+   {
+    "unit": "0419",
+    "date": "01/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0419",
+    "date": "22/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0419",
+    "date": "27/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0419",
+    "date": "14/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0419",
+    "date": "10/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0419",
+    "date": "30/09/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0420": [
+   {
+    "unit": "0420",
+    "date": "24/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0420",
+    "date": "10/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0420",
+    "date": "11/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0420",
+    "date": "26/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0420",
+    "date": "24/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0420",
+    "date": "17/02/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0441": [
+   {
+    "unit": "0441",
+    "date": "31/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0441",
+    "date": "27/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0441",
+    "date": "27/07/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0441",
+    "date": "25/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0441",
+    "date": "13/07/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0441",
+    "date": "21/06/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0442": [
+   {
+    "unit": "0442",
+    "date": "14/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0442",
+    "date": "06/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0442",
+    "date": "23/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0442",
+    "date": "13/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0442",
+    "date": "28/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0442",
+    "date": "24/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0445": [
+   {
+    "unit": "0445",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0445",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0445",
+    "date": "22/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0445",
+    "date": "18/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0445",
+    "date": "13/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0445",
+    "date": "10/05/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0446": [
+   {
+    "unit": "0446",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0446",
+    "date": "27/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0446",
+    "date": "19/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0446",
+    "date": "11/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0446",
+    "date": "31/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0446",
+    "date": "27/03/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0447": [
+   {
+    "unit": "0447",
+    "date": "17/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0447",
+    "date": "10/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0447",
+    "date": "07/03/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0447",
+    "date": "06/03/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0447",
+    "date": "03/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0447",
+    "date": "24/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0448": [
+   {
+    "unit": "0448",
+    "date": "06/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0448",
+    "date": "02/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0448",
+    "date": "24/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0448",
+    "date": "18/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0448",
+    "date": "17/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0448",
+    "date": "14/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0450": [
+   {
+    "unit": "0450",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0450",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0450",
+    "date": "05/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0450",
+    "date": "01/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0450",
+    "date": "26/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0450",
+    "date": "20/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0451": [
+   {
+    "unit": "0451",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0451",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0451",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0451",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0451",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0451",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0452": [
+   {
+    "unit": "0452",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0452",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0452",
+    "date": "08/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0452",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0452",
+    "date": "22/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0452",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0460": [
+   {
+    "unit": "0460",
+    "date": "14/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0460",
+    "date": "05/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0460",
+    "date": "27/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0460",
+    "date": "15/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0460",
+    "date": "11/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0460",
+    "date": "06/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0461": [
+   {
+    "unit": "0461",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0461",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0461",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0461",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0461",
+    "date": "30/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0461",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0470": [
+   {
+    "unit": "0470",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0470",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0470",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0470",
+    "date": "28/05/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0470",
+    "date": "26/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0470",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0471": [
+   {
+    "unit": "0471",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0471",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0471",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0471",
+    "date": "17/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0471",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0471",
+    "date": "29/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0474": [
+   {
+    "unit": "0474",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0474",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0474",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0474",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0474",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0474",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0475": [
+   {
+    "unit": "0475",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0475",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0475",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0475",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0475",
+    "date": "15/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0475",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0476": [
+   {
+    "unit": "0476",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0476",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0476",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0476",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0476",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0476",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0477": [
+   {
+    "unit": "0477",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0477",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0477",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0477",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0477",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0477",
+    "date": "15/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0478": [
+   {
+    "unit": "0478",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0478",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0478",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0478",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0478",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0478",
+    "date": "20/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0479": [
+   {
+    "unit": "0479",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0479",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0479",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0479",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0479",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0479",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0480": [
+   {
+    "unit": "0480",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0480",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0480",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0480",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0480",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0480",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0481": [
+   {
+    "unit": "0481",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0481",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0481",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0481",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0481",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0481",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0482": [
+   {
+    "unit": "0482",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0482",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0482",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0482",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0482",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0482",
+    "date": "09/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0483": [
+   {
+    "unit": "0483",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0483",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0483",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0483",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0483",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0483",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0484": [
+   {
+    "unit": "0484",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0484",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0484",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0484",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0484",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0484",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0485": [
+   {
+    "unit": "0485",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0485",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0485",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0485",
+    "date": "05/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0485",
+    "date": "02/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0485",
+    "date": "20/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0486": [
+   {
+    "unit": "0486",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0486",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0486",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0486",
+    "date": "08/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0486",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0486",
+    "date": "03/07/2026",
+    "type": "RT Taller"
+   }
+  ],
+  "0488": [
+   {
+    "unit": "0488",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0488",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0488",
+    "date": "25/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0488",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0488",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0488",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0489": [
+   {
+    "unit": "0489",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0489",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0489",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0489",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0489",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0489",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0490": [
+   {
+    "unit": "0490",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0490",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0490",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0490",
+    "date": "10/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0490",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0490",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0491": [
+   {
+    "unit": "0491",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0491",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0491",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0491",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0491",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0491",
+    "date": "26/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0492": [
+   {
+    "unit": "0492",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0492",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0492",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0492",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0492",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0492",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0493": [
+   {
+    "unit": "0493",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0493",
+    "date": "09/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0493",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0493",
+    "date": "13/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0493",
+    "date": "12/05/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0493",
+    "date": "11/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0494": [
+   {
+    "unit": "0494",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0494",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0494",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0494",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0494",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0494",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0495": [
+   {
+    "unit": "0495",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0495",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0495",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0495",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0495",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0495",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0497": [
+   {
+    "unit": "0497",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0497",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0497",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0497",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0497",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0497",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0498": [
+   {
+    "unit": "0498",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0498",
+    "date": "23/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0498",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0498",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0498",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0498",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0499": [
+   {
+    "unit": "0499",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0499",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0499",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0499",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0499",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0499",
+    "date": "23/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0500": [
+   {
+    "unit": "0500",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0500",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0500",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0500",
+    "date": "02/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0500",
+    "date": "29/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0500",
+    "date": "12/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0501": [
+   {
+    "unit": "0501",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0501",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0501",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0501",
+    "date": "22/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0501",
+    "date": "17/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0501",
+    "date": "15/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0504": [
+   {
+    "unit": "0504",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0504",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0504",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0504",
+    "date": "26/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0504",
+    "date": "13/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0504",
+    "date": "26/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0505": [
+   {
+    "unit": "0505",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0505",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0505",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0505",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0505",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0505",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0506": [
+   {
+    "unit": "0506",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0506",
+    "date": "28/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0506",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0506",
+    "date": "20/06/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0506",
+    "date": "17/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0506",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0507": [
+   {
+    "unit": "0507",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0507",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0507",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0507",
+    "date": "08/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0507",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0507",
+    "date": "25/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0508": [
+   {
+    "unit": "0508",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0508",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0508",
+    "date": "09/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0508",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0508",
+    "date": "05/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0508",
+    "date": "09/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0509": [
+   {
+    "unit": "0509",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0509",
+    "date": "20/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0509",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0509",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0509",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0509",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0510": [
+   {
+    "unit": "0510",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0510",
+    "date": "26/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0510",
+    "date": "14/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0510",
+    "date": "11/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0510",
+    "date": "06/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0510",
+    "date": "27/03/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0511": [
+   {
+    "unit": "0511",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0511",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0511",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0511",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0511",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0511",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0512": [
+   {
+    "unit": "0512",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0512",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0512",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0512",
+    "date": "17/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0512",
+    "date": "13/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0512",
+    "date": "13/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0513": [
+   {
+    "unit": "0513",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0513",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0513",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0513",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0513",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0513",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0514": [
+   {
+    "unit": "0514",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0514",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0514",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0514",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0514",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0514",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0515": [
+   {
+    "unit": "0515",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0515",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0515",
+    "date": "14/05/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0515",
+    "date": "14/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0515",
+    "date": "12/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0515",
+    "date": "09/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0516": [
+   {
+    "unit": "0516",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0516",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0516",
+    "date": "11/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0516",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0516",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0516",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0517": [
+   {
+    "unit": "0517",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0517",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0517",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0517",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0517",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0517",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0518": [
+   {
+    "unit": "0518",
+    "date": "31/10/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0518",
+    "date": "09/10/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0518",
+    "date": "06/10/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0518",
+    "date": "01/10/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0518",
+    "date": "26/09/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0518",
+    "date": "26/09/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0519": [
+   {
+    "unit": "0519",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0519",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0519",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0519",
+    "date": "23/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0519",
+    "date": "23/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0519",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0529": [
+   {
+    "unit": "0529",
+    "date": "11/03/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0529",
+    "date": "11/03/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0529",
+    "date": "03/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0529",
+    "date": "24/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0529",
+    "date": "05/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0529",
+    "date": "02/02/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0530": [
+   {
+    "unit": "0530",
+    "date": "29/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0530",
+    "date": "23/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0530",
+    "date": "18/02/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0530",
+    "date": "16/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0530",
+    "date": "13/02/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0530",
+    "date": "01/02/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0553": [
+   {
+    "unit": "0553",
+    "date": "19/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0553",
+    "date": "15/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0553",
+    "date": "09/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0553",
+    "date": "13/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0553",
+    "date": "25/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0553",
+    "date": "11/11/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0554": [
+   {
+    "unit": "0554",
+    "date": "30/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0554",
+    "date": "22/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0554",
+    "date": "08/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0554",
+    "date": "02/01/2024",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0554",
+    "date": "01/01/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0554",
+    "date": "28/12/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0558": [
+   {
+    "unit": "0558",
+    "date": "01/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0558",
+    "date": "19/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0558",
+    "date": "17/04/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0558",
+    "date": "15/04/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0558",
+    "date": "29/03/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0558",
+    "date": "19/03/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0720": [
+   {
+    "unit": "0720",
+    "date": "08/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0720",
+    "date": "06/03/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0720",
+    "date": "03/03/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0720",
+    "date": "24/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0720",
+    "date": "23/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0720",
+    "date": "16/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0721": [
+   {
+    "unit": "0721",
+    "date": "08/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0721",
+    "date": "21/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0721",
+    "date": "18/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0721",
+    "date": "15/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0721",
+    "date": "14/02/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0721",
+    "date": "13/02/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0722": [
+   {
+    "unit": "0722",
+    "date": "16/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0722",
+    "date": "16/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0722",
+    "date": "14/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0722",
+    "date": "29/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0722",
+    "date": "12/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0722",
+    "date": "05/01/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0723": [
+   {
+    "unit": "0723",
+    "date": "13/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0723",
+    "date": "07/11/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0723",
+    "date": "23/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0723",
+    "date": "14/10/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0723",
+    "date": "16/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0723",
+    "date": "01/08/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0724": [
+   {
+    "unit": "0724",
+    "date": "30/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0724",
+    "date": "22/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0724",
+    "date": "22/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0724",
+    "date": "31/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0724",
+    "date": "24/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0724",
+    "date": "23/07/2023",
+    "type": "SL Salida"
+   }
+  ],
+  "0732": [
+   {
+    "unit": "0732",
+    "date": "10/12/2023",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0732",
+    "date": "29/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0732",
+    "date": "01/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0732",
+    "date": "17/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0732",
+    "date": "04/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0732",
+    "date": "22/07/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0733": [
+   {
+    "unit": "0733",
+    "date": "22/09/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0733",
+    "date": "31/08/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0733",
+    "date": "05/07/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0733",
+    "date": "19/06/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0733",
+    "date": "19/05/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0733",
+    "date": "11/05/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0753": [
+   {
+    "unit": "0753",
+    "date": "27/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0753",
+    "date": "20/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0753",
+    "date": "05/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0753",
+    "date": "20/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0753",
+    "date": "03/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0753",
+    "date": "03/03/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0754": [
+   {
+    "unit": "0754",
+    "date": "08/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0754",
+    "date": "07/05/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0754",
+    "date": "07/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0754",
+    "date": "25/04/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0754",
+    "date": "25/04/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0754",
+    "date": "22/04/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0756": [],
+  "0758": [
+   {
+    "unit": "0758",
+    "date": "01/04/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0758",
+    "date": "30/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0758",
+    "date": "13/03/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0758",
+    "date": "09/03/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0758",
+    "date": "09/03/2024",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0758",
+    "date": "27/02/2024",
+    "type": "RT Retorno"
+   }
+  ],
+  "0759": [
+   {
+    "unit": "0759",
+    "date": "03/06/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0759",
+    "date": "01/06/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0759",
+    "date": "03/05/2024",
+    "type": "SL Prueba"
+   },
+   {
+    "unit": "0759",
+    "date": "03/05/2024",
+    "type": "RT Prueba"
+   },
+   {
+    "unit": "0759",
+    "date": "03/05/2024",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0759",
+    "date": "19/04/2024",
+    "type": "SL Prueba"
+   }
+  ],
+  "0760": [
+   {
+    "unit": "0760",
+    "date": "09/12/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0760",
+    "date": "20/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0760",
+    "date": "07/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0760",
+    "date": "02/03/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0760",
+    "date": "12/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0760",
+    "date": "10/01/2023",
+    "type": "RT Retorno"
+   }
+  ],
+  "0761": [
+   {
+    "unit": "0761",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0761",
+    "date": "24/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0761",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0761",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0761",
+    "date": "30/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0761",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0762": [
+   {
+    "unit": "0762",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0762",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0762",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0762",
+    "date": "15/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0762",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0762",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0763": [
+   {
+    "unit": "0763",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0763",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0763",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0763",
+    "date": "07/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0763",
+    "date": "05/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0763",
+    "date": "04/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0764": [],
+  "0770": [
+   {
+    "unit": "0770",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0770",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0770",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0770",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0770",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0770",
+    "date": "11/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0771": [
+   {
+    "unit": "0771",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0771",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0771",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0771",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0771",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0771",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0772": [
+   {
+    "unit": "0772",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0772",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0772",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0772",
+    "date": "08/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0772",
+    "date": "03/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0772",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0773": [
+   {
+    "unit": "0773",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0773",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0773",
+    "date": "22/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0773",
+    "date": "04/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0773",
+    "date": "24/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0773",
+    "date": "21/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0774": [
+   {
+    "unit": "0774",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0774",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0774",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0774",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0774",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0774",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0775": [
+   {
+    "unit": "0775",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0775",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0775",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0775",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0775",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0775",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0776": [
+   {
+    "unit": "0776",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0776",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0776",
+    "date": "08/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0776",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0776",
+    "date": "08/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0776",
+    "date": "31/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0778": [
+   {
+    "unit": "0778",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0778",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0778",
+    "date": "23/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0778",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0778",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0778",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0780": [
+   {
+    "unit": "0780",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0780",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0780",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0780",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0780",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0780",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0781": [
+   {
+    "unit": "0781",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0781",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0781",
+    "date": "13/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0781",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0781",
+    "date": "22/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0781",
+    "date": "20/05/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0782": [
+   {
+    "unit": "0782",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0782",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0782",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0782",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0782",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0782",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0783": [
+   {
+    "unit": "0783",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0783",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0783",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0783",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0783",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0783",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0850": [
+   {
+    "unit": "0850",
+    "date": "25/07/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0850",
+    "date": "31/05/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0850",
+    "date": "23/02/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0850",
+    "date": "18/02/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0850",
+    "date": "10/02/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0850",
+    "date": "05/02/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0851": [
+   {
+    "unit": "0851",
+    "date": "22/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0851",
+    "date": "16/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0851",
+    "date": "02/11/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0851",
+    "date": "27/10/2021",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0851",
+    "date": "22/10/2021",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0851",
+    "date": "21/10/2021",
+    "type": "RT Retorno"
+   }
+  ],
+  "0862": [
+   {
+    "unit": "0862",
+    "date": "02/01/2023",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0862",
+    "date": "26/12/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0862",
+    "date": "28/11/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0862",
+    "date": "25/11/2022",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0862",
+    "date": "24/11/2022",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0862",
+    "date": "07/10/2022",
+    "type": "RT Retorno"
+   }
+  ],
+  "0870": [
+   {
+    "unit": "0870",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0870",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0870",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0870",
+    "date": "04/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0870",
+    "date": "27/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0870",
+    "date": "22/04/2024",
+    "type": "RT Prueba"
+   }
+  ],
+  "0871": [
+   {
+    "unit": "0871",
+    "date": "23/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0871",
+    "date": "13/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0871",
+    "date": "10/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0871",
+    "date": "07/01/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0871",
+    "date": "05/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0871",
+    "date": "15/12/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0880": [
+   {
+    "unit": "0880",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0880",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0880",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0880",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0880",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0880",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0881": [
+   {
+    "unit": "0881",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0881",
+    "date": "19/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0881",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0881",
+    "date": "17/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0881",
+    "date": "15/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0881",
+    "date": "02/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0882": [
+   {
+    "unit": "0882",
+    "date": "23/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0882",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0882",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0882",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0882",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0882",
+    "date": "06/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0883": [
+   {
+    "unit": "0883",
+    "date": "11/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0883",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0883",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0883",
+    "date": "25/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0883",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0883",
+    "date": "01/06/2026",
+    "type": "RT Taller"
+   }
+  ],
+  "0890": [
+   {
+    "unit": "0890",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0890",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0890",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0890",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0890",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0890",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0891": [
+   {
+    "unit": "0891",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0891",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0891",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0891",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0891",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0891",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0893": [
+   {
+    "unit": "0893",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0893",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0893",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0893",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0893",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0893",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0894": [
+   {
+    "unit": "0894",
+    "date": "26/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0894",
+    "date": "21/02/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0894",
+    "date": "21/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0894",
+    "date": "17/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0894",
+    "date": "11/02/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0894",
+    "date": "12/01/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0895": [
+   {
+    "unit": "0895",
+    "date": "19/12/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0895",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0895",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0895",
+    "date": "24/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0895",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0895",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0896": [
+   {
+    "unit": "0896",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0896",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0896",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0896",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0896",
+    "date": "09/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0896",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0897": [
+   {
+    "unit": "0897",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0897",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0897",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0897",
+    "date": "07/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0897",
+    "date": "02/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0897",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0898": [
+   {
+    "unit": "0898",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0898",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0898",
+    "date": "18/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0898",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0898",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0898",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0899": [
+   {
+    "unit": "0899",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0899",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0899",
+    "date": "07/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0899",
+    "date": "03/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0899",
+    "date": "27/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0899",
+    "date": "20/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0900": [
+   {
+    "unit": "0900",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0900",
+    "date": "23/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0900",
+    "date": "20/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0900",
+    "date": "17/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0900",
+    "date": "16/01/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0900",
+    "date": "13/01/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0901": [
+   {
+    "unit": "0901",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0901",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0901",
+    "date": "11/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0901",
+    "date": "07/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0901",
+    "date": "01/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0901",
+    "date": "18/02/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0902": [
+   {
+    "unit": "0902",
+    "date": "10/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0902",
+    "date": "23/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0902",
+    "date": "18/05/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0902",
+    "date": "01/12/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0902",
+    "date": "29/11/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0902",
+    "date": "22/11/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0903": [
+   {
+    "unit": "0903",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0903",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0903",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0903",
+    "date": "08/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0903",
+    "date": "05/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0903",
+    "date": "28/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0909": [
+   {
+    "unit": "0909",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0909",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0909",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0909",
+    "date": "02/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0909",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0909",
+    "date": "26/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0913": [
+   {
+    "unit": "0913",
+    "date": "02/07/2025",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0913",
+    "date": "21/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0913",
+    "date": "14/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0913",
+    "date": "09/06/2025",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0913",
+    "date": "04/06/2025",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0913",
+    "date": "04/06/2025",
+    "type": "RT Retorno"
+   }
+  ],
+  "0915": [
+   {
+    "unit": "0915",
+    "date": "30/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0915",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0915",
+    "date": "27/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0915",
+    "date": "25/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0915",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0915",
+    "date": "10/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0916": [
+   {
+    "unit": "0916",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0916",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0916",
+    "date": "17/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0916",
+    "date": "11/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0916",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0916",
+    "date": "29/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0943": [
+   {
+    "unit": "0943",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0943",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0943",
+    "date": "18/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0943",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0943",
+    "date": "04/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0943",
+    "date": "29/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0944": [
+   {
+    "unit": "0944",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0944",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0944",
+    "date": "25/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0944",
+    "date": "16/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0944",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0944",
+    "date": "12/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0945": [
+   {
+    "unit": "0945",
+    "date": "19/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0945",
+    "date": "13/04/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0945",
+    "date": "05/04/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0945",
+    "date": "22/03/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0945",
+    "date": "19/03/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0945",
+    "date": "19/03/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0946": [
+   {
+    "unit": "0946",
+    "date": "13/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0946",
+    "date": "08/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0946",
+    "date": "11/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0946",
+    "date": "04/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0946",
+    "date": "30/04/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0946",
+    "date": "25/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0947": [
+   {
+    "unit": "0947",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0947",
+    "date": "21/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0947",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0947",
+    "date": "01/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0947",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0947",
+    "date": "05/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0953": [],
+  "0960": [
+   {
+    "unit": "0960",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0960",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0960",
+    "date": "04/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0960",
+    "date": "27/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0960",
+    "date": "06/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0960",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0961": [
+   {
+    "unit": "0961",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0961",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0961",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0961",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0961",
+    "date": "04/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0961",
+    "date": "29/04/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0962": [
+   {
+    "unit": "0962",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0962",
+    "date": "27/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0962",
+    "date": "22/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0962",
+    "date": "13/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0962",
+    "date": "04/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0962",
+    "date": "28/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0963": [
+   {
+    "unit": "0963",
+    "date": "31/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0963",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0963",
+    "date": "06/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0963",
+    "date": "21/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0963",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0963",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0964": [
+   {
+    "unit": "0964",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0964",
+    "date": "20/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0964",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0964",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0964",
+    "date": "23/06/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0964",
+    "date": "19/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0965": [
+   {
+    "unit": "0965",
+    "date": "01/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0965",
+    "date": "26/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0965",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0965",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0965",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0965",
+    "date": "25/06/2026",
+    "type": "SL Salida"
+   }
+  ],
+  "0966": [
+   {
+    "unit": "0966",
+    "date": "15/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0966",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0966",
+    "date": "29/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0966",
+    "date": "14/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0966",
+    "date": "27/05/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0966",
+    "date": "15/05/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0967": [
+   {
+    "unit": "0967",
+    "date": "14/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0967",
+    "date": "05/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0967",
+    "date": "03/07/2026",
+    "type": "SL Salida"
+   },
+   {
+    "unit": "0967",
+    "date": "26/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0967",
+    "date": "20/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0967",
+    "date": "11/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0968": [
+   {
+    "unit": "0968",
+    "date": "02/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0968",
+    "date": "22/07/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0968",
+    "date": "17/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0968",
+    "date": "14/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0968",
+    "date": "12/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0968",
+    "date": "30/06/2026",
+    "type": "RT Retorno"
+   }
+  ],
+  "0969": [
+   {
+    "unit": "0969",
+    "date": "03/08/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0969",
+    "date": "29/07/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0969",
+    "date": "24/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0969",
+    "date": "16/06/2026",
+    "type": "RT Retorno"
+   },
+   {
+    "unit": "0969",
+    "date": "03/06/2026",
+    "type": "RT Taller"
+   },
+   {
+    "unit": "0969",
+    "date": "30/05/2026",
+    "type": "RT Retorno"
+   }
+  ]
+ }
+}

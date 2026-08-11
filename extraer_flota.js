@@ -2,8 +2,11 @@
 // ============================================================
 // Reporte de Flota — Budget Perú (versión GitHub Actions)
 // - Extrae la flota de la intranet usando agent-browser
-// - Genera public/index.html (reporte) + public/flota_data.json
+// - Genera public/flota_data.json (snapshot JSON; la app React se sirve
+//   desde el index.html raíz, así que aquí NO se genera public/index.html)
 // - Envía la flota completa por Telegram (si hay token configurado)
+// - El workflow (flota.yml) envía public/flota_data.json al panel (Convex)
+//   vía el endpoint /ingest-flota
 //
 // Credenciales: variables de entorno (GitHub Secrets):
 //   BUDGET_USER, BUDGET_PASS, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
@@ -167,14 +170,13 @@ async function extraerFlota() {
   return unidades;
 }
 
-// ---------- Reporte HTML ----------
+// ---------- Snapshot JSON ----------
 function generarReporte(unidades, fecha) {
   fs.mkdirSync(PUBLIC, { recursive: true });
-  const tpl = fs.readFileSync(path.join(DIR, 'informe_flota_template.html'), 'utf8');
-  const html = tpl.replace('__DATA__', JSON.stringify({ fecha, unidades }));
-  fs.writeFileSync(path.join(PUBLIC, 'index.html'), html);
+  // Solo el JSON: NO se genera public/index.html porque la app React usa el
+  // index.html raíz y public/index.html la pisotearía en dev y en build.
   fs.writeFileSync(path.join(PUBLIC, 'flota_data.json'), JSON.stringify({ fecha, unidades }, null, 2));
-  console.log('    📄 Reporte generado en public/index.html (' + unidades.length + ' unidades)');
+  console.log('    📄 Snapshot guardado en public/flota_data.json (' + unidades.length + ' unidades)');
 }
 
 // ---------- Main ----------

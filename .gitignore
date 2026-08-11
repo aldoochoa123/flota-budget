@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.wrangler/
+*.local
+.env
+.env.*
+!.env.example
+# Credenciales locales de la intranet (extraer_flota.js)
+config.json

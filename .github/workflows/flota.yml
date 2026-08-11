@@ -1,19 +1,19 @@
 name: Reporte de Flota
 
 on:
+  # Cada hora dentro del horario de trabajo (15:00-08:00 del día siguiente,
+  # hora Perú / UTC-5 -> 20:00-13:00 UTC). GitHub Actions usa UTC por defecto.
   schedule:
-    - cron: '5 * * * *'
+    - cron: '0 20-23,0-13 * * *'
   workflow_dispatch:
   push:
     branches: [main]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: "flota-sync"
   cancel-in-progress: false
 
 jobs:
@@ -24,6 +24,10 @@ jobs:
       BUDGET_PASS: ${{ secrets.BUDGET_PASS }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      # URL del panel (Convex): base + /ingest-flota. Ej:
+      # https://3210-<workspace>.daytonaproxy01.net/ingest-flota
+      CONVEX_SYNC_URL: ${{ secrets.CONVEX_SYNC_URL }}
+      FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,8 +55,22 @@ jobs:
       - name: Instalar Chrome
         run: agent-browser install --with-deps
 
-      - name: Extraer flota y generar reporte
+      - name: Extraer flota y generar snapshot
         run: node extraer_flota.js
+
+      - name: Enviar flota al panel (Convex /ingest-flota)
+        run: |
+          code=""
+          for i in 1 2 3; do
+            code=$(curl -s -o /tmp/sync_resp.json -w "%{http_code}" -X POST "$CONVEX_SYNC_URL" \
+              -H "Content-Type: application/json" \
+              -H "x-flota-secret: $FLOTA_SYNC_SECRET" \
+              --data-binary @public/flota_data.json || true)
+            echo "Intento $i: HTTP $code — $(cat /tmp/sync_resp.json)"
+            if [ "$code" = "200" ]; then break; fi
+            sleep 30
+          done
+          [ "$code" = "200" ] || { echo "::error::No se pudo sincronizar con el panel (HTTP $code)"; exit 1; }
 
       - name: Guardar cambios (si los hay)
         run: |
@@ -61,15 +79,3 @@ jobs:
           git add public/
           git commit -m "Actualizar flota $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Sin cambios"
           git push
-
-      - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Subir reporte como artefacto
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-
-      - name: Desplegar en GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

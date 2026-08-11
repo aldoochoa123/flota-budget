@@ -1,0 +1,3234 @@
+{
+ "fecha_generado": "10/08/2026",
+ "total_registros": 475,
+ "registros": [
+  {
+   "key": "25239",
+   "unit": "0001",
+   "date": "10/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0001-0133",
+   "reportExt": ""
+  },
+  {
+   "key": "23727",
+   "unit": "0001",
+   "date": "16/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0001-0127",
+   "reportExt": ""
+  },
+  {
+   "key": "23809",
+   "unit": "0001",
+   "date": "19/08/2023",
+   "type": "SL Salida",
+   "reportId": "RV0001-0128",
+   "reportExt": ""
+  },
+  {
+   "key": "23888",
+   "unit": "0001",
+   "date": "21/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0001-0129",
+   "reportExt": ""
+  },
+  {
+   "key": "23209",
+   "unit": "0001",
+   "date": "24/07/2023",
+   "type": "SL Salida",
+   "reportId": "RV0001-0125",
+   "reportExt": ""
+  },
+  {
+   "key": "23210",
+   "unit": "0001",
+   "date": "25/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0001-0126",
+   "reportExt": ""
+  },
+  {
+   "key": "23608",
+   "unit": "0002",
+   "date": "08/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0002-0128",
+   "reportExt": ""
+  },
+  {
+   "key": "23704",
+   "unit": "0002",
+   "date": "12/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0002-0129",
+   "reportExt": ""
+  },
+  {
+   "key": "23723",
+   "unit": "0002",
+   "date": "14/08/2023",
+   "type": "SL Salida",
+   "reportId": "RV0002-0130",
+   "reportExt": ""
+  },
+  {
+   "key": "23724",
+   "unit": "0002",
+   "date": "16/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0002-0131",
+   "reportExt": ""
+  },
+  {
+   "key": "23839",
+   "unit": "0002",
+   "date": "18/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0002-0132",
+   "reportExt": ""
+  },
+  {
+   "key": "23421",
+   "unit": "0002",
+   "date": "29/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0002-0127",
+   "reportExt": ""
+  },
+  {
+   "key": "23059",
+   "unit": "0003",
+   "date": "08/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0003-0129",
+   "reportExt": ""
+  },
+  {
+   "key": "23018",
+   "unit": "0003",
+   "date": "12/07/2023",
+   "type": "SL Salida",
+   "reportId": "RV0003-0128",
+   "reportExt": ""
+  },
+  {
+   "key": "28227",
+   "unit": "0003",
+   "date": "14/03/2024",
+   "type": "SL Prueba",
+   "reportId": "RV0003-0137.pdf",
+   "reportExt": "pdf"
+  },
+  {
+   "key": "23017",
+   "unit": "0003",
+   "date": "17/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0003-0127",
+   "reportExt": ""
+  },
+  {
+   "key": "23666",
+   "unit": "0003",
+   "date": "20/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0003-0131",
+   "reportExt": ""
+  },
+  {
+   "key": "23324",
+   "unit": "0003",
+   "date": "31/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0003-0130",
+   "reportExt": ""
+  },
+  {
+   "key": "17398",
+   "unit": "0004",
+   "date": "06/03/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0004-0050",
+   "reportExt": ""
+  },
+  {
+   "key": "16739",
+   "unit": "0004",
+   "date": "11/05/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0004-0055",
+   "reportExt": ""
+  },
+  {
+   "key": "16736",
+   "unit": "0004",
+   "date": "15/04/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0004-0054",
+   "reportExt": ""
+  },
+  {
+   "key": "17292",
+   "unit": "0004",
+   "date": "18/03/2021",
+   "type": "SL Salida",
+   "reportId": "RV0004-0051",
+   "reportExt": ""
+  },
+  {
+   "key": "17293",
+   "unit": "0004",
+   "date": "19/03/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0004-0052",
+   "reportExt": ""
+  },
+  {
+   "key": "16945",
+   "unit": "0004",
+   "date": "20/04/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0004-0053",
+   "reportExt": ""
+  },
+  {
+   "key": "23456",
+   "unit": "0005",
+   "date": "02/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0142",
+   "reportExt": ""
+  },
+  {
+   "key": "23503",
+   "unit": "0005",
+   "date": "06/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0143",
+   "reportExt": ""
+  },
+  {
+   "key": "23637",
+   "unit": "0005",
+   "date": "08/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0144",
+   "reportExt": ""
+  },
+  {
+   "key": "23711",
+   "unit": "0005",
+   "date": "12/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0145",
+   "reportExt": ""
+  },
+  {
+   "key": "23220",
+   "unit": "0005",
+   "date": "21/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0138",
+   "reportExt": ""
+  },
+  {
+   "key": "23228",
+   "unit": "0005",
+   "date": "24/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0005-0140",
+   "reportExt": ""
+  },
+  {
+   "key": "28536",
+   "unit": "0006",
+   "date": "03/04/2024",
+   "type": "RT Prueba",
+   "reportId": "RV0006-0158.pdf",
+   "reportExt": "pdf"
+  },
+  {
+   "key": "28534",
+   "unit": "0006",
+   "date": "03/04/2024",
+   "type": "SL Prueba",
+   "reportId": "RV0006-0157.pdf",
+   "reportExt": "pdf"
+  },
+  {
+   "key": "24435",
+   "unit": "0006",
+   "date": "09/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0006-0154",
+   "reportExt": ""
+  },
+  {
+   "key": "24551",
+   "unit": "0006",
+   "date": "20/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0006-0155",
+   "reportExt": ""
+  },
+  {
+   "key": "24609",
+   "unit": "0006",
+   "date": "25/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0006-0156",
+   "reportExt": ""
+  },
+  {
+   "key": "24130",
+   "unit": "0006",
+   "date": "27/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0006-0152",
+   "reportExt": ""
+  },
+  {
+   "key": "24848",
+   "unit": "0007",
+   "date": "01/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0007-0163",
+   "reportExt": ""
+  },
+  {
+   "key": "23784",
+   "unit": "0007",
+   "date": "15/08/2023",
+   "type": "SL Salida",
+   "reportId": "RV0007-0156",
+   "reportExt": ""
+  },
+  {
+   "key": "24630",
+   "unit": "0007",
+   "date": "24/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0007-0160",
+   "reportExt": ""
+  },
+  {
+   "key": "24750",
+   "unit": "0007",
+   "date": "26/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0007-0161",
+   "reportExt": ""
+  },
+  {
+   "key": "24847",
+   "unit": "0007",
+   "date": "27/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0007-0162",
+   "reportExt": ""
+  },
+  {
+   "key": "24149",
+   "unit": "0007",
+   "date": "28/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0007-0158",
+   "reportExt": ""
+  },
+  {
+   "key": "22455",
+   "unit": "0008",
+   "date": "05/06/2023",
+   "type": "SL Salida",
+   "reportId": "RV0008-0151",
+   "reportExt": ""
+  },
+  {
+   "key": "22456",
+   "unit": "0008",
+   "date": "17/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0008-0152",
+   "reportExt": ""
+  },
+  {
+   "key": "25244",
+   "unit": "0008",
+   "date": "18/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0008-0156",
+   "reportExt": ""
+  },
+  {
+   "key": "21407",
+   "unit": "0008",
+   "date": "19/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0008-0146",
+   "reportExt": ""
+  },
+  {
+   "key": "22532",
+   "unit": "0008",
+   "date": "19/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0008-0153",
+   "reportExt": ""
+  },
+  {
+   "key": "21505",
+   "unit": "0008",
+   "date": "23/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0008-0147",
+   "reportExt": ""
+  },
+  {
+   "key": "23522",
+   "unit": "0009",
+   "date": "08/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0149",
+   "reportExt": ""
+  },
+  {
+   "key": "22411",
+   "unit": "0009",
+   "date": "14/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0145",
+   "reportExt": ""
+  },
+  {
+   "key": "22470",
+   "unit": "0009",
+   "date": "17/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0146",
+   "reportExt": ""
+  },
+  {
+   "key": "22546",
+   "unit": "0009",
+   "date": "20/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0147",
+   "reportExt": ""
+  },
+  {
+   "key": "22116",
+   "unit": "0009",
+   "date": "28/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0143",
+   "reportExt": ""
+  },
+  {
+   "key": "22169",
+   "unit": "0009",
+   "date": "31/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0009-0144",
+   "reportExt": ""
+  },
+  {
+   "key": "24899",
+   "unit": "0010",
+   "date": "06/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0176",
+   "reportExt": ""
+  },
+  {
+   "key": "24279",
+   "unit": "0010",
+   "date": "09/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0173",
+   "reportExt": ""
+  },
+  {
+   "key": "24403",
+   "unit": "0010",
+   "date": "18/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0174",
+   "reportExt": ""
+  },
+  {
+   "key": "23989",
+   "unit": "0010",
+   "date": "28/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0172",
+   "reportExt": ""
+  },
+  {
+   "key": "26092",
+   "unit": "0010",
+   "date": "30/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0177",
+   "reportExt": ""
+  },
+  {
+   "key": "26093",
+   "unit": "0010",
+   "date": "30/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0010-0178",
+   "reportExt": ""
+  },
+  {
+   "key": "24773",
+   "unit": "0011",
+   "date": "01/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0011-0156",
+   "reportExt": ""
+  },
+  {
+   "key": "24405",
+   "unit": "0011",
+   "date": "15/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0011-0152",
+   "reportExt": ""
+  },
+  {
+   "key": "24424",
+   "unit": "0011",
+   "date": "19/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0011-0153",
+   "reportExt": ""
+  },
+  {
+   "key": "24689",
+   "unit": "0011",
+   "date": "28/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0011-0154",
+   "reportExt": ""
+  },
+  {
+   "key": "24772",
+   "unit": "0011",
+   "date": "29/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0011-0155",
+   "reportExt": ""
+  },
+  {
+   "key": "23996",
+   "unit": "0011",
+   "date": "31/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0011-0150",
+   "reportExt": ""
+  },
+  {
+   "key": "11596",
+   "unit": "0012",
+   "date": "07/01/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0002",
+   "reportExt": ""
+  },
+  {
+   "key": "11338",
+   "unit": "0012",
+   "date": "19/01/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0003",
+   "reportExt": ""
+  },
+  {
+   "key": "11174",
+   "unit": "0012",
+   "date": "27/01/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0004",
+   "reportExt": ""
+  },
+  {
+   "key": "11199",
+   "unit": "0012",
+   "date": "29/01/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0005",
+   "reportExt": ""
+  },
+  {
+   "key": "10101",
+   "unit": "0012",
+   "date": "30/12/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0008",
+   "reportExt": ""
+  },
+  {
+   "key": "11023",
+   "unit": "0012",
+   "date": "31/01/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0012-0006",
+   "reportExt": ""
+  },
+  {
+   "key": "24907",
+   "unit": "0013",
+   "date": "09/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0013-0180",
+   "reportExt": ""
+  },
+  {
+   "key": "24488",
+   "unit": "0013",
+   "date": "18/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0013-0176",
+   "reportExt": ""
+  },
+  {
+   "key": "24394",
+   "unit": "0013",
+   "date": "18/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0013-0174",
+   "reportExt": ""
+  },
+  {
+   "key": "24487",
+   "unit": "0013",
+   "date": "20/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0013-0175",
+   "reportExt": ""
+  },
+  {
+   "key": "24576",
+   "unit": "0013",
+   "date": "21/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0013-0177",
+   "reportExt": ""
+  },
+  {
+   "key": "24857",
+   "unit": "0013",
+   "date": "25/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0013-0179",
+   "reportExt": ""
+  },
+  {
+   "key": "38068",
+   "unit": "0014",
+   "date": "07/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0251",
+   "reportExt": ""
+  },
+  {
+   "key": "36528",
+   "unit": "0014",
+   "date": "14/03/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0246",
+   "reportExt": ""
+  },
+  {
+   "key": "36580",
+   "unit": "0014",
+   "date": "18/03/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0247",
+   "reportExt": ""
+  },
+  {
+   "key": "38324",
+   "unit": "0014",
+   "date": "20/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0252",
+   "reportExt": ""
+  },
+  {
+   "key": "37698",
+   "unit": "0014",
+   "date": "25/03/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0248",
+   "reportExt": ""
+  },
+  {
+   "key": "37877",
+   "unit": "0014",
+   "date": "31/03/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0014-0249",
+   "reportExt": ""
+  },
+  {
+   "key": "24841",
+   "unit": "0015",
+   "date": "02/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0015-0195",
+   "reportExt": ""
+  },
+  {
+   "key": "24959",
+   "unit": "0015",
+   "date": "04/10/2023",
+   "type": "SL Salida",
+   "reportId": "RV0015-0197",
+   "reportExt": ""
+  },
+  {
+   "key": "24958",
+   "unit": "0015",
+   "date": "07/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0015-0196",
+   "reportExt": ""
+  },
+  {
+   "key": "24983",
+   "unit": "0015",
+   "date": "11/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0015-0198",
+   "reportExt": ""
+  },
+  {
+   "key": "24593",
+   "unit": "0015",
+   "date": "24/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0015-0191",
+   "reportExt": ""
+  },
+  {
+   "key": "24707",
+   "unit": "0015",
+   "date": "25/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0015-0194",
+   "reportExt": ""
+  },
+  {
+   "key": "25590",
+   "unit": "0016",
+   "date": "06/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0154",
+   "reportExt": ""
+  },
+  {
+   "key": "25688",
+   "unit": "0016",
+   "date": "11/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0155",
+   "reportExt": ""
+  },
+  {
+   "key": "25875",
+   "unit": "0016",
+   "date": "19/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0156",
+   "reportExt": ""
+  },
+  {
+   "key": "25308",
+   "unit": "0016",
+   "date": "22/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0152",
+   "reportExt": ""
+  },
+  {
+   "key": "25905",
+   "unit": "0016",
+   "date": "24/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0157",
+   "reportExt": ""
+  },
+  {
+   "key": "25437",
+   "unit": "0016",
+   "date": "28/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0016-0153",
+   "reportExt": ""
+  },
+  {
+   "key": "27608",
+   "unit": "0017",
+   "date": "09/02/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0017-0198",
+   "reportExt": ""
+  },
+  {
+   "key": "26685",
+   "unit": "0017",
+   "date": "16/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0017-0190",
+   "reportExt": ""
+  },
+  {
+   "key": "26918",
+   "unit": "0017",
+   "date": "19/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0017-0194",
+   "reportExt": ""
+  },
+  {
+   "key": "27135",
+   "unit": "0017",
+   "date": "21/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0017-0197",
+   "reportExt": ""
+  },
+  {
+   "key": "27091",
+   "unit": "0017",
+   "date": "23/01/2024",
+   "type": "RT Taller",
+   "reportId": "RV0017-0196",
+   "reportExt": ""
+  },
+  {
+   "key": "27090",
+   "unit": "0017",
+   "date": "27/01/2024",
+   "type": "RT Taller",
+   "reportId": "RV0017-0195",
+   "reportExt": ""
+  },
+  {
+   "key": "24459",
+   "unit": "0018",
+   "date": "16/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0018-0165",
+   "reportExt": ""
+  },
+  {
+   "key": "24556",
+   "unit": "0018",
+   "date": "20/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0018-0167",
+   "reportExt": ""
+  },
+  {
+   "key": "24606",
+   "unit": "0018",
+   "date": "22/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0018-0168",
+   "reportExt": ""
+  },
+  {
+   "key": "24629",
+   "unit": "0018",
+   "date": "24/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0018-0169",
+   "reportExt": ""
+  },
+  {
+   "key": "24749",
+   "unit": "0018",
+   "date": "26/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0018-0170",
+   "reportExt": ""
+  },
+  {
+   "key": "24953",
+   "unit": "0018",
+   "date": "29/09/2023",
+   "type": "SL Salida",
+   "reportId": "RV0018-0172",
+   "reportExt": ""
+  },
+  {
+   "key": "26216",
+   "unit": "0019",
+   "date": "07/12/2023",
+   "type": "SL Salida",
+   "reportId": "RV0019-0142",
+   "reportExt": ""
+  },
+  {
+   "key": "28053",
+   "unit": "0019",
+   "date": "12/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0019-0149",
+   "reportExt": ""
+  },
+  {
+   "key": "26218",
+   "unit": "0019",
+   "date": "12/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0019-0143",
+   "reportExt": ""
+  },
+  {
+   "key": "26887",
+   "unit": "0019",
+   "date": "15/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0019-0148",
+   "reportExt": ""
+  },
+  {
+   "key": "26329",
+   "unit": "0019",
+   "date": "15/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0019-0145",
+   "reportExt": ""
+  },
+  {
+   "key": "26407",
+   "unit": "0019",
+   "date": "30/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0019-0146",
+   "reportExt": ""
+  },
+  {
+   "key": "38264",
+   "unit": "0020",
+   "date": "15/04/2025",
+   "type": "SL Salida",
+   "reportId": "RV0020-0225",
+   "reportExt": ""
+  },
+  {
+   "key": "38263",
+   "unit": "0020",
+   "date": "18/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0020-0224",
+   "reportExt": ""
+  },
+  {
+   "key": "38317",
+   "unit": "0020",
+   "date": "19/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0020-0226",
+   "reportExt": ""
+  },
+  {
+   "key": "38495",
+   "unit": "0020",
+   "date": "25/04/2025",
+   "type": "SL Salida",
+   "reportId": "RV0020-0228",
+   "reportExt": ""
+  },
+  {
+   "key": "38494",
+   "unit": "0020",
+   "date": "26/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0020-0227",
+   "reportExt": ""
+  },
+  {
+   "key": "39078",
+   "unit": "0020",
+   "date": "26/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0020-0229",
+   "reportExt": ""
+  },
+  {
+   "key": "14706",
+   "unit": "0021",
+   "date": "11/09/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0021-0007",
+   "reportExt": ""
+  },
+  {
+   "key": "14632",
+   "unit": "0021",
+   "date": "13/09/2021",
+   "type": "SL Salida",
+   "reportId": "RV0021-0008",
+   "reportExt": ""
+  },
+  {
+   "key": "14636",
+   "unit": "0021",
+   "date": "15/09/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0021-0009",
+   "reportExt": ""
+  },
+  {
+   "key": "14266",
+   "unit": "0021",
+   "date": "23/09/2021",
+   "type": "SL Salida",
+   "reportId": "RV0021-0012",
+   "reportExt": ""
+  },
+  {
+   "key": "14541",
+   "unit": "0021",
+   "date": "23/09/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0021-0010",
+   "reportExt": ""
+  },
+  {
+   "key": "14265",
+   "unit": "0021",
+   "date": "27/09/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0021-0011",
+   "reportExt": ""
+  },
+  {
+   "key": "38039",
+   "unit": "0022",
+   "date": "05/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0189",
+   "reportExt": ""
+  },
+  {
+   "key": "38372",
+   "unit": "0022",
+   "date": "10/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0191",
+   "reportExt": ""
+  },
+  {
+   "key": "38158",
+   "unit": "0022",
+   "date": "22/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0190",
+   "reportExt": ""
+  },
+  {
+   "key": "38442",
+   "unit": "0022",
+   "date": "26/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0192",
+   "reportExt": ""
+  },
+  {
+   "key": "39229",
+   "unit": "0022",
+   "date": "26/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0194",
+   "reportExt": ""
+  },
+  {
+   "key": "38960",
+   "unit": "0022",
+   "date": "29/03/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0022-0193",
+   "reportExt": ""
+  },
+  {
+   "key": "38885",
+   "unit": "0023",
+   "date": "10/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0216",
+   "reportExt": ""
+  },
+  {
+   "key": "38872",
+   "unit": "0023",
+   "date": "17/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0215",
+   "reportExt": ""
+  },
+  {
+   "key": "38333",
+   "unit": "0023",
+   "date": "20/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0213",
+   "reportExt": ""
+  },
+  {
+   "key": "39230",
+   "unit": "0023",
+   "date": "26/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0218",
+   "reportExt": ""
+  },
+  {
+   "key": "38514",
+   "unit": "0023",
+   "date": "27/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0214",
+   "reportExt": ""
+  },
+  {
+   "key": "39199",
+   "unit": "0023",
+   "date": "31/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0023-0217",
+   "reportExt": ""
+  },
+  {
+   "key": "4733",
+   "unit": "0024",
+   "date": "03/12/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0024-0038",
+   "reportExt": ""
+  },
+  {
+   "key": "4643",
+   "unit": "0024",
+   "date": "07/12/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0024-0039",
+   "reportExt": ""
+  },
+  {
+   "key": "5210",
+   "unit": "0024",
+   "date": "10/11/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0024-0034",
+   "reportExt": ""
+  },
+  {
+   "key": "5133",
+   "unit": "0024",
+   "date": "11/11/2022",
+   "type": "SL Salida",
+   "reportId": "RV0024-0035",
+   "reportExt": ""
+  },
+  {
+   "key": "5134",
+   "unit": "0024",
+   "date": "13/11/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0024-0036",
+   "reportExt": ""
+  },
+  {
+   "key": "4972",
+   "unit": "0024",
+   "date": "22/11/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0024-0037",
+   "reportExt": ""
+  },
+  {
+   "key": "37994",
+   "unit": "0025",
+   "date": "05/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0025-0204",
+   "reportExt": ""
+  },
+  {
+   "key": "38094",
+   "unit": "0025",
+   "date": "09/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0025-0205",
+   "reportExt": ""
+  },
+  {
+   "key": "38394",
+   "unit": "0025",
+   "date": "19/04/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0025-0206",
+   "reportExt": ""
+  },
+  {
+   "key": "39662",
+   "unit": "0025",
+   "date": "23/06/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0025-0208",
+   "reportExt": ""
+  },
+  {
+   "key": "39237",
+   "unit": "0025",
+   "date": "27/05/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0025-0207",
+   "reportExt": ""
+  },
+  {
+   "key": "39663",
+   "unit": "0025",
+   "date": "31/05/2025",
+   "type": "SL Salida",
+   "reportId": "RV0025-0209",
+   "reportExt": ""
+  },
+  {
+   "key": "5511",
+   "unit": "0030",
+   "date": "26/10/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0030-0001",
+   "reportExt": ""
+  },
+  {
+   "key": "17527",
+   "unit": "0035",
+   "date": "13/03/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0035-0327",
+   "reportExt": ""
+  },
+  {
+   "key": "17526",
+   "unit": "0039",
+   "date": "13/03/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0039-0340",
+   "reportExt": ""
+  },
+  {
+   "key": "26672",
+   "unit": "0045",
+   "date": "05/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0045-0271",
+   "reportExt": ""
+  },
+  {
+   "key": "26928",
+   "unit": "0045",
+   "date": "12/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0045-0278",
+   "reportExt": ""
+  },
+  {
+   "key": "26795",
+   "unit": "0045",
+   "date": "16/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0045-0274",
+   "reportExt": ""
+  },
+  {
+   "key": "26794",
+   "unit": "0045",
+   "date": "16/01/2024",
+   "type": "SL Salida",
+   "reportId": "RV0045-0273",
+   "reportExt": ""
+  },
+  {
+   "key": "26687",
+   "unit": "0045",
+   "date": "16/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0045-0272",
+   "reportExt": ""
+  },
+  {
+   "key": "26873",
+   "unit": "0045",
+   "date": "17/01/2024",
+   "type": "RT Taller",
+   "reportId": "RV0045-0277",
+   "reportExt": ""
+  },
+  {
+   "key": "27578",
+   "unit": "0046",
+   "date": "05/02/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0046-0237",
+   "reportExt": ""
+  },
+  {
+   "key": "27388",
+   "unit": "0046",
+   "date": "06/02/2024",
+   "type": "RT Taller",
+   "reportId": "RV0046-0236",
+   "reportExt": ""
+  },
+  {
+   "key": "26944",
+   "unit": "0046",
+   "date": "13/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0046-0231",
+   "reportExt": ""
+  },
+  {
+   "key": "26734",
+   "unit": "0046",
+   "date": "17/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0046-0230",
+   "reportExt": ""
+  },
+  {
+   "key": "27118",
+   "unit": "0046",
+   "date": "22/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0046-0233",
+   "reportExt": ""
+  },
+  {
+   "key": "27265",
+   "unit": "0046",
+   "date": "31/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0046-0235",
+   "reportExt": ""
+  },
+  {
+   "key": "24032",
+   "unit": "0047",
+   "date": "05/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0307",
+   "reportExt": ""
+  },
+  {
+   "key": "20883",
+   "unit": "0047",
+   "date": "07/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0300",
+   "reportExt": ""
+  },
+  {
+   "key": "21166",
+   "unit": "0047",
+   "date": "09/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0303",
+   "reportExt": ""
+  },
+  {
+   "key": "24674",
+   "unit": "0047",
+   "date": "10/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0310",
+   "reportExt": ""
+  },
+  {
+   "key": "22357",
+   "unit": "0047",
+   "date": "13/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0305",
+   "reportExt": ""
+  },
+  {
+   "key": "24081",
+   "unit": "0047",
+   "date": "21/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0047-0308",
+   "reportExt": ""
+  },
+  {
+   "key": "21082",
+   "unit": "0048",
+   "date": "01/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0038",
+   "reportExt": ""
+  },
+  {
+   "key": "22190",
+   "unit": "0048",
+   "date": "02/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0040",
+   "reportExt": ""
+  },
+  {
+   "key": "24564",
+   "unit": "0048",
+   "date": "04/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0045",
+   "reportExt": ""
+  },
+  {
+   "key": "20709",
+   "unit": "0048",
+   "date": "11/03/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0036",
+   "reportExt": ""
+  },
+  {
+   "key": "20758",
+   "unit": "0048",
+   "date": "16/03/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0037",
+   "reportExt": ""
+  },
+  {
+   "key": "24062",
+   "unit": "0048",
+   "date": "18/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0048-0044",
+   "reportExt": ""
+  },
+  {
+   "key": "22278",
+   "unit": "0049",
+   "date": "02/03/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0305",
+   "reportExt": ""
+  },
+  {
+   "key": "21745",
+   "unit": "0049",
+   "date": "04/01/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0304",
+   "reportExt": ""
+  },
+  {
+   "key": "20889",
+   "unit": "0049",
+   "date": "13/12/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0302",
+   "reportExt": ""
+  },
+  {
+   "key": "20902",
+   "unit": "0049",
+   "date": "14/01/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0303",
+   "reportExt": ""
+  },
+  {
+   "key": "4483",
+   "unit": "0049",
+   "date": "19/12/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0058",
+   "reportExt": ""
+  },
+  {
+   "key": "20183",
+   "unit": "0049",
+   "date": "20/01/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0049-0301",
+   "reportExt": ""
+  },
+  {
+   "key": "24666",
+   "unit": "0050",
+   "date": "02/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0341",
+   "reportExt": ""
+  },
+  {
+   "key": "21148",
+   "unit": "0050",
+   "date": "07/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0331",
+   "reportExt": ""
+  },
+  {
+   "key": "21240",
+   "unit": "0050",
+   "date": "10/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0332",
+   "reportExt": ""
+  },
+  {
+   "key": "24681",
+   "unit": "0050",
+   "date": "11/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0342",
+   "reportExt": ""
+  },
+  {
+   "key": "21913",
+   "unit": "0050",
+   "date": "15/05/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0336",
+   "reportExt": ""
+  },
+  {
+   "key": "22905",
+   "unit": "0050",
+   "date": "20/04/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0050-0337",
+   "reportExt": ""
+  },
+  {
+   "unit": "0051",
+   "date": "04/10/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0047"
+  },
+  {
+   "unit": "0051",
+   "date": "06/05/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0049"
+  },
+  {
+   "unit": "0051",
+   "date": "06/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0048"
+  },
+  {
+   "unit": "0051",
+   "date": "14/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0045"
+  },
+  {
+   "unit": "0051",
+   "date": "28/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0046"
+  },
+  {
+   "unit": "0051",
+   "date": "30/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0051-0044"
+  },
+  {
+   "unit": "0062",
+   "date": "23/02/2021",
+   "type": "RT Retorno",
+   "reportId": "RV0062-0154"
+  },
+  {
+   "unit": "0072",
+   "date": "23/02/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0072-0001"
+  },
+  {
+   "unit": "0095",
+   "date": "07/03/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0095-0001"
+  },
+  {
+   "unit": "0098",
+   "date": "09/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0098-0160"
+  },
+  {
+   "unit": "0099",
+   "date": "06/06/2019",
+   "type": "RT Retorno",
+   "reportId": "RV0099-0320"
+  },
+  {
+   "unit": "0100",
+   "date": "03/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0145"
+  },
+  {
+   "unit": "0100",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0146"
+  },
+  {
+   "unit": "0100",
+   "date": "18/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0143"
+  },
+  {
+   "unit": "0100",
+   "date": "21/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0148"
+  },
+  {
+   "unit": "0100",
+   "date": "29/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0147"
+  },
+  {
+   "unit": "0100",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0100-0144"
+  },
+  {
+   "unit": "0101",
+   "date": "06/07/2026",
+   "type": "SL Salida",
+   "reportId": "RV0101-0126"
+  },
+  {
+   "unit": "0101",
+   "date": "08/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0101-0125"
+  },
+  {
+   "unit": "0101",
+   "date": "11/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0101-0123"
+  },
+  {
+   "unit": "0101",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0101-0124"
+  },
+  {
+   "unit": "0101",
+   "date": "22/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0101-0127"
+  },
+  {
+   "unit": "0101",
+   "date": "28/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0101-0128"
+  },
+  {
+   "unit": "0102",
+   "date": "12/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0102-0136"
+  },
+  {
+   "unit": "0102",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0102-0137"
+  },
+  {
+   "unit": "0102",
+   "date": "15/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0102-0133"
+  },
+  {
+   "unit": "0102",
+   "date": "15/06/2026",
+   "type": "SL Salida",
+   "reportId": "RV0102-0134"
+  },
+  {
+   "unit": "0102",
+   "date": "28/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0102-0135"
+  },
+  {
+   "unit": "0102",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0102-0138"
+  },
+  {
+   "unit": "0103",
+   "date": "02/07/2026",
+   "type": "SL Salida",
+   "reportId": "RV0103-0160"
+  },
+  {
+   "unit": "0103",
+   "date": "04/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0103-0156"
+  },
+  {
+   "unit": "0103",
+   "date": "10/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0103-0159"
+  },
+  {
+   "unit": "0103",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0103-0158"
+  },
+  {
+   "unit": "0103",
+   "date": "20/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0103-0157"
+  },
+  {
+   "unit": "0103",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0103-0161"
+  },
+  {
+   "unit": "0104",
+   "date": "03/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0437"
+  },
+  {
+   "unit": "0104",
+   "date": "17/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0434"
+  },
+  {
+   "unit": "0104",
+   "date": "18/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0432"
+  },
+  {
+   "unit": "0104",
+   "date": "22/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0436"
+  },
+  {
+   "unit": "0104",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0435"
+  },
+  {
+   "unit": "0104",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0104-0433"
+  },
+  {
+   "unit": "0105",
+   "date": "25/07/2022",
+   "type": "RT Retorno",
+   "reportId": "RV0105-0001"
+  },
+  {
+   "unit": "0107",
+   "date": "06/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0107-0417"
+  },
+  {
+   "unit": "0107",
+   "date": "06/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0107-0415"
+  },
+  {
+   "unit": "0107",
+   "date": "10/06/2023",
+   "type": "SL Salida",
+   "reportId": "RV0107-0412"
+  },
+  {
+   "unit": "0107",
+   "date": "10/07/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0107-0416"
+  },
+  {
+   "unit": "0107",
+   "date": "11/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0107-0413"
+  },
+  {
+   "unit": "0107",
+   "date": "24/06/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0107-0414"
+  },
+  {
+   "unit": "0108",
+   "date": "15/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0108-0337"
+  },
+  {
+   "unit": "0108",
+   "date": "28/02/2020",
+   "type": "SL Salida",
+   "reportId": "RV0108-0336"
+  },
+  {
+   "unit": "0110",
+   "date": "02/03/2020",
+   "type": "SL Salida",
+   "reportId": "RV0110-0503"
+  },
+  {
+   "unit": "0110",
+   "date": "11/11/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0110-0505"
+  },
+  {
+   "unit": "0111",
+   "date": "03/03/2020",
+   "type": "SL Salida",
+   "reportId": "RV0111-0463"
+  },
+  {
+   "unit": "0111",
+   "date": "15/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0111-0464"
+  },
+  {
+   "unit": "0112",
+   "date": "04/03/2020",
+   "type": "SL Salida",
+   "reportId": "RV0112-0371"
+  },
+  {
+   "unit": "0112",
+   "date": "06/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0112-0372"
+  },
+  {
+   "unit": "0113",
+   "date": "10/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0113-0471"
+  },
+  {
+   "unit": "0115",
+   "date": "02/07/2020",
+   "type": "RT Retorno",
+   "reportId": "RV0115-0463"
+  },
+  {
+   "unit": "0120",
+   "date": "06/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0409"
+  },
+  {
+   "unit": "0120",
+   "date": "09/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0410"
+  },
+  {
+   "unit": "0120",
+   "date": "12/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0411"
+  },
+  {
+   "unit": "0120",
+   "date": "18/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0413"
+  },
+  {
+   "unit": "0120",
+   "date": "19/08/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0412"
+  },
+  {
+   "unit": "0120",
+   "date": "22/09/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0120-0414"
+  },
+  {
+   "unit": "0130",
+   "date": "09/06/2026",
+   "type": "SL Salida",
+   "reportId": "RV0130-0047"
+  },
+  {
+   "unit": "0130",
+   "date": "13/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0130-0046"
+  },
+  {
+   "unit": "0130",
+   "date": "16/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0130-0050"
+  },
+  {
+   "unit": "0130",
+   "date": "20/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0130-0048"
+  },
+  {
+   "unit": "0130",
+   "date": "22/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0130-0049"
+  },
+  {
+   "unit": "0130",
+   "date": "22/07/2026",
+   "type": "RT Taller",
+   "reportId": "RV0130-0051"
+  },
+  {
+   "unit": "0131",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0131-0043"
+  },
+  {
+   "unit": "0131",
+   "date": "17/06/2026",
+   "type": "SL Salida",
+   "reportId": "RV0131-0039"
+  },
+  {
+   "unit": "0131",
+   "date": "22/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0131-0038"
+  },
+  {
+   "unit": "0131",
+   "date": "25/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0131-0045"
+  },
+  {
+   "unit": "0131",
+   "date": "29/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0131-0042"
+  },
+  {
+   "unit": "0131",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0131-0046"
+  },
+  {
+   "unit": "0134",
+   "date": "01/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0134-0072"
+  },
+  {
+   "unit": "0134",
+   "date": "07/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0134-0068"
+  },
+  {
+   "unit": "0134",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0134-0067"
+  },
+  {
+   "unit": "0134",
+   "date": "14/07/2026",
+   "type": "RT Taller",
+   "reportId": "RV0134-0069"
+  },
+  {
+   "unit": "0134",
+   "date": "19/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0134-0070"
+  },
+  {
+   "unit": "0134",
+   "date": "28/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0134-0071"
+  },
+  {
+   "unit": "0137",
+   "date": "06/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0020"
+  },
+  {
+   "unit": "0137",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0022"
+  },
+  {
+   "unit": "0137",
+   "date": "16/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0025"
+  },
+  {
+   "unit": "0137",
+   "date": "19/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0023"
+  },
+  {
+   "unit": "0137",
+   "date": "26/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0024"
+  },
+  {
+   "unit": "0137",
+   "date": "30/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0137-0026"
+  },
+  {
+   "unit": "0139",
+   "date": "02/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0017"
+  },
+  {
+   "unit": "0139",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0014"
+  },
+  {
+   "unit": "0139",
+   "date": "16/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0012"
+  },
+  {
+   "unit": "0139",
+   "date": "22/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0011"
+  },
+  {
+   "unit": "0139",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0015"
+  },
+  {
+   "unit": "0139",
+   "date": "28/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0139-0016"
+  },
+  {
+   "unit": "0200",
+   "date": "05/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0200-0132"
+  },
+  {
+   "unit": "0200",
+   "date": "10/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0200-0133"
+  },
+  {
+   "unit": "0200",
+   "date": "15/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0200-0134"
+  },
+  {
+   "unit": "0200",
+   "date": "20/03/2026",
+   "type": "SL Salida",
+   "reportId": "RV0200-0130"
+  },
+  {
+   "unit": "0200",
+   "date": "23/03/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0200-0129"
+  },
+  {
+   "unit": "0200",
+   "date": "29/03/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0200-0131"
+  },
+  {
+   "unit": "0250",
+   "date": "05/07/2024",
+   "type": "SL Salida",
+   "reportId": "RV0250-0321"
+  },
+  {
+   "unit": "0250",
+   "date": "06/07/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0250-0325"
+  },
+  {
+   "unit": "0250",
+   "date": "14/07/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0250-0322"
+  },
+  {
+   "unit": "0250",
+   "date": "17/07/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0250-0324"
+  },
+  {
+   "unit": "0250",
+   "date": "24/07/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0250-0327"
+  },
+  {
+   "unit": "0250",
+   "date": "31/07/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0250-0326"
+  },
+  {
+   "unit": "0255",
+   "date": "01/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0279"
+  },
+  {
+   "unit": "0255",
+   "date": "01/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0283"
+  },
+  {
+   "unit": "0255",
+   "date": "06/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0281"
+  },
+  {
+   "unit": "0255",
+   "date": "12/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0280"
+  },
+  {
+   "unit": "0255",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0282"
+  },
+  {
+   "unit": "0255",
+   "date": "23/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0255-0277"
+  },
+  {
+   "unit": "0265",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0265-0128"
+  },
+  {
+   "unit": "0265",
+   "date": "18/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0265-0126"
+  },
+  {
+   "unit": "0265",
+   "date": "22/04/2026",
+   "type": "RT Taller",
+   "reportId": "RV0265-0125"
+  },
+  {
+   "unit": "0265",
+   "date": "24/03/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0265-0124"
+  },
+  {
+   "unit": "0265",
+   "date": "30/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0265-0129"
+  },
+  {
+   "unit": "0265",
+   "date": "31/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0265-0127"
+  },
+  {
+   "unit": "0268",
+   "date": "07/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0156"
+  },
+  {
+   "unit": "0268",
+   "date": "08/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0152"
+  },
+  {
+   "unit": "0268",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0155"
+  },
+  {
+   "unit": "0268",
+   "date": "24/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0153"
+  },
+  {
+   "unit": "0268",
+   "date": "27/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0154"
+  },
+  {
+   "unit": "0268",
+   "date": "28/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0268-0157"
+  },
+  {
+   "unit": "0300",
+   "date": "02/01/2024",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0305"
+  },
+  {
+   "unit": "0300",
+   "date": "11/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0302"
+  },
+  {
+   "unit": "0300",
+   "date": "13/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0303"
+  },
+  {
+   "unit": "0300",
+   "date": "23/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0307"
+  },
+  {
+   "unit": "0300",
+   "date": "27/11/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0306"
+  },
+  {
+   "unit": "0300",
+   "date": "28/12/2023",
+   "type": "RT Retorno",
+   "reportId": "RV0300-0304"
+  },
+  {
+   "unit": "0326",
+   "date": "04/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0150"
+  },
+  {
+   "unit": "0326",
+   "date": "09/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0151"
+  },
+  {
+   "unit": "0326",
+   "date": "12/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0149"
+  },
+  {
+   "unit": "0326",
+   "date": "18/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0146"
+  },
+  {
+   "unit": "0326",
+   "date": "24/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0147"
+  },
+  {
+   "unit": "0326",
+   "date": "27/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0326-0148"
+  },
+  {
+   "unit": "0327",
+   "date": "13/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0174"
+  },
+  {
+   "unit": "0327",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0177"
+  },
+  {
+   "unit": "0327",
+   "date": "18/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0173"
+  },
+  {
+   "unit": "0327",
+   "date": "20/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0178"
+  },
+  {
+   "unit": "0327",
+   "date": "29/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0176"
+  },
+  {
+   "unit": "0327",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0327-0175"
+  },
+  {
+   "unit": "0471",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0471-0348"
+  },
+  {
+   "unit": "0471",
+   "date": "17/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0471-0347"
+  },
+  {
+   "unit": "0471",
+   "date": "20/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0471-0350"
+  },
+  {
+   "unit": "0471",
+   "date": "28/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0471-0351"
+  },
+  {
+   "unit": "0471",
+   "date": "29/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV-0001"
+  },
+  {
+   "unit": "0471",
+   "date": "31/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0471-0345"
+  },
+  {
+   "unit": "0476",
+   "date": "03/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0186"
+  },
+  {
+   "unit": "0476",
+   "date": "07/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0183"
+  },
+  {
+   "unit": "0476",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0181"
+  },
+  {
+   "unit": "0476",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0182"
+  },
+  {
+   "unit": "0476",
+   "date": "20/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0185"
+  },
+  {
+   "unit": "0476",
+   "date": "30/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0476-0187"
+  },
+  {
+   "unit": "0478",
+   "date": "19/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0062"
+  },
+  {
+   "unit": "0478",
+   "date": "20/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0060"
+  },
+  {
+   "unit": "0478",
+   "date": "23/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0059"
+  },
+  {
+   "unit": "0478",
+   "date": "26/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0063"
+  },
+  {
+   "unit": "0478",
+   "date": "27/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0061"
+  },
+  {
+   "unit": "0478",
+   "date": "30/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0478-0064"
+  },
+  {
+   "unit": "0479",
+   "date": "02/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0135"
+  },
+  {
+   "unit": "0479",
+   "date": "03/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0140"
+  },
+  {
+   "unit": "0479",
+   "date": "06/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0136"
+  },
+  {
+   "unit": "0479",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0137"
+  },
+  {
+   "unit": "0479",
+   "date": "24/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0138"
+  },
+  {
+   "unit": "0479",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0479-0139"
+  },
+  {
+   "unit": "0481",
+   "date": "01/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0175"
+  },
+  {
+   "unit": "0481",
+   "date": "16/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0172"
+  },
+  {
+   "unit": "0481",
+   "date": "20/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0169"
+  },
+  {
+   "unit": "0481",
+   "date": "22/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0173"
+  },
+  {
+   "unit": "0481",
+   "date": "26/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0174"
+  },
+  {
+   "unit": "0481",
+   "date": "27/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0481-0171"
+  },
+  {
+   "unit": "0498",
+   "date": "10/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0113"
+  },
+  {
+   "unit": "0498",
+   "date": "15/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0114"
+  },
+  {
+   "unit": "0498",
+   "date": "17/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0116"
+  },
+  {
+   "unit": "0498",
+   "date": "20/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0117"
+  },
+  {
+   "unit": "0498",
+   "date": "23/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0119"
+  },
+  {
+   "unit": "0498",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0498-0118"
+  },
+  {
+   "unit": "0500",
+   "date": "02/07/2026",
+   "type": "RT Taller",
+   "reportId": "RV0500-0386"
+  },
+  {
+   "unit": "0500",
+   "date": "12/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0500-0382"
+  },
+  {
+   "unit": "0500",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0500-0385"
+  },
+  {
+   "unit": "0500",
+   "date": "20/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0500-0388"
+  },
+  {
+   "unit": "0500",
+   "date": "29/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0500-0387"
+  },
+  {
+   "unit": "0500",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0500-0389"
+  },
+  {
+   "unit": "0772",
+   "date": "01/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0772-0117"
+  },
+  {
+   "unit": "0772",
+   "date": "03/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0772-0118"
+  },
+  {
+   "unit": "0772",
+   "date": "08/07/2026",
+   "type": "RT Taller",
+   "reportId": "RV0772-0120"
+  },
+  {
+   "unit": "0772",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0772-0119"
+  },
+  {
+   "unit": "0772",
+   "date": "24/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0772-0121"
+  },
+  {
+   "unit": "0772",
+   "date": "30/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0772-0122"
+  },
+  {
+   "unit": "0773",
+   "date": "04/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0116"
+  },
+  {
+   "unit": "0773",
+   "date": "11/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0119"
+  },
+  {
+   "unit": "0773",
+   "date": "21/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0114"
+  },
+  {
+   "unit": "0773",
+   "date": "22/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0118"
+  },
+  {
+   "unit": "0773",
+   "date": "24/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0115"
+  },
+  {
+   "unit": "0773",
+   "date": "27/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0773-0120"
+  },
+  {
+   "unit": "0778",
+   "date": "10/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0090"
+  },
+  {
+   "unit": "0778",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0092"
+  },
+  {
+   "unit": "0778",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0091"
+  },
+  {
+   "unit": "0778",
+   "date": "23/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0095"
+  },
+  {
+   "unit": "0778",
+   "date": "25/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0093"
+  },
+  {
+   "unit": "0778",
+   "date": "29/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0778-0094"
+  },
+  {
+   "unit": "0782",
+   "date": "15/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0095"
+  },
+  {
+   "unit": "0782",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0098"
+  },
+  {
+   "unit": "0782",
+   "date": "19/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0096"
+  },
+  {
+   "unit": "0782",
+   "date": "22/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0099"
+  },
+  {
+   "unit": "0782",
+   "date": "24/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0097"
+  },
+  {
+   "unit": "0782",
+   "date": "29/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0782-0100"
+  },
+  {
+   "unit": "0871",
+   "date": "05/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0871-0036"
+  },
+  {
+   "unit": "0871",
+   "date": "07/01/2026",
+   "type": "SL Salida",
+   "reportId": "RV0871-0038"
+  },
+  {
+   "unit": "0871",
+   "date": "10/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0871-0037"
+  },
+  {
+   "unit": "0871",
+   "date": "13/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0871-0039"
+  },
+  {
+   "unit": "0871",
+   "date": "15/12/2025",
+   "type": "RT Retorno",
+   "reportId": "RV0871-0032"
+  },
+  {
+   "unit": "0871",
+   "date": "23/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0871-0040"
+  },
+  {
+   "unit": "0900",
+   "date": "13/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0034"
+  },
+  {
+   "unit": "0900",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0036"
+  },
+  {
+   "unit": "0900",
+   "date": "16/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0031"
+  },
+  {
+   "unit": "0900",
+   "date": "17/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0030"
+  },
+  {
+   "unit": "0900",
+   "date": "20/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0032"
+  },
+  {
+   "unit": "0900",
+   "date": "23/01/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0900-0033"
+  },
+  {
+   "unit": "0909",
+   "date": "02/07/2026",
+   "type": "SL Salida",
+   "reportId": "RV0909-0110"
+  },
+  {
+   "unit": "0909",
+   "date": "05/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0909-0109"
+  },
+  {
+   "unit": "0909",
+   "date": "17/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0909-0112"
+  },
+  {
+   "unit": "0909",
+   "date": "26/06/2026",
+   "type": "SL Salida",
+   "reportId": "RV0909-0108"
+  },
+  {
+   "unit": "0909",
+   "date": "26/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0909-0111"
+  },
+  {
+   "unit": "0909",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0909-0107"
+  },
+  {
+   "unit": "0953",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0008"
+  },
+  {
+   "unit": "0953",
+   "date": "18/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0009"
+  },
+  {
+   "unit": "0953",
+   "date": "25/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0006"
+  },
+  {
+   "unit": "0953",
+   "date": "26/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0011"
+  },
+  {
+   "unit": "0953",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0007"
+  },
+  {
+   "unit": "0953",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0953-0010"
+  },
+  {
+   "unit": "0962",
+   "date": "01/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0128"
+  },
+  {
+   "unit": "0962",
+   "date": "04/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0124"
+  },
+  {
+   "unit": "0962",
+   "date": "13/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0125"
+  },
+  {
+   "unit": "0962",
+   "date": "22/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0126"
+  },
+  {
+   "unit": "0962",
+   "date": "27/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0127"
+  },
+  {
+   "unit": "0962",
+   "date": "28/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0962-0123"
+  },
+  {
+   "unit": "0968",
+   "date": "02/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0968-0011"
+  },
+  {
+   "unit": "0968",
+   "date": "12/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0968-0007"
+  },
+  {
+   "unit": "0968",
+   "date": "14/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0968-0008"
+  },
+  {
+   "unit": "0968",
+   "date": "17/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0968-0009"
+  },
+  {
+   "unit": "0968",
+   "date": "22/07/2026",
+   "type": "RT Taller",
+   "reportId": "RV0968-0010"
+  },
+  {
+   "unit": "0968",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV0968-0006"
+  },
+  {
+   "unit": "1035",
+   "date": "02/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1035-0105"
+  },
+  {
+   "unit": "1035",
+   "date": "15/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1035-0106"
+  },
+  {
+   "unit": "1035",
+   "date": "23/04/2026",
+   "type": "RT Taller",
+   "reportId": "RV1035-0102"
+  },
+  {
+   "unit": "1035",
+   "date": "26/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1035-0103"
+  },
+  {
+   "unit": "1035",
+   "date": "28/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1035-0104"
+  },
+  {
+   "unit": "1035",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1035-0107"
+  },
+  {
+   "unit": "1061",
+   "date": "03/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1061-0101"
+  },
+  {
+   "unit": "1061",
+   "date": "09/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1061-0098"
+  },
+  {
+   "unit": "1061",
+   "date": "14/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1061-0100"
+  },
+  {
+   "unit": "1061",
+   "date": "23/06/2026",
+   "type": "SL Salida",
+   "reportId": "RV1061-0102"
+  },
+  {
+   "unit": "1061",
+   "date": "27/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1061-0099"
+  },
+  {
+   "unit": "1061",
+   "date": "30/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1061-0097"
+  },
+  {
+   "unit": "1063",
+   "date": "03/08/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1063-0078"
+  },
+  {
+   "unit": "1063",
+   "date": "06/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1063-0074"
+  },
+  {
+   "unit": "1063",
+   "date": "09/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1063-0073"
+  },
+  {
+   "unit": "1063",
+   "date": "11/07/2026",
+   "type": "SL Salida",
+   "reportId": "RV1063-0076"
+  },
+  {
+   "unit": "1063",
+   "date": "12/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1063-0075"
+  },
+  {
+   "unit": "1063",
+   "date": "17/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1063-0077"
+  },
+  {
+   "unit": "1064",
+   "date": "01/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0075"
+  },
+  {
+   "unit": "1064",
+   "date": "05/03/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0072"
+  },
+  {
+   "unit": "1064",
+   "date": "14/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0078"
+  },
+  {
+   "unit": "1064",
+   "date": "17/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0074"
+  },
+  {
+   "unit": "1064",
+   "date": "23/02/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0073"
+  },
+  {
+   "unit": "1064",
+   "date": "27/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1064-0076"
+  },
+  {
+   "unit": "1065",
+   "date": "14/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0082"
+  },
+  {
+   "unit": "1065",
+   "date": "16/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0085"
+  },
+  {
+   "unit": "1065",
+   "date": "21/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0080"
+  },
+  {
+   "unit": "1065",
+   "date": "23/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0081"
+  },
+  {
+   "unit": "1065",
+   "date": "29/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0084"
+  },
+  {
+   "unit": "1065",
+   "date": "30/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1065-0083"
+  },
+  {
+   "unit": "1067",
+   "date": "01/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0015"
+  },
+  {
+   "unit": "1067",
+   "date": "08/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0016"
+  },
+  {
+   "unit": "1067",
+   "date": "14/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0014"
+  },
+  {
+   "unit": "1067",
+   "date": "24/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0018"
+  },
+  {
+   "unit": "1067",
+   "date": "27/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0013"
+  },
+  {
+   "unit": "1067",
+   "date": "31/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1067-0017"
+  },
+  {
+   "unit": "1081",
+   "date": "03/06/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1081-0031"
+  },
+  {
+   "unit": "1081",
+   "date": "12/05/2026",
+   "type": "SL Salida",
+   "reportId": "RV1081-0029"
+  },
+  {
+   "unit": "1081",
+   "date": "14/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1081-0028"
+  },
+  {
+   "unit": "1081",
+   "date": "18/07/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1081-0032"
+  },
+  {
+   "unit": "1081",
+   "date": "25/05/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1081-0030"
+  },
+  {
+   "unit": "1081",
+   "date": "27/04/2026",
+   "type": "RT Retorno",
+   "reportId": "RV1081-0027"
+  }
+ ]
+}

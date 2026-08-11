@@ -1,87 +1,96 @@
-# 🚗 Reporte de Flota — Budget Perú (GitHub, costo $0)
+# 🚗 Flota Control
 
-Tu app de flota que se actualiza **cada hora automáticamente**, se ve desde el **celular** y te manda la flota completa por **Telegram**. Sin pagar nada y sin dejar tu PC encendida.
+App de gestión de flota con **acceso libre** (sin login), panel web y **bot de Telegram**. Tus unidades, tus datos, tu base de datos — sin depender de sistemas ajenos.
 
-## Cómo funciona
+## Funcionalidades
 
-```
-GitHub (gratis)
- ├── Acción programada → corre tu app CADA HORA
- ├── Extrae la flota de la intranet (login automático)
- ├── Actualiza el reporte → GitHub Pages (URL para tu celular)
- └── Envía la flota completa por Telegram (opcional)
-```
+- **Acceso libre**: cualquiera puede ver y editar la flota, sin cuentas ni contraseñas.
+- **Flota de hoy**: el panel y el bot muestran **solo las 29 unidades** del inventario diario (Control Inventario de Flota Aeropuerto), con kilometraje, próximo servicio (km), estado (limpio/sucio), próximo mantenimiento, SOAT, revisión técnica y observaciones.
+- **Flota base**: las **161 unidades** (9 series) se guardan en la base como la flota base de la empresa, **oculta** del panel (no se muestra). Si la base está vacía, se siembra automáticamente y se aplica la flota del día.
+- **Botón "Cargar flota de hoy (29)"**: aplica el inventario diario y marca esas unidades como la flota visible (las que salen del inventario quedan ocultas).
+- **Alertas visuales** de vencimientos: rojo (≤ 30 días o vencido), ámbar (≤ 60 días), verde (ok).
+- **Bot de Telegram** para consultar la flota desde el celular.
+- **Sincronización diaria con la intranet**: un workflow de GitHub Actions extrae la flota de la intranet de Budget (login + scraping con `agent-browser`) cada día a las 05:30 UTC y la envía al panel vía el endpoint `/ingest-flota` de Convex. El panel muestra el último snapshot (unidades en parqueo E1/E7/E12, kilometraje, combustible y estado).
 
-## 🛠️ Configuración (una sola vez, ~15 minutos)
+## Stack
 
-### Paso 1 — Crea tu cuenta de GitHub (gratis)
-1. Entra a https://github.com/signup y crea tu cuenta
-2. **Confirma tu correo** (te llega un email)
+- [Vite](https://vitejs.dev) + React + TypeScript
+- [Convex](https://convex.dev) (backend y base de datos)
+- [Tailwind CSS](https://tailwindcss.com) + Framer Motion
 
-### Paso 2 — Crea el repositorio (privado, para que nadie más vea los datos)
-1. Clic en el botón **"+"** (arriba a la derecha) → **New repository**
-2. Nombre: `flota-budget`
-3. **IMPORTANTE:** marca **Private** (privado — los datos de la flota son de la empresa)
-4. Clic en **Create repository**
-5. En la página que aparece, clic en **"uploading an existing file"**
-6. Arrastra **todos los archivos de esta carpeta** (`flota_github/`):
-   - `extraer_flota.js`
-   - `informe_flota_template.html`
-   - la carpeta `.github` (completa)
-   - `README.md`
-   - ⚠️ **NO subas** `config.json` (si existe — tiene credenciales y está excluido)
-7. Clic en **Commit changes**
-
-### Paso 3 — Guarda las credenciales (Secrets)
-1. En tu repositorio: pestaña **Settings** → menú izquierdo **Secrets and variables** → **Actions**
-2. Clic en **New repository secret** y crea 4 secretos:
-   - `BUDGET_USER` → tu usuario de la intranet (`73206264`)
-   - `BUDGET_PASS` → tu contraseña
-   - `TELEGRAM_TOKEN` → el token de tu bot (paso 5)
-   - `TELEGRAM_CHAT_ID` → tu ID de chat (paso 5)
-   *(Los secretos van cifrados; nadie los ve, ni siquiera en el historial)*
-
-### Paso 4 — Activa GitHub Pages (para verlo desde el celular)
-1. En tu repositorio: **Settings** → menú izquierdo **Pages**
-2. En **Source** elige **"GitHub Actions"**
-3. Listo — el reporte quedará en: `https://TU-USUARIO.github.io/flota-budget/`
-4. Guárdate esa dirección en el celular (o agrégala a la pantalla de inicio)
-
-### Paso 5 — Crea el bot de Telegram (para recibir la flota)
-1. Instala **Telegram** en tu celular y crea tu cuenta
-2. Busca **@BotFather** → escribe `/newbot` → ponle nombre (ej: "Flota Budget") → te da un **token**
-3. Abre tu bot (el nombre de usuario que elegiste) y escribe `/start`
-4. Para obtener tu **ID de chat**: busca **@userinfobot** y escribe `/start` — te dirá tu ID numérico
-5. Pon el **token** y el **ID** en los secretos del Paso 3 (TELEGRAM_TOKEN y TELEGRAM_CHAT_ID)
-
-### Paso 6 — Pruébalo
-1. En tu repositorio: pestaña **Actions** → clic en el workflow **"Reporte de Flota"** → botón **"Run workflow"**
-2. Espera ~2-3 minutos (instala Chrome la primera vez)
-3. Revisa que el run termine en verde ✅
-4. Abre la URL del Paso 4 en tu celular y mira tu bot de Telegram
-
-Después de eso, **todo es automático cada hora** 🎉
-
-## ⚠️ Notas importantes
-
-- **Horario:** la acción corre cada hora en el minuto 5 (hora UTC). Para cambiar la frecuencia, edita la línea `cron` del archivo `.github/workflows/flota.yml` (hay ejemplos de cada 2 horas y 3 veces al día).
-- **Minutos gratis:** GitHub da 2,000 minutos/mes para repos privados. Con caché activado, cada corrida usa ~2-3 min → ~1,500/mes. Cabe bien. Si algún mes se agota, GitHub pausa las acciones hasta el 1ro del mes siguiente (el reporte queda con la última versión).
-- **Telegram opcional:** si no creas el bot, el reporte igual se actualiza cada hora; solo no llegarían mensajes. El script lo detecta y continúa.
-- **Seguridad:** el repositorio es PRIVADO, así que el reporte solo lo ves tú (quien tenga acceso al repo). Las credenciales van en Secrets (cifradas), nunca en los archivos.
-
-## 🧪 Probar en tu PC (opcional)
+## Comandos
 
 ```bash
-# Con Node.js instalado:
-node extraer_flota.js              # extrae de verdad y genera public/
-node extraer_flota.js --mensaje    # muestra el mensaje de Telegram sin enviarlo
+bun install          # instala dependencias
+bun run preview      # convex dev + Vite juntos (usado por el preview)
+bun run dev          # solo el dev server de Vite
+bun run build        # build de producción (dist/)
+bun tsc -b --noEmit  # typecheck
 ```
 
-## 📁 Archivos
+> En el preview de Freebuff, el comando configurado es `bun run preview`, que levanta
+> `convex dev --start "vite --host 0.0.0.0"` (backend de Convex en el puerto 3210 + Vite en el 5173).
 
-| Archivo | Qué es |
+## Variables de entorno
+
+| Variable | Qué es | Dónde se configura |
+|---|---|---|
+| `VITE_CONVEX_URL` | URL del backend de Convex | `convex dev` la escribe en `.env.local` (`http://127.0.0.1:3210`); en el preview del workspace se usa la URL proxy del puerto 3210 |
+| `VITE_CONVEX_SITE_URL` | URL de acciones HTTP | `.env.local` (la escribe `convex dev`) |
+| `TELEGRAM_BOT_TOKEN` | Token del bot de Telegram | API Keys (secreto) |
+| `FLOTA_SYNC_SECRET` | Secreto compartido para el endpoint `/ingest-flota` | API Keys (secreto) + GitHub secret con el mismo valor |
+
+## Sincronización diaria con la intranet
+
+El workflow [`.github/workflows/flota.yml`](.github/workflows/flota.yml) corre **cada hora dentro del horario de trabajo: 15:00–08:00 del día siguiente** en hora Perú (UTC−5 → 20:00–13:00 UTC), y a pedido con *Run workflow*:
+
+1. Se loguea en la intranet con `agent-browser` (`extraer_flota.js`, secrets `BUDGET_USER` / `BUDGET_PASS`).
+2. Extrae la flota del día y guarda el snapshot en `public/flota_data.json`.
+3. Envía el JSON a `<CONVEX_SYNC_URL>` (el endpoint `/ingest-flota`) con el header `x-flota-secret`.
+4. Opcionalmente envía el resumen por Telegram (`TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID`).
+
+Secrets de GitHub necesarios:
+
+| Secret | Valor |
 |---|---|
-| `extraer_flota.js` | La app: login + extracción + reporte + Telegram |
-| `informe_flota_template.html` | Plantilla del reporte visual |
-| `.github/workflows/flota.yml` | La programación: cada hora + publicación web |
-| `public/` | El reporte generado (se actualiza solo, no lo edites) |
+| `BUDGET_USER` / `BUDGET_PASS` | Credenciales de la intranet |
+| `CONVEX_SYNC_URL` | URL pública del endpoint, ej. `https://<proyecto>.convex.site/ingest-flota` (para que funcione aunque el workspace esté apagado, el backend de Convex debe estar desplegado en Convex Cloud) |
+| `FLOTA_SYNC_SECRET` | Mismo valor que el `FLOTA_SYNC_SECRET` configurado en API Keys |
+| `TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID` | Opcionales: resumen por Telegram |
+
+El endpoint guarda un snapshot por fecha, reemplaza el del mismo día en reintentos y poda el historial a los 30 días más recientes.
+
+## Bot de Telegram
+
+1. Crea tu bot con **@BotFather** en Telegram (`/newbot`) y guarda el token.
+2. Configura `TELEGRAM_BOT_TOKEN` en **API Keys**.
+3. Registra el webhook:
+
+```
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=<CONVEX_URL>/telegram-webhook
+```
+
+Comandos disponibles:
+
+- `/flota` — lista todas las unidades con su estado
+- `/unidad <nº o texto>` — detalle de una unidad
+- `/ayuda` — muestra la ayuda
+
+## Estructura
+
+```
+src/
+├── convex/               # Backend (schema, funciones, webhook de Telegram)
+│   ├── schema.ts         # Tablas: vehicles + intranetSnapshots
+│   ├── vehicles.ts       # CRUD + importación de flota total y flota del día
+│   ├── intranet.ts       # Snapshot diario de la intranet (upsert + consultas)
+│   ├── fleetCatalog.ts   # Flota base (161 unidades en 9 series)
+│   ├── todayFleet.ts     # Flota del día (29 unidades del formulario diario)
+│   └── http.ts           # Webhook de Telegram + endpoint /ingest-flota
+├── pages/                # Landing + dashboard
+└── components/           # UI
+```
+
+## Nota
+
+La carpeta `legacy/` contiene archivos de una versión estática anterior del repo; la app actual no los usa. Los archivos sueltos en la raíz (`extraer_flota.js`, `parse_*.py`, `informe_flota_template.html`) son de esa versión anterior y no forman parte de la app.
