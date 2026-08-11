@@ -71,8 +71,10 @@ async function pollUrl(needle, timeoutMs = 60000) {
   throw new Error('Timeout esperando URL "' + needle + '" (última: ' + last + ')');
 }
 
+// Columnas de la tabla (encabezados): ['', 'Unid.', 'Ubic.', 'RA', 'KM', 'Fuel', 'Estado', 'Rev.']
+// → unidad=td[1], select de ubicación en td[2], km=td[4], fuel=td[5], estado=td[6].
 const EXTRACT_JS =
-  "JSON.stringify([...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');var sel=tr.querySelector('select');return {unidad:(tds[0]?tds[0].innerText:'').trim(),ubic:sel?sel.value:'',km:(tds[2]?tds[2].innerText:'').trim(),fuel:(tds[3]?tds[3].innerText:'').trim(),estado:(tds[4]?tds[4].innerText:'').trim()}}))";
+  "JSON.stringify([...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');var sel=tr.querySelector('select');return {unidad:(tds[1]?tds[1].innerText:'').trim(),ubic:sel?sel.value:'',km:(tds[4]?tds[4].innerText:'').trim(),fuel:(tds[5]?tds[5].innerText:'').trim(),estado:(tds[6]?tds[6].innerText:'').trim()}}))";
 
 const fmtKm = v => (+v).toLocaleString('es-PE');
 
@@ -170,11 +172,6 @@ async function extraerFlota() {
   let unidades = JSON.parse(raw);
   if (typeof unidades === 'string') unidades = JSON.parse(unidades);
   if (!Array.isArray(unidades) || unidades.length === 0) throw new Error('Sin unidades en la respuesta');
-  // DEBUG: muestra la estructura real de las primeras filas para ajustar el mapeo de columnas.
-  console.log('    DEBUG filas (' + unidades.length + '):');
-  console.log(JSON.stringify(unidades.slice(0, 3), null, 1));
-  const debugHtml = ab(['eval', "JSON.stringify({headers:[...document.querySelectorAll('table')[0].querySelectorAll('thead th,thead td')].map(function(th){return th.innerText.trim()}),rows:[...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].slice(0,2).map(function(tr){return tr.outerHTML})})"], 30000);
-  console.log('    DEBUG html: ' + (debugHtml.startsWith('__ERR__') ? 'ERROR ' + debugHtml : debugHtml));
   return unidades;
 }
 
