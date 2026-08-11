@@ -44,7 +44,7 @@ bun tsc -b --noEmit  # typecheck
 
 El workflow [`.github/workflows/flota.yml`](.github/workflows/flota.yml) corre **cada hora dentro del horario de trabajo: 15:00–08:00 del día siguiente** en hora Perú (UTC−5 → 20:00–13:00 UTC), y a pedido con *Run workflow*:
 
-1. Se loguea en la intranet con `agent-browser` (`extraer_flota.js`, secrets `BUDGET_USER` / `BUDGET_PASS`).
+1. Se loguea en la intranet con `agent-browser` (`extraer_flota.cjs`, secrets `BUDGET_USER` / `BUDGET_PASS`).
 2. Extrae la flota del día y guarda el snapshot en `public/flota_data.json`.
 3. Envía el JSON a `<CONVEX_SYNC_URL>` (el endpoint `/ingest-flota`) con el header `x-flota-secret`.
 4. Opcionalmente envía el resumen por Telegram (`TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID`).
@@ -93,4 +93,4 @@ src/
 
 ## Nota
 
-La carpeta `legacy/` contiene archivos de una versión estática anterior del repo; la app actual no los usa. Los archivos sueltos en la raíz (`extraer_flota.js`, `parse_*.py`, `informe_flota_template.html`) son de esa versión anterior y no forman parte de la app.
+La carpeta `legacy/` contiene archivos de una versión estática anterior del repo; la app actual no los usa. Los archivos sueltos en la raíz (`extraer_flota.cjs`, `parse_*.py`, `informe_flota_template.html`) son de esa versión anterior y no forman parte de la app.

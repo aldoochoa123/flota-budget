@@ -13,8 +13,11 @@
 // (o config.json local, que NO se sube a GitHub)
 //
 // Uso:
-//   node extraer_flota.js              → extrae + genera + envía Telegram
-//   node extraer_flota.js --mensaje    → prueba el mensaje de Telegram sin enviar
+//   node extraer_flota.cjs            → extrae + genera + envía Telegram
+//   node extraer_flota.cjs --mensaje  → prueba el mensaje de Telegram sin enviar
+//
+// Nota: usa la extensión .cjs porque package.json declara "type": "module"
+// y este script usa require() (CommonJS).
 // ============================================================
 const { execSync, execFileSync } = require('child_process');
 const fs = require('fs');
