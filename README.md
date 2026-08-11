@@ -46,7 +46,7 @@ El workflow [`.github/workflows/flota.yml`](.github/workflows/flota.yml) corre *
 
 1. Se loguea en la intranet con `agent-browser` (`extraer_flota.cjs`, secrets `BUDGET_USER` / `BUDGET_PASS`).
 2. Extrae la flota del día y guarda el snapshot en `public/flota_data.json`.
-3. Envía el JSON a `<CONVEX_SYNC_URL>` (el endpoint `/ingest-flota`) con el header `x-flota-secret`.
+3. Envía el JSON a `<CONVEX_SYNC_URL>` (el endpoint `/ingest-flota` de Convex Cloud) con el header `x-flota-secret`.
 4. Opcionalmente envía el resumen por Telegram (`TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID`).
 
 Secrets de GitHub necesarios:
@@ -54,7 +54,7 @@ Secrets de GitHub necesarios:
 | Secret | Valor |
 |---|---|
 | `BUDGET_USER` / `BUDGET_PASS` | Credenciales de la intranet |
-| `CONVEX_SYNC_URL` | URL pública del endpoint, ej. `https://<proyecto>.convex.site/ingest-flota` (para que funcione aunque el workspace esté apagado, el backend de Convex debe estar desplegado en Convex Cloud) |
+| `CONVEX_SYNC_URL` | URL pública del endpoint: `https://artful-otter-336.convex.site/ingest-flota` (deployment de producción en Convex Cloud — funciona aunque el workspace esté apagado) |
 | `FLOTA_SYNC_SECRET` | Mismo valor que el `FLOTA_SYNC_SECRET` configurado en API Keys |
 | `TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID` | Opcionales: resumen por Telegram |
 
