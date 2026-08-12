@@ -339,6 +339,43 @@ async function main() {
         console.log('    [ep-post] ' + ep + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 300)));
       }
 
+      // 9) inAndOut/list respondió 200 (no 404): volcar el BODY COMPLETO vía GET
+      //    (¿lista de movimientos / historial de taller?)
+      const listHtml = ev("(function(){try{var x=new XMLHttpRequest();x.open('GET','https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/list',false);x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.send();return x.status+' :: '+(x.responseText||'').slice(0,6000);}catch(e){return 'ERR '+e.message;}})()");
+      console.log('    [inAndOut-list] GET: ' + (listHtml.startsWith('__ERR__') ? listHtml : listHtml.slice(0, 6000)));
+      // Variantes de la ruta de listado
+      for (const u of [
+        'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/listado',
+        'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/historial',
+        'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/movimientos',
+        'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/history',
+        'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/lista',
+      ]) {
+        const jsx = `(function(){try{var x=new XMLHttpRequest();x.open('GET','${u}',false);x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.send();return x.status+' :: '+(x.responseText||'').slice(0,300).replace(/\\s+/g,' ');}catch(e){return 'ERR '+e.message;}})()`;
+        const r = ev(jsx);
+        console.log('    [inout-get] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 350)));
+      }
+
+      // 10) Buscar RA: tabla completa de la búsqueda vacía (¿todas las unidades con su RA?)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'"], 20000);
+      await sleep(3500);
+      ev("document.getElementById('search').value=''");
+      await sleep(300);
+      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
+      await sleep(3500);
+      const tablaVaciaFull = ev("var t=document.querySelectorAll('table')[0]; (t?t.outerHTML:'NO TABLA').slice(0,8000)");
+      console.log('    [buscarRa] TABLA_VACIA_COMPLETA: ' + (tablaVaciaFull.startsWith('__ERR__') ? tablaVaciaFull : tablaVaciaFull.slice(0, 8000)));
+      const contarFilas = ev("var t=document.querySelectorAll('table')[0]; (t?t.querySelectorAll('tbody tr').length:'NO TABLA')");
+      console.log('    [buscarRa] FILAS_BUSQUEDA_VACIA: ' + contarFilas);
+
+      // 11) inAndOut/0: ¿la página tiene historial de movimientos además del form?
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
+      await sleep(4000);
+      const bodyInOut = ev("(document.body?document.body.innerText:'') .slice(0,2500)");
+      console.log('    [inAndOut/0] BODY: ' + (bodyInOut.startsWith('__ERR__') ? bodyInOut : bodyInOut.replace(/\n/g, ' | ').slice(0, 2500)));
+      const tablasInOut = ev("JSON.stringify([...document.querySelectorAll('table')].map(function(t){return t.outerHTML.slice(0,1500)}))");
+      console.log('    [inAndOut/0] TABLAS: ' + (tablasInOut.startsWith('__ERR__') ? tablasInOut : tablasInOut.slice(0, 3000)));
+
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
