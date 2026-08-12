@@ -377,12 +377,12 @@ async function main() {
       const scriptsInOut = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.slice(0,6000)}).filter(function(c){return c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('$.post')>=0||c.indexOf('$.get')>=0||c.indexOf('url')>=0||c.indexOf('modalidad')>=0||c.indexOf('movimiento')>=0||c.indexOf('Guardar')>=0||c.indexOf('salida')>=0||c.indexOf('ingreso')>=0}))");
       console.log('    [inAndOut/0] SCRIPTS_AJAX: ' + (scriptsInOut.startsWith('__ERR__') ? scriptsInOut : scriptsInOut.slice(0, 9000)));
 
-      // 12) inAndOut: volcar los scripts que mencionan modalidad/Guardar/save/
-      //    validateExistence/salida/ingreso (los handlers del SPA).
+      // 12) inAndOut: extraer SOLO los fragmentos de los scripts que mencionan
+      //    validateExistence / guardar / modalidad / movimiento / formSubmit
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
       await sleep(4000);
-      const scriptsHandler = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c}).filter(function(c){return c.indexOf('modalidad')>=0||c.indexOf('Guardar')>=0||c.indexOf('save')>=0||c.indexOf('validateExistence')>=0||c.indexOf('guardar')>=0||c.indexOf('swal')>=0}))");
-      console.log('    [inAndOut/0] SCRIPTS_HANDLER: ' + (scriptsHandler.startsWith('__ERR__') ? scriptsHandler : scriptsHandler.slice(0, 11000)));
+      const frags = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');var out=[];var terms=['validateExistence','Guardar','guardar','modalidad','movimiento','save','salida','ingreso','formAction'];for(var i=0;i<terms.length;i++){var t=terms[i];var idx=c.indexOf(t);while(idx>=0&&out.length<4){out.push(c.slice(Math.max(0,idx-400),idx+500));idx=c.indexOf(t,idx+1);}}return out.join(' |||| ');}).filter(function(c){return c.length>0}))");
+      console.log('    [inAndOut/0] FRAGS: ' + (frags.startsWith('__ERR__') ? frags : frags.slice(0, 10000)));
 
       // 13) Probar rutas de listado de movimientos fuera de inAndOut
       const rutasList = [
