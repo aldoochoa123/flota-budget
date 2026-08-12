@@ -368,13 +368,24 @@ async function main() {
       const contarFilas = ev("var t=document.querySelectorAll('table')[0]; (t?t.querySelectorAll('tbody tr').length:'NO TABLA')");
       console.log('    [buscarRa] FILAS_BUSQUEDA_VACIA: ' + contarFilas);
 
-      // 11) inAndOut/0: ¿la página tiene historial de movimientos además del form?
+      // 11) inAndOut: TODOS los scripts inline de la página (SPA con #modalidad
+      //    según el segmento de la URL) — ahí están los endpoints AJAX.
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
       await sleep(4000);
-      const bodyInOut = ev("(document.body?document.body.innerText:'') .slice(0,2500)");
-      console.log('    [inAndOut/0] BODY: ' + (bodyInOut.startsWith('__ERR__') ? bodyInOut : bodyInOut.replace(/\n/g, ' | ').slice(0, 2500)));
-      const tablasInOut = ev("JSON.stringify([...document.querySelectorAll('table')].map(function(t){return t.outerHTML.slice(0,1500)}))");
-      console.log('    [inAndOut/0] TABLAS: ' + (tablasInOut.startsWith('__ERR__') ? tablasInOut : tablasInOut.slice(0, 3000)));
+      const modalidad = ev("var m=document.getElementById('modalidad'); (m?m.value:'SIN MODALIDAD')");
+      console.log('    [inAndOut/0] MODALIDAD: ' + modalidad);
+      const scriptsInOut = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.slice(0,6000)}).filter(function(c){return c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('$.post')>=0||c.indexOf('$.get')>=0||c.indexOf('url')>=0||c.indexOf('modalidad')>=0||c.indexOf('movimiento')>=0||c.indexOf('Guardar')>=0||c.indexOf('salida')>=0||c.indexOf('ingreso')>=0}))");
+      console.log('    [inAndOut/0] SCRIPTS_AJAX: ' + (scriptsInOut.startsWith('__ERR__') ? scriptsInOut : scriptsInOut.slice(0, 9000)));
+
+      // 12) inAndOut/list: misma página pero modalidad=list — ¿carga un listado?
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/list'"], 20000);
+      await sleep(4000);
+      const modList = ev("var m=document.getElementById('modalidad'); (m?m.value:'SIN MODALIDAD')");
+      console.log('    [inAndOut/list] MODALIDAD: ' + modList);
+      const bodyList = ev("(document.body?document.body.innerText:'') .slice(0,2000)");
+      console.log('    [inAndOut/list] BODY: ' + (bodyList.startsWith('__ERR__') ? bodyList : bodyList.replace(/\n/g, ' | ').slice(0, 2000)));
+      const tablasList = ev("JSON.stringify([...document.querySelectorAll('table')].map(function(t){return t.outerHTML.slice(0,1200)}))");
+      console.log('    [inAndOut/list] TABLAS: ' + (tablasList.startsWith('__ERR__') ? tablasList : tablasList.slice(0, 2500)));
 
       console.log('[--descubrir] Fin de la exploración.');
     }
