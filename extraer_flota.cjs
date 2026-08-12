@@ -259,11 +259,14 @@ async function main() {
       await sleep(4500);
       console.log('    --- Menú del módulo ControlCar');
       await descubrirEnlaces();
-      // Página de flota: tabla + columnas
-      ab(['eval', "location.href='" + URL_FLOTA + "'"], 20000);
-      await sleep(4500);
-      console.log('    --- Página de flota');
-      await descubrirEnlaces();
+      // Click en los tabs Ingreso y Salida para ver su contenido
+      for (const tab of ['Ingreso', 'Salida']) {
+        const clickJs = `(function(){var all=document.querySelectorAll('span[href="javascript:;"]');for(var i=0;i<all.length;i++){if((all[i].innerText||'').trim().indexOf('${tab}')===0){all[i].click();return 'clicked:'+all[i].outerHTML.slice(0,120);}}return 'no-encontrado';})()`;
+        const res = ab(['eval', clickJs], 20000);
+        console.log('    --- Click en tab ' + tab + ' → ' + res);
+        await sleep(4500);
+        await descubrirEnlaces();
+      }
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
