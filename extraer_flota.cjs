@@ -184,7 +184,7 @@ async function extraerFlota() {
 async function descubrirEnlaces() {
   console.log('    [--descubrir] Volcando página: ' + ab(['get', 'url'], 15000));
   // Nota: agent-browser devuelve el JSON de string con comillas extra → doble parse.
-  const js = `(function(){var out={links:[],text:'',table:'',menciones:[],items:{}};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2000);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,1600);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<30;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte|ingreso/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}['Ingreso','Salida','Buscar RA','Flota'].forEach(function(term){var found=null;for(var i=0;i<all.length;i++){var el=all[i];var t=(el.childNodes.length===1&&el.childNodes[0].nodeType===3)?el.textContent.trim():'';if(t===term){found=el;break;}}if(found){var chain=[];var cur=found;for(var k=0;k<5&&cur;k++){chain.push(cur.outerHTML.slice(0,260));cur=cur.parentElement;}out.items[term]=chain.join(' || ');}});return JSON.stringify(out)})()`;
+  const js = `(function(){var out={links:[],text:'',table:'',menciones:[],items:{},scripts:[]};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2000);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,1600);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<30;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte|ingreso|vehiculo/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}['Ingreso','Salida','Buscar RA','Flota'].forEach(function(term){var found=null;for(var i=0;i<all.length;i++){var el=all[i];var t=(el.childNodes.length===1&&el.childNodes[0].nodeType===3)?el.textContent.trim():'';if(t===term){found=el;break;}}if(found){var chain=[];var cur=found;for(var k=0;k<5&&cur;k++){chain.push(cur.outerHTML.slice(0,260));cur=cur.parentElement;}out.items[term]=chain.join(' || ');}});document.querySelectorAll('script:not([src])').forEach(function(s){var c=(s.textContent||'');if(/ajax|fetch|axios|\/hiker\//i.test(c))out.scripts.push(c.replace(/\\s+/g,' ').slice(0,500));});return JSON.stringify(out)})()`;
   const raw = ab(['eval', js], 30000);
   if (raw.startsWith('__ERR__')) {
     console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 200));
@@ -203,6 +203,7 @@ async function descubrirEnlaces() {
   if (d.table) console.log('    TABLE_HTML: ' + d.table.slice(0, 1500));
   d.menciones.forEach(m => console.log('    MENCION ' + m));
   Object.keys(d.items).forEach(k => console.log('    ITEM[' + k + ']: ' + d.items[k]));
+  d.scripts.forEach(s => console.log('    SCRIPT_AJAX: ' + s));
 }
 
 // ---------- Snapshot JSON ----------
@@ -259,9 +260,9 @@ async function main() {
       await sleep(4500);
       console.log('    --- Menú del módulo ControlCar');
       await descubrirEnlaces();
-      // Click en los tabs Ingreso y Salida para ver su contenido
-      for (const tab of ['Ingreso', 'Salida']) {
-        const clickJs = `(function(){var all=document.querySelectorAll('span[href="javascript:;"]');for(var i=0;i<all.length;i++){if((all[i].innerText||'').trim().indexOf('${tab}')===0){all[i].click();return 'clicked:'+all[i].outerHTML.slice(0,120);}}return 'no-encontrado';})()`;
+      // Click en los tabs (Ingreso/Salida/Buscar RA) para ver su contenido
+      for (const tab of ['Ingreso', 'Salida', 'Buscar RA']) {
+        const clickJs = `(function(){var all=document.querySelectorAll('span,li,div,a,button');for(var i=0;i<all.length;i++){var t=(all[i].innerText||'').trim();if(t===('${tab}')||t.indexOf('${tab}')===0&&all[i].children.length<3){var el=all[i];while(el&&el.tagName!=='BODY'&&!el.getAttribute('href')&&!el.getAttribute('onclick')&&el.tagName!=='SPAN'){el=el.parentElement;}el.click();return 'clicked:'+el.outerHTML.slice(0,150);}}return 'no-encontrado';})()`;
         const res = ab(['eval', clickJs], 20000);
         console.log('    --- Click en tab ' + tab + ' → ' + res);
         await sleep(4500);
