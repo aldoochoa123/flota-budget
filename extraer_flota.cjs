@@ -254,30 +254,37 @@ async function main() {
 
     if (DISCOVERY) {
       console.log('[--descubrir] Explorando páginas de la intranet...');
-      // URLs reales (del script de la página ControlCar):
-      //   Ingreso = inAndOut/1, Salida = inAndOut/0, Flota = flota, Buscar RA = buscarRa
-      const probar = [
-        ['Buscar RA', 'https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'],
-        ['Salida (inAndOut/0)', 'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'],
-        ['Ingreso (inAndOut/1)', 'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/1'],
-      ];
-      for (const [nombre, u] of probar) {
-        ab(['eval', "location.href='" + u + "'"], 20000);
-        await sleep(4500);
-        console.log('    --- Página: ' + nombre + ' (' + u + ')');
-        await descubrirEnlaces();
-        if (nombre === 'Buscar RA') {
-          // Prueba la búsqueda por unidad: ¿qué muestra la tabla de resultados?
-          for (const unidad of ['1063', '943']) {
-            ab(['eval', "document.getElementById('search').value='" + unidad + "'"], 15000);
-            await sleep(300);
-            ab(['eval', "(document.querySelector('button[type=submit]')||document.querySelector('form')).click()"], 15000);
-            await sleep(3500);
-            console.log('    --- RESULTADO Buscar RA unidad ' + unidad);
-            await descubrirEnlaces();
-          }
-        }
-      }
+      const b64 = js => Buffer.from(js).toString('base64');
+      const ev = (js, t = 25000) => ab(['eval', '-b', b64(js)], t);
+
+      // 1) Buscar RA: tabla completa + click en el resultado (¿es enlace al detalle?)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'"], 20000);
+      await sleep(4000);
+      ev("document.getElementById('search').value='1063'");
+      await sleep(300);
+      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
+      await sleep(3500);
+      const tablaRa = ev("document.querySelectorAll('table')[0].outerHTML");
+      console.log('    [buscarRa] TABLA_COMPLETA: ' + (tablaRa.startsWith('__ERR__') ? tablaRa : tablaRa.slice(0, 3500)));
+      const linksRa = ev("JSON.stringify([...document.querySelectorAll('a,button')].map(function(el){return {tag:el.tagName,text:(el.innerText||'').trim().slice(0,40),href:el.getAttribute('href')||'',onclick:(el.getAttribute('onclick')||'').slice(0,120)}}).filter(function(x){return x.text||x.href}))");
+      console.log('    [buscarRa] CLICKABLES: ' + (linksRa.startsWith('__ERR__') ? linksRa : linksRa.slice(0, 2500)));
+      // Click en la primera fila de resultados
+      ev("var row=document.querySelectorAll('table tbody tr')[0]; if(row){var c=row.querySelector('a,button,td'); if(c) c.click();}");
+      await sleep(3500);
+      console.log('    [buscarRa] URL tras click: ' + ab(['get', 'url'], 15000));
+      const bodyTras = ev("(document.body.innerText||'').slice(0,800)");
+      console.log('    [buscarRa] BODY_TRAS_CLICK: ' + (bodyTras.startsWith('__ERR__') ? bodyTras : bodyTras));
+
+      // 2) Flota: abrir el modal de inspección de la primera fila (¿trae el historial?)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 20000);
+      await sleep(4000);
+      ev("var b=document.querySelector('button.row_flota'); if(b) b.click();");
+      await sleep(3000);
+      const modal = ev("var m=document.querySelector('#modalInspection'); (m?m.outerHTML:'NO MODAL').slice(0,4000)");
+      console.log('    [flota] MODAL_INSPECCION: ' + (modal.startsWith('__ERR__') ? modal : modal));
+      const modalLinks = ev("JSON.stringify([...document.querySelectorAll('#modalInspection a, #modalInspection button')].map(function(el){return {text:(el.innerText||'').trim().slice(0,40),href:el.getAttribute('href')||'',onclick:(el.getAttribute('onclick')||'').slice(0,120)}}))");
+      console.log('    [flota] MODAL_CLICKABLES: ' + (modalLinks.startsWith('__ERR__') ? modalLinks : modalLinks.slice(0, 2000)));
+
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
