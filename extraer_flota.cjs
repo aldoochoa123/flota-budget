@@ -287,48 +287,23 @@ async function main() {
       const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
       console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
 
-      // 5) Volcar TODOS los scripts inline de las páginas (buscar rutas del router)
-      const dumpScripts = `(function(){
-        var out=[];
-        document.querySelectorAll('script:not([src])').forEach(function(s){
-          var c=(s.textContent||'');
-          if(c.indexOf('location')>=0||c.indexOf('href')>=0||c.indexOf('route')>=0||c.indexOf('ControlCar')>=0||c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('movim')>=0||c.indexOf('reporte')>=0||c.indexOf('history')>=0){
-            out.push(c.slice(0,2000));
-          }
-        });
-        return out.join('\n=====\n');
-      })()`;
-      const sc = ev(dumpScripts);
-      console.log('    [scripts-inline] flota: ' + (sc.startsWith('__ERR__') ? sc : sc.slice(0, 5500)));
+      // 5) Flota: expandir fila (DataTables responsive) para ver columnas ocultas RA/Rev.
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 20000);
+      await sleep(4000);
+      // Click en el ícono de expandir (primera columna, clase "control")
+      ev("var c=document.querySelector('table tbody tr td.control'); if(c){c.click(); 'clicked-expand';} else 'no-control'", 15000);
+      await sleep(2500);
+      const expandido = ev("var d=document.querySelector('table tbody tr.child'); (d?d.outerHTML:'NO CHILD ROW').slice(0,3000)");
+      console.log('    [flota] FILA_EXPANDIDA: ' + (expandido.startsWith('__ERR__') ? expandido : expandido));
+      const childLinks = ev("JSON.stringify([...document.querySelectorAll('table tbody tr.child a, table tbody tr.child button')].map(function(el){return {text:(el.innerText||'').trim().slice(0,40),href:el.getAttribute('href')||'',onclick:(el.getAttribute('onclick')||'').slice(0,150),cls:(el.className||'').toString().slice(0,60)}}))");
+      console.log('    [flota] CHILD_CLICKABLES: ' + (childLinks.startsWith('__ERR__') ? childLinks : childLinks.slice(0, 2000)));
+      // ¿Click en el RA o en el botón de la fila expandida navega al reporte?
+      ev("var a=document.querySelector('table tbody tr.child a, table tbody tr.child button'); if(a) a.click(); 'clicked-child'");
+      await sleep(3500);
+      console.log('    [flota] URL_TRAS_CLICK_CHILD: ' + ab(['get', 'url'], 15000));
+      const bodyChild = ev("(document.body.innerText||'').slice(0,600)");
+      console.log('    [flota] BODY_TRAS_CLICK_CHILD: ' + (bodyChild.startsWith('__ERR__') ? bodyChild : bodyChild.replace(/\n/g, ' | ').slice(0, 600)));
 
-      // 6) Probar endpoints AJAX candidatos del controlador (POST, como validateExistence)
-      //    Usa XHR síncrono para que eval pueda leer la respuesta inmediatamente.
-      const ep = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/movements/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/getMovements/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/history/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/reportes/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/getReports/',
-        'https://intranet.budgetperu.com/hiker/ControlCar/getReportes/',
-      ];
-      for (const u of ep) {
-        ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 15000);
-        await sleep(2500);
-        const jsx = `(function(){
-          try{
-            var x=new XMLHttpRequest();
-            x.open('POST','${u}',false);
-            x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-            x.setRequestHeader('X-Requested-With','XMLHttpRequest');
-            x.send('unidad=1063');
-            var body=(x.responseText||'').slice(0,300).replace(/\\n/g,' ');
-            return x.status+' :: '+body;
-          }catch(e){return 'ERR '+e.message;}
-        })()`;
-        const r = ev(jsx);
-        console.log('    [ep] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r));
-      }
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
