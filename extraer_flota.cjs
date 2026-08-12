@@ -287,38 +287,56 @@ async function main() {
       const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
       console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
 
-      // 5) Flota: encontrar el AJAX del DataTable (¿source JSON? ¿endpoints hermanos?)
+      // 5) Flota: ver TODAS las filas con su columna RA (¿alguna unidad tiene RA =
+      //    taller activo?) y el modal de inspección completo.
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 20000);
       await sleep(4000);
-      const dtScript = `(function(){
-        var out=[];
-        document.querySelectorAll('script:not([src])').forEach(function(s){
-          var c=(s.textContent||'');
-          if(c.indexOf('DataTable')>=0||c.indexOf('dataTable')>=0||c.indexOf('ajax')>=0||c.indexOf('url')>=0){
-            out.push(c.slice(0,3000));
-          }
-        });
-        return out.join('\n=====\n');
-      })()`;
-      const sc = ev(dtScript);
-      console.log('    [dt-scripts] flota: ' + (sc.startsWith('__ERR__') ? sc : sc.slice(0, 6500)));
-      // ¿Hay un endpoint de datos visible en el DOM (data-source, url en la tabla)?
-      const tabUrl = ev("var t=document.querySelector('#tbody-content'); (t?JSON.stringify({src:t.getAttribute('data-src'),url:t.getAttribute('data-url'),ajax:t.getAttribute('data-ajax')}):'NO TABLE')");
-      console.log('    [tabla] DATOS: ' + (tabUrl.startsWith('__ERR__') ? tabUrl : tabUrl));
-      // Probar endpoints hermanos de getFlota (GET)
-      const eps = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/getFlota',
-        'https://intranet.budgetperu.com/hiker/ControlCar/flotaData',
-        'https://intranet.budgetperu.com/hiker/ControlCar/getFlotaData',
-        'https://intranet.budgetperu.com/hiker/ControlCar/data',
-        'https://intranet.budgetperu.com/hiker/ControlCar/list',
-        'https://intranet.budgetperu.com/hiker/ControlCar/lista',
-        'https://intranet.budgetperu.com/hiker/ControlCar/getCar',
+      const filasRa = ev("JSON.stringify([...document.querySelectorAll('table tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');return {unidad:(tds[1]?tds[1].innerText:'').trim(),ra:(tds[3]?tds[3].innerText:'').trim(),km:(tds[4]?tds[4].innerText:'').trim(),estado:(tds[6]?tds[6].innerText:'').trim(),ccid:(tr.querySelector('[data-ccid]')||{getAttribute:function(){return ''}}).getAttribute('data-ccid')||''}}))");
+      console.log('    [flota] TODAS_FILAS_RA: ' + (filasRa.startsWith('__ERR__') ? filasRa : filasRa.slice(0, 4000)));
+
+      // 6) Buscar RA con búsqueda VACÍA: ¿lista todas las unidades con su último RA?
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'"], 20000);
+      await sleep(3500);
+      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
+      await sleep(3500);
+      const tablaVacia = ev("var t=document.querySelectorAll('table')[0]; (t?t.innerText:'NO TABLA').slice(0,1200)");
+      console.log('    [buscarRa] BUSQUEDA_VACIA: ' + (tablaVacia.startsWith('__ERR__') ? tablaVacia : tablaVacia.replace(/\n/g, ' | ')));
+      // Búsqueda por placa (CMO-371 = unidad 1063)
+      ev("document.getElementById('search').value='CMO-371'");
+      await sleep(300);
+      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
+      await sleep(3500);
+      const tablaPlaca = ev("var t=document.querySelectorAll('table')[0]; (t?t.innerText:'NO TABLA').slice(0,500)");
+      console.log('    [buscarRa] BUSQUEDA_POR_PLACA: ' + (tablaPlaca.startsWith('__ERR__') ? tablaPlaca : tablaPlaca.replace(/\n/g, ' | ')));
+
+      // 7) Salida (inAndOut/0): form completo tras buscar una unidad (motivo,
+      //    movimiento, conductor, acción del form) — SOLO LECTURA, sin guardar.
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
+      await sleep(4000);
+      const formSalida = ev("var f=document.querySelector('form'); (f?f.outerHTML:'NO FORM').slice(0,6000)");
+      console.log('    [salida] FORM_COMPLETO: ' + (formSalida.startsWith('__ERR__') ? formSalida : formSalida.slice(0, 6000)));
+      // Ingreso (inAndOut/1): mismo dump
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/1'"], 20000);
+      await sleep(4000);
+      const formIngreso = ev("var f=document.querySelector('form'); (f?f.outerHTML:'NO FORM').slice(0,6000)");
+      console.log('    [ingreso] FORM_COMPLETO: ' + (formIngreso.startsWith('__ERR__') ? formIngreso : formIngreso.slice(0, 6000)));
+
+      // 8) Probar endpoints POST hermanos de validateExistence para movimientos
+      //    (GET a movimientos dio 404; probar POST con unidad y cc_id).
+      const posts = [
+        ['movimientos', 'unidad=1063'],
+        ['getMovimientos', 'unidad=1063'],
+        ['listMovimientos', 'unidad=1063'],
+        ['historial', 'unidad=1063'],
+        ['movements', 'unidad=1063'],
+        ['getMovimientosUnidad', 'unidad=1063'],
+        ['inAndOut/list', 'unidad=1063'],
+        ['reportes', 'unidad=1063'],
       ];
-      for (const u of eps) {
-        const jsx = `(function(){try{var x=new XMLHttpRequest();x.open('GET','${u}',false);x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.send();return x.status+' :: '+(x.responseText||'').slice(0,200).replace(/\\s+/g,' ');}catch(e){return 'ERR '+e.message;}})()`;
+      for (const [ep, body] of posts) {
+        const jsx = `(function(){try{var x=new XMLHttpRequest();x.open('POST','https://intranet.budgetperu.com/hiker/ControlCar/${ep}/',false);x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.setRequestHeader('X-CSRF-TOKEN',(document.querySelector('meta[name=csrf-token]')||{content:''}).content);x.send('${body}');return x.status+' :: '+(x.responseText||'').slice(0,200).replace(/\\s+/g,' ');}catch(e){return 'ERR '+e.message;}})()`;
         const r = ev(jsx);
-        console.log('    [ep-get] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 300)));
+        console.log('    [ep-post] ' + ep + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 300)));
       }
 
       console.log('[--descubrir] Fin de la exploración.');
