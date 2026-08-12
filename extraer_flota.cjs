@@ -266,6 +266,17 @@ async function main() {
         await sleep(4500);
         console.log('    --- Página: ' + nombre + ' (' + u + ')');
         await descubrirEnlaces();
+        if (nombre === 'Buscar RA') {
+          // Prueba la búsqueda por unidad: ¿qué muestra la tabla de resultados?
+          for (const unidad of ['1063', '943']) {
+            ab(['eval', "document.getElementById('search').value='" + unidad + "'"], 15000);
+            await sleep(300);
+            ab(['eval', "(document.querySelector('button[type=submit]')||document.querySelector('form')).click()"], 15000);
+            await sleep(3500);
+            console.log('    --- RESULTADO Buscar RA unidad ' + unidad);
+            await descubrirEnlaces();
+          }
+        }
       }
       console.log('[--descubrir] Fin de la exploración.');
     }
