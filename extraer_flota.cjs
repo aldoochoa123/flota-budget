@@ -185,9 +185,12 @@ async function descubrirEnlaces() {
   console.log('    [--descubrir] Volcando página: ' + ab(['get', 'url'], 15000));
   // Nota: agent-browser devuelve el JSON de string con comillas extra → doble parse.
   const js = `(function(){var out={links:[],text:'',table:'',menciones:[],items:{},scripts:[],inputs:[]};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\n{3,}/g,'\n\n').slice(0,2000);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,4500);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<30;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte|ingreso|vehiculo|historial/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}['Ingreso','Salida','Buscar RA','Flota'].forEach(function(term){var found=null;for(var i=0;i<all.length;i++){var el=all[i];var t=(el.childNodes.length===1&&el.childNodes[0].nodeType===3)?el.textContent.trim():'';if(t===term){found=el;break;}}if(found){var chain=[];var cur=found;for(var k=0;k<5&&cur;k++){chain.push(cur.outerHTML.slice(0,260));cur=cur.parentElement;}out.items[term]=chain.join(' || ');}});document.querySelectorAll('script:not([src])').forEach(function(s){var c=(s.textContent||'');if(c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('/hiker/')>=0)out.scripts.push(c.replace(/\s+/g,' ').slice(0,600));});document.querySelectorAll('input,select,button').forEach(function(el){out.inputs.push(el.outerHTML.slice(0,200));});return JSON.stringify(out)})()`;
-  const raw = ab(['eval', js], 30000);
+  // Nota: agent-browser eval solo acepta expresiones simples; el JS complejo
+  // (regex, comillas, saltos) debe ir en base64 con el flag -b.
+  const b64 = Buffer.from(js).toString('base64');
+  const raw = ab(['eval', '-b', b64], 30000);
   if (raw.startsWith('__ERR__')) {
-    console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 200));
+    console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 300));
     return;
   }
   let d;
