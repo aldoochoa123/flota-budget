@@ -257,33 +257,35 @@ async function main() {
       const b64 = js => Buffer.from(js).toString('base64');
       const ev = (js, t = 25000) => ab(['eval', '-b', b64(js)], t);
 
-      // 1) Buscar RA: tabla completa + click en el resultado (¿es enlace al detalle?)
-      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'"], 20000);
-      await sleep(4000);
-      ev("document.getElementById('search').value='1063'");
-      await sleep(300);
-      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
-      await sleep(3500);
-      const tablaRa = ev("document.querySelectorAll('table')[0].outerHTML");
-      console.log('    [buscarRa] TABLA_COMPLETA: ' + (tablaRa.startsWith('__ERR__') ? tablaRa : tablaRa.slice(0, 3500)));
-      const linksRa = ev("JSON.stringify([...document.querySelectorAll('a,button')].map(function(el){return {tag:el.tagName,text:(el.innerText||'').trim().slice(0,40),href:el.getAttribute('href')||'',onclick:(el.getAttribute('onclick')||'').slice(0,120)}}).filter(function(x){return x.text||x.href}))");
-      console.log('    [buscarRa] CLICKABLES: ' + (linksRa.startsWith('__ERR__') ? linksRa : linksRa.slice(0, 2500)));
-      // Click en la primera fila de resultados
-      ev("var row=document.querySelectorAll('table tbody tr')[0]; if(row){var c=row.querySelector('a,button,td'); if(c) c.click();}");
-      await sleep(3500);
-      console.log('    [buscarRa] URL tras click: ' + ab(['get', 'url'], 15000));
-      const bodyTras = ev("(document.body.innerText||'').slice(0,800)");
-      console.log('    [buscarRa] BODY_TRAS_CLICK: ' + (bodyTras.startsWith('__ERR__') ? bodyTras : bodyTras));
+      // 1) Volcar todos los scripts (src y contenido) de la página ControlCar
+      //    para encontrar endpoints AJAX de reportes/movimientos.
+      const scripts = ev("JSON.stringify([...document.querySelectorAll('script')].map(function(s){var src=s.getAttribute('src')||'';return {src:src,body:(src?'':(s.textContent||'').slice(0,1400))}}).filter(function(x){return x.src||x.body}))");
+      console.log('    [scripts] CONTROL_CAR: ' + (scripts.startsWith('__ERR__') ? scripts : scripts.slice(0, 5500)));
 
-      // 2) Flota: abrir el modal de inspección de la primera fila (¿trae el historial?)
+      // 2) Menú lateral completo (todos los ítems, no solo los que mencionan términos)
+      const menu = ev("JSON.stringify([...document.querySelectorAll('.sidebar a, .sidenav a, .navbar-vertical a, aside a, nav a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||'',onclick:(a.getAttribute('onclick')||'').slice(0,100)}}))");
+      console.log('    [menu] SIDEBAR: ' + (menu.startsWith('__ERR__') ? menu : menu.slice(0, 3000)));
+
+      // 3) Fila completa de la tabla de flota (incluye columnas ocultas RA y Rev.)
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 20000);
       await sleep(4000);
-      ev("var b=document.querySelector('button.row_flota'); if(b) b.click();");
-      await sleep(3000);
-      const modal = ev("var m=document.querySelector('#modalInspection'); (m?m.outerHTML:'NO MODAL').slice(0,4000)");
-      console.log('    [flota] MODAL_INSPECCION: ' + (modal.startsWith('__ERR__') ? modal : modal));
-      const modalLinks = ev("JSON.stringify([...document.querySelectorAll('#modalInspection a, #modalInspection button')].map(function(el){return {text:(el.innerText||'').trim().slice(0,40),href:el.getAttribute('href')||'',onclick:(el.getAttribute('onclick')||'').slice(0,120)}}))");
-      console.log('    [flota] MODAL_CLICKABLES: ' + (modalLinks.startsWith('__ERR__') ? modalLinks : modalLinks.slice(0, 2000)));
+      const fila = ev("var tr=document.querySelectorAll('table tbody tr')[0]; (tr?tr.outerHTML:'NO ROW').slice(0,2500)");
+      console.log('    [flota] FILA_COMPLETA: ' + (fila.startsWith('__ERR__') ? fila : fila));
+
+      // 4) Probar rutas candidatas para el historial de movimientos/reportes
+      const rutas = [
+        'https://intranet.budgetperu.com/hiker/ControlCar/reportes',
+        'https://intranet.budgetperu.com/hiker/ControlCar/historial',
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos',
+        'https://intranet.budgetperu.com/hiker/reportes',
+      ];
+      for (const u of rutas) {
+        ab(['eval', "location.href='" + u + "'"], 20000);
+        await sleep(3500);
+        const url = ab(['get', 'url'], 15000);
+        const body = ev("(document.body.innerText||'').slice(0,300)");
+        console.log('    [ruta] ' + u + ' → URL=' + url + ' BODY=' + (body.startsWith('__ERR__') ? body : body.replace(/\n/g, ' | ').slice(0, 300)));
+      }
 
       console.log('[--descubrir] Fin de la exploración.');
     }
