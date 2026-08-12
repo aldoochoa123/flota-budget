@@ -6,13 +6,26 @@ import App from "./App";
 import "./index.css";
 
 /**
- * En el preview de Freebuff, `convex dev` escribe VITE_CONVEX_URL con la URL local
- * (http://127.0.0.1:3210), que el navegador no puede alcanzar. Si detectamos esa
- * URL local, derivamos la URL proxy del workspace a partir de la URL actual
- * (https://<puerto>-<workspace>.daytonaproxy01.net → https://<puertoConvex>-<workspace>...).
- * En producción (URL de Convex Cloud) esta lógica nunca se activa.
+ * Deployment de Convex Cloud (producción). No es secreto: es la URL pública del
+ * backend en la nube. Sirve de respaldo para que el primer deploy funcione sin
+ * variables de entorno, y como destino del preview del workspace.
+ */
+const CLOUD_CONVEX_URL = "https://artful-otter-336.convex.cloud";
+
+/**
+ * Resolución de la URL de Convex, en este orden:
+ *  1. VITE_CONVEX_URL_CLOUD — override explícito (lo usa el preview para leer la
+ *     nube; `convex dev` no lo pisa porque él solo escribe VITE_CONVEX_URL).
+ *  2. VITE_CONVEX_URL — en el preview, `convex dev` escribe la URL local
+ *     (http://127.0.0.1:3210), que el navegador no puede alcanzar; si la
+ *     detectamos, la derivamos al proxy del workspace
+ *     (https://<puerto>-<workspace>.daytonaproxy01.net).
+ *  3. CLOUD_CONVEX_URL — respaldo final (builds de producción sin variables).
  */
 function resolveConvexUrl(envUrl: string): string {
+  const cloudOverride = import.meta.env.VITE_CONVEX_URL_CLOUD as string | undefined;
+  if (cloudOverride) return cloudOverride;
+
   const m = envUrl.match(/^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?/);
   if (m && typeof window !== "undefined") {
     const port = m[2] ? m[2].slice(1) : "3210";
@@ -22,17 +35,11 @@ function resolveConvexUrl(envUrl: string): string {
       return `${scheme}://${port}-${host[1]}`;
     }
   }
-  return envUrl;
+  return envUrl || CLOUD_CONVEX_URL;
 }
 
 const rawConvexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
 const convexUrl = resolveConvexUrl(rawConvexUrl ?? "");
-
-if (!convexUrl) {
-  throw new Error(
-    "Falta VITE_CONVEX_URL. Configúrala en .env.local o en las variables del entorno antes de iniciar.",
-  );
-}
 
 const convex = new ConvexReactClient(convexUrl, { unsavedChangesWarning: false });
 

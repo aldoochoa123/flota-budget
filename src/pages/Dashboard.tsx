@@ -63,13 +63,20 @@ export default function Dashboard() {
       (daysUntil(v.revisionExpiry) ?? Infinity) <= 30,
   ).length;
 
+  // Resumen del último snapshot de la intranet (la flota visible).
+  const snap = intranetSnapshot;
+  const snapTotal = snap?.unidades.length ?? 0;
+  const snapLimpias = snap ? snap.unidades.filter((u) => /limpio/i.test(u.estado)).length : 0;
+  const snapSucias = snapTotal - snapLimpias;
+  const snapPorTanquear = snap ? snap.unidades.filter((u) => !/full/i.test(u.fuel)).length : 0;
+
   async function handleImportFleet() {
     setBusy(true);
     setFleetMsg(null);
     try {
       const result = await importFleet();
       setFleetMsg(
-        `✅ Flota base sembrada: ${result.added} agregadas, ${result.skipped} ya existían (total: ${result.total}). No se muestra en la flota de hoy.`,
+        `✅ Flota base sembrada: ${result.added} agregadas, ${result.skipped} ya existían (total: ${result.total}). No se muestra en la flota visible.`,
       );
     } catch (err) {
       setFleetMsg(
@@ -192,359 +199,397 @@ export default function Dashboard() {
       </header>
 
       <main className="mx-auto w-full max-w-6xl px-6 py-8">
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight">Flota de hoy</h1>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {vehicles === undefined
-                ? "Cargando…"
-                : `${vehicles.length} unidad${vehicles.length === 1 ? "" : "es"} operativa${vehicles.length === 1 ? "" : "s"} hoy — flota base (161) oculta en la base`}
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button variant="outline" onClick={handleApplyTodayFleet} disabled={busy}>
-              {busy ? "Cargando…" : "Cargar flota de hoy (29)"}
-            </Button>
-            <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
-              {busy ? "Cargando…" : "Rellenar datos históricos"}
-            </Button>
-            <Button variant="ghost" onClick={handleImportFleet} disabled={busy}>
-              {busy ? "Cargando…" : "Sembrar flota base (161)"}
-            </Button>
-            <Button onClick={openNew}>+ Nueva unidad</Button>
-          </div>
+        {/* Título principal: flota vinculada a la intranet */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-extrabold tracking-tight">Flota vinculada a la intranet</h1>
+          <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+            La flota visible es la que reporta la intranet. Se actualiza sola cada hora dentro
+            del horario de trabajo (15:00 – 08:00, hora Perú).
+            {snap ? (
+              <>
+                {" "}
+                Último reporte: <strong className="text-foreground">{snap.fecha}</strong> ·{" "}
+                {snapTotal} unidades en parqueo.
+              </>
+            ) : (
+              " Aún no hay datos sincronizados."
+            )}
+          </p>
         </div>
 
-        {fleetMsg && (
-          <p className="mb-8 rounded-xl border border-border bg-card px-4 py-3 text-sm">{fleetMsg}</p>
+        {/* Resumen de la flota intranet */}
+        {snap && (
+          <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                En parqueo
+              </div>
+              <div className="mt-1 text-3xl font-extrabold">🚗 {snapTotal}</div>
+            </Card>
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Limpias
+              </div>
+              <div className="mt-1 text-3xl font-extrabold text-ok">✅ {snapLimpias}</div>
+            </Card>
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Sucias
+              </div>
+              <div className="mt-1 text-3xl font-extrabold text-warn">🧼 {snapSucias}</div>
+            </Card>
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Por tanquear
+              </div>
+              <div className="mt-1 text-3xl font-extrabold text-danger">⛽ {snapPorTanquear}</div>
+            </Card>
+          </div>
         )}
 
-        {/* Stats */}
-        <div className="mb-8 grid gap-4 sm:grid-cols-3">
-          <Card className="p-4">
-            <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Unidades hoy
+        {/* Tabla principal: flota de la intranet */}
+        <Card className="mt-8">
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="flex items-center gap-2 text-lg font-bold">📡 Flota en parqueo (intranet)</h2>
+            {snap && (
+              <span className="text-xs text-muted-foreground">
+                Sincronizado {new Date(snap.syncedAt).toLocaleString("es-PE")}
+              </span>
+            )}
+          </div>
+          {snap === undefined ? (
+            <p className="text-sm text-muted-foreground">Cargando…</p>
+          ) : snap === null ? (
+            <div className="text-sm text-muted-foreground">
+              <p>
+                Aún no hay sincronización desde la intranet. El workflow de GitHub Actions se
+                ejecuta cada hora dentro del horario de trabajo (15:00 – 08:00, hora Perú) y envía
+                el reporte automáticamente.
+              </p>
+              <p className="mt-2">
+                Si acabas de activar la configuración, espera la próxima corrida programada o
+                ejecútala manualmente desde{" "}
+                <strong className="text-foreground">GitHub → Actions → “Reporte de Flota” → Run workflow</strong>.
+              </p>
             </div>
-            <div className="mt-1 text-3xl font-extrabold">{vehicles?.length ?? "—"}</div>
-          </Card>
-          <Card className="p-4">
-            <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Mantenimiento ≤ 30 días
-            </div>
-            <div className="mt-1 text-3xl font-extrabold text-warn">
-              {vehicles === undefined ? "—" : maintenanceSoon}
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              SOAT / R. técnica ≤ 30 días
-            </div>
-            <div className="mt-1 text-3xl font-extrabold text-danger">
-              {vehicles === undefined ? "—" : docsSoon}
-            </div>
-          </Card>
-        </div>
+          ) : (
+            <>
+              <p className="mb-4 text-sm text-muted-foreground">
+                Reporte de <strong className="text-foreground">{snap.fecha}</strong> — {snapTotal}{" "}
+                unidades en parqueo (E1/E7/E12).
+              </p>
+              <div className="mb-4 flex flex-wrap gap-2">
+                <Badge tone="muted">🚗 {snapTotal} unidades</Badge>
+                <Badge tone="ok">✅ {snapLimpias} limpias</Badge>
+                <Badge tone="warn">🧼 {snapSucias} sucias</Badge>
+                <Badge tone="danger">⛽ {snapPorTanquear} por tanquear</Badge>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-border">
+                <table className="w-full min-w-[560px] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
+                      <th className="px-4 py-2.5">Nº unidad</th>
+                      <th className="px-4 py-2.5">Parqueo</th>
+                      <th className="px-4 py-2.5">Kilometraje</th>
+                      <th className="px-4 py-2.5">Combustible</th>
+                      <th className="px-4 py-2.5">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {snap.unidades.map((u) => (
+                      <tr
+                        key={`${u.unidad}-${u.ubic}`}
+                        className="border-b border-border last:border-0 hover:bg-muted/30"
+                      >
+                        <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
+                        <td className="px-4 py-2.5">
+                          <Badge tone="muted">{u.ubic}</Badge>
+                        </td>
+                        <td className="px-4 py-2.5 text-muted-foreground">
+                          {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
+                        </td>
+                        <td className="px-4 py-2.5">{u.fuel || "—"}</td>
+                        <td className="px-4 py-2.5">
+                          <Badge tone={/limpio/i.test(u.estado) ? "ok" : "warn"}>
+                            {u.estado}
+                          </Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </Card>
 
-        {/* Form */}
-        {showForm && (
-          <Card className="mb-8">
-            <h2 className="mb-4 text-lg font-bold">
-              {editingId ? `Editar unidad ${form.unitNumber || ""}` : "Nueva unidad"}
-            </h2>
-            <form onSubmit={handleSave} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div>
-                <Label>Número de unidad *</Label>
-                <Input
-                  value={form.unitNumber}
-                  onChange={(e) => setForm({ ...form, unitNumber: e.target.value })}
-                  placeholder="Ej: 42"
-                />
-              </div>
-              <div>
-                <Label>Kilometraje</Label>
-                <Input
-                  type="number"
-                  min={0}
-                  value={form.mileage}
-                  onChange={(e) => setForm({ ...form, mileage: e.target.value })}
-                  placeholder="Ej: 45230"
-                />
-              </div>
-              <div>
-                <Label>Próximo servicio (km)</Label>
-                <Input
-                  type="number"
-                  min={0}
-                  value={form.nextServiceKm}
-                  onChange={(e) => setForm({ ...form, nextServiceKm: e.target.value })}
-                  placeholder="Ej: 75000"
-                />
-              </div>
-              <div>
-                <Label>Estado</Label>
-                <div className="flex gap-2 pt-1">
-                  <Button
-                    type="button"
-                    variant={form.clean ? "primary" : "outline"}
-                    className="flex-1"
-                    onClick={() => setForm({ ...form, clean: true })}
-                  >
-                    🟢 Limpio
-                  </Button>
-                  <Button
-                    type="button"
-                    variant={!form.clean ? "primary" : "outline"}
-                    className="flex-1"
-                    onClick={() => setForm({ ...form, clean: false })}
-                  >
-                    🟡 Sucio
-                  </Button>
-                </div>
-              </div>
-              <div>
-                <Label>Próximo mantenimiento</Label>
-                <Input
-                  type="date"
-                  value={form.nextMaintenance}
-                  onChange={(e) => setForm({ ...form, nextMaintenance: e.target.value })}
-                />
-              </div>
-              <div>
-                <Label>Vencimiento SOAT</Label>
-                <Input
-                  type="date"
-                  value={form.soatExpiry}
-                  onChange={(e) => setForm({ ...form, soatExpiry: e.target.value })}
-                />
-              </div>
-              <div>
-                <Label>Revisión técnica</Label>
-                <Input
-                  type="date"
-                  value={form.revisionExpiry}
-                  onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
-                />
-              </div>
-              <div className="sm:col-span-2 lg:col-span-3">
-                <Label>Observaciones</Label>
-                <Textarea
-                  rows={2}
-                  value={form.observations}
-                  onChange={(e) => setForm({ ...form, observations: e.target.value })}
-                  placeholder="Ej: cambió de placa, próximo cambio de llantas…"
-                />
-              </div>
-
-              {error && (
-                <p className="sm:col-span-2 lg:col-span-3 rounded-xl border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
-                  {error}
-                </p>
-              )}
-
-              <div className="flex gap-3 sm:col-span-2 lg:col-span-3">
-                <Button type="submit">{editingId ? "Guardar cambios" : "Agregar unidad"}</Button>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  onClick={() => {
-                    setShowForm(false);
-                    setEditingId(null);
-                    setError(null);
-                  }}
-                >
-                  Cancelar
-                </Button>
-              </div>
-            </form>
-          </Card>
-        )}
-
-        {/* Table */}
-        {vehicles === undefined ? (
-          <Card className="p-8 text-center text-sm text-muted-foreground">Cargando unidades…</Card>
-        ) : vehicles.length === 0 && !showForm ? (
-          <Card className="p-10 text-center">
-            <div className="mb-3 text-4xl">🚗</div>
-            <p className="font-semibold">No hay flota de hoy cargada</p>
-            <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-              Carga el inventario diario (29 unidades) para ver la flota de hoy. La flota
-              base (161 unidades) queda guardada en la base de datos.
-            </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-3">
-              <Button onClick={handleApplyTodayFleet} disabled={busy}>
+        {/* Catálogo de flota (base 161) — se llena con fotos poco a poco */}
+        <section className="mt-14">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight">🗂️ Catálogo de flota (base 161)</h2>
+              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+                Las 161 unidades de la empresa. Se va completando poco a poco con las fotos que
+                se me pasen (SOAT, revisión técnica, kilometraje…). Esta sección no es la flota
+                visible del día — la visible es la de la intranet, arriba.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Button variant="outline" onClick={handleApplyTodayFleet} disabled={busy}>
                 {busy ? "Cargando…" : "Cargar flota de hoy (29)"}
               </Button>
               <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
                 {busy ? "Cargando…" : "Rellenar datos históricos"}
               </Button>
-              <Button variant="outline" onClick={handleImportFleet} disabled={busy}>
+              <Button variant="ghost" onClick={handleImportFleet} disabled={busy}>
                 {busy ? "Cargando…" : "Sembrar flota base (161)"}
               </Button>
-              <Button variant="ghost" onClick={openNew}>
-                + Nueva unidad
-              </Button>
+              <Button onClick={openNew}>+ Nueva unidad</Button>
             </div>
-          </Card>
-        ) : (
-          <div className="overflow-x-auto rounded-2xl border border-border bg-card">
-            <table className="w-full min-w-[1000px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
-                  <th className="px-4 py-3">Nº unidad</th>
-                  <th className="px-4 py-3">Kilometraje</th>
-                  <th className="px-4 py-3">Próx. servicio</th>
-                  <th className="px-4 py-3">Estado</th>
-                  <th className="px-4 py-3">Próx. mantenimiento</th>
-                  <th className="px-4 py-3">SOAT</th>
-                  <th className="px-4 py-3">Revisión técnica</th>
-                  <th className="px-4 py-3">Observaciones</th>
-                  <th className="px-4 py-3 text-right">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {vehicles.map((v) => {
-                  const maint = expiryInfo(v.nextMaintenance);
-                  const soat = expiryInfo(v.soatExpiry);
-                  const rev = expiryInfo(v.revisionExpiry);
-                  return (
-                    <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
-                      <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.mileage)}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.nextServiceKm)}</td>
-                      <td className="px-4 py-3">
-                        <Badge tone={v.clean ? "ok" : "warn"}>{v.clean ? "Limpio" : "Sucio"}</Badge>
-                      </td>
-                      <td className="px-4 py-3">
-                        <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
-                          {formatDate(v.nextMaintenance)}
-                          {maint.tone !== "none" && ` · ${maint.label}`}
-                        </Badge>
-                      </td>
-                      <td className="px-4 py-3">
-                        <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
-                          {formatDate(v.soatExpiry)}
-                          {soat.tone !== "none" && ` · ${soat.label}`}
-                        </Badge>
-                      </td>
-                      <td className="px-4 py-3">
-                        <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
-                          {formatDate(v.revisionExpiry)}
-                          {rev.tone !== "none" && ` · ${rev.label}`}
-                        </Badge>
-                      </td>
-                      <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
-                        {v.observations || "—"}
-                      </td>
-                      <td className="px-4 py-3 text-right">
-                        <div className="inline-flex gap-2">
-                          <Button variant="outline" className="px-3 py-1 text-xs" onClick={() => openEdit(v)}>
-                            Editar
-                          </Button>
-                          <Button
-                            variant="danger"
-                            className="px-3 py-1 text-xs"
-                            onClick={() => handleDelete(v._id, v.unitNumber)}
-                          >
-                            Eliminar
-                          </Button>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
           </div>
-        )}
 
-        {/* Flota intranet (sincronizada diariamente) */}
-        <Card className="mt-8">
-          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="flex items-center gap-2 text-lg font-bold">📡 Flota desde la intranet</h2>
-            {intranetSnapshot && (
-              <span className="text-xs text-muted-foreground">
-                Sincronizado {new Date(intranetSnapshot.syncedAt).toLocaleString("es-PE")}
-              </span>
-            )}
-          </div>
-          {intranetSnapshot === undefined ? (
-            <p className="text-sm text-muted-foreground">Cargando…</p>
-          ) : intranetSnapshot === null ? (
-            <div className="text-sm text-muted-foreground">
-              <p>
-                Aún no hay sincronización. El workflow de GitHub Actions extrae la flota de la
-                intranet a diario y la envía a este panel automáticamente.
-              </p>
-              <p className="mt-1">
-                Configuración pendiente: crea un bot en{" "}
-                <strong className="text-foreground">@BotFather</strong> (paso del Telegram) y agrega
-                en GitHub los secrets{" "}
-                <code className="rounded bg-muted px-1.5 py-0.5 text-xs">CONVEX_SYNC_URL</code> y{" "}
-                <code className="rounded bg-muted px-1.5 py-0.5 text-xs">FLOTA_SYNC_SECRET</code>.
-              </p>
-            </div>
-          ) : (
-            (() => {
-              const total = intranetSnapshot.unidades.length;
-              const limpias = intranetSnapshot.unidades.filter((u) =>
-                /limpio/i.test(u.estado),
-              ).length;
-              const sucias = total - limpias;
-              const porTanquear = intranetSnapshot.unidades.filter(
-                (u) => !/full/i.test(u.fuel),
-              ).length;
-              return (
-                <>
-                  <p className="mb-4 text-sm text-muted-foreground">
-                    Reporte de <strong className="text-foreground">{intranetSnapshot.fecha}</strong> —{" "}
-                    {total} unidades en parqueo (E1/E7/E12).
-                  </p>
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    <Badge tone="muted">🚗 {total} unidades</Badge>
-                    <Badge tone="ok">✅ {limpias} limpias</Badge>
-                    <Badge tone="warn">🧼 {sucias} sucias</Badge>
-                    <Badge tone="danger">⛽ {porTanquear} por tanquear</Badge>
-                  </div>
-                  <div className="overflow-x-auto rounded-xl border border-border">
-                    <table className="w-full min-w-[560px] text-left text-sm">
-                      <thead>
-                        <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
-                          <th className="px-4 py-2.5">Nº unidad</th>
-                          <th className="px-4 py-2.5">Parqueo</th>
-                          <th className="px-4 py-2.5">Kilometraje</th>
-                          <th className="px-4 py-2.5">Combustible</th>
-                          <th className="px-4 py-2.5">Estado</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {intranetSnapshot.unidades.map((u) => (
-                          <tr
-                            key={`${u.unidad}-${u.ubic}`}
-                            className="border-b border-border last:border-0 hover:bg-muted/30"
-                          >
-                            <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
-                            <td className="px-4 py-2.5">
-                              <Badge tone="muted">{u.ubic}</Badge>
-                            </td>
-                            <td className="px-4 py-2.5 text-muted-foreground">
-                              {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
-                            </td>
-                            <td className="px-4 py-2.5">{u.fuel || "—"}</td>
-                            <td className="px-4 py-2.5">
-                              <Badge tone={/limpio/i.test(u.estado) ? "ok" : "warn"}>
-                                {u.estado}
-                              </Badge>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </>
-              );
-            })()
+          {fleetMsg && (
+            <p className="mb-8 rounded-xl border border-border bg-card px-4 py-3 text-sm">{fleetMsg}</p>
           )}
-        </Card>
+
+          {/* Stats del catálogo */}
+          <div className="mb-8 grid gap-4 sm:grid-cols-3">
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Unidades hoy (catálogo)
+              </div>
+              <div className="mt-1 text-3xl font-extrabold">{vehicles?.length ?? "—"}</div>
+            </Card>
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Mantenimiento ≤ 30 días
+              </div>
+              <div className="mt-1 text-3xl font-extrabold text-warn">
+                {vehicles === undefined ? "—" : maintenanceSoon}
+              </div>
+            </Card>
+            <Card className="p-4">
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                SOAT / R. técnica ≤ 30 días
+              </div>
+              <div className="mt-1 text-3xl font-extrabold text-danger">
+                {vehicles === undefined ? "—" : docsSoon}
+              </div>
+            </Card>
+          </div>
+
+          {/* Form */}
+          {showForm && (
+            <Card className="mb-8">
+              <h2 className="mb-4 text-lg font-bold">
+                {editingId ? `Editar unidad ${form.unitNumber || ""}` : "Nueva unidad"}
+              </h2>
+              <form onSubmit={handleSave} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div>
+                  <Label>Número de unidad *</Label>
+                  <Input
+                    value={form.unitNumber}
+                    onChange={(e) => setForm({ ...form, unitNumber: e.target.value })}
+                    placeholder="Ej: 42"
+                  />
+                </div>
+                <div>
+                  <Label>Kilometraje</Label>
+                  <Input
+                    type="number"
+                    min={0}
+                    value={form.mileage}
+                    onChange={(e) => setForm({ ...form, mileage: e.target.value })}
+                    placeholder="Ej: 45230"
+                  />
+                </div>
+                <div>
+                  <Label>Próximo servicio (km)</Label>
+                  <Input
+                    type="number"
+                    min={0}
+                    value={form.nextServiceKm}
+                    onChange={(e) => setForm({ ...form, nextServiceKm: e.target.value })}
+                    placeholder="Ej: 75000"
+                  />
+                </div>
+                <div>
+                  <Label>Estado</Label>
+                  <div className="flex gap-2 pt-1">
+                    <Button
+                      type="button"
+                      variant={form.clean ? "primary" : "outline"}
+                      className="flex-1"
+                      onClick={() => setForm({ ...form, clean: true })}
+                    >
+                      🟢 Limpio
+                    </Button>
+                    <Button
+                      type="button"
+                      variant={!form.clean ? "primary" : "outline"}
+                      className="flex-1"
+                      onClick={() => setForm({ ...form, clean: false })}
+                    >
+                      🟡 Sucio
+                    </Button>
+                  </div>
+                </div>
+                <div>
+                  <Label>Próximo mantenimiento</Label>
+                  <Input
+                    type="date"
+                    value={form.nextMaintenance}
+                    onChange={(e) => setForm({ ...form, nextMaintenance: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <Label>Vencimiento SOAT</Label>
+                  <Input
+                    type="date"
+                    value={form.soatExpiry}
+                    onChange={(e) => setForm({ ...form, soatExpiry: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <Label>Revisión técnica</Label>
+                  <Input
+                    type="date"
+                    value={form.revisionExpiry}
+                    onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
+                  />
+                </div>
+                <div className="sm:col-span-2 lg:col-span-3">
+                  <Label>Observaciones</Label>
+                  <Textarea
+                    rows={2}
+                    value={form.observations}
+                    onChange={(e) => setForm({ ...form, observations: e.target.value })}
+                    placeholder="Ej: cambió de placa, próximo cambio de llantas…"
+                  />
+                </div>
+
+                {error && (
+                  <p className="sm:col-span-2 lg:col-span-3 rounded-xl border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
+                    {error}
+                  </p>
+                )}
+
+                <div className="flex gap-3 sm:col-span-2 lg:col-span-3">
+                  <Button type="submit">{editingId ? "Guardar cambios" : "Agregar unidad"}</Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => {
+                      setShowForm(false);
+                      setEditingId(null);
+                      setError(null);
+                    }}
+                  >
+                    Cancelar
+                  </Button>
+                </div>
+              </form>
+            </Card>
+          )}
+
+          {/* Tabla del catálogo */}
+          {vehicles === undefined ? (
+            <Card className="p-8 text-center text-sm text-muted-foreground">Cargando unidades…</Card>
+          ) : vehicles.length === 0 && !showForm ? (
+            <Card className="p-10 text-center">
+              <div className="mb-3 text-4xl">🚗</div>
+              <p className="font-semibold">No hay flota de hoy cargada</p>
+              <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+                Carga el inventario diario (29 unidades) para poblar el catálogo. La flota base
+                (161 unidades) se siembra con el botón de abajo y se va completando con las fotos.
+              </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-3">
+                <Button onClick={handleApplyTodayFleet} disabled={busy}>
+                  {busy ? "Cargando…" : "Cargar flota de hoy (29)"}
+                </Button>
+                <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
+                  {busy ? "Cargando…" : "Rellenar datos históricos"}
+                </Button>
+                <Button variant="outline" onClick={handleImportFleet} disabled={busy}>
+                  {busy ? "Cargando…" : "Sembrar flota base (161)"}
+                </Button>
+                <Button variant="ghost" onClick={openNew}>
+                  + Nueva unidad
+                </Button>
+              </div>
+            </Card>
+          ) : (
+            <div className="overflow-x-auto rounded-2xl border border-border bg-card">
+              <table className="w-full min-w-[1000px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
+                    <th className="px-4 py-3">Nº unidad</th>
+                    <th className="px-4 py-3">Kilometraje</th>
+                    <th className="px-4 py-3">Próx. servicio</th>
+                    <th className="px-4 py-3">Estado</th>
+                    <th className="px-4 py-3">Próx. mantenimiento</th>
+                    <th className="px-4 py-3">SOAT</th>
+                    <th className="px-4 py-3">Revisión técnica</th>
+                    <th className="px-4 py-3">Observaciones</th>
+                    <th className="px-4 py-3 text-right">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {vehicles.map((v) => {
+                    const maint = expiryInfo(v.nextMaintenance);
+                    const soat = expiryInfo(v.soatExpiry);
+                    const rev = expiryInfo(v.revisionExpiry);
+                    return (
+                      <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
+                        <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.mileage)}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.nextServiceKm)}</td>
+                        <td className="px-4 py-3">
+                          <Badge tone={v.clean ? "ok" : "warn"}>{v.clean ? "Limpio" : "Sucio"}</Badge>
+                        </td>
+                        <td className="px-4 py-3">
+                          <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
+                            {formatDate(v.nextMaintenance)}
+                            {maint.tone !== "none" && ` · ${maint.label}`}
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3">
+                          <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
+                            {formatDate(v.soatExpiry)}
+                            {soat.tone !== "none" && ` · ${soat.label}`}
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3">
+                          <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
+                            {formatDate(v.revisionExpiry)}
+                            {rev.tone !== "none" && ` · ${rev.label}`}
+                          </Badge>
+                        </td>
+                        <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
+                          {v.observations || "—"}
+                        </td>
+                        <td className="px-4 py-3 text-right">
+                          <div className="inline-flex gap-2">
+                            <Button variant="outline" className="px-3 py-1 text-xs" onClick={() => openEdit(v)}>
+                              Editar
+                            </Button>
+                            <Button
+                              variant="danger"
+                              className="px-3 py-1 text-xs"
+                              onClick={() => handleDelete(v._id, v.unitNumber)}
+                            >
+                              Eliminar
+                            </Button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
 
         {/* Telegram info */}
         <Card className="mt-8">
