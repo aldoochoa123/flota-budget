@@ -33,8 +33,8 @@ jobs:
       # https://3211-<workspace>.daytonaproxy01.net/ingest-flota
       CONVEX_SYNC_URL: ${{ secrets.CONVEX_SYNC_URL }}
       FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
-      # Modo descubrimiento (workflow_dispatch manual): vuelca los enlaces de la intranet.
-      DISCOVERY: ${{ github.event.inputs.descubrir }}
+      # Modo descubrimiento: temporalmente activo para localizar las páginas de taller.
+      DISCOVERY: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
