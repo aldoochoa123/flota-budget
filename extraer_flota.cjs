@@ -377,15 +377,31 @@ async function main() {
       const scriptsInOut = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.slice(0,6000)}).filter(function(c){return c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('$.post')>=0||c.indexOf('$.get')>=0||c.indexOf('url')>=0||c.indexOf('modalidad')>=0||c.indexOf('movimiento')>=0||c.indexOf('Guardar')>=0||c.indexOf('salida')>=0||c.indexOf('ingreso')>=0}))");
       console.log('    [inAndOut/0] SCRIPTS_AJAX: ' + (scriptsInOut.startsWith('__ERR__') ? scriptsInOut : scriptsInOut.slice(0, 9000)));
 
-      // 12) inAndOut/list: misma página pero modalidad=list — ¿carga un listado?
-      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/list'"], 20000);
+      // 12) inAndOut: volcar TODOS los scripts inline SIN filtrar (el handler de
+      //    modalidad 0/1 y el Guardar de salida/ingreso están ahí).
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
       await sleep(4000);
-      const modList = ev("var m=document.getElementById('modalidad'); (m?m.value:'SIN MODALIDAD')");
-      console.log('    [inAndOut/list] MODALIDAD: ' + modList);
-      const bodyList = ev("(document.body?document.body.innerText:'') .slice(0,2000)");
-      console.log('    [inAndOut/list] BODY: ' + (bodyList.startsWith('__ERR__') ? bodyList : bodyList.replace(/\n/g, ' | ').slice(0, 2000)));
-      const tablasList = ev("JSON.stringify([...document.querySelectorAll('table')].map(function(t){return t.outerHTML.slice(0,1200)}))");
-      console.log('    [inAndOut/list] TABLAS: ' + (tablasList.startsWith('__ERR__') ? tablasList : tablasList.slice(0, 2500)));
+      const todosScripts = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.length>300?c.slice(0,8000):''}).filter(function(c){return c.length>0}))");
+      console.log('    [inAndOut/0] TODOS_SCRIPTS: ' + (todosScripts.startsWith('__ERR__') ? todosScripts : todosScripts.slice(0, 12000)));
+
+      // 13) Probar rutas de listado de movimientos fuera de inAndOut
+      const rutasList = [
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimientosLista',
+        'https://intranet.budgetperu.com/hiker/ControlCar/listMovimientos',
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimiento',
+        'https://intranet.budgetperu.com/hiker/ControlCar/salidas',
+        'https://intranet.budgetperu.com/hiker/ControlCar/ingresos',
+        'https://intranet.budgetperu.com/hiker/ControlCar/reporteMovimientos',
+        'https://intranet.budgetperu.com/hiker/ControlCar/reportesMovimientos',
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimientosReporte',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getMovimientos/1063',
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos/1063',
+      ];
+      for (const u of rutasList) {
+        const jsx = `(function(){try{var x=new XMLHttpRequest();x.open('GET','${u}',false);x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.send();return x.status+' :: '+(x.responseText||'').slice(0,150).replace(/\\s+/g,' ');}catch(e){return 'ERR '+e.message;}})()`;
+        const r = ev(jsx);
+        console.log('    [ep2-get] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 200)));
+      }
 
       console.log('[--descubrir] Fin de la exploración.');
     }
