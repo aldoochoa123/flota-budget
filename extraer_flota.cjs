@@ -36,6 +36,11 @@ try {
 
 const USUARIO = process.env.BUDGET_USER || config.usuario;
 const PASSWORD = process.env.BUDGET_PASS || config.password;
+
+// Modo descubrimiento: activado con DISCOVERY=true (workflow manual) o --descubrir.
+// Vuelca los enlaces de la intranet relacionados con taller/movimientos para
+// encontrar las URLs de entradas y salidas de taller.
+const DISCOVERY = process.env.DISCOVERY === 'true' || process.argv.includes('--descubrir');
 const URL_LOGIN = 'https://intranet.budgetperu.com/hiker/auth/login';
 const URL_FLOTA = 'https://intranet.budgetperu.com/hiker/ControlCar/flota';
 
@@ -175,6 +180,27 @@ async function extraerFlota() {
   return unidades;
 }
 
+// ---------- Descubrimiento (modo --descubrir) ----------
+async function descubrirEnlaces() {
+  console.log('    [--descubrir] Volcando enlaces de la intranet...');
+  const js = "JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {href:(a.getAttribute('href')||''),text:(a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)}}).filter(function(l){return l.href&&/taller|movim|reporte|salida|retorno|mant|servicio|control|vehicul/i.test(l.href+' '+l.text)}))";
+  const raw = ab(['eval', js], 30000);
+  if (raw.startsWith('__ERR__')) {
+    console.log('    [--descubrir] Error evaluando enlaces: ' + raw.slice(0, 200));
+    return;
+  }
+  try {
+    const links = JSON.parse(raw);
+    const unicos = {};
+    links.forEach(l => { unicos[l.href] = unicos[l.href] || l.text; });
+    Object.keys(unicos).forEach(href => console.log('    LINK ' + href + '  =>  ' + unicos[href]));
+    console.log('    [--descubrir] Enlaces únicos con keywords: ' + Object.keys(unicos).length);
+  } catch (e) {
+    console.log('    [--descubrir] No se pudieron parsear enlaces: ' + raw.slice(0, 300));
+  }
+  console.log('    [--descubrir] URL actual: ' + ab(['get', 'url'], 15000));
+}
+
 // ---------- Snapshot JSON ----------
 function generarReporte(unidades, fecha) {
   fs.mkdirSync(PUBLIC, { recursive: true });
@@ -213,6 +239,19 @@ async function main() {
     console.log('    ✅ Verificaciones OK — ' + total + ' unidades');
 
     generarReporte(unidades, fecha);
+
+    if (DISCOVERY) {
+      console.log('[--descubrir] Explorando páginas de la intranet...');
+      // Menú principal (tras login)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/control'"], 20000);
+      await sleep(3000);
+      await descubrirEnlaces();
+      // Sección flota
+      ab(['eval', "location.href='" + URL_FLOTA + "'"], 20000);
+      await sleep(3000);
+      await descubrirEnlaces();
+      console.log('[--descubrir] Fin de la exploración.');
+    }
   }
 
   const mensaje = buildMensaje(unidades, fecha);

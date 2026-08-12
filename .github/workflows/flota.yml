@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '0 20-23,0-13 * * *'
   workflow_dispatch:
+    inputs:
+      descubrir:
+        description: "Explorar enlaces de la intranet (modo descubrimiento)"
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -28,6 +33,8 @@ jobs:
       # https://3211-<workspace>.daytonaproxy01.net/ingest-flota
       CONVEX_SYNC_URL: ${{ secrets.CONVEX_SYNC_URL }}
       FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
+      # Modo descubrimiento (workflow_dispatch manual): vuelca los enlaces de la intranet.
+      DISCOVERY: ${{ github.event.inputs.descubrir }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
