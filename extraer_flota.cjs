@@ -182,23 +182,25 @@ async function extraerFlota() {
 
 // ---------- Descubrimiento (modo --descubrir) ----------
 async function descubrirEnlaces() {
-  console.log('    [--descubrir] Volcando enlaces de la intranet...');
-  const js = "JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {href:(a.getAttribute('href')||''),text:(a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)}}).filter(function(l){return l.href&&/taller|movim|reporte|salida|retorno|mant|servicio|control|vehicul/i.test(l.href+' '+l.text)}))";
+  console.log('    [--descubrir] Volcando página: ' + ab(['get', 'url'], 15000));
+  const js = `(function(){var out={links:[],clicks:[],text:''};document.querySelectorAll('a').forEach(function(a){out.links.push({href:a.href,text:(a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)})});document.querySelectorAll('[onclick],[data-url],[data-href]').forEach(function(el){var o=el.getAttribute('onclick')||el.getAttribute('data-url')||el.getAttribute('data-href');if(o)out.clicks.push({type:el.tagName,attr:o.slice(0,140),text:(el.innerText||'').trim().replace(/\\s+/g,' ').slice(0,50)})});var nav=document.querySelector('nav,header,aside,.sidebar,#sidebar');if(nav)out.text=(nav.innerText||'').trim().replace(/\\s+/g,' | ').slice(0,1200);return JSON.stringify(out)})()`;
   const raw = ab(['eval', js], 30000);
   if (raw.startsWith('__ERR__')) {
-    console.log('    [--descubrir] Error evaluando enlaces: ' + raw.slice(0, 200));
+    console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 200));
     return;
   }
   try {
-    const links = JSON.parse(raw);
+    const d = JSON.parse(raw);
     const unicos = {};
-    links.forEach(l => { unicos[l.href] = unicos[l.href] || l.text; });
+    d.links.forEach(l => { if (l.href) unicos[l.href] = unicos[l.href] || l.text; });
     Object.keys(unicos).forEach(href => console.log('    LINK ' + href + '  =>  ' + unicos[href]));
-    console.log('    [--descubrir] Enlaces únicos con keywords: ' + Object.keys(unicos).length);
+    console.log('    [--descubrir] Total enlaces únicos: ' + Object.keys(unicos).length);
+    d.clicks.forEach(c => console.log('    CLICK <' + c.type + '> attr="' + c.attr + '"  =>  ' + c.text));
+    console.log('    [--descubrir] Total clickables: ' + d.clicks.length);
+    if (d.text) console.log('    MENU_TEXT: ' + d.text);
   } catch (e) {
-    console.log('    [--descubrir] No se pudieron parsear enlaces: ' + raw.slice(0, 300));
+    console.log('    [--descubrir] No se pudo parsear: ' + raw.slice(0, 500));
   }
-  console.log('    [--descubrir] URL actual: ' + ab(['get', 'url'], 15000));
 }
 
 // ---------- Snapshot JSON ----------
@@ -244,11 +246,11 @@ async function main() {
       console.log('[--descubrir] Explorando páginas de la intranet...');
       // Menú principal (tras login)
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/control'"], 20000);
-      await sleep(3000);
+      await sleep(4000);
       await descubrirEnlaces();
       // Sección flota
       ab(['eval', "location.href='" + URL_FLOTA + "'"], 20000);
-      await sleep(3000);
+      await sleep(4000);
       await descubrirEnlaces();
       console.log('[--descubrir] Fin de la exploración.');
     }
