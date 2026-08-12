@@ -43,6 +43,9 @@ const PASSWORD = process.env.BUDGET_PASS || config.password;
 const DISCOVERY = process.env.DISCOVERY === 'true' || process.argv.includes('--descubrir');
 const URL_LOGIN = 'https://intranet.budgetperu.com/hiker/auth/login';
 const URL_FLOTA = 'https://intranet.budgetperu.com/hiker/ControlCar/flota';
+// Lista de movimientos de taller (entradas/salidas) — módulo inAndOut.
+// Descubierto en la exploración: GET inAndOut/list responde 200 con una tabla.
+const URL_INOUT_LIST = 'https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/list';
 
 function ab(args, timeoutMs = 40000) {
   try {
@@ -80,6 +83,12 @@ async function pollUrl(needle, timeoutMs = 60000) {
 // → unidad=td[1], select de ubicación en td[2], km=td[4], fuel=td[5], estado=td[6].
 const EXTRACT_JS =
   "JSON.stringify([...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');var sel=tr.querySelector('select');return {unidad:(tds[1]?tds[1].innerText:'').trim(),ubic:sel?sel.value:'',km:(tds[4]?tds[4].innerText:'').trim(),fuel:(tds[5]?tds[5].innerText:'').trim(),estado:(tds[6]?tds[6].innerText:'').trim()}}))";
+
+// Extracción defensiva de la tabla de movimientos (inAndOut/list). Mapea columnas
+// por encabezado (unidad/fecha/tipo/reporte). Sin literales de regex ni arrow
+// functions: agent-browser@0.34.0 falla con regex y prefiere ES5.
+const EXTRACT_MOV_JS =
+  "(function(){var sp=function(s){return (s||'').trim()};var out={ok:false,why:'sin tabla',headers:[],rows:[]};var tables=document.querySelectorAll('table');if(!tables||tables.length===0)return JSON.stringify(out);var t=tables[0];out.why='sin filas';var rows=t.querySelectorAll('tbody tr');if(!rows||rows.length===0)return JSON.stringify(out);var thead=t.querySelector('thead');var headers=[];if(thead){var ths=thead.querySelectorAll('th,td');for(var i=0;i<ths.length;i++)headers.push(sp(ths[i].innerText));}out.headers=headers;var idxU=-1,idxF=-1,idxT=-1,idxR=-1;for(var i=0;i<headers.length;i++){var h=headers[i].toLowerCase();if(idxU<0&&h.indexOf('unid')>=0)idxU=i;if(idxF<0&&(h.indexOf('fecha')>=0||h.indexOf('date')>=0))idxF=i;if(idxT<0&&(h.indexOf('tipo')>=0||h.indexOf('mov')>=0||h.indexOf('modalidad')>=0||h.indexOf('ingreso')>=0||h.indexOf('salida')>=0))idxT=i;if(idxR<0&&(h.indexOf('report')>=0||h.indexOf('ra')>=0||h.indexOf('doc')>=0||h.indexOf('codigo')>=0))idxR=i;}var out2=[];for(var i=0;i<rows.length;i++){var tds=rows[i].querySelectorAll('td');if(tds.length===0)continue;var row={};if(idxU>=0)row.unidad=sp(tds[idxU].innerText);else if(tds.length>=1)row.unidad=sp(tds[0].innerText);if(idxF>=0)row.fecha=sp(tds[idxF].innerText);if(idxT>=0)row.tipo=sp(tds[idxT].innerText);if(idxR>=0)row.reportId=sp(tds[idxR].innerText);out2.push(row);}out.ok=out2.length>0;out.why=out.ok?'ok':(out2.length===0?'filas vacías':'sin mapeo');out.rows=out2.slice(0,1500);return JSON.stringify(out)})()";
 
 const fmtKm = v => (+v).toLocaleString('es-PE');
 
@@ -213,13 +222,49 @@ async function descubrirEnlaces() {
   d.inputs.forEach(i => console.log('    INPUT: ' + i));
 }
 
+// ---------- Movimientos de taller (inAndOut/list) ----------
+async function extraerMovimientos() {
+  console.log('    [taller] Abriendo lista de movimientos (inAndOut/list)...');
+  ab(['eval', "location.href='" + URL_INOUT_LIST + "'"], 20000);
+  await sleep(4500);
+  const raw = ab(['eval', EXTRACT_MOV_JS], 30000);
+  if (raw.startsWith('__ERR__')) {
+    console.log('    [taller] ⚠️ No se pudo evaluar la página: ' + raw.slice(0, 160));
+    return [];
+  }
+  let d;
+  try {
+    d = JSON.parse(raw);
+    if (typeof d === 'string') d = JSON.parse(d);
+  } catch (e) {
+    console.log('    [taller] ⚠️ No se pudo parsear la respuesta: ' + raw.slice(0, 300));
+    return [];
+  }
+  if (!d || !d.ok) {
+    console.log('    [taller] ⚠️ Sin movimientos (' + (d && d.why ? d.why : 'respuesta vacía') + '). Cabeceras: ' + JSON.stringify((d && d.headers) || []));
+    return [];
+  }
+  const movimientos = d.rows
+    .map(r => ({
+      unidad: String(r.unidad || '').trim(),
+      fecha: String(r.fecha || '').trim(),
+      tipo: String(r.tipo || '').trim(),
+      reportId: r.reportId ? String(r.reportId).trim() : undefined,
+    }))
+    .filter(m => m.unidad && m.tipo);
+  console.log('    [taller] ✅ ' + movimientos.length + ' movimientos extraídos (' + d.headers.join(' | ') + ')');
+  return movimientos;
+}
+
 // ---------- Snapshot JSON ----------
-function generarReporte(unidades, fecha) {
+function generarReporte(unidades, fecha, movimientos) {
   fs.mkdirSync(PUBLIC, { recursive: true });
   // Solo el JSON: NO se genera public/index.html porque la app React usa el
   // index.html raíz y public/index.html la pisotearía en dev y en build.
-  fs.writeFileSync(path.join(PUBLIC, 'flota_data.json'), JSON.stringify({ fecha, unidades }, null, 2));
-  console.log('    📄 Snapshot guardado en public/flota_data.json (' + unidades.length + ' unidades)');
+  const snapshot = { fecha, unidades };
+  if (movimientos && movimientos.length > 0) snapshot.movimientos = movimientos;
+  fs.writeFileSync(path.join(PUBLIC, 'flota_data.json'), JSON.stringify(snapshot, null, 2));
+  console.log('    📄 Snapshot guardado en public/flota_data.json (' + unidades.length + ' unidades, ' + (movimientos ? movimientos.length : 0) + ' movimientos)');
 }
 
 // ---------- Main ----------
@@ -228,15 +273,31 @@ async function main() {
 
   let unidades;
   let fecha;
+  let movimientos = [];
   if (soloMensaje) {
     const json = JSON.parse(fs.readFileSync(path.join(PUBLIC, 'flota_data.json'), 'utf8'));
     unidades = json.unidades;
     fecha = json.fecha;
+    movimientos = json.movimientos || [];
     console.log('Modo prueba de mensaje (sin enviar). Datos de: ' + fecha);
   } else {
     if (!USUARIO || !PASSWORD) throw new Error('Faltan credenciales (BUDGET_USER/BUDGET_PASS o config.json)');
     unidades = await extraerFlota();
-    fecha = new Date().toLocaleString('es-PE', { dateStyle: 'short', timeStyle: 'short' });
+    // GitHub Actions corre en UTC; forzamos la zona horaria de Lima para que la
+    // fecha del reporte coincida con la hora local de Perú (UTC-5).
+    fecha = new Date().toLocaleString('es-PE', {
+      timeZone: 'America/Lima',
+      dateStyle: 'short',
+      timeStyle: 'short',
+    });
+
+    // Movimientos de taller: opcionales — un fallo aquí no rompe el reporte.
+    try {
+      movimientos = await extraerMovimientos();
+    } catch (e) {
+      console.log('    [taller] ⚠️ No se pudieron extraer movimientos: ' + e.message);
+      movimientos = [];
+    }
 
     // Verificaciones
     let fallos = 0;
@@ -248,9 +309,14 @@ async function main() {
     check(limpias + sucias === total, 'Limpio + Sucio = total (' + limpias + ' + ' + sucias + ' = ' + total + ')');
     check(unidades.every(u => /^(E1|E7|E12)$/.test(u.ubic)), 'Ubicaciones válidas (E1/E7/E12)');
     if (fallos > 0) throw new Error(fallos + ' verificación(es) fallaron');
+    if (movimientos.length > 0) {
+      const salidas = movimientos.filter(m => m.tipo.toLowerCase().indexOf('salida') >= 0).length;
+      const retornos = movimientos.filter(m => m.tipo.toLowerCase().indexOf('retorno') >= 0).length;
+      console.log('    [taller] Resumen: ' + salidas + ' salidas · ' + retornos + ' retornos · ' + (movimientos.length - salidas - retornos) + ' otros');
+    }
     console.log('    ✅ Verificaciones OK — ' + total + ' unidades');
 
-    generarReporte(unidades, fecha);
+    generarReporte(unidades, fecha, movimientos);
 
     if (DISCOVERY) {
       console.log('[--descubrir] Explorando páginas de la intranet...');

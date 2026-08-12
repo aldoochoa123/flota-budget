@@ -33,8 +33,9 @@ jobs:
       # https://3211-<workspace>.daytonaproxy01.net/ingest-flota
       CONVEX_SYNC_URL: ${{ secrets.CONVEX_SYNC_URL }}
       FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
-      # Modo descubrimiento: temporalmente activo para localizar las páginas de taller.
-      DISCOVERY: 'true'
+      # Modo descubrimiento (manual, con workflow_dispatch inputs.descubrir):
+      # off en producción. La extracción de taller (inAndOut/list) es parte del flujo normal.
+      DISCOVERY: 'false'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
