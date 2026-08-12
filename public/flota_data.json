@@ -1,5 +1,5 @@
 {
-  "fecha": "12/08/26, 2:56 p. m.",
+  "fecha": "12/08/26, 2:59 p. m.",
   "unidades": [
     {
       "unidad": "260",
@@ -40,13 +40,6 @@
       "unidad": "943",
       "ubic": "E7",
       "km": "104042",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "1068",
-      "ubic": "E1",
-      "km": "10784",
       "fuel": "Full",
       "estado": "Limpio"
     },
