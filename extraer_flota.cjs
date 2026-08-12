@@ -250,13 +250,14 @@ async function main() {
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar'"], 20000);
       await sleep(5000);
       await descubrirEnlaces();
-      // Página de detalle por unidad (¿historial de reportes?)
+      // Páginas de Ingreso/Salida (taller) del módulo ControlCar
       const probar = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/flota/501',
+        'https://intranet.budgetperu.com/hiker/ControlCar/ingreso',
+        'https://intranet.budgetperu.com/hiker/ControlCar/salida',
       ];
       for (const u of probar) {
         ab(['eval', "location.href='" + u + "'"], 20000);
-        await sleep(4000);
+        await sleep(4500);
         console.log('    --- Probando: ' + u);
         await descubrirEnlaces();
       }
