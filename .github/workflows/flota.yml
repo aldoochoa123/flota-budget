@@ -55,8 +55,10 @@ jobs:
             agentbrowser-${{ runner.os }}-
 
       - name: Instalar agent-browser
+        # 0.34.0 fijado: versiones posteriores rompen eval con regex ("Invalid
+        # regular expression: missing /"). Verificado localmente.
         run: |
-          npm i -g agent-browser
+          npm i -g agent-browser@0.34.0
           echo "$(npm config get prefix)/bin" >> "$GITHUB_PATH"
 
       - name: Instalar Chrome
