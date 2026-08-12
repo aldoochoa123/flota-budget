@@ -183,22 +183,26 @@ async function extraerFlota() {
 // ---------- Descubrimiento (modo --descubrir) ----------
 async function descubrirEnlaces() {
   console.log('    [--descubrir] Volcando página: ' + ab(['get', 'url'], 15000));
-  const js = `(function(){var out={links:[],text:'',table:'',menciones:[]};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2500);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,2500);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<40;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}return JSON.stringify(out)})()`;
+  // Nota: agent-browser devuelve el JSON de string con comillas extra → doble parse.
+  const js = `(function(){var out={links:[],text:'',table:'',menciones:[],items:{}};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2000);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,1600);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<30;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte|ingreso/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}['Ingreso','Salida','Buscar RA','Flota'].forEach(function(term){var found=null;for(var i=0;i<all.length;i++){var el=all[i];var t=(el.childNodes.length===1&&el.childNodes[0].nodeType===3)?el.textContent.trim():'';if(t===term){found=el;break;}}if(found){var chain=[];var cur=found;for(var k=0;k<5&&cur;k++){chain.push(cur.outerHTML.slice(0,260));cur=cur.parentElement;}out.items[term]=chain.join(' || ');}});return JSON.stringify(out)})()`;
   const raw = ab(['eval', js], 30000);
   if (raw.startsWith('__ERR__')) {
     console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 200));
     return;
   }
+  let d;
   try {
-    const d = JSON.parse(raw);
-    d.links.forEach(l => console.log('    LINK ' + l));
-    console.log('    [--descubrir] Total links /hiker/: ' + d.links.length);
-    console.log('    BODY_TEXT: ' + d.text.replace(/\n/g, ' \\n '));
-    if (d.table) console.log('    TABLE_HTML: ' + d.table.slice(0, 2200));
-    d.menciones.forEach(m => console.log('    MENCION ' + m));
+    d = JSON.parse(raw);
+    if (typeof d === 'string') d = JSON.parse(d);
   } catch (e) {
     console.log('    [--descubrir] No se pudo parsear: ' + raw.slice(0, 600));
+    return;
   }
+  d.links.forEach(l => console.log('    LINK ' + l));
+  console.log('    BODY_TEXT: ' + d.text.replace(/\n/g, ' \\n '));
+  if (d.table) console.log('    TABLE_HTML: ' + d.table.slice(0, 1500));
+  d.menciones.forEach(m => console.log('    MENCION ' + m));
+  Object.keys(d.items).forEach(k => console.log('    ITEM[' + k + ']: ' + d.items[k]));
 }
 
 // ---------- Snapshot JSON ----------
@@ -250,17 +254,16 @@ async function main() {
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar'"], 20000);
       await sleep(5000);
       await descubrirEnlaces();
-      // Páginas de Ingreso/Salida (taller) del módulo ControlCar
-      const probar = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/ingreso',
-        'https://intranet.budgetperu.com/hiker/ControlCar/salida',
-      ];
-      for (const u of probar) {
-        ab(['eval', "location.href='" + u + "'"], 20000);
-        await sleep(4500);
-        console.log('    --- Probando: ' + u);
-        await descubrirEnlaces();
-      }
+      // Raíz del módulo: aquí está el menú (Ingreso/Salida/Flota/Buscar RA)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar'"], 20000);
+      await sleep(4500);
+      console.log('    --- Menú del módulo ControlCar');
+      await descubrirEnlaces();
+      // Página de flota: tabla + columnas
+      ab(['eval', "location.href='" + URL_FLOTA + "'"], 20000);
+      await sleep(4500);
+      console.log('    --- Página de flota');
+      await descubrirEnlaces();
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
