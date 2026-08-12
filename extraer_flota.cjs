@@ -287,36 +287,39 @@ async function main() {
       const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
       console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
 
-      // 5) Llamar validateExistence y capturar la RESPUESTA completa (¿historial?)
-      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
+      // 5) Flota: encontrar el AJAX del DataTable (¿source JSON? ¿endpoints hermanos?)
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 20000);
       await sleep(4000);
-      const jsx = `(function(){
-        try{
-          var x=new XMLHttpRequest();
-          x.open('POST','https://intranet.budgetperu.com/hiker/ControlCar/validateExistence/',false);
-          x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-          x.setRequestHeader('X-Requested-With','XMLHttpRequest');
-          x.setRequestHeader('X-CSRF-TOKEN',(document.querySelector('meta[name=csrf-token]')||{content:''}).content);
-          x.send('unidad=1063');
-          return x.status+' :: '+(x.responseText||'').slice(0,3000);
-        }catch(e){return 'ERR '+e.message;}
-      })()`;
-      const resp = ev(jsx);
-      console.log('    [validateExistence] 1063: ' + (resp.startsWith('__ERR__') ? resp : resp));
-
-      // 6) Volcar TODOS los scripts inline de la página inAndOut (buscar rutas del router)
-      const dumpScripts = `(function(){
+      const dtScript = `(function(){
         var out=[];
         document.querySelectorAll('script:not([src])').forEach(function(s){
           var c=(s.textContent||'');
-          if(c.indexOf('url:')>=0||c.indexOf('$.post')>=0||c.indexOf('$.ajax')>=0||c.indexOf('fetch(')>=0||c.indexOf('window.location')>=0||c.indexOf('route(')>=0){
-            out.push(c.slice(0,2500));
+          if(c.indexOf('DataTable')>=0||c.indexOf('dataTable')>=0||c.indexOf('ajax')>=0||c.indexOf('url')>=0){
+            out.push(c.slice(0,3000));
           }
         });
         return out.join('\n=====\n');
       })()`;
-      const sc = ev(dumpScripts);
-      console.log('    [scripts-inline] inAndOut: ' + (sc.startsWith('__ERR__') ? sc : sc.slice(0, 6000)));
+      const sc = ev(dtScript);
+      console.log('    [dt-scripts] flota: ' + (sc.startsWith('__ERR__') ? sc : sc.slice(0, 6500)));
+      // ¿Hay un endpoint de datos visible en el DOM (data-source, url en la tabla)?
+      const tabUrl = ev("var t=document.querySelector('#tbody-content'); (t?JSON.stringify({src:t.getAttribute('data-src'),url:t.getAttribute('data-url'),ajax:t.getAttribute('data-ajax')}):'NO TABLE')");
+      console.log('    [tabla] DATOS: ' + (tabUrl.startsWith('__ERR__') ? tabUrl : tabUrl));
+      // Probar endpoints hermanos de getFlota (GET)
+      const eps = [
+        'https://intranet.budgetperu.com/hiker/ControlCar/getFlota',
+        'https://intranet.budgetperu.com/hiker/ControlCar/flotaData',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getFlotaData',
+        'https://intranet.budgetperu.com/hiker/ControlCar/data',
+        'https://intranet.budgetperu.com/hiker/ControlCar/list',
+        'https://intranet.budgetperu.com/hiker/ControlCar/lista',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getCar',
+      ];
+      for (const u of eps) {
+        const jsx = `(function(){try{var x=new XMLHttpRequest();x.open('GET','${u}',false);x.setRequestHeader('X-Requested-With','XMLHttpRequest');x.send();return x.status+' :: '+(x.responseText||'').slice(0,200).replace(/\\s+/g,' ');}catch(e){return 'ERR '+e.message;}})()`;
+        const r = ev(jsx);
+        console.log('    [ep-get] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r.slice(0, 300)));
+      }
 
       console.log('[--descubrir] Fin de la exploración.');
     }
