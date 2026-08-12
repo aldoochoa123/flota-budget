@@ -287,7 +287,27 @@ async function main() {
       const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
       console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
 
-      // 5) Probar rutas candidatas: detalle de RA / reporte / vehículo
+      // 5) Formulario de Salida: buscar unidad → ¿muestra historial de movimientos?
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
+      await sleep(4000);
+      // Hook de fetch/XHR para capturar endpoints AJAX
+      ev("window.__reqs=[]; var oFetch=window.fetch; window.fetch=function(u,o){try{window.__reqs.push(String(u));}catch(e){} return oFetch.apply(this,arguments);}; var oOpen=XMLHttpRequest.prototype.open; XMLHttpRequest.prototype.open=function(m,u){try{window.__reqs.push(String(u));}catch(e){} return oOpen.apply(this,arguments);}; 'ok'");
+      // Buscar la unidad 1063 en el formulario de salida
+      const buscaUnidad = ev("var b=document.querySelector('.next-unidad, button.next'); if(b){b.click(); 'clicked-next';} else {var inp=document.getElementById('unidad'); if(inp){inp.value='1063';} 'no-next-btn';}");
+      console.log('    [salida] PASO_BUSCAR: ' + (buscaUnidad.startsWith('__ERR__') ? buscaUnidad : buscaUnidad));
+      await sleep(2500);
+      // ¿Hay un botón de búsqueda o input adicional?
+      const salidaInputs = ev("JSON.stringify([...document.querySelectorAll('input,select,button')].map(function(el){return {id:el.id||'',cls:(el.className||'').toString().slice(0,50),type:el.type||'',placeholder:el.getAttribute('placeholder')||'',text:(el.innerText||'').trim().slice(0,30)}}).filter(function(x){return x.id||x.placeholder||x.text}))");
+      console.log('    [salida] INPUTS: ' + (salidaInputs.startsWith('__ERR__') ? salidaInputs : salidaInputs.slice(0, 2000)));
+      // Probar llenar el input de unidad del formulario y disparar el evento
+      ev("var inp=document.getElementById('unidad'); if(inp){inp.value='1063'; var evt=new Event('change',{bubbles:true}); inp.dispatchEvent(evt);} 'ok'");
+      await sleep(2500);
+      const salidaBody = ev("(document.body.innerText||'').slice(0,900)");
+      console.log('    [salida] BODY_TRAS_BUSCAR: ' + (salidaBody.startsWith('__ERR__') ? salidaBody : salidaBody.replace(/\n/g, ' | ').slice(0, 900)));
+      const reqs = ev("JSON.stringify(window.__reqs||[])");
+      console.log('    [salida] REQUESTS: ' + (reqs.startsWith('__ERR__') ? reqs : reqs.slice(0, 2000)));
+
+      // 6) Probar rutas candidatas: detalle de RA / reporte / vehículo
       const rutas = [
         'https://intranet.budgetperu.com/hiker/ControlCar/ra/511102793',
         'https://intranet.budgetperu.com/hiker/ControlCar/reporte/511102793',
