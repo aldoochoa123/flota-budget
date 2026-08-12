@@ -377,12 +377,12 @@ async function main() {
       const scriptsInOut = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.slice(0,6000)}).filter(function(c){return c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('$.post')>=0||c.indexOf('$.get')>=0||c.indexOf('url')>=0||c.indexOf('modalidad')>=0||c.indexOf('movimiento')>=0||c.indexOf('Guardar')>=0||c.indexOf('salida')>=0||c.indexOf('ingreso')>=0}))");
       console.log('    [inAndOut/0] SCRIPTS_AJAX: ' + (scriptsInOut.startsWith('__ERR__') ? scriptsInOut : scriptsInOut.slice(0, 9000)));
 
-      // 12) inAndOut: volcar TODOS los scripts inline SIN filtrar (el handler de
-      //    modalidad 0/1 y el Guardar de salida/ingreso están ahí).
+      // 12) inAndOut: volcar los scripts que mencionan modalidad/Guardar/save/
+      //    validateExistence/salida/ingreso (los handlers del SPA).
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
       await sleep(4000);
-      const todosScripts = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c.length>300?c.slice(0,8000):''}).filter(function(c){return c.length>0}))");
-      console.log('    [inAndOut/0] TODOS_SCRIPTS: ' + (todosScripts.startsWith('__ERR__') ? todosScripts : todosScripts.slice(0, 12000)));
+      const scriptsHandler = ev("JSON.stringify([...document.querySelectorAll('script:not([src])')].map(function(s){var c=(s.textContent||'');return c}).filter(function(c){return c.indexOf('modalidad')>=0||c.indexOf('Guardar')>=0||c.indexOf('save')>=0||c.indexOf('validateExistence')>=0||c.indexOf('guardar')>=0||c.indexOf('swal')>=0}))");
+      console.log('    [inAndOut/0] SCRIPTS_HANDLER: ' + (scriptsHandler.startsWith('__ERR__') ? scriptsHandler : scriptsHandler.slice(0, 11000)));
 
       // 13) Probar rutas de listado de movimientos fuera de inAndOut
       const rutasList = [
