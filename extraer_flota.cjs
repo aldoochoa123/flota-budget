@@ -183,7 +183,7 @@ async function extraerFlota() {
 // ---------- Descubrimiento (modo --descubrir) ----------
 async function descubrirEnlaces() {
   console.log('    [--descubrir] Volcando página: ' + ab(['get', 'url'], 15000));
-  const js = `(function(){var out={links:[],wires:[],text:'',tables:[]};document.querySelectorAll('a').forEach(function(a){out.links.push({href:a.href,text:(a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)})});document.querySelectorAll('[wire\\:click],[wire\\:target],[data-url],[data-href],[onclick]').forEach(function(el){var o=el.getAttribute('wire:click')||el.getAttribute('wire:target')||el.getAttribute('data-url')||el.getAttribute('data-href')||el.getAttribute('onclick');if(o)out.wires.push({type:el.tagName,attr:o.slice(0,120),text:(el.innerText||'').trim().replace(/\\s+/g,' ').slice(0,50)})});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2500);document.querySelectorAll('table').forEach(function(t,i){if(i<3)out.tables.push(t.outerHTML.slice(0,1800))});return JSON.stringify(out)})()`;
+  const js = `(function(){var out={links:[],text:'',table:'',menciones:[]};document.querySelectorAll('a').forEach(function(a){var h=a.getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+'  =>  '+((a.innerText||'').trim().replace(/\\s+/g,' ').slice(0,60)))});var body=document.body;if(body)out.text=body.innerText.replace(/\\n{3,}/g,'\\n\\n').slice(0,2500);var t=document.querySelector('table');if(t)out.table=t.outerHTML.slice(0,2500);var all=document.querySelectorAll('*');var n=0;for(var i=0;i<all.length&&n<40;i++){var el=all[i];var txt=(el.innerText||'').trim().replace(/\\s+/g,' ');if(/taller|movimiento|mantenimiento|salida|retorno|reporte/i.test(txt)&&txt.length<60){out.menciones.push(el.tagName+': '+txt.slice(0,60));n++;}}return JSON.stringify(out)})()`;
   const raw = ab(['eval', js], 30000);
   if (raw.startsWith('__ERR__')) {
     console.log('    [--descubrir] Error evaluando: ' + raw.slice(0, 200));
@@ -191,14 +191,11 @@ async function descubrirEnlaces() {
   }
   try {
     const d = JSON.parse(raw);
-    const unicos = {};
-    d.links.forEach(l => { if (l.href) unicos[l.href] = unicos[l.href] || l.text; });
-    Object.keys(unicos).forEach(href => console.log('    LINK ' + href + '  =>  ' + unicos[href]));
-    console.log('    [--descubrir] Total enlaces: ' + Object.keys(unicos).length);
-    d.wires.forEach(w => console.log('    WIRE <' + w.type + '> attr="' + w.attr + '"  =>  ' + w.text));
-    if (d.wires.length === 0) console.log('    (sin wire:/clickables)');
+    d.links.forEach(l => console.log('    LINK ' + l));
+    console.log('    [--descubrir] Total links /hiker/: ' + d.links.length);
     console.log('    BODY_TEXT: ' + d.text.replace(/\n/g, ' \\n '));
-    d.tables.forEach((t, i) => console.log('    TABLE_' + i + ': ' + t.slice(0, 1500)));
+    if (d.table) console.log('    TABLE_HTML: ' + d.table.slice(0, 2200));
+    d.menciones.forEach(m => console.log('    MENCION ' + m));
   } catch (e) {
     console.log('    [--descubrir] No se pudo parsear: ' + raw.slice(0, 600));
   }
@@ -253,20 +250,15 @@ async function main() {
       ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar'"], 20000);
       await sleep(5000);
       await descubrirEnlaces();
-      // Candidatos a taller/movimientos (404 si no existen)
-      const candidatos = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/taller',
-        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos',
-        'https://intranet.budgetperu.com/hiker/ControlCar/reportes',
-        'https://intranet.budgetperu.com/hiker/ControlCar/documentos',
-        'https://intranet.budgetperu.com/hiker/ControlCar/flota/reportes',
+      // Página de detalle por unidad (¿historial de reportes?)
+      const probar = [
+        'https://intranet.budgetperu.com/hiker/ControlCar/flota/501',
       ];
-      for (const u of candidatos) {
+      for (const u of probar) {
         ab(['eval', "location.href='" + u + "'"], 20000);
-        await sleep(3500);
-        const url = ab(['get', 'url'], 15000);
-        const raw = ab(['eval', '(document.body?document.body.innerText.replace(/\\n{3,}/g,\'\\n\\n\').slice(0,700):"")'], 15000);
-        console.log('    CANDIDATO ' + u + '  →  URL final: ' + url + '  |  texto: ' + (raw || '').replace(/\n/g, ' ').slice(0, 200));
+        await sleep(4000);
+        console.log('    --- Probando: ' + u);
+        await descubrirEnlaces();
       }
       console.log('[--descubrir] Fin de la exploración.');
     }
