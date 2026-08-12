@@ -287,40 +287,48 @@ async function main() {
       const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
       console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
 
-      // 5) Formulario de Salida: llenar unidad PRIMERO y luego Buscar
-      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/inAndOut/0'"], 20000);
-      await sleep(4000);
-      // Hook de fetch/XHR ANTES de interactuar
-      ev("window.__reqs=[]; var oFetch=window.fetch; window.fetch=function(u,o){try{window.__reqs.push('FETCH '+String(u));}catch(e){} return oFetch.apply(this,arguments);}; var oOpen=XMLHttpRequest.prototype.open; XMLHttpRequest.prototype.open=function(m,u){try{window.__reqs.push(m+' '+String(u));}catch(e){} return oOpen.apply(this,arguments);}; 'ok'");
-      // Llenar unidad
-      ev("var inp=document.getElementById('unidad'); if(inp){inp.value='1063'; inp.dispatchEvent(new Event('input',{bubbles:true}));} 'ok'");
-      await sleep(800);
-      // Click en Buscar (next-unidad)
-      ev("var b=document.querySelector('.next-unidad'); if(b){b.click(); 'clicked';} else 'no-btn'");
-      await sleep(3500);
-      const salidaBody = ev("(document.body.innerText||'').slice(0,1200)");
-      console.log('    [salida] BODY_TRAS_BUSCAR: ' + (salidaBody.startsWith('__ERR__') ? salidaBody : salidaBody.replace(/\n/g, ' | ').slice(0, 1200)));
-      const reqs = ev("JSON.stringify(window.__reqs||[])");
-      console.log('    [salida] REQUESTS: ' + (reqs.startsWith('__ERR__') ? reqs : reqs.slice(0, 2500)));
-      // ¿Cambió la URL?
-      console.log('    [salida] URL_ACTUAL: ' + ab(['get', 'url'], 15000));
+      // 5) Volcar TODOS los scripts inline de las páginas (buscar rutas del router)
+      const dumpScripts = `(function(){
+        var out=[];
+        document.querySelectorAll('script:not([src])').forEach(function(s){
+          var c=(s.textContent||'');
+          if(c.indexOf('location')>=0||c.indexOf('href')>=0||c.indexOf('route')>=0||c.indexOf('ControlCar')>=0||c.indexOf('ajax')>=0||c.indexOf('fetch')>=0||c.indexOf('movim')>=0||c.indexOf('reporte')>=0||c.indexOf('history')>=0){
+            out.push(c.slice(0,2000));
+          }
+        });
+        return out.join('\n=====\n');
+      })()`;
+      const sc = ev(dumpScripts);
+      console.log('    [scripts-inline] flota: ' + (sc.startsWith('__ERR__') ? sc : sc.slice(0, 5500)));
 
-      // 6) Probar rutas candidatas: detalle de RA / reporte / vehículo
-      const rutas = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/ra/511102793',
-        'https://intranet.budgetperu.com/hiker/ControlCar/reporte/511102793',
-        'https://intranet.budgetperu.com/hiker/ControlCar/vehiculo/1063',
-        'https://intranet.budgetperu.com/hiker/ControlCar/reporte/1063',
-        'https://intranet.budgetperu.com/hiker/ControlCar/inspecciones',
+      // 6) Probar endpoints AJAX candidatos del controlador (POST, como validateExistence)
+      //    Usa XHR síncrono para que eval pueda leer la respuesta inmediatamente.
+      const ep = [
+        'https://intranet.budgetperu.com/hiker/ControlCar/movements/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getMovements/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/history/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/reportes/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getReports/',
+        'https://intranet.budgetperu.com/hiker/ControlCar/getReportes/',
       ];
-      for (const u of rutas) {
-        ab(['eval', "location.href='" + u + "'"], 20000);
-        await sleep(3500);
-        const url = ab(['get', 'url'], 15000);
-        const body = ev("(document.body.innerText||'').slice(0,250)");
-        console.log('    [ruta] ' + u + ' → URL=' + url + ' BODY=' + (body.startsWith('__ERR__') ? body : body.replace(/\n/g, ' | ').slice(0, 250)));
+      for (const u of ep) {
+        ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/flota'"], 15000);
+        await sleep(2500);
+        const jsx = `(function(){
+          try{
+            var x=new XMLHttpRequest();
+            x.open('POST','${u}',false);
+            x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            x.setRequestHeader('X-Requested-With','XMLHttpRequest');
+            x.send('unidad=1063');
+            var body=(x.responseText||'').slice(0,300).replace(/\\n/g,' ');
+            return x.status+' :: '+body;
+          }catch(e){return 'ERR '+e.message;}
+        })()`;
+        const r = ev(jsx);
+        console.log('    [ep] ' + u + ' → ' + (r.startsWith('__ERR__') ? r : r));
       }
-
       console.log('[--descubrir] Fin de la exploración.');
     }
   }
