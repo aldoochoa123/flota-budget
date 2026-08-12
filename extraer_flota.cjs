@@ -272,19 +272,35 @@ async function main() {
       const fila = ev("var tr=document.querySelectorAll('table tbody tr')[0]; (tr?tr.outerHTML:'NO ROW').slice(0,2500)");
       console.log('    [flota] FILA_COMPLETA: ' + (fila.startsWith('__ERR__') ? fila : fila));
 
-      // 4) Probar rutas candidatas para el historial de movimientos/reportes
+      // 4) Buscar RA: ver cómo envía el formulario y probar búsqueda por número de RA
+      ab(['eval', "location.href='https://intranet.budgetperu.com/hiker/ControlCar/buscarRa'"], 20000);
+      await sleep(3500);
+      const formRa = ev("var f=document.querySelector('form'); (f?f.outerHTML:'NO FORM').slice(0,1200)");
+      console.log('    [buscarRa] FORM: ' + (formRa.startsWith('__ERR__') ? formRa : formRa));
+      // Búsqueda por el número de RA que devolvió la búsqueda anterior (511102793)
+      ev("document.getElementById('search').value='511102793'");
+      await sleep(300);
+      ev("(document.querySelector('button[type=submit]')||document.querySelector('form')).click()");
+      await sleep(3500);
+      const tablaPorRa = ev("var t=document.querySelectorAll('table')[0]; (t?t.innerText:'NO TABLA').slice(0,500)");
+      console.log('    [buscarRa] BUSQUEDA_POR_RA: ' + (tablaPorRa.startsWith('__ERR__') ? tablaPorRa : tablaPorRa.replace(/\n/g, ' | ')));
+      const linksPorRa = ev("JSON.stringify([...document.querySelectorAll('a')].map(function(a){return {text:(a.innerText||'').trim().slice(0,40),href:a.getAttribute('href')||''}}).filter(function(x){return x.href.indexOf('ControlCar')>=0&&x.href!==location.href}))");
+      console.log('    [buscarRa] LINKS_POR_RA: ' + (linksPorRa.startsWith('__ERR__') ? linksPorRa : linksPorRa.slice(0, 1500)));
+
+      // 5) Probar rutas candidatas: detalle de RA / reporte / vehículo
       const rutas = [
-        'https://intranet.budgetperu.com/hiker/ControlCar/reportes',
-        'https://intranet.budgetperu.com/hiker/ControlCar/historial',
-        'https://intranet.budgetperu.com/hiker/ControlCar/movimientos',
-        'https://intranet.budgetperu.com/hiker/reportes',
+        'https://intranet.budgetperu.com/hiker/ControlCar/ra/511102793',
+        'https://intranet.budgetperu.com/hiker/ControlCar/reporte/511102793',
+        'https://intranet.budgetperu.com/hiker/ControlCar/vehiculo/1063',
+        'https://intranet.budgetperu.com/hiker/ControlCar/reporte/1063',
+        'https://intranet.budgetperu.com/hiker/ControlCar/inspecciones',
       ];
       for (const u of rutas) {
         ab(['eval', "location.href='" + u + "'"], 20000);
         await sleep(3500);
         const url = ab(['get', 'url'], 15000);
-        const body = ev("(document.body.innerText||'').slice(0,300)");
-        console.log('    [ruta] ' + u + ' → URL=' + url + ' BODY=' + (body.startsWith('__ERR__') ? body : body.replace(/\n/g, ' | ').slice(0, 300)));
+        const body = ev("(document.body.innerText||'').slice(0,250)");
+        console.log('    [ruta] ' + u + ' → URL=' + url + ' BODY=' + (body.startsWith('__ERR__') ? body : body.replace(/\n/g, ' | ').slice(0, 250)));
       }
 
       console.log('[--descubrir] Fin de la exploración.');
