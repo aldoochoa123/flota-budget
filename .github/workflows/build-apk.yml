@@ -33,7 +33,10 @@ jobs:
         run: npm run build
 
       - name: Copiar archivos web a Android nativo
-        run: npx cap copy android
+        run: |
+          mkdir -p android/app/src/main/assets/public
+          cp -r dist/* android/app/src/main/assets/public/
+          cp capacitor.config.json android/app/src/main/assets/capacitor.config.json
 
       - name: Dar permisos de ejecución a Gradle
         run: chmod +x android/gradlew
