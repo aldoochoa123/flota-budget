@@ -777,27 +777,6 @@ export default function Dashboard() {
                     />
                   </div>
                   <div>
-                    <Label>Estado de la Unidad</Label>
-                    <div className="flex gap-2 pt-1">
-                      <Button
-                        type="button"
-                        variant={form.clean ? "primary" : "outline"}
-                        className={`flex-1 ${form.clean ? "bg-ok/20 border-ok/40 text-ok font-bold" : ""}`}
-                        onClick={() => setForm({ ...form, clean: true })}
-                      >
-                        🟢 Limpio
-                      </Button>
-                      <Button
-                        type="button"
-                        variant={!form.clean ? "primary" : "outline"}
-                        className={`flex-1 ${!form.clean ? "bg-warn/20 border-warn/40 text-warn font-bold" : ""}`}
-                        onClick={() => setForm({ ...form, clean: false })}
-                      >
-                        🟡 Sucio
-                      </Button>
-                    </div>
-                  </div>
-                  <div>
                     <Label>Vencimiento SOAT</Label>
                     <Input
                       type="date"
@@ -805,21 +784,12 @@ export default function Dashboard() {
                       onChange={(e) => setForm({ ...form, soatExpiry: e.target.value })}
                     />
                   </div>
-                  <div className="sm:col-span-2">
+                  <div>
                     <Label>Vencimiento Revisión Técnica (RT)</Label>
                     <Input
                       type="date"
                       value={form.revisionExpiry}
                       onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
-                    />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <Label>Observaciones / Notas</Label>
-                    <Textarea
-                      rows={3}
-                      value={form.observations}
-                      onChange={(e) => setForm({ ...form, observations: e.target.value })}
-                      placeholder="Ej: cambió de placa, llanta delantera derecha con clavo, próximo cambio…"
                     />
                   </div>
 
@@ -888,11 +858,9 @@ export default function Dashboard() {
                     <th className="px-4 py-3">Nº unidad</th>
                     <th className="px-4 py-3">Kilometraje</th>
                     <th className="px-4 py-3">Próximo servicio</th>
-                    <th className="px-4 py-3">Estado</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
                     <th className="px-4 py-3">RA (Contrato)</th>
-                    <th className="px-4 py-3">Observaciones</th>
                     <th className="px-4 py-3 text-right">Acciones</th>
                   </tr>
                 </thead>
@@ -928,9 +896,6 @@ export default function Dashboard() {
                           )}
                         </td>
                         <td className="px-4 py-3">
-                          <Badge tone={v.clean ? "ok" : "warn"}>{v.clean ? "Limpio" : "Sucio"}</Badge>
-                        </td>
-                        <td className="px-4 py-3">
                           <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
                             {formatDate(v.soatExpiry)}
                             {soat.tone !== "none" && ` · ${soat.label}`}
@@ -950,9 +915,6 @@ export default function Dashboard() {
                           ) : (
                             <span className="text-muted-foreground">—</span>
                           )}
-                        </td>
-                        <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
-                          {v.observations || "—"}
                         </td>
                         <td className="px-4 py-3 text-right">
                           <div className="inline-flex gap-2">
