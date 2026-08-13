@@ -123,15 +123,15 @@ export const applyHistoricalData = mutation({
         continue;
       }
       const patch: Record<string, unknown> = {};
-      if (entry.soatExpiry && !vehicle.soatExpiry) {
+      if (entry.soatExpiry && vehicle.soatExpiry !== entry.soatExpiry) {
         patch.soatExpiry = entry.soatExpiry;
         soat += 1;
       }
-      if (entry.revisionExpiry && !vehicle.revisionExpiry) {
+      if (entry.revisionExpiry && vehicle.revisionExpiry !== entry.revisionExpiry) {
         patch.revisionExpiry = entry.revisionExpiry;
         revision += 1;
       }
-      if (entry.nextServiceKm !== undefined && vehicle.nextServiceKm === undefined) {
+      if (entry.nextServiceKm !== undefined && vehicle.nextServiceKm !== entry.nextServiceKm) {
         patch.nextServiceKm = entry.nextServiceKm;
         nextService += 1;
       }
