@@ -862,7 +862,7 @@ export default function Dashboard() {
             </Card>
           ) : (
             <div className="overflow-x-auto rounded-2xl border border-border bg-card">
-              <table className="w-full min-w-[1000px] text-left text-sm">
+              <table className="w-full min-w-[900px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                     <th className="px-4 py-3">Nº unidad</th>
@@ -870,7 +870,6 @@ export default function Dashboard() {
                     <th className="px-4 py-3">Próximo servicio</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
-                    <th className="px-4 py-3">RA (Contrato)</th>
                     <th className="px-4 py-3 text-right">Acciones</th>
                   </tr>
                 </thead>
@@ -879,10 +878,6 @@ export default function Dashboard() {
                     const maint = expiryInfo(v.nextMaintenance);
                     const soat = expiryInfo(v.soatExpiry);
                     const rev = expiryInfo(v.revisionExpiry);
-                    const snapUnit = snap?.unidades.find(
-                      (u) => unitKey(u.unidad) === unitKey(v.unitNumber),
-                    );
-                    const raVal = snapUnit?.ra?.trim();
                     return (
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
@@ -916,15 +911,6 @@ export default function Dashboard() {
                             {formatDate(v.revisionExpiry)}
                             {rev.tone !== "none" && ` · ${rev.label}`}
                           </Badge>
-                        </td>
-                        <td className="px-4 py-3">
-                          {raVal ? (
-                            <span className="font-mono text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
-                              {raVal}
-                            </span>
-                          ) : (
-                            <span className="text-muted-foreground">—</span>
-                          )}
                         </td>
                         <td className="px-4 py-3 text-right">
                           <div className="inline-flex gap-2">
