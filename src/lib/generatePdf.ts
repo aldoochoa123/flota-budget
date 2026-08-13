@@ -40,20 +40,23 @@ export function downloadFlotaPdf(
   doc.setFillColor(234, 88, 12); // #ea580c (Budget Orange)
   doc.rect(0, 0, pageWidth, 4, "F");
 
+  // Determinar turno según la hora actual de descarga (07:00 - 19:00 = DÍA; 19:00 - 07:00 = NOCHE)
+  const now = new Date();
+  const currentHour = now.getHours();
+  const isDia = currentHour >= 7 && currentHour < 19;
+  const turnoText = isDia ? "TURNO : DIA" : "TURNO : NOCHE";
+
   // Encabezado
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(18);
+  doc.setFontSize(17);
   doc.setTextColor(20, 24, 33);
-  doc.text("BUDGET PERÚ — REPORTE DE FLOTA EN PARQUEO", 14, 15);
+  doc.text("BUDGET PERÚ — REPORTE DE FLOTA EN PARQUEO", 14, 14);
 
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(9.5);
-  doc.setTextColor(100, 116, 139);
-  doc.text(
-    `Fecha del reporte intranet: ${snap.fecha}   |   Generado: ${new Date().toLocaleString("es-PE")}`,
-    14,
-    21,
-  );
+  // Subtítulo: Turno
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.setTextColor(234, 88, 12);
+  doc.text(turnoText, 14, 20.5);
 
   // Tarjetas / Bloques de resumen (KPIs)
   const kpiY = 25;
