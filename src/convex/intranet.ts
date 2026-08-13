@@ -9,12 +9,26 @@ export type IntranetUnit = {
   estado: string;
 };
 
+export type IntranetMovement = {
+  unidad: string;
+  fecha: string;
+  tipo: string;
+  reportId?: string;
+};
+
 const unitFields = v.object({
   unidad: v.string(),
   ubic: v.string(),
   km: v.string(),
   fuel: v.string(),
   estado: v.string(),
+});
+
+const movementFields = v.object({
+  unidad: v.string(),
+  fecha: v.string(),
+  tipo: v.string(),
+  reportId: v.optional(v.string()),
 });
 
 /**
@@ -26,8 +40,9 @@ export const upsertSnapshot = internalMutation({
   args: {
     fecha: v.string(),
     unidades: v.array(unitFields),
+    movimientos: v.optional(v.array(movementFields)),
   },
-  handler: async (ctx, { fecha, unidades }) => {
+  handler: async (ctx, { fecha, unidades, movimientos }) => {
     // Reemplaza el snapshot del mismo día si ya existe (evita duplicados en reintentos).
     const previos = await ctx.db
       .query("intranetSnapshots")
@@ -41,6 +56,7 @@ export const upsertSnapshot = internalMutation({
       fecha,
       syncedAt: Date.now(),
       unidades,
+      movimientos,
     });
 
     // Poda: conserva solo los 720 snapshots más recientes (~30 días a 1 por hora).

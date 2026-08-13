@@ -2,10 +2,45 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import type { Doc, Id } from "../convex/_generated/dataModel";
-import { Badge, Button, Card, Input, Label, Textarea } from "../components/ui";
-import { daysUntil, expiryInfo, formatDate, formatMileage } from "../lib/dates";
+import { Badge, Button, Card, Input, Label, Logo, Textarea } from "../components/ui";
+import {
+  daysUntil,
+  expiryInfo,
+  formatDate,
+  formatLimaDate,
+  formatLimaDateTime,
+  formatMileage,
+  formatMovDate,
+  parseMovDate,
+} from "../lib/dates";
 
 type Vehicle = Doc<"vehicles">;
+type Movement = NonNullable<Doc<"intranetSnapshots">["movimientos"]>[number];
+
+/** Unidad “en taller” = su último movimiento NO es un retorno (RT Retorno). */
+function isEnTaller(tipo: string): boolean {
+  return !/retorno/i.test(tipo);
+}
+
+function movTone(tipo: string): "ok" | "warn" | "danger" | "muted" {
+  if (/retorno/i.test(tipo)) return "ok";
+  if (/taller/i.test(tipo)) return "danger";
+  if (/salida/i.test(tipo)) return "warn";
+  return "muted";
+}
+
+function movLabel(tipo: string): string {
+  if (/retorno/i.test(tipo)) return "Retorno";
+  if (/taller/i.test(tipo)) return "En taller";
+  if (/salida/i.test(tipo)) return "Salida";
+  return tipo;
+}
+
+/** Normaliza un número de unidad para cruzar fuentes ("0909" de la app = "909" de la intranet). */
+function unitKey(n: string): string {
+  const num = Number(n);
+  return Number.isFinite(num) ? String(num) : n.trim();
+}
 
 const emptyForm = {
   unitNumber: "",
@@ -20,6 +55,7 @@ const emptyForm = {
 
 export default function Dashboard() {
   const vehicles = useQuery(api.vehicles.listVehicles);
+  const allVehicles = useQuery(api.vehicles.listAllVehicles);
   const intranetSnapshot = useQuery(api.intranet.getLatestSnapshot);
   const addVehicle = useMutation(api.vehicles.addVehicle);
   const updateVehicle = useMutation(api.vehicles.updateVehicle);
@@ -34,6 +70,7 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [fleetMsg, setFleetMsg] = useState<string | null>(null);
+  const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
 
   // Si no hay flota de hoy, siembra la flota base (161) y aplica la flota del día.
@@ -54,10 +91,19 @@ export default function Dashboard() {
     }
   }, [vehicles, importFleet, applyTodayFleet]);
 
-  const maintenanceSoon = (vehicles ?? []).filter(
+  // Catálogo: flota de hoy por defecto; con el botón se ve la flota base completa (161).
+  const catalogVehicles = showBaseFleet ? allVehicles : vehicles;
+
+  // Índice por número de unidad normalizado (la intranet omite ceros: "909" = "0909").
+  const vehicleByUnit = new Map<string, Vehicle>();
+  for (const v of allVehicles ?? []) {
+    vehicleByUnit.set(unitKey(v.unitNumber), v);
+  }
+
+  const maintenanceSoon = (catalogVehicles ?? []).filter(
     (v) => (daysUntil(v.nextMaintenance) ?? Infinity) <= 30,
   ).length;
-  const docsSoon = (vehicles ?? []).filter(
+  const docsSoon = (catalogVehicles ?? []).filter(
     (v) =>
       (daysUntil(v.soatExpiry) ?? Infinity) <= 30 ||
       (daysUntil(v.revisionExpiry) ?? Infinity) <= 30,
@@ -69,6 +115,31 @@ export default function Dashboard() {
   const snapLimpias = snap ? snap.unidades.filter((u) => /limpio/i.test(u.estado)).length : 0;
   const snapSucias = snapTotal - snapLimpias;
   const snapPorTanquear = snap ? snap.unidades.filter((u) => !/full/i.test(u.fuel)).length : 0;
+
+  // Movimientos de taller (entradas/salidas) del último snapshot.
+  const movimientos = snap?.movimientos ?? [];
+  const movByUnit = new Map<string, Movement>();
+  for (const m of movimientos) {
+    const prev = movByUnit.get(m.unidad);
+    if (!prev) {
+      movByUnit.set(m.unidad, m);
+      continue;
+    }
+    const cur = parseMovDate(m.fecha)?.getTime() ?? 0;
+    const old = parseMovDate(prev.fecha)?.getTime() ?? 0;
+    if (cur >= old) movByUnit.set(m.unidad, m);
+  }
+  const enTaller = [...movByUnit.entries()]
+    .filter(([, m]) => isEnTaller(m.tipo))
+    .sort((a, b) => a[0].localeCompare(b[0], "es", { numeric: true }))
+    .map(([unidad, m]) => ({ ...m, unidad }));
+  const movRecientes = movimientos
+    .slice()
+    .sort(
+      (a, b) =>
+        (parseMovDate(b.fecha)?.getTime() ?? 0) - (parseMovDate(a.fecha)?.getTime() ?? 0),
+    )
+    .slice(0, 25);
 
   async function handleImportFleet() {
     setBusy(true);
@@ -189,11 +260,8 @@ export default function Dashboard() {
       {/* Header */}
       <header className="border-b border-border bg-card/60 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2 font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-              🚗
-            </span>
-            Flota Control
+          <div className="flex items-center">
+            <Logo className="h-8" badgeClassName="h-8 w-8 rounded-lg shadow-none" />
           </div>
         </div>
       </header>
@@ -253,7 +321,7 @@ export default function Dashboard() {
             <h2 className="flex items-center gap-2 text-lg font-bold">📡 Flota en parqueo (intranet)</h2>
             {snap && (
               <span className="text-xs text-muted-foreground">
-                Sincronizado {new Date(snap.syncedAt).toLocaleString("es-PE")}
+                Sincronizado {formatLimaDateTime(snap.syncedAt)}
               </span>
             )}
           </div>
@@ -285,7 +353,7 @@ export default function Dashboard() {
                 <Badge tone="danger">⛽ {snapPorTanquear} por tanquear</Badge>
               </div>
               <div className="overflow-x-auto rounded-xl border border-border">
-                <table className="w-full min-w-[560px] text-left text-sm">
+                <table className="w-full min-w-[1150px] text-left text-sm">
                   <thead>
                     <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                       <th className="px-4 py-2.5">Nº unidad</th>
@@ -293,29 +361,63 @@ export default function Dashboard() {
                       <th className="px-4 py-2.5">Kilometraje</th>
                       <th className="px-4 py-2.5">Combustible</th>
                       <th className="px-4 py-2.5">Estado</th>
+                      <th className="px-4 py-2.5">Próx. mantenimiento</th>
+                      <th className="px-4 py-2.5">SOAT</th>
+                      <th className="px-4 py-2.5">Revisión técnica</th>
+                      <th className="px-4 py-2.5">Observaciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {snap.unidades.map((u) => (
-                      <tr
-                        key={`${u.unidad}-${u.ubic}`}
-                        className="border-b border-border last:border-0 hover:bg-muted/30"
-                      >
-                        <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
-                        <td className="px-4 py-2.5">
-                          <Badge tone="muted">{u.ubic}</Badge>
-                        </td>
-                        <td className="px-4 py-2.5 text-muted-foreground">
-                          {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
-                        </td>
-                        <td className="px-4 py-2.5">{u.fuel || "—"}</td>
-                        <td className="px-4 py-2.5">
-                          <Badge tone={/limpio/i.test(u.estado) ? "ok" : "warn"}>
-                            {u.estado}
-                          </Badge>
-                        </td>
-                      </tr>
-                    ))}
+                    {snap.unidades.map((u) => {
+                      const veh = vehicleByUnit.get(unitKey(u.unidad));
+                      const maint = expiryInfo(veh?.nextMaintenance);
+                      const soat = expiryInfo(veh?.soatExpiry);
+                      const rev = expiryInfo(veh?.revisionExpiry);
+                      return (
+                        <tr
+                          key={`${u.unidad}-${u.ubic}`}
+                          className="border-b border-border last:border-0 hover:bg-muted/30"
+                        >
+                          <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone="muted">{u.ubic}</Badge>
+                          </td>
+                          <td className="px-4 py-2.5 text-muted-foreground">
+                            {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
+                          </td>
+                          <td className="px-4 py-2.5">{u.fuel || "—"}</td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone={/limpio/i.test(u.estado) ? "ok" : "warn"}>
+                              {u.estado}
+                            </Badge>
+                          </td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
+                              {formatDate(veh?.nextMaintenance)}
+                              {maint.tone !== "none" && ` · ${maint.label}`}
+                            </Badge>
+                          </td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
+                              {formatDate(veh?.soatExpiry)}
+                              {soat.tone !== "none" && ` · ${soat.label}`}
+                            </Badge>
+                          </td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
+                              {formatDate(veh?.revisionExpiry)}
+                              {rev.tone !== "none" && ` · ${rev.label}`}
+                            </Badge>
+                          </td>
+                          <td
+                            className="max-w-[220px] truncate px-4 py-2.5 text-muted-foreground"
+                            title={veh?.observations}
+                          >
+                            {veh?.observations || "—"}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -323,20 +425,138 @@ export default function Dashboard() {
           )}
         </Card>
 
+        {/* Taller — entradas y salidas sincronizadas desde la intranet */}
+        <section className="mt-14">
+          <div className="mb-6">
+            <h2 className="text-2xl font-extrabold tracking-tight">🛠️ Taller — entradas y salidas</h2>
+            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+              Movimientos de taller (salida / retorno) extraídos del módulo inAndOut de la
+              intranet. Se actualizan con el mismo reporte horario de la flota. Una unidad está
+              en taller cuando su último movimiento no es un retorno.
+            </p>
+          </div>
+
+          {snap === undefined ? (
+            <Card className="p-8 text-center text-sm text-muted-foreground">Cargando movimientos…</Card>
+          ) : snap === null || movimientos.length === 0 ? (
+            <Card className="p-8 text-center">
+              <div className="mb-3 text-4xl">🛠️</div>
+              <p className="font-semibold">Sin movimientos de taller sincronizados todavía</p>
+              <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+                El reporte horario aún no incluye el listado del módulo inAndOut. Si el taller no
+                registró entradas o salidas en el último reporte, esta sección se llena sola en la
+                próxima sincronización.
+              </p>
+            </Card>
+          ) : (
+            <>
+              <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <Card className="p-4">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Unidades en taller ahora
+                  </div>
+                  <div className="mt-1 text-3xl font-extrabold text-danger">🛠️ {enTaller.length}</div>
+                </Card>
+                <Card className="p-4">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Movimientos en el reporte
+                  </div>
+                  <div className="mt-1 text-3xl font-extrabold">🔁 {movimientos.length}</div>
+                </Card>
+                <Card className="p-4">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Última actualización
+                  </div>
+                  <div className="mt-1 text-3xl font-extrabold">{formatLimaDate(snap.syncedAt)}</div>
+                </Card>
+              </div>
+
+              {enTaller.length > 0 && (
+                <div className="mb-8 rounded-2xl border border-danger/30 bg-danger/10 p-5">
+                  <h3 className="mb-3 text-sm font-bold text-danger">
+                    🛠️ Unidades en taller ({enTaller.length})
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {enTaller.map((m) => (
+                      <span
+                        key={m.unidad}
+                        className="inline-flex items-center gap-2 rounded-full border border-danger/30 bg-card px-3 py-1.5 text-sm"
+                        title={`${m.tipo} · ${m.reportId ?? "sin reporte"}`}
+                      >
+                        <strong>#{m.unidad}</strong>
+                        <span className="text-xs text-muted-foreground">
+                          {movLabel(m.tipo)} · {formatMovDate(m.fecha)}
+                        </span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <Card>
+                <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="text-lg font-bold">📋 Movimientos recientes</h3>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <Badge tone="danger">RT Taller = en taller</Badge>
+                    <Badge tone="warn">SL Salida = hacia taller</Badge>
+                    <Badge tone="ok">RT Retorno = de vuelta</Badge>
+                  </div>
+                </div>
+                <div className="overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full min-w-[560px] text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
+                        <th className="px-4 py-2.5">Fecha</th>
+                        <th className="px-4 py-2.5">Nº unidad</th>
+                        <th className="px-4 py-2.5">Movimiento</th>
+                        <th className="px-4 py-2.5">Reporte</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {movRecientes.map((m, i) => (
+                        <tr
+                          key={`${m.unidad}-${m.fecha}-${m.tipo}-${i}`}
+                          className="border-b border-border last:border-0 hover:bg-muted/30"
+                        >
+                          <td className="px-4 py-2.5 whitespace-nowrap">{formatMovDate(m.fecha)}</td>
+                          <td className="px-4 py-2.5 font-bold">#{m.unidad}</td>
+                          <td className="px-4 py-2.5">
+                            <Badge tone={movTone(m.tipo)}>{movLabel(m.tipo)}</Badge>
+                          </td>
+                          <td className="px-4 py-2.5 text-muted-foreground">{m.reportId || "—"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Card>
+            </>
+          )}
+        </section>
+
         {/* Catálogo de flota (base 161) — se llena con fotos poco a poco */}
         <section className="mt-14">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-extrabold tracking-tight">🗂️ Catálogo de flota (base 161)</h2>
+              <h2 className="text-2xl font-extrabold tracking-tight">
+                {showBaseFleet ? "🗂️ Flota base completa" : "🗂️ Catálogo de flota"}
+              </h2>
               <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-                Las 161 unidades de la empresa. Se va completando poco a poco con las fotos que
-                se me pasen (SOAT, revisión técnica, kilometraje…). Esta sección no es la flota
-                visible del día — la visible es la de la intranet, arriba.
+                {showBaseFleet
+                  ? `Las 161 unidades de la empresa (flota base). Mostrando ${catalogVehicles?.length ?? "…"} unidades. Se va completando con las fotos que se pasen (SOAT, revisión técnica, kilometraje…).`
+                  : `Flota de hoy: ${catalogVehicles?.length ?? "…"} unidades del inventario diario. Con el botón “Ver flota base (161)” se ve la flota completa de la empresa.`}
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
+              <Button
+                variant="outline"
+                onClick={() => setShowBaseFleet((s) => !s)}
+                disabled={catalogVehicles === undefined}
+              >
+                {showBaseFleet ? "Ver flota de hoy" : "🚗 Ver flota base (161)"}
+              </Button>
               <Button variant="outline" onClick={handleApplyTodayFleet} disabled={busy}>
-                {busy ? "Cargando…" : "Cargar flota de hoy (29)"}
+                {busy ? "Cargando…" : "Cargar flota de hoy"}
               </Button>
               <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
                 {busy ? "Cargando…" : "Rellenar datos históricos"}
@@ -348,24 +568,21 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {fleetMsg && (
-            <p className="mb-8 rounded-xl border border-border bg-card px-4 py-3 text-sm">{fleetMsg}</p>
+          {/* Solo se muestran errores; el aviso de éxito (“29 unidades cargadas”) se oculta */}
+          {fleetMsg?.startsWith("No se pudo") && (
+            <p className="mb-8 rounded-xl border border-danger/30 bg-danger/10 px-4 py-3 text-sm text-danger">
+              {fleetMsg}
+            </p>
           )}
 
           {/* Stats del catálogo */}
-          <div className="mb-8 grid gap-4 sm:grid-cols-3">
-            <Card className="p-4">
-              <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Unidades hoy (catálogo)
-              </div>
-              <div className="mt-1 text-3xl font-extrabold">{vehicles?.length ?? "—"}</div>
-            </Card>
+          <div className="mb-8 grid gap-4 sm:grid-cols-2">
             <Card className="p-4">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Mantenimiento ≤ 30 días
               </div>
               <div className="mt-1 text-3xl font-extrabold text-warn">
-                {vehicles === undefined ? "—" : maintenanceSoon}
+                {catalogVehicles === undefined ? "—" : maintenanceSoon}
               </div>
             </Card>
             <Card className="p-4">
@@ -373,7 +590,7 @@ export default function Dashboard() {
                 SOAT / R. técnica ≤ 30 días
               </div>
               <div className="mt-1 text-3xl font-extrabold text-danger">
-                {vehicles === undefined ? "—" : docsSoon}
+                {catalogVehicles === undefined ? "—" : docsSoon}
               </div>
             </Card>
           </div>
@@ -493,19 +710,22 @@ export default function Dashboard() {
           )}
 
           {/* Tabla del catálogo */}
-          {vehicles === undefined ? (
+          {vehicles === undefined || (showBaseFleet && allVehicles === undefined) ? (
             <Card className="p-8 text-center text-sm text-muted-foreground">Cargando unidades…</Card>
-          ) : vehicles.length === 0 && !showForm ? (
+          ) : (catalogVehicles ?? []).length === 0 && !showForm ? (
             <Card className="p-10 text-center">
               <div className="mb-3 text-4xl">🚗</div>
-              <p className="font-semibold">No hay flota de hoy cargada</p>
+              <p className="font-semibold">
+                {showBaseFleet ? "La flota base aún no está sembrada" : "No hay flota de hoy cargada"}
+              </p>
               <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-                Carga el inventario diario (29 unidades) para poblar el catálogo. La flota base
-                (161 unidades) se siembra con el botón de abajo y se va completando con las fotos.
+                {showBaseFleet
+                  ? "Usa el botón “Sembrar flota base (161)” para crear las 161 unidades en la base."
+                  : "Carga el inventario diario para poblar el catálogo. La flota base (161 unidades) se siembra con el botón de abajo y se va completando con las fotos."}
               </p>
               <div className="mt-5 flex flex-wrap justify-center gap-3">
                 <Button onClick={handleApplyTodayFleet} disabled={busy}>
-                  {busy ? "Cargando…" : "Cargar flota de hoy (29)"}
+                  {busy ? "Cargando…" : "Cargar flota de hoy"}
                 </Button>
                 <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
                   {busy ? "Cargando…" : "Rellenar datos históricos"}
@@ -531,14 +751,18 @@ export default function Dashboard() {
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
                     <th className="px-4 py-3">Observaciones</th>
+                    <th className="px-4 py-3">Taller</th>
                     <th className="px-4 py-3 text-right">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {vehicles.map((v) => {
+                  {(catalogVehicles ?? []).map((v) => {
                     const maint = expiryInfo(v.nextMaintenance);
                     const soat = expiryInfo(v.soatExpiry);
                     const rev = expiryInfo(v.revisionExpiry);
+                    const tallerMov = movByUnit.get(v.unitNumber);
+                    const enTallerNow =
+                      tallerMov !== undefined && isEnTaller(tallerMov.tipo);
                     return (
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
@@ -567,6 +791,15 @@ export default function Dashboard() {
                         </td>
                         <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
                           {v.observations || "—"}
+                        </td>
+                        <td className="px-4 py-3">
+                          {enTallerNow ? (
+                            <Badge tone="danger">
+                              🛠️ En taller · {formatMovDate(tallerMov.fecha)}
+                            </Badge>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
                         </td>
                         <td className="px-4 py-3 text-right">
                           <div className="inline-flex gap-2">

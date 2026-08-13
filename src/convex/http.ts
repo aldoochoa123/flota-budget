@@ -90,7 +90,11 @@ http.route({
     } catch {
       return new Response("JSON inválido", { status: 400 });
     }
-    const { fecha, unidades } = body as { fecha?: unknown; unidades?: unknown };
+    const { fecha, unidades, movimientos } = body as {
+      fecha?: unknown;
+      unidades?: unknown;
+      movimientos?: unknown;
+    };
     if (typeof fecha !== "string" || !Array.isArray(unidades) || unidades.length === 0) {
       return new Response(
         "Formato inválido: espera { fecha: string, unidades: [{unidad, ubic, km, fuel, estado}] }",
@@ -113,9 +117,25 @@ http.route({
       return new Response("No hay unidades válidas en el payload", { status: 400 });
     }
 
+    // Movimientos de taller: opcionales; se validan y limpian igual que unidades.
+    const cleanMov = Array.isArray(movimientos)
+      ? (movimientos as Record<string, unknown>[])
+          .map((m) => {
+            const x = (m ?? {}) as Record<string, unknown>;
+            return {
+              unidad: String(x.unidad ?? ""),
+              fecha: String(x.fecha ?? ""),
+              tipo: String(x.tipo ?? ""),
+              reportId: x.reportId === undefined ? undefined : String(x.reportId),
+            };
+          })
+          .filter((m) => m.unidad.length > 0 && m.tipo.length > 0)
+      : [];
+
     const result = await ctx.runMutation(internal.intranet.upsertSnapshot, {
       fecha,
       unidades: clean,
+      movimientos: cleanMov.length > 0 ? cleanMov : undefined,
     });
     return new Response(JSON.stringify({ ok: true, ...result }), {
       status: 200,

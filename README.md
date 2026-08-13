@@ -10,7 +10,8 @@ App de gestión de flota con **acceso libre** (sin login), panel web y **bot de 
 - **Botón "Cargar flota de hoy (29)"**: aplica el inventario diario y marca esas unidades como la flota visible (las que salen del inventario quedan ocultas).
 - **Alertas visuales** de vencimientos: rojo (≤ 30 días o vencido), ámbar (≤ 60 días), verde (ok).
 - **Bot de Telegram** para consultar la flota desde el celular.
-- **Sincronización diaria con la intranet**: un workflow de GitHub Actions extrae la flota de la intranet de Budget (login + scraping con `agent-browser`) cada día a las 05:30 UTC y la envía al panel vía el endpoint `/ingest-flota` de Convex. El panel muestra el último snapshot (unidades en parqueo E1/E7/E12, kilometraje, combustible y estado).
+- **Sincronización diaria con la intranet**: un workflow de GitHub Actions extrae la flota de la intranet de Budget (login + scraping con `agent-browser`) cada hora dentro del horario de trabajo y la envía al panel vía el endpoint `/ingest-flota` de Convex. El panel muestra el último snapshot (unidades en parqueo E1/E7/E12, kilometraje, combustible y estado).
+- **Taller (entradas/salidas)**: el mismo reporte extrae los movimientos del módulo inAndOut de la intranet (`/ControlCar/inAndOut/list`) y los muestra en el panel: unidades en taller (último movimiento no es un retorno), movimientos recientes y columna "Taller" en el catálogo de las 161 unidades.
 
 ## Stack
 
@@ -45,9 +46,13 @@ bun tsc -b --noEmit  # typecheck
 El workflow [`.github/workflows/flota.yml`](.github/workflows/flota.yml) corre **cada hora dentro del horario de trabajo: 15:00–08:00 del día siguiente** en hora Perú (UTC−5 → 20:00–13:00 UTC), y a pedido con *Run workflow*:
 
 1. Se loguea en la intranet con `agent-browser` (`extraer_flota.cjs`, secrets `BUDGET_USER` / `BUDGET_PASS`).
-2. Extrae la flota del día y guarda el snapshot en `public/flota_data.json`.
+2. Extrae la flota del día **y los movimientos de taller** (módulo inAndOut) y guarda el snapshot en `public/flota_data.json`.
 3. Envía el JSON a `<CONVEX_SYNC_URL>` (el endpoint `/ingest-flota` de Convex Cloud) con el header `x-flota-secret`.
 4. Opcionalmente envía el resumen por Telegram (`TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID`).
+
+El snapshot incluye un array `movimientos` opcional (los movimientos de taller solo se
+sincronizan si la extracción de `inAndOut/list` encuentra datos; un fallo ahí no rompe
+el reporte de la flota).
 
 Secrets de GitHub necesarios:
 
@@ -58,7 +63,7 @@ Secrets de GitHub necesarios:
 | `FLOTA_SYNC_SECRET` | Mismo valor que el `FLOTA_SYNC_SECRET` configurado en API Keys |
 | `TELEGRAM_TOKEN` / `TELEGRAM_CHAT_ID` | Opcionales: resumen por Telegram |
 
-El endpoint guarda un snapshot por fecha, reemplaza el del mismo día en reintentos y poda el historial a los 30 días más recientes.
+El endpoint guarda un snapshot por fecha, reemplaza el del mismo día en reintentos y poda el historial a los 30 días más recientes. En el panel, la sección **Taller** se calcula del último snapshot: una unidad está "en taller" si su último movimiento no es un retorno (`RT Retorno`).
 
 ## Bot de Telegram
 
@@ -83,7 +88,7 @@ src/
 ├── convex/               # Backend (schema, funciones, webhook de Telegram)
 │   ├── schema.ts         # Tablas: vehicles + intranetSnapshots
 │   ├── vehicles.ts       # CRUD + importación de flota total y flota del día
-│   ├── intranet.ts       # Snapshot diario de la intranet (upsert + consultas)
+│   ├── intranet.ts       # Snapshot diario de la intranet (upsert + consultas, incluye movimientos de taller)
 │   ├── fleetCatalog.ts   # Flota base (161 unidades en 9 series)
 │   ├── todayFleet.ts     # Flota del día (29 unidades del formulario diario)
 │   └── http.ts           # Webhook de Telegram + endpoint /ingest-flota

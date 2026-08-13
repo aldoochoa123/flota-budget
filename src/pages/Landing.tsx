@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "../components/ui";
+import { Button, Logo } from "../components/ui";
 
 const features = [
   { icon: "🔢", title: "Número de unidad", desc: "Identifica cada vehículo de un vistazo." },
@@ -23,11 +23,8 @@ export default function Landing() {
     <div className="min-h-screen">
       {/* Nav */}
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-2 text-lg font-bold tracking-tight">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/30">
-            🚗
-          </span>
-          Flota Control
+        <div className="flex items-center">
+          <Logo />
         </div>
         <nav className="flex items-center gap-3">
           <Link to="/dashboard">

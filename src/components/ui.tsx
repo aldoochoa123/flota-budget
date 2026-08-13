@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type {
   ButtonHTMLAttributes,
   InputHTMLAttributes,
@@ -83,5 +84,36 @@ export function Badge({ tone = "muted", children }: { tone?: BadgeTone; children
     >
       {children}
     </span>
+  );
+}
+
+/**
+ * Logo de la app: muestra /logo.png (archivo en public/). Si el archivo
+ * aún no existe o falla la carga, cae a un badge con el emoji de auto.
+ */
+export function Logo({
+  className = "",
+  badgeClassName = "",
+}: {
+  className?: string;
+  badgeClassName?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return (
+      <span
+        className={`grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/30 ${badgeClassName}`}
+      >
+        🚗
+      </span>
+    );
+  }
+  return (
+    <img
+      src="/logo.png"
+      alt="Budget Perú"
+      onError={() => setFailed(true)}
+      className={`h-9 w-auto object-contain ${className}`}
+    />
   );
 }

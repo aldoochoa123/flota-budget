@@ -15,7 +15,7 @@ export default defineSchema({
     todayFleet: v.optional(v.boolean()),
     updatedAt: v.number(),
   }),
-  // Snapshots diarios sincronizados desde la intranet (extraer_flota.js + GitHub Actions).
+  // Snapshots diarios sincronizados desde la intranet (extraer_flota.cjs + GitHub Actions).
   intranetSnapshots: defineTable({
     fecha: v.string(), // etiqueta de fecha del reporte (ej: "10/08/26, 10:34 a. m.")
     syncedAt: v.number(), // timestamp de la sincronización
@@ -27,6 +27,17 @@ export default defineSchema({
         fuel: v.string(),
         estado: v.string(),
       }),
+    ),
+    // Movimientos de taller (entradas/salidas) — módulo inAndOut de la intranet.
+    movimientos: v.optional(
+      v.array(
+        v.object({
+          unidad: v.string(),
+          fecha: v.string(), // ej: "22/07/2026"
+          tipo: v.string(), // ej: "SL Salida" | "RT Retorno" | "RT Taller"
+          reportId: v.optional(v.string()), // ej: "RV0130-0051"
+        }),
+      ),
     ),
   }).index("by_syncedAt", ["syncedAt"]),
 });

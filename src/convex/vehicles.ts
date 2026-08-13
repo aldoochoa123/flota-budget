@@ -39,6 +39,19 @@ export const listAll = internalQuery({
 });
 
 /**
+ * Todas las unidades registradas (flota base 161 + flota de hoy + agregadas),
+ * ordenadas por número. Se usa para el catálogo completo y para cruzar los
+ * datos (mantenimiento, SOAT, revisión, observaciones) con la flota intranet.
+ */
+export const listAllVehicles = query({
+  args: {},
+  handler: async (ctx) => {
+    const all = await ctx.db.query("vehicles").collect();
+    return all.sort((a, b) => a.unitNumber.localeCompare(b.unitNumber, "es", { numeric: true }));
+  },
+});
+
+/**
  * Aplica la flota del día (formulario diario, 29 unidades).
  * Marca esas unidades como visibles (todayFleet: true) y desmarca las que ya
  * no están en el inventario de hoy.

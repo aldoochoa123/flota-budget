@@ -5,20 +5,21 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --background: 220 30% 6%;
+    /* Paleta Budget Perú: azul marino + naranja + naranja-rojo */
+    --background: 216 35% 7%;
     --foreground: 210 25% 94%;
-    --card: 219 28% 10%;
+    --card: 216 30% 10%;
     --card-foreground: 210 25% 94%;
-    --muted: 218 22% 16%;
+    --muted: 216 22% 16%;
     --muted-foreground: 215 15% 65%;
-    --border: 217 20% 20%;
-    --input: 217 20% 20%;
-    --primary: 158 70% 42%;
-    --primary-foreground: 220 30% 6%;
-    --accent: 168 60% 24%;
+    --border: 216 22% 20%;
+    --input: 216 22% 20%;
+    --primary: 34 100% 48%; /* Budget orange #F78B00 */
+    --primary-foreground: 216 45% 12%; /* azul marino sobre naranja */
+    --accent: 21 95% 48%; /* Budget red-orange #ED5506 */
     --accent-foreground: 210 25% 94%;
-    --danger: 0 72% 55%;
-    --warn: 38 92% 55%;
+    --danger: 15 100% 55%; /* Budget red #FF531B */
+    --warn: 34 100% 58%;
     --ok: 150 60% 45%;
   }
 
@@ -33,8 +34,8 @@
   body {
     @apply bg-background font-sans text-foreground antialiased;
     background-image:
-      radial-gradient(ellipse 60% 40% at 15% -5%, hsl(168 60% 22% / 0.28), transparent),
-      radial-gradient(ellipse 45% 35% at 95% 5%, hsl(210 60% 25% / 0.22), transparent);
+      radial-gradient(ellipse 60% 40% at 15% -5%, hsl(216 70% 30% / 0.35), transparent),
+      radial-gradient(ellipse 45% 35% at 95% 5%, hsl(34 90% 50% / 0.1), transparent);
     background-attachment: fixed;
     min-height: 100vh;
   }
