@@ -121,9 +121,11 @@ export default function Dashboard() {
     vehicleByUnit.set(unitKey(v.unitNumber), v);
   }
 
-  const maintenanceSoon = (catalogVehicles ?? []).filter(
-    (v) => (daysUntil(v.nextMaintenance) ?? Infinity) <= 30,
-  ).length;
+  const serviceSoon = (catalogVehicles ?? []).filter((v) => {
+    if (v.nextServiceKm && v.mileage && v.nextServiceKm - v.mileage <= 1500) return true;
+    if (v.nextMaintenance && (daysUntil(v.nextMaintenance) ?? Infinity) <= 30) return true;
+    return false;
+  }).length;
   const docsSoon = (catalogVehicles ?? []).filter(
     (v) =>
       (daysUntil(v.soatExpiry) ?? Infinity) <= 30 ||
@@ -382,7 +384,7 @@ export default function Dashboard() {
                       <th className="px-4 py-2.5">Kilometraje</th>
                       <th className="px-4 py-2.5">Combustible</th>
                       <th className="px-4 py-2.5">Estado</th>
-                      <th className="px-4 py-2.5">Próx. mantenimiento</th>
+                      <th className="px-4 py-2.5">Próximo servicio</th>
                       <th className="px-4 py-2.5">SOAT</th>
                       <th className="px-4 py-2.5">Revisión técnica</th>
                       <th className="px-4 py-2.5">Observaciones</th>
@@ -413,10 +415,17 @@ export default function Dashboard() {
                             </Badge>
                           </td>
                           <td className="px-4 py-2.5">
-                            <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
-                              {formatDate(veh?.nextMaintenance)}
-                              {maint.tone !== "none" && ` · ${maint.label}`}
-                            </Badge>
+                            {veh?.nextServiceKm ? (
+                              <Badge tone={veh.mileage && veh.nextServiceKm - veh.mileage <= 1500 ? "warn" : "muted"}>
+                                🔧 {formatMileage(veh.nextServiceKm)}
+                              </Badge>
+                            ) : veh?.nextMaintenance ? (
+                              <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
+                                {formatDate(veh.nextMaintenance)}
+                              </Badge>
+                            ) : (
+                              <span className="text-muted-foreground">—</span>
+                            )}
                           </td>
                           <td className="px-4 py-2.5">
                             <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
@@ -600,10 +609,10 @@ export default function Dashboard() {
           <div className="mb-8 grid gap-4 sm:grid-cols-2">
             <Card className="p-4">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Mantenimiento ≤ 30 días
+                Próximo servicio cercano (≤ 1500 km)
               </div>
               <div className="mt-1 text-3xl font-extrabold text-warn">
-                {catalogVehicles === undefined ? "—" : maintenanceSoon}
+                {catalogVehicles === undefined ? "—" : serviceSoon}
               </div>
             </Card>
             <Card className="p-4">
@@ -716,14 +725,6 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div>
-                    <Label>Próximo Mantenimiento</Label>
-                    <Input
-                      type="date"
-                      value={form.nextMaintenance}
-                      onChange={(e) => setForm({ ...form, nextMaintenance: e.target.value })}
-                    />
-                  </div>
-                  <div>
                     <Label>Vencimiento SOAT</Label>
                     <Input
                       type="date"
@@ -813,9 +814,8 @@ export default function Dashboard() {
                   <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                     <th className="px-4 py-3">Nº unidad</th>
                     <th className="px-4 py-3">Kilometraje</th>
-                    <th className="px-4 py-3">Próx. servicio</th>
+                    <th className="px-4 py-3">Próximo servicio</th>
                     <th className="px-4 py-3">Estado</th>
-                    <th className="px-4 py-3">Próx. mantenimiento</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
                     <th className="px-4 py-3">Observaciones</th>
@@ -835,15 +835,26 @@ export default function Dashboard() {
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
                         <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.mileage)}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.nextServiceKm)}</td>
                         <td className="px-4 py-3">
-                          <Badge tone={v.clean ? "ok" : "warn"}>{v.clean ? "Limpio" : "Sucio"}</Badge>
+                          {v.nextServiceKm ? (
+                            <span className="font-medium text-foreground">
+                              {formatMileage(v.nextServiceKm)}
+                              {v.mileage && v.nextServiceKm - v.mileage <= 1500 && (
+                                <span className="ml-2 inline-block rounded-full bg-warn/20 px-2 py-0.5 text-xs font-semibold text-warn">
+                                  {v.nextServiceKm - v.mileage <= 0 ? "⚠️ Vencido" : `en ${formatMileage(v.nextServiceKm - v.mileage)}`}
+                                </span>
+                              )}
+                            </span>
+                          ) : v.nextMaintenance ? (
+                            <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
+                              {formatDate(v.nextMaintenance)}
+                            </Badge>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
                         </td>
                         <td className="px-4 py-3">
-                          <Badge tone={maint.tone === "none" ? "muted" : maint.tone}>
-                            {formatDate(v.nextMaintenance)}
-                            {maint.tone !== "none" && ` · ${maint.label}`}
-                          </Badge>
+                          <Badge tone={v.clean ? "ok" : "warn"}>{v.clean ? "Limpio" : "Sucio"}</Badge>
                         </td>
                         <td className="px-4 py-3">
                           <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
