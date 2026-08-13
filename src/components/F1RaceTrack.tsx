@@ -316,20 +316,10 @@ export function F1RaceTrack() {
   return (
     <div
       onClick={jump}
-      className="mt-8 overflow-hidden rounded-3xl border border-border/80 bg-[#0c1017] p-4 shadow-xl cursor-pointer select-none transition-all hover:border-primary/40 active:scale-[0.99]"
+      className="mt-8 w-full overflow-hidden rounded-2xl bg-[#0c1017] cursor-pointer select-none"
       title="Haz clic o pulsa la barra espaciadora para saltar obstáculos"
     >
-      <div className="flex items-center justify-between px-2 pb-2 text-xs text-muted-foreground border-b border-border/30 mb-2 font-mono">
-        <span className="flex items-center gap-2">
-          <span>🎮</span>
-          <strong className="text-foreground">BUDGET F1 RUNNER</strong> (Estilo Dino)
-        </span>
-        <span>Espacio / ⬆️ / Clic para saltar</span>
-      </div>
-
-      <div className="relative w-full">
-        <canvas ref={canvasRef} className="block w-full h-[170px]" />
-      </div>
+      <canvas ref={canvasRef} className="block w-full h-[160px]" />
     </div>
   );
 }
