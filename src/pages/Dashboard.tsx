@@ -823,11 +823,10 @@ export default function Dashboard() {
             </Card>
           ) : (
             <div className="overflow-x-auto rounded-2xl border border-border bg-card">
-              <table className="w-full min-w-[900px] text-left text-sm">
+              <table className="w-full min-w-[800px] text-left text-sm">
                 <thead>
                   <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                     <th className="px-4 py-3">Nº unidad</th>
-                    <th className="px-4 py-3">Kilometraje</th>
                     <th className="px-4 py-3">Próximo servicio</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
@@ -842,7 +841,6 @@ export default function Dashboard() {
                     return (
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{formatMileage(v.mileage)}</td>
                         <td className="px-4 py-3">
                           {v.nextServiceKm ? (
                             <span className="font-medium text-foreground">
