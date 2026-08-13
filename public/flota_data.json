@@ -1,5 +1,5 @@
 {
-  "fecha": "13/08/26, 8:32 a. m.",
+  "fecha": "13/08/26, 9:19 a. m.",
   "unidades": [
     {
       "unidad": "498",
@@ -103,13 +103,6 @@
       "unidad": "478",
       "ubic": "E7",
       "km": "76557",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "265",
-      "ubic": "E7",
-      "km": "47756",
       "fuel": "Full",
       "estado": "Limpio"
     },
