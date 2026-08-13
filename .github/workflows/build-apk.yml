@@ -17,7 +17,7 @@ jobs:
       - name: Configurar Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Configurar Node.js 20
@@ -29,22 +29,21 @@ jobs:
       - name: Instalar dependencias de Node
         run: npm install
 
-      - name: Compilar Frontend (Vite)
+      - name: Compilar Frontend Web (Vite)
         run: npm run build
 
-      - name: Configurar Gradle
-        uses: gradle/actions/setup-gradle@v3
+      - name: Copiar archivos web a Android nativo
+        run: npx cap copy android
 
-      - name: Sincronizar Capacitor Android
-        run: npx cap sync android
+      - name: Dar permisos de ejecución a Gradle
+        run: chmod +x android/gradlew
 
-      - name: Compilar APK Debug
+      - name: Compilar APK Debug con Gradle
         run: |
           cd android
-          chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
 
-      - name: Subir APK como artefacto descargable
+      - name: Subir instalador APK como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: FlotaBudget-Android-APK
