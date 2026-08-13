@@ -342,9 +342,6 @@ export default function Dashboard() {
           <div className="flex items-center">
             <Logo className="h-8" badgeClassName="h-8 w-8 rounded-lg shadow-none" />
           </div>
-          <div className="flex items-center gap-3">
-            <SyncCountdownWidget syncedAt={snap?.syncedAt} />
-          </div>
         </div>
       </header>
 
