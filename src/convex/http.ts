@@ -144,6 +144,61 @@ http.route({
   }),
 });
 
+function buildIntranetMessage(snap: {
+  fecha: string;
+  unidades: Array<{ unidad: string; ubic: string; km: string; fuel: string; estado: string }>;
+}): string {
+  const grupos: Record<string, typeof snap.unidades> = {};
+  for (const u of snap.unidades) {
+    const ubic = u.ubic || "Sin ubicación";
+    if (!grupos[ubic]) grupos[ubic] = [];
+    grupos[ubic].push(u);
+  }
+  const ordenUbic = Object.keys(grupos).sort();
+  const lineas: string[] = [
+    `🚗 <b>FLOTA EN PARQUEO (INTRANET)</b>`,
+    `📅 <i>${escapeHtml(snap.fecha)}</i>`,
+    ``,
+  ];
+
+  for (const ubic of ordenUbic) {
+    const g = grupos[ubic];
+    lineas.push(`📍 <b>PARQUEO ${escapeHtml(ubic)} (${g.length} autos)</b>`);
+    for (const u of g) {
+      const limpio = /limpio/i.test(u.estado) ? "✅" : "🧼";
+      const kmNum = Number(u.km);
+      const kmFormatted = Number.isFinite(kmNum) ? `${kmNum.toLocaleString("es-PE")} km` : `${escapeHtml(u.km)} km`;
+      lineas.push(`▸ <b>${escapeHtml(u.unidad)}</b> · ${kmFormatted} · ${escapeHtml(u.fuel)} · ${limpio} ${escapeHtml(u.estado)}`);
+    }
+    lineas.push("");
+  }
+
+  const limpias = snap.unidades.filter((u) => /limpio/i.test(u.estado)).length;
+  const sucias = snap.unidades.length - limpias;
+  const porTanquear = snap.unidades.filter((u) => !/full/i.test(u.fuel)).length;
+  lineas.push(`✅ <b>${limpias}</b> limpias · 🧼 <b>${sucias}</b> sucias · ⛽ <b>${porTanquear}</b> por tanquear`);
+
+  return lineas.join("\n");
+}
+
+function chunkMessage(text: string, maxLen = 3800): string[] {
+  if (text.length <= maxLen) return [text];
+  const chunks: string[] = [];
+  const lines = text.split("\n");
+  let current = "";
+
+  for (const line of lines) {
+    if ((current + "\n" + line).length > maxLen) {
+      if (current) chunks.push(current.trim());
+      current = line;
+    } else {
+      current = current ? current + "\n" + line : line;
+    }
+  }
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+
 http.route({
   path: "/telegram-webhook",
   method: "POST",
@@ -165,32 +220,58 @@ http.route({
     if (cmd === "/start" || cmd === "/ayuda" || cmd === "/help") {
       reply = HELP_TEXT;
     } else if (cmd === "/flota") {
-      const vehicles = await ctx.runQuery(internal.vehicles.listAll, {});
-      if (vehicles.length === 0) {
-        reply = "No hay flota de hoy cargada. Cárgala desde el panel web (Cargar flota de hoy). 🚗";
+      const snap = await ctx.runQuery(internal.intranet.getLatestSnapshotInternal, {});
+      if (!snap || snap.unidades.length === 0) {
+        reply = "No hay reporte de 'Flota en parqueo (intranet)' cargado aún. Ejecuta el workflow de sincronización en GitHub Actions o carga datos desde el panel. 🚗";
       } else {
-        reply = `🚗 <b>Flota de hoy (${vehicles.length} unidades)</b>\n\n` + vehicles.map(unitLine).join("\n\n");
+        reply = buildIntranetMessage(snap);
       }
     } else if (cmd === "/unidad") {
+      const snap = await ctx.runQuery(internal.intranet.getLatestSnapshotInternal, {});
       const vehicles = await ctx.runQuery(internal.vehicles.listAll, {});
-      const needle = arg.toLowerCase();
-      const found = vehicles.find(
+      const needle = arg.toLowerCase().trim();
+
+      const snapUnit = snap?.unidades.find(
+        (u) => u.unidad.toLowerCase() === needle || u.unidad.toLowerCase().includes(needle),
+      );
+      const vehicleUnit = vehicles.find(
         (v) => v.unitNumber.toLowerCase() === needle || v.unitNumber.toLowerCase().includes(needle),
       );
-      if (!found) {
-        reply = `No encontré la unidad "${arg}". Usa /flota para ver la lista completa.`;
+
+      if (!snapUnit && !vehicleUnit) {
+        reply = `No encontré la unidad "${escapeHtml(arg)}". Usa /flota para ver la lista en parqueo.`;
       } else {
-        reply = unitLine(found);
+        const lines: string[] = [];
+        const uNum = snapUnit?.unidad || vehicleUnit?.unitNumber || arg;
+        lines.push(`🚗 <b>Unidad ${escapeHtml(uNum)}</b>`);
+        if (snapUnit) {
+          const limpio = /limpio/i.test(snapUnit.estado) ? "✅ Limpio" : "🧼 Sucio";
+          lines.push(`📍 Parqueo: <b>${escapeHtml(snapUnit.ubic)}</b>`);
+          lines.push(`   Kilometraje: <b>${escapeHtml(snapUnit.km)} km</b>`);
+          lines.push(`   Combustible: <b>${escapeHtml(snapUnit.fuel)}</b>`);
+          lines.push(`   Estado: <b>${limpio}</b> (${escapeHtml(snapUnit.estado)})`);
+        }
+        if (vehicleUnit) {
+          if (vehicleUnit.nextServiceKm) lines.push(`   Próximo servicio: a los ${vehicleUnit.nextServiceKm.toLocaleString("es-PE")} km`);
+          if (vehicleUnit.nextMaintenance) lines.push(`   Próximo mantenimiento: ${expiryTag(vehicleUnit.nextMaintenance)}`);
+          lines.push(`   SOAT: ${expiryTag(vehicleUnit.soatExpiry)}`);
+          lines.push(`   Revisión técnica: ${expiryTag(vehicleUnit.revisionExpiry)}`);
+          if (vehicleUnit.observations) lines.push(`   📝 Observaciones: ${escapeHtml(vehicleUnit.observations)}`);
+        }
+        reply = lines.join("\n");
       }
     } else {
       reply = "Comando no reconocido. Usa /ayuda para ver los comandos disponibles.";
     }
 
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chatId, text: reply, parse_mode: "HTML" }),
-    });
+    const chunks = chunkMessage(reply);
+    for (const chunk of chunks) {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: chunk, parse_mode: "HTML" }),
+      });
+    }
 
     return new Response("ok");
   }),

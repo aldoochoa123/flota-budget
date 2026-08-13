@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { internalMutation, query } from "./_generated/server";
+import { internalMutation, internalQuery, query } from "./_generated/server";
 
 export type IntranetUnit = {
   unidad: string;
@@ -72,6 +72,19 @@ export const upsertSnapshot = internalMutation({
     }
 
     return { id, unidades: unidades.length, pruned };
+  },
+});
+
+/** Último snapshot sincronizado desde la intranet (interno para Telegram y backend). */
+export const getLatestSnapshotInternal = internalQuery({
+  args: {},
+  handler: async (ctx) => {
+    const snap = await ctx.db
+      .query("intranetSnapshots")
+      .withIndex("by_syncedAt")
+      .order("desc")
+      .first();
+    return snap ?? null;
   },
 });
 
