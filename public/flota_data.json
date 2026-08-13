@@ -1,6 +1,13 @@
 {
-  "fecha": "13/08/26, 6:49 a. m.",
+  "fecha": "13/08/26, 7:38 a. m.",
   "unidades": [
+    {
+      "unidad": "498",
+      "ubic": "E1",
+      "km": "55649",
+      "fuel": "1/4",
+      "estado": "Sucio"
+    },
     {
       "unidad": "947",
       "ubic": "E1",
@@ -107,13 +114,6 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "1064",
-      "ubic": "E7",
-      "km": "48635",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "1067",
       "ubic": "E7",
       "km": "16040",
@@ -135,56 +135,11 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "326",
-      "ubic": "E7",
-      "km": "83723",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "1065",
       "ubic": "E7",
       "km": "51254",
       "fuel": "Full",
       "estado": "Limpio"
     }
-  ],
-  "movimientos": [
-    { "unidad": "0130", "fecha": "22/07/2026", "tipo": "RT Taller", "reportId": "RV0130-0051" },
-    { "unidad": "0104", "fecha": "03/08/2026", "tipo": "RT Retorno", "reportId": "RV0104-0437" },
-    { "unidad": "0103", "fecha": "27/07/2026", "tipo": "RT Retorno", "reportId": "RV0103-0161" },
-    { "unidad": "0102", "fecha": "31/07/2026", "tipo": "RT Retorno", "reportId": "RV0102-0138" },
-    { "unidad": "0101", "fecha": "28/07/2026", "tipo": "RT Retorno", "reportId": "RV0101-0128" },
-    { "unidad": "0100", "fecha": "29/07/2026", "tipo": "RT Retorno", "reportId": "RV0100-0147" },
-    { "unidad": "0131", "fecha": "31/07/2026", "tipo": "RT Retorno", "reportId": "RV0131-0046" },
-    { "unidad": "0134", "fecha": "01/08/2026", "tipo": "RT Retorno", "reportId": "RV0134-0072" },
-    { "unidad": "0137", "fecha": "30/07/2026", "tipo": "RT Retorno", "reportId": "RV0137-0026" },
-    { "unidad": "0139", "fecha": "02/08/2026", "tipo": "RT Retorno", "reportId": "RV0139-0017" },
-    { "unidad": "0255", "fecha": "01/08/2026", "tipo": "RT Retorno", "reportId": "RV0255-0283" },
-    { "unidad": "0265", "fecha": "30/07/2026", "tipo": "RT Retorno", "reportId": "RV0265-0129" },
-    { "unidad": "0268", "fecha": "28/07/2026", "tipo": "RT Retorno", "reportId": "RV0268-0157" },
-    { "unidad": "0326", "fecha": "12/07/2026", "tipo": "RT Retorno", "reportId": "RV0326-0149" },
-    { "unidad": "0327", "fecha": "20/07/2026", "tipo": "RT Retorno", "reportId": "RV0327-0178" },
-    { "unidad": "0471", "fecha": "28/07/2026", "tipo": "RT Retorno", "reportId": "RV0471-0351" },
-    { "unidad": "0478", "fecha": "30/07/2026", "tipo": "RT Retorno", "reportId": "RV0478-0064" },
-    { "unidad": "0479", "fecha": "03/08/2026", "tipo": "RT Retorno", "reportId": "RV0479-0140" },
-    { "unidad": "0498", "fecha": "27/07/2026", "tipo": "RT Retorno", "reportId": "RV0498-0118" },
-    { "unidad": "0772", "fecha": "30/07/2026", "tipo": "RT Retorno", "reportId": "RV0772-0122" },
-    { "unidad": "0773", "fecha": "11/07/2026", "tipo": "RT Retorno", "reportId": "RV0773-0119" },
-    { "unidad": "0778", "fecha": "29/07/2026", "tipo": "RT Retorno", "reportId": "RV0778-0094" },
-    { "unidad": "0782", "fecha": "29/07/2026", "tipo": "RT Retorno", "reportId": "RV0782-0100" },
-    { "unidad": "0909", "fecha": "26/07/2026", "tipo": "RT Retorno", "reportId": "RV0909-0111" },
-    { "unidad": "0962", "fecha": "01/08/2026", "tipo": "RT Retorno", "reportId": "RV0962-0128" },
-    { "unidad": "1035", "fecha": "31/07/2026", "tipo": "RT Retorno", "reportId": "RV1035-0107" },
-    { "unidad": "1061", "fecha": "03/07/2026", "tipo": "RT Retorno", "reportId": "RV1061-0101" },
-    { "unidad": "1063", "fecha": "03/08/2026", "tipo": "RT Retorno", "reportId": "RV1063-0078" },
-    { "unidad": "1064", "fecha": "14/06/2026", "tipo": "RT Retorno", "reportId": "RV1064-0078" },
-    { "unidad": "1065", "fecha": "16/07/2026", "tipo": "RT Retorno", "reportId": "RV1065-0085" },
-    { "unidad": "1067", "fecha": "31/07/2026", "tipo": "RT Retorno", "reportId": "RV1067-0017" },
-    { "unidad": "1081", "fecha": "18/07/2026", "tipo": "RT Retorno", "reportId": "RV1081-0032" },
-    { "unidad": "0101", "fecha": "06/07/2026", "tipo": "SL Salida", "reportId": "RV0101-0126" },
-    { "unidad": "0102", "fecha": "15/06/2026", "tipo": "SL Salida", "reportId": "RV0102-0134" },
-    { "unidad": "0103", "fecha": "02/07/2026", "tipo": "SL Salida", "reportId": "RV0103-0160" },
-    { "unidad": "0130", "fecha": "09/06/2026", "tipo": "SL Salida", "reportId": "RV0130-0047" }
   ]
 }
