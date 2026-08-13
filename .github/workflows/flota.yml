@@ -35,7 +35,8 @@ jobs:
       FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
       # Modo descubrimiento: activado por defecto en runs manuales
       # (workflow_dispatch). En schedule/push queda off.
-      DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && inputs.descubrir == 'true' }}
+      # Nota: a nivel de env de job, los inputs se leen via github.event.inputs.
+      DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.descubrir == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -89,4 +90,22 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/
           git commit -m "Actualizar flota $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Sin cambios"
-          git push
+          # Push tolerante a carreras: si el remoto avanzó (otro run horario),
+          # se rebasea y reintenta; si hay conflicto en el JSON generado, se omite
+          # el push (el próximo run lo regenera) sin tumbar el job.
+          for i in 1 2 3; do
+            if git push 2>/dev/null; then
+              echo "Push OK"
+              exit 0
+            fi
+            echo "Intento $i: push rechazado (remoto avanzó), rebaseando..."
+            sleep 5
+            git pull --rebase origin main 2>&1 | tail -1 || true
+            if git status --porcelain | grep -q '^UU'; then
+              echo "::warning::Conflicto en archivos generados — se omite el push (el próximo run lo regenera)"
+              git rebase --abort 2>/dev/null || true
+              exit 0
+            fi
+          done
+          echo "::error::No se pudo pushear tras 3 intentos"
+          exit 1
