@@ -16,12 +16,12 @@ export type ExpiryTone = "none" | "ok" | "warn" | "danger";
 
 export function expiryInfo(iso?: string): { label: string; tone: ExpiryTone } {
   const days = daysUntil(iso);
-  if (days === null) return { label: "—", tone: "none" };
+  if (days === null) return { label: "", tone: "none" };
   if (days < 0) return { label: `Vencido (${Math.abs(days)}d)`, tone: "danger" };
   if (days === 0) return { label: "Vence hoy", tone: "danger" };
-  if (days <= 30) return { label: `En ${days} días`, tone: "danger" };
-  if (days <= 60) return { label: `En ${days} días`, tone: "warn" };
-  return { label: formatDate(iso), tone: "ok" };
+  if (days <= 30) return { label: `En ${days}d`, tone: "danger" };
+  if (days <= 60) return { label: `En ${days}d`, tone: "warn" };
+  return { label: "", tone: "ok" };
 }
 
 export function formatMileage(km?: number): string {

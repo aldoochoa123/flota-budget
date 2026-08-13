@@ -510,13 +510,13 @@ export default function Dashboard() {
                           <td className="px-1.5 py-1.5 whitespace-nowrap">
                             <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
                               {formatDate(veh?.soatExpiry)}
-                              {soat.tone !== "none" && ` · ${soat.label}`}
+                              {soat.label ? ` · ${soat.label}` : ""}
                             </Badge>
                           </td>
                           <td className="px-1.5 py-1.5 whitespace-nowrap">
                             <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
                               {formatDate(veh?.revisionExpiry)}
-                              {rev.tone !== "none" && ` · ${rev.label}`}
+                              {rev.label ? ` · ${rev.label}` : ""}
                             </Badge>
                           </td>
                           <td
@@ -776,13 +776,13 @@ export default function Dashboard() {
                         <td className="px-4 py-3">
                           <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
                             {formatDate(v.soatExpiry)}
-                            {soat.tone !== "none" && ` · ${soat.label}`}
+                            {soat.label ? ` · ${soat.label}` : ""}
                           </Badge>
                         </td>
                         <td className="px-4 py-3">
                           <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
                             {formatDate(v.revisionExpiry)}
-                            {rev.tone !== "none" && ` · ${rev.label}`}
+                            {rev.label ? ` · ${rev.label}` : ""}
                           </Badge>
                         </td>
                         <td className="px-4 py-3 text-right">

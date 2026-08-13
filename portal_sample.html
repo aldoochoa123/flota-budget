@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Metas -->
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>
+        Dashboard
+    </title>
+    <!-- Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/7e65600a9c.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1" rel="stylesheet" />
+    <!-- Alpine -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+	    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+
+    <!--<nav
+    class="navbar navbar-expand-lg  blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="http://168.181.8.120:81/dashboard">
+            Soft UI Dashboard Laravel Livewire
+        </a>
+        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                    <a class="nav-link text-dark me-2 text-dark"
+                        href=" http://168.181.8.120:81/sign-up">
+                        <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
+                        Sign Up
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark me-2" href="http://168.181.8.120:81/login">
+                        <i class="fas fa-key opacity-6 text-dark me-1"></i>
+                        Sign In
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-lg-block d-none">
+                <li class="nav-item">
+                    <a href="https://www.creative-tim.com/product/soft-ui-dashboard-laravel-livewire"
+                        class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark" target="_blank">Free download</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+-->
+            <section wire:id="hPJSLJsVRY3jFRrYq24B" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;hPJSLJsVRY3jFRrYq24B&quot;,&quot;name&quot;:&quot;auth.login&quot;,&quot;locale&quot;:&quot;es&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;3254c3f5&quot;,&quot;data&quot;:{&quot;email&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;,&quot;remember_me&quot;:false},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;8649ae194f73945173eadca8e22358c468ed42d84682066a36c5094e175fd29e&quot;}}">
+    <div class="page-header section-height-75">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                    <div class="card card-plain mt-8">
+                        <div class="card-header pb-0 text-left bg-transparent">
+                            <h3 class="font-weight-bolder text-info text-gradient">Bienvenido de nuevo</h3>
+                            <!--<p class="mb-0">Create a new acount<br></p>
+                            <p class="mb-0">OR Sign in with these credentials:</p>
+                            <p class="mb-0">Email <b>admin@softui.com</b></p>
+                            <p class="mb-0">Password <b>secret</b></p>-->
+                        </div>
+                        <div class="card-body">
+                            <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
+                                <div class="mb-3">
+                                    <label for="email">Usuario o email</label>
+                                    <div class="">
+                                        <input wire:model="email" id="email" type="text" class="form-control"
+                                            placeholder="Usuario o email" aria-label="Email" aria-describedby="email-addon">
+                                    </div>
+                                                                    </div>
+                                <div class="mb-3">
+                                    <label for="password">Contraseña</label>
+                                    <div class="">
+                                        <input wire:model="password" id="password" type="password" class="form-control"
+                                            placeholder="Contraseña" aria-label="Password"
+                                            aria-describedby="password-addon">
+                                    </div>
+                                                                    </div>
+                                <!--<div class="form-check form-switch">
+                                    <input wire:model="remember_me" class="form-check-input" type="checkbox"
+                                        id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>-->
+                                <div class="text-center">
+                                    <button type="submit"
+                                        class="btn bg-gradient-info w-100 mt-4 mb-0">Iniciar sesión</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!--<div class="card-footer text-center pt-0 px-lg-2 px-1">
+                            <small class="text-muted">Forgot you password? Reset you password <a
+                                    href="http://168.181.8.120:81/login/forgot-password"
+                                    class="text-info text-gradient font-weight-bold">here</a></small>
+                            <p class="mb-4 text-sm mx-auto">
+                                 Don&#039;t have an account?
+                                <a href="http://168.181.8.120:81/sign-up"
+                                    class="text-info text-gradient font-weight-bold">Sign up</a>
+                            </p>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                        <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
+                            style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Livewire Component wire-end:hPJSLJsVRY3jFRrYq24B -->
+            <div class="mt-5">
+                <!--<footer class="footer pb-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 mb-4 mx-auto text-center">
+                  <a href="https://www.creative-tim.com" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      Company
+                  </a>
+                  <a href="https://www.creative-tim.com/presentation" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      About Us
+                  </a>
+                  <a href="https://www.creative-tim.com/presentation" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      Team
+                  </a>
+                  <a href="https://www.creative-tim.com/templates" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      Products
+                  </a>
+                  <a href="https://www.creative-tim.com/blog" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      Blog
+                  </a>
+                  <a href="https://www.creative-tim.com/support-terms" target="_blank"
+                      class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                      Pricing
+                  </a>
+              </div>
+              <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+                  <a href="https://dribbble.com/creativetim" target="_blank" class="text-secondary me-xl-4 me-4">
+                      <span class="text-lg fab fa-dribbble"></span>
+                  </a>
+                  <a href="https://twitter.com/CreativeTim" target="_blank" class="text-secondary me-xl-4 me-4">
+                      <span class="text-lg fab fa-twitter"></span>
+                  </a>
+                  <a href="https://www.instagram.com/creativetimofficial/" target="_blank"
+                      class="text-secondary me-xl-4 me-4">
+                      <span class="text-lg fab fa-instagram"></span>
+                  </a>
+                  <a href="https://ro.pinterest.com/thecreativetim/" target="_blank"
+                      class="text-secondary me-xl-4 me-4">
+                      <span class="text-lg fab fa-pinterest"></span>
+                  </a>
+                  <a href="https://github.com/creativetimofficial" target="_blank" class="text-secondary me-xl-4 me-4">
+                      <span class="text-lg fab fa-github"></span>
+                  </a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-8 mx-auto text-center mt-1">
+                  <p class="mb-0 text-secondary">
+                      Copyright © 2026 Soft by <a style="color: #252f40;" href="https://www.creative-tim.com"
+                          class="font-weight-bold ml-1" target="_blank">Creative Tim</a> &amp; <a style="color: #252f40;"
+                          href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">UPDIVISION</a>
+              </div>
+              </p>
+          </div>
+      </div>
+      </div>
+  </footer>
+-->
+            </div>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="assets/js/soft-ui-dashboard.js"></script>
+    <script src="/vendor/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = '5qJieC0VA9jvJUJAeZ4JrqDpKBctBqqfJ1eraC7h';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+</body>
+
+    <script>
+        Livewire.on('alert', function() {
+            Swal.fire({
+                title: "Buen trabajo!",
+                text: "Se registró con éxito!",
+                icon: "success"
+            });
+        })
+
+        Livewire.on('validation', function() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debe marcar al menos un item de la lista",
+            });
+        })
+		
+		Livewire.on('ra_validation', function() {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "El contrato no existe",
+            });
+        })
+    </script>
+</html>
