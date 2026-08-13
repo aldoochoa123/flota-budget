@@ -99,7 +99,6 @@ export function downloadFlotaPdf(
     return [
       `#${u.unidad}`,
       u.ubic || "—",
-      u.ra || "—",
       u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—",
       u.fuel || "—",
       /limpio/i.test(u.estado) ? "Limpio" : "Sucio",
@@ -116,7 +115,6 @@ export function downloadFlotaPdf(
       [
         "Nº Unidad",
         "Parqueo",
-        "RA (Contrato)",
         "Kilometraje",
         "Combustible",
         "Estado",
@@ -146,16 +144,15 @@ export function downloadFlotaPdf(
       fillColor: [248, 250, 252],
     },
     columnStyles: {
-      0: { fontStyle: "bold", textColor: [15, 23, 42], cellWidth: 20 },
-      1: { cellWidth: 18 },
-      2: { fontStyle: "bold", textColor: [234, 88, 12], cellWidth: 26 },
+      0: { fontStyle: "bold", textColor: [15, 23, 42], cellWidth: 22 },
+      1: { cellWidth: 20 },
+      2: { cellWidth: 26 },
       3: { cellWidth: 24 },
-      4: { cellWidth: 22 },
-      5: { cellWidth: 18 },
-      6: { cellWidth: 26 },
-      7: { cellWidth: 22 },
-      8: { cellWidth: 22 },
-      9: { cellWidth: "auto" },
+      4: { cellWidth: 20 },
+      5: { cellWidth: 28 },
+      6: { cellWidth: 24 },
+      7: { cellWidth: 24 },
+      8: { cellWidth: "auto" },
     },
     didDrawPage: (data) => {
       // Pie de página
