@@ -53,6 +53,62 @@ const emptyForm = {
   observations: "",
 };
 
+function SyncCountdownWidget({ syncedAt }: { syncedAt?: number }) {
+  const [timeLeft, setTimeLeft] = useState<{ min: number; sec: number; isImminent: boolean }>({
+    min: 0,
+    sec: 0,
+    isImminent: false,
+  });
+
+  useEffect(() => {
+    function update() {
+      const now = Date.now();
+      const d = new Date(now);
+      // El workflow en GitHub Actions corre al minuto :00 de cada hora programada.
+      // Calculamos la hora siguiente en punto.
+      const nextHour = new Date(
+        d.getFullYear(),
+        d.getMonth(),
+        d.getDate(),
+        d.getHours() + 1,
+        0,
+        0,
+      ).getTime();
+      const diffMs = Math.max(0, nextHour - now);
+      const totalSec = Math.floor(diffMs / 1000);
+      const min = Math.floor(totalSec / 60);
+      const sec = totalSec % 60;
+      setTimeLeft({
+        min,
+        sec,
+        isImminent: totalSec <= 60,
+      });
+    }
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, [syncedAt]);
+
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur-sm">
+      <span className="relative flex h-2 w-2">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+      </span>
+      {timeLeft.isImminent ? (
+        <span className="font-bold text-warn animate-pulse">⏳ Sincronizando en breve…</span>
+      ) : (
+        <span>
+          Próxima sincronización:{" "}
+          <span className="font-mono font-bold text-foreground">
+            {String(timeLeft.min).padStart(2, "0")}:{String(timeLeft.sec).padStart(2, "0")}
+          </span>
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const vehicles = useQuery(api.vehicles.listVehicles);
   const allVehicles = useQuery(api.vehicles.listAllVehicles);
@@ -286,6 +342,9 @@ export default function Dashboard() {
           <div className="flex items-center">
             <Logo className="h-8" badgeClassName="h-8 w-8 rounded-lg shadow-none" />
           </div>
+          <div className="flex items-center gap-3">
+            <SyncCountdownWidget syncedAt={snap?.syncedAt} />
+          </div>
         </div>
       </header>
 
@@ -340,13 +399,16 @@ export default function Dashboard() {
 
         {/* Tabla principal: flota de la intranet */}
         <Card className="mt-8">
-          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-border/50 pb-3">
             <h2 className="flex items-center gap-2 text-lg font-bold">📡 Flota en parqueo (intranet)</h2>
-            {snap && (
-              <span className="text-xs text-muted-foreground">
-                Sincronizado {formatLimaDateTime(snap.syncedAt)}
-              </span>
-            )}
+            <div className="flex flex-wrap items-center gap-3">
+              <SyncCountdownWidget syncedAt={snap?.syncedAt} />
+              {snap && (
+                <span className="text-xs text-muted-foreground">
+                  Sincronizado {formatLimaDateTime(snap.syncedAt)}
+                </span>
+              )}
+            </div>
           </div>
           {snap === undefined ? (
             <p className="text-sm text-muted-foreground">Cargando…</p>
