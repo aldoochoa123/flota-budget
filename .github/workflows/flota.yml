@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       descubrir:
-        description: "Explorar enlaces de la intranet (modo descubrimiento)"
+        description: "Explorar enlaces de la intranet (modo descubrimiento). Default: activado en runs manuales; en schedule/push queda off."
         type: boolean
-        default: false
+        default: true
   push:
     branches: [main]
 
@@ -33,9 +33,9 @@ jobs:
       # https://3211-<workspace>.daytonaproxy01.net/ingest-flota
       CONVEX_SYNC_URL: ${{ secrets.CONVEX_SYNC_URL }}
       FLOTA_SYNC_SECRET: ${{ secrets.FLOTA_SYNC_SECRET }}
-      # Modo descubrimiento: se activa SOLO cuando se marca la casilla "descubrir"
-      # en workflow_dispatch. En schedule/push queda off.
-      DISCOVERY: ${{ inputs.descubrir == 'true' }}
+      # Modo descubrimiento: activado por defecto en runs manuales
+      # (workflow_dispatch). En schedule/push queda off.
+      DISCOVERY: ${{ github.event_name == 'workflow_dispatch' && inputs.descubrir == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7

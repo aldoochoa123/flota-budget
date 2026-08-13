@@ -278,6 +278,7 @@ function generarReporte(unidades, fecha, movimientos) {
 // ---------- Main ----------
 async function main() {
   const soloMensaje = process.argv.includes('--mensaje');
+  console.log('[DISCOVERY] env=' + process.env.DISCOVERY + ' → modo descubrimiento ' + (DISCOVERY ? 'ON' : 'off'));
 
   let unidades;
   let fecha;
