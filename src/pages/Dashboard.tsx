@@ -125,6 +125,7 @@ export default function Dashboard() {
   const [form, setForm] = useState(emptyForm);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [saving, setSaving] = useState(false);
   const [fleetMsg, setFleetMsg] = useState<string | null>(null);
   const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
@@ -312,6 +313,7 @@ export default function Dashboard() {
       return;
     }
     try {
+      setSaving(true);
       if (editingId) {
         await updateVehicle({ id: editingId, ...payload });
       } else {
@@ -322,6 +324,8 @@ export default function Dashboard() {
       setShowForm(false);
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo guardar la unidad");
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -838,8 +842,8 @@ export default function Dashboard() {
                     >
                       Cancelar
                     </Button>
-                    <Button type="submit" className="px-6 font-semibold">
-                      {editingId ? "💾 Guardar cambios" : "➕ Agregar unidad"}
+                    <Button type="submit" className="px-6 font-semibold" disabled={saving}>
+                      {saving ? "⏳ Guardando…" : editingId ? "💾 Guardar cambios" : "➕ Agregar unidad"}
                     </Button>
                   </div>
                 </form>

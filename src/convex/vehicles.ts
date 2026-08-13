@@ -189,7 +189,18 @@ export const updateVehicle = mutation({
     const { id, ...fields } = args;
     const existing = await ctx.db.get(id);
     if (!existing) throw new Error("Unidad no encontrada");
-    await ctx.db.patch(id, { ...fields, updatedAt: Date.now() });
+    await ctx.db.replace(id, {
+      unitNumber: fields.unitNumber,
+      clean: fields.clean,
+      mileage: fields.mileage,
+      nextMaintenance: fields.nextMaintenance,
+      nextServiceKm: fields.nextServiceKm,
+      soatExpiry: fields.soatExpiry,
+      revisionExpiry: fields.revisionExpiry,
+      observations: fields.observations,
+      todayFleet: existing.todayFleet,
+      updatedAt: Date.now(),
+    });
   },
 });
 
