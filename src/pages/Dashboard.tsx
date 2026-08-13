@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import type { Doc, Id } from "../convex/_generated/dataModel";
 import { Badge, Button, Card, Input, Label, Logo, Textarea } from "../components/ui";
+import { F1RaceTrack } from "../components/F1RaceTrack";
 import {
   daysUntil,
   expiryInfo,
@@ -935,37 +936,8 @@ export default function Dashboard() {
           )}
         </section>
 
-        {/* Telegram info */}
-        <Card className="mt-8">
-          <h2 className="mb-2 flex items-center gap-2 text-lg font-bold">🤖 Tu bot de Telegram</h2>
-          <p className="mb-2 text-sm text-muted-foreground">
-            Consulta tu flota desde el celular. Comandos disponibles:{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">/flota</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">/unidad &lt;nº&gt;</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">/ayuda</code>.
-          </p>
-          <p className="mb-4 text-sm text-muted-foreground">
-            Nivel básico: cada unidad muestra número de unidad, kilometraje, estado (limpio/sucio),
-            próximo mantenimiento, SOAT, revisión técnica y observaciones.
-          </p>
-          <ol className="list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
-            <li>
-              Crea tu bot con <strong className="text-foreground">@BotFather</strong> en Telegram
-              (comando <code className="rounded bg-muted px-1.5 py-0.5 text-xs">/newbot</code>) y
-              guarda el token.
-            </li>
-            <li>
-              Pon el token en <strong className="text-foreground">API Keys</strong> con el nombre{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 text-xs">TELEGRAM_BOT_TOKEN</code>.
-            </li>
-            <li>
-              Registra el webhook con tu URL de Convex:{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-                https://api.telegram.org/bot&lt;TOKEN&gt;/setWebhook?url=&lt;CONVEX_URL&gt;/telegram-webhook
-              </code>
-            </li>
-          </ol>
-        </Card>
+        {/* Animación F1 en pista de carreras */}
+        <F1RaceTrack />
       </main>
     </div>
   );
