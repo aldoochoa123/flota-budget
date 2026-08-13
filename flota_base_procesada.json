@@ -1,0 +1,1053 @@
+{
+  "1032": {
+    "unitNumber": "1032",
+    "plate": "BZO-274",
+    "mileage": 95714,
+    "updatedAt": 1786659811610
+  },
+  "1033": {
+    "unitNumber": "1033",
+    "plate": "CHB-409",
+    "mileage": 76453,
+    "soatExpiry": "2027-07-09",
+    "updatedAt": 1786659823571
+  },
+  "1034": {
+    "unitNumber": "1034",
+    "plate": "CHB-625",
+    "mileage": 74358,
+    "updatedAt": 1786659836864
+  },
+  "1035": {
+    "unitNumber": "1035",
+    "plate": "CJT-220",
+    "mileage": 58680,
+    "updatedAt": 1786659849047
+  },
+  "1036": {
+    "unitNumber": "1036",
+    "plate": "CJT-222",
+    "mileage": 52598,
+    "nextServiceKm": 1792,
+    "updatedAt": 1786659860620
+  },
+  "1037": {
+    "unitNumber": "1037",
+    "plate": "CSE-156",
+    "mileage": 30938,
+    "updatedAt": 1786659872289
+  },
+  "1038": {
+    "unitNumber": "1038",
+    "plate": "CSF-490",
+    "mileage": 31833,
+    "updatedAt": 1786659882934
+  },
+  "1061": {
+    "unitNumber": "1061",
+    "plate": "CKW-212",
+    "mileage": 63855,
+    "updatedAt": 1786659898121
+  },
+  "1063": {
+    "unitNumber": "1063",
+    "plate": "CMO-371",
+    "mileage": 63558,
+    "nextServiceKm": 65701,
+    "updatedAt": 1786659908229
+  },
+  "1064": {
+    "unitNumber": "1064",
+    "plate": "CMO-685",
+    "mileage": 47257,
+    "updatedAt": 1786659919194
+  },
+  "1065": {
+    "unitNumber": "1065",
+    "plate": "CMP-111",
+    "mileage": 51254,
+    "updatedAt": 1786659933264
+  },
+  "1066": {
+    "unitNumber": "1066",
+    "plate": "CMP-112",
+    "mileage": 53638,
+    "nextServiceKm": 60209,
+    "updatedAt": 1786659945467
+  },
+  "1067": {
+    "unitNumber": "1067",
+    "plate": "CXJ-115",
+    "mileage": 15210,
+    "updatedAt": 1786659957212
+  },
+  "1068": {
+    "unitNumber": "1068",
+    "plate": "CXP-252",
+    "mileage": 10657,
+    "updatedAt": 1786659967096
+  },
+  "1081": {
+    "unitNumber": "1081",
+    "plate": "BLJ-828",
+    "mileage": 104585,
+    "updatedAt": 1786659978345
+  },
+  "1083": {
+    "unitNumber": "1083",
+    "plate": "BMS-702",
+    "mileage": 116699,
+    "nextMaintenance": "533-01-26",
+    "updatedAt": 1786659990421
+  },
+  "1084": {
+    "unitNumber": "1084",
+    "plate": "BPD-914",
+    "mileage": 108666,
+    "updatedAt": 1786660003818
+  },
+  "1085": {
+    "unitNumber": "1085",
+    "plate": "CAK-247",
+    "mileage": 114057,
+    "updatedAt": 1786660016187
+  },
+  "0100": {
+    "unitNumber": "0100",
+    "plate": "CJX-370",
+    "mileage": 73936,
+    "soatExpiry": "2026-02-01",
+    "updatedAt": 1786660028804
+  },
+  "0101": {
+    "unitNumber": "0101",
+    "plate": "CJY-259",
+    "mileage": 72168,
+    "updatedAt": 1786660041474
+  },
+  "0102": {
+    "unitNumber": "0102",
+    "plate": "CJY-282",
+    "mileage": 71468,
+    "updatedAt": 1786660052554
+  },
+  "0103": {
+    "unitNumber": "0103",
+    "plate": "CJZ-002",
+    "mileage": 69893,
+    "updatedAt": 1786660063580
+  },
+  "0104": {
+    "unitNumber": "0104",
+    "plate": "CJZ-031",
+    "mileage": 69332,
+    "updatedAt": 1786660074072
+  },
+  "0130": {
+    "unitNumber": "0130",
+    "plate": "CTB-069",
+    "mileage": 20794,
+    "updatedAt": 1786660085068
+  },
+  "0131": {
+    "unitNumber": "0131",
+    "plate": "CTB-119",
+    "mileage": 32368,
+    "updatedAt": 1786660096720
+  },
+  "0132": {
+    "unitNumber": "0132",
+    "plate": "CTB-302",
+    "mileage": 24889,
+    "updatedAt": 1786660108683
+  },
+  "0133": {
+    "unitNumber": "0133",
+    "plate": "CTB-413",
+    "mileage": 26756,
+    "soatExpiry": "2027-06-17",
+    "updatedAt": 1786660122317
+  },
+  "0134": {
+    "unitNumber": "0134",
+    "plate": "CTB-555",
+    "mileage": 35214,
+    "updatedAt": 1786660134492
+  },
+  "0135": {
+    "unitNumber": "0135",
+    "plate": "CYF-161",
+    "mileage": 6518,
+    "updatedAt": 1786660146086
+  },
+  "0136": {
+    "unitNumber": "0136",
+    "plate": "CYF-475",
+    "mileage": 4680,
+    "soatExpiry": "2027-04-02",
+    "nextServiceKm": 267497,
+    "updatedAt": 1786660158238
+  },
+  "0137": {
+    "unitNumber": "0137",
+    "plate": "CYD-139",
+    "mileage": 8045,
+    "updatedAt": 1786660169523
+  },
+  "0138": {
+    "unitNumber": "0138",
+    "plate": "CYC-682",
+    "mileage": 9798,
+    "updatedAt": 1786660182235
+  },
+  "0139": {
+    "unitNumber": "0139",
+    "plate": "CYD-131",
+    "mileage": 8570,
+    "updatedAt": 1786660193501
+  },
+  "0200": {
+    "unitNumber": "0200",
+    "plate": "BZW-251",
+    "mileage": 29294,
+    "soatExpiry": "2027-02-04",
+    "revisionExpiry": "2027-02-04",
+    "updatedAt": 1786660201890
+  },
+  "0254": {
+    "unitNumber": "0254",
+    "plate": "BXN-148",
+    "mileage": 67377,
+    "updatedAt": 1786660213249
+  },
+  "0255": {
+    "unitNumber": "0255",
+    "plate": "BXN-520",
+    "mileage": 86935,
+    "soatExpiry": "2027-01-10",
+    "revisionExpiry": "2027-01-10",
+    "updatedAt": 1786660224718
+  },
+  "0256": {
+    "unitNumber": "0256",
+    "plate": "CBA-696",
+    "mileage": 67003,
+    "updatedAt": 1786660237219
+  },
+  "0257": {
+    "unitNumber": "0257",
+    "plate": "CCR-261",
+    "mileage": 58847,
+    "updatedAt": 1786660248975
+  },
+  "0258": {
+    "unitNumber": "0258",
+    "plate": "CCR-227",
+    "mileage": 91338,
+    "updatedAt": 1786660260582
+  },
+  "0259": {
+    "unitNumber": "0259",
+    "plate": "CKO-445",
+    "mileage": 47953,
+    "updatedAt": 1786660270760
+  },
+  "0260": {
+    "unitNumber": "0260",
+    "plate": "CKP-042",
+    "mileage": 51612,
+    "updatedAt": 1786660282788
+  },
+  "0261": {
+    "unitNumber": "0261",
+    "plate": "CKP-330",
+    "mileage": 42894,
+    "soatExpiry": "2027-02-07",
+    "nextServiceKm": 32469,
+    "updatedAt": 1786660292386
+  },
+  "0262": {
+    "unitNumber": "0262",
+    "plate": "CKP-399",
+    "mileage": 40861,
+    "nextServiceKm": 45247,
+    "updatedAt": 1786660302619
+  },
+  "0263": {
+    "unitNumber": "0263",
+    "plate": "CKP-555",
+    "mileage": 48676,
+    "soatExpiry": "727-02-07",
+    "updatedAt": 1786660314399
+  },
+  "0264": {
+    "unitNumber": "0264",
+    "plate": "CKV-367",
+    "mileage": 42747,
+    "soatExpiry": "2024-12-02",
+    "updatedAt": 1786660325108
+  },
+  "0265": {
+    "unitNumber": "0265",
+    "plate": "CKV-368",
+    "mileage": 47756,
+    "nextServiceKm": 77760,
+    "updatedAt": 1786660334760
+  },
+  "0266": {
+    "unitNumber": "0266",
+    "plate": "CKV-518",
+    "mileage": 39159,
+    "updatedAt": 1786660345508
+  },
+  "0267": {
+    "unitNumber": "0267",
+    "plate": "CKV-641",
+    "mileage": 42847,
+    "nextServiceKm": 201997,
+    "updatedAt": 1786660358845
+  },
+  "0268": {
+    "unitNumber": "0268",
+    "plate": "CKW-148",
+    "mileage": 44987,
+    "updatedAt": 1786660371799
+  },
+  "0320": {
+    "unitNumber": "0320",
+    "plate": "BWR-126",
+    "mileage": 104070,
+    "soatExpiry": "2026-07-28",
+    "revisionExpiry": "2026-07-01",
+    "updatedAt": 1786660382713
+  },
+  "0321": {
+    "unitNumber": "0321",
+    "plate": "BWS-181",
+    "mileage": 94084,
+    "nextServiceKm": 1223,
+    "updatedAt": 1786660393000
+  },
+  "0322": {
+    "unitNumber": "0322",
+    "plate": "BXS-130",
+    "mileage": 90147,
+    "updatedAt": 1786660401822
+  },
+  "0324": {
+    "unitNumber": "0324",
+    "plate": "BXS-626",
+    "mileage": 81016,
+    "updatedAt": 1786660411712
+  },
+  "0325": {
+    "unitNumber": "0325",
+    "plate": "BXS-413",
+    "mileage": 112232,
+    "updatedAt": 1786660422280
+  },
+  "0326": {
+    "unitNumber": "0326",
+    "plate": "BXT-432",
+    "mileage": 83723,
+    "updatedAt": 1786660433771
+  },
+  "0327": {
+    "unitNumber": "0327",
+    "plate": "CBY-481",
+    "mileage": 74981,
+    "soatExpiry": "2026-10-01",
+    "updatedAt": 1786660444488
+  },
+  "0328": {
+    "unitNumber": "0328",
+    "plate": "CBY-662",
+    "mileage": 79684,
+    "soatExpiry": "2004-04-02",
+    "revisionExpiry": "2004-04-02",
+    "updatedAt": 1786660455717
+  },
+  "0445": {
+    "unitNumber": "0445",
+    "plate": "BVU-182",
+    "mileage": 103021,
+    "soatExpiry": "2026-07-03",
+    "updatedAt": 1786660466452
+  },
+  "0446": {
+    "unitNumber": "0446",
+    "plate": "BVS-421",
+    "mileage": 111347,
+    "soatExpiry": "2026-07-03",
+    "revisionExpiry": "2003-03-14",
+    "updatedAt": 1786660476256
+  },
+  "0447": {
+    "unitNumber": "0447",
+    "plate": "BWI-189",
+    "mileage": 104335,
+    "nextMaintenance": "1773-05-25",
+    "updatedAt": 1786660485086
+  },
+  "0448": {
+    "unitNumber": "0448",
+    "plate": "BWJ-083",
+    "mileage": 98766,
+    "updatedAt": 1786660493287
+  },
+  "0450": {
+    "unitNumber": "0450",
+    "plate": "BZZ-006",
+    "mileage": 106580,
+    "soatExpiry": "2027-05-12",
+    "updatedAt": 1786660504393
+  },
+  "0451": {
+    "unitNumber": "0451",
+    "plate": "BZZ-188",
+    "mileage": 84714,
+    "nextServiceKm": 22112,
+    "updatedAt": 1786660515559
+  },
+  "0452": {
+    "unitNumber": "0452",
+    "plate": "CAA-471",
+    "mileage": 101196,
+    "soatExpiry": "2072-03-12",
+    "revisionExpiry": "2072-03-12",
+    "updatedAt": 1786660527458
+  },
+  "0460": {
+    "unitNumber": "0460",
+    "plate": "CCK-222",
+    "mileage": 71313,
+    "updatedAt": 1786660536578
+  },
+  "0461": {
+    "unitNumber": "0461",
+    "plate": "CCK-653",
+    "mileage": 78580,
+    "soatExpiry": "2026-01-11",
+    "updatedAt": 1786660546732
+  },
+  "0470": {
+    "unitNumber": "0470",
+    "plate": "CHG-360",
+    "mileage": 68155,
+    "updatedAt": 1786660557410
+  },
+  "0471": {
+    "unitNumber": "0471",
+    "plate": "CHG-555",
+    "mileage": 64050,
+    "updatedAt": 1786660568288
+  },
+  "0474": {
+    "unitNumber": "0474",
+    "plate": "CHJ-484",
+    "mileage": 68542,
+    "updatedAt": 1786660579064
+  },
+  "0475": {
+    "unitNumber": "0475",
+    "plate": "CHJ-657",
+    "mileage": 66454,
+    "updatedAt": 1786660590991
+  },
+  "0476": {
+    "unitNumber": "0476",
+    "plate": "CHJ-172",
+    "mileage": 75835,
+    "updatedAt": 1786660600679
+  },
+  "0477": {
+    "unitNumber": "0477",
+    "plate": "CHJ-376",
+    "mileage": 72543,
+    "updatedAt": 1786660610746
+  },
+  "0478": {
+    "unitNumber": "0478",
+    "plate": "CHJ-541",
+    "mileage": 76274,
+    "nextServiceKm": 5777,
+    "updatedAt": 1786660621780
+  },
+  "0479": {
+    "unitNumber": "0479",
+    "plate": "CHJ-544",
+    "mileage": 61784,
+    "updatedAt": 1786660632646
+  },
+  "0480": {
+    "unitNumber": "0480",
+    "plate": "CHJ-583",
+    "mileage": 70270,
+    "nextServiceKm": 102665,
+    "updatedAt": 1786660643312
+  },
+  "0481": {
+    "unitNumber": "0481",
+    "plate": "CHK-688",
+    "mileage": 73548,
+    "updatedAt": 1786660654178
+  },
+  "0482": {
+    "unitNumber": "0482",
+    "plate": "CHK-032",
+    "mileage": 66429,
+    "updatedAt": 1786660665101
+  },
+  "0483": {
+    "unitNumber": "0483",
+    "plate": "CHK-631",
+    "mileage": 73124,
+    "updatedAt": 1786660676860
+  },
+  "0484": {
+    "unitNumber": "0484",
+    "plate": "CHK-694",
+    "mileage": 61136,
+    "updatedAt": 1786660688012
+  },
+  "0485": {
+    "unitNumber": "0485",
+    "plate": "CJH-567",
+    "mileage": 55141,
+    "nextServiceKm": 20366,
+    "updatedAt": 1786660699815
+  },
+  "0486": {
+    "unitNumber": "0486",
+    "plate": "CJH-604",
+    "mileage": 68241,
+    "updatedAt": 1786660709669
+  },
+  "0488": {
+    "unitNumber": "0488",
+    "plate": "CJJ-173",
+    "mileage": 58246,
+    "nextServiceKm": 6727,
+    "updatedAt": 1786660722006
+  },
+  "0489": {
+    "unitNumber": "0489",
+    "plate": "CJJ-200",
+    "mileage": 55098,
+    "nextServiceKm": 7032,
+    "updatedAt": 1786660732293
+  },
+  "0490": {
+    "unitNumber": "0490",
+    "plate": "CJN-042",
+    "mileage": 66867,
+    "nextServiceKm": 1392,
+    "updatedAt": 1786660741901
+  },
+  "0491": {
+    "unitNumber": "0491",
+    "plate": "CJN-277",
+    "mileage": 63198,
+    "nextMaintenance": "863-02-05",
+    "updatedAt": 1786660752914
+  },
+  "0492": {
+    "unitNumber": "0492",
+    "plate": "CJN-391",
+    "mileage": 50747,
+    "updatedAt": 1786660763552
+  },
+  "0493": {
+    "unitNumber": "0493",
+    "plate": "CJN-501",
+    "mileage": 55639,
+    "updatedAt": 1786660772706
+  },
+  "0494": {
+    "unitNumber": "0494",
+    "plate": "CJN-652",
+    "mileage": 71149,
+    "nextServiceKm": 275787,
+    "updatedAt": 1786660784176
+  },
+  "0495": {
+    "unitNumber": "0495",
+    "plate": "CLC-089",
+    "mileage": 51548,
+    "nextServiceKm": 7017,
+    "updatedAt": 1786660794619
+  },
+  "0497": {
+    "unitNumber": "0497",
+    "plate": "CLB-065",
+    "mileage": 70389,
+    "nextServiceKm": 2727,
+    "updatedAt": 1786660805893
+  },
+  "0498": {
+    "unitNumber": "0498",
+    "plate": "CLB-566",
+    "mileage": 54228,
+    "updatedAt": 1786660815921
+  },
+  "0499": {
+    "unitNumber": "0499",
+    "plate": "CLB-630",
+    "mileage": 59274,
+    "updatedAt": 1786660826740
+  },
+  "0500": {
+    "unitNumber": "0500",
+    "plate": "CPM-311",
+    "mileage": 29805,
+    "updatedAt": 1786660838008
+  },
+  "0501": {
+    "unitNumber": "0501",
+    "plate": "CPM-334",
+    "mileage": 37648,
+    "updatedAt": 1786660848503
+  },
+  "0504": {
+    "unitNumber": "0504",
+    "plate": "CPN-238",
+    "mileage": 38284,
+    "nextServiceKm": 43087,
+    "updatedAt": 1786660857959
+  },
+  "0505": {
+    "unitNumber": "0505",
+    "plate": "CPP-192",
+    "mileage": 38924,
+    "nextServiceKm": 203303,
+    "updatedAt": 1786660868664
+  },
+  "0506": {
+    "unitNumber": "0506",
+    "plate": "CRO-120",
+    "mileage": 37787,
+    "nextServiceKm": 77777,
+    "updatedAt": 1786660878711
+  },
+  "0507": {
+    "unitNumber": "0507",
+    "plate": "CRO-157",
+    "mileage": 37036,
+    "updatedAt": 1786660888918
+  },
+  "0508": {
+    "unitNumber": "0508",
+    "plate": "CRO-456",
+    "mileage": 31716,
+    "updatedAt": 1786660899126
+  },
+  "0509": {
+    "unitNumber": "0509",
+    "plate": "CRP-203",
+    "mileage": 27819,
+    "updatedAt": 1786660909582
+  },
+  "0510": {
+    "unitNumber": "0510",
+    "plate": "CRQ-147",
+    "mileage": 38779,
+    "updatedAt": 1786660921509
+  },
+  "0511": {
+    "unitNumber": "0511",
+    "plate": "CRS-517",
+    "mileage": 25710,
+    "updatedAt": 1786660932118
+  },
+  "0512": {
+    "unitNumber": "0512",
+    "plate": "CSO-288",
+    "mileage": 28822,
+    "updatedAt": 1786660944069
+  },
+  "0513": {
+    "unitNumber": "0513",
+    "plate": "CSO-419",
+    "mileage": 21665,
+    "soatExpiry": "2021-05-09",
+    "updatedAt": 1786660955234
+  },
+  "0514": {
+    "unitNumber": "0514",
+    "plate": "CSP-187",
+    "mileage": 28524,
+    "updatedAt": 1786660965570
+  },
+  "0515": {
+    "unitNumber": "0515",
+    "plate": "CSP-547",
+    "mileage": 26264,
+    "updatedAt": 1786660975706
+  },
+  "0516": {
+    "unitNumber": "0516",
+    "plate": "CTP-013",
+    "mileage": 17414,
+    "updatedAt": 1786660987206
+  },
+  "0517": {
+    "unitNumber": "0517",
+    "plate": "CTP-695",
+    "mileage": 22706,
+    "soatExpiry": "2026-07-02",
+    "updatedAt": 1786660996739
+  },
+  "0519": {
+    "unitNumber": "0519",
+    "plate": "CTQ-325",
+    "mileage": 23298,
+    "soatExpiry": "2027-07-17",
+    "nextServiceKm": 224706,
+    "updatedAt": 1786661007178
+  },
+  "0720": {
+    "unitNumber": "0720",
+    "plate": "BLC-471",
+    "mileage": 118521,
+    "nextServiceKm": 72605,
+    "updatedAt": 1786661016716
+  },
+  "0721": {
+    "unitNumber": "0721",
+    "plate": "BLB-253",
+    "mileage": 105348,
+    "soatExpiry": "2026-04-23",
+    "revisionExpiry": "2026-04-23",
+    "updatedAt": 1786661024422
+  },
+  "0722": {
+    "unitNumber": "0722",
+    "plate": "BLB-368",
+    "mileage": 126825,
+    "nextServiceKm": 3672,
+    "updatedAt": 1786661033826
+  },
+  "0761": {
+    "unitNumber": "0761",
+    "plate": "BWK-144",
+    "mileage": 75630,
+    "revisionExpiry": "726-07-02",
+    "updatedAt": 1786661045738
+  },
+  "0762": {
+    "unitNumber": "0762",
+    "plate": "BXA-122",
+    "mileage": 80044,
+    "nextServiceKm": 2324,
+    "updatedAt": 1786661055619
+  },
+  "0763": {
+    "unitNumber": "0763",
+    "plate": "BWZ-624",
+    "mileage": 85424,
+    "soatExpiry": "2027-06-22",
+    "revisionExpiry": "2027-06-22",
+    "nextServiceKm": 27779,
+    "updatedAt": 1786661067685
+  },
+  "0770": {
+    "unitNumber": "0770",
+    "plate": "CKE-457",
+    "mileage": 59141,
+    "updatedAt": 1786661078884
+  },
+  "0771": {
+    "unitNumber": "0771",
+    "plate": "CKE-572",
+    "mileage": 73943,
+    "updatedAt": 1786661089621
+  },
+  "0772": {
+    "unitNumber": "0772",
+    "plate": "CKK-490",
+    "mileage": 66439,
+    "nextServiceKm": 3204,
+    "updatedAt": 1786661101056
+  },
+  "0773": {
+    "unitNumber": "0773",
+    "plate": "CKK-560",
+    "mileage": 63020,
+    "updatedAt": 1786661112272
+  },
+  "0774": {
+    "unitNumber": "0774",
+    "plate": "CKL-203",
+    "mileage": 62914,
+    "soatExpiry": "2027-09-30",
+    "updatedAt": 1786661123000
+  },
+  "0775": {
+    "unitNumber": "0775",
+    "plate": "CMF-306",
+    "mileage": 49209,
+    "updatedAt": 1786661133729
+  },
+  "0776": {
+    "unitNumber": "0776",
+    "plate": "CMF-437",
+    "mileage": 54341,
+    "updatedAt": 1786661143898
+  },
+  "0778": {
+    "unitNumber": "0778",
+    "plate": "CNL-417",
+    "mileage": 33362,
+    "updatedAt": 1786661155483
+  },
+  "0780": {
+    "unitNumber": "0780",
+    "plate": "CPH-089",
+    "mileage": 45430,
+    "updatedAt": 1786661166342
+  },
+  "0781": {
+    "unitNumber": "0781",
+    "plate": "CPI-664",
+    "mileage": 45807,
+    "updatedAt": 1786661178447
+  },
+  "0782": {
+    "unitNumber": "0782",
+    "plate": "CPJ-086",
+    "mileage": 39915,
+    "updatedAt": 1786661189543
+  },
+  "0783": {
+    "unitNumber": "0783",
+    "plate": "CPJ-383",
+    "mileage": 43067,
+    "updatedAt": 1786661199985
+  },
+  "0880": {
+    "unitNumber": "0880",
+    "plate": "CYA-138",
+    "mileage": 5515,
+    "nextServiceKm": 2777,
+    "updatedAt": 1786661211511
+  },
+  "0881": {
+    "unitNumber": "0881",
+    "plate": "CYA-134",
+    "mileage": 5141,
+    "updatedAt": 1786661222096
+  },
+  "0882": {
+    "unitNumber": "0882",
+    "plate": "CYB-000",
+    "mileage": 7750,
+    "nextServiceKm": 5000,
+    "updatedAt": 1786661233391
+  },
+  "0883": {
+    "unitNumber": "0883",
+    "plate": "CYB-446",
+    "mileage": 7208,
+    "updatedAt": 1786661243952
+  },
+  "0890": {
+    "unitNumber": "0890",
+    "plate": "CKK-548",
+    "mileage": 65183,
+    "updatedAt": 1786661255060
+  },
+  "0891": {
+    "unitNumber": "0891",
+    "plate": "CKL-308",
+    "mileage": 50939,
+    "nextServiceKm": 6036,
+    "updatedAt": 1786661266181
+  },
+  "0893": {
+    "unitNumber": "0893",
+    "plate": "CNN-369",
+    "mileage": 47516,
+    "nextServiceKm": 97735,
+    "updatedAt": 1786661276590
+  },
+  "0894": {
+    "unitNumber": "0894",
+    "plate": "CPI-688",
+    "mileage": 35890,
+    "nextServiceKm": 303671,
+    "nextMaintenance": "3671-10-30",
+    "updatedAt": 1786661285359
+  },
+  "0895": {
+    "unitNumber": "0895",
+    "plate": "CPJ-351",
+    "mileage": 24886,
+    "soatExpiry": "2026-02-04",
+    "nextServiceKm": 20299,
+    "updatedAt": 1786661295344
+  },
+  "0896": {
+    "unitNumber": "0896",
+    "plate": "CWR-351",
+    "mileage": 20436,
+    "soatExpiry": "2027-07-06",
+    "updatedAt": 1786661305981
+  },
+  "0897": {
+    "unitNumber": "0897",
+    "plate": "CWQ-496",
+    "mileage": 7739,
+    "updatedAt": 1786661316758
+  },
+  "0898": {
+    "unitNumber": "0898",
+    "plate": "CWS-280",
+    "mileage": 13832,
+    "updatedAt": 1786661327329
+  },
+  "0899": {
+    "unitNumber": "0899",
+    "plate": "CWT-291",
+    "mileage": 15236,
+    "updatedAt": 1786661338868
+  },
+  "0900": {
+    "unitNumber": "0900",
+    "plate": "CMC-415",
+    "mileage": 31534,
+    "nextServiceKm": 6673,
+    "updatedAt": 1786661348005
+  },
+  "0901": {
+    "unitNumber": "0901",
+    "plate": "CMC-619",
+    "mileage": 54050,
+    "updatedAt": 1786661358594
+  },
+  "0903": {
+    "unitNumber": "0903",
+    "plate": "CME-223",
+    "mileage": 32050,
+    "updatedAt": 1786661368950
+  },
+  "0909": {
+    "unitNumber": "0909",
+    "plate": "CBB-245",
+    "mileage": 70435,
+    "soatExpiry": "2027-10-24",
+    "revisionExpiry": "2027-10-24",
+    "nextServiceKm": 7547,
+    "nextMaintenance": "1777-05-02",
+    "updatedAt": 1786661379859
+  },
+  "0915": {
+    "unitNumber": "0915",
+    "plate": "CPM-145",
+    "mileage": 51245,
+    "nextMaintenance": "3820-04-04",
+    "updatedAt": 1786661390822
+  },
+  "0916": {
+    "unitNumber": "0916",
+    "plate": "CPM-310",
+    "mileage": 49680,
+    "updatedAt": 1786661402084
+  },
+  "0943": {
+    "unitNumber": "0943",
+    "plate": "CJO-426",
+    "mileage": 104042,
+    "updatedAt": 1786661414052
+  },
+  "0944": {
+    "unitNumber": "0944",
+    "plate": "CNP-026",
+    "mileage": 62197,
+    "soatExpiry": "2026-10-03",
+    "updatedAt": 1786661424949
+  },
+  "0945": {
+    "unitNumber": "0945",
+    "plate": "CNP-053",
+    "mileage": 48816,
+    "updatedAt": 1786661433077
+  },
+  "0946": {
+    "unitNumber": "0946",
+    "plate": "CSC-362",
+    "mileage": 39852,
+    "nextServiceKm": 4246,
+    "updatedAt": 1786661444272
+  },
+  "0947": {
+    "unitNumber": "0947",
+    "plate": "CSD-192",
+    "mileage": 41081,
+    "updatedAt": 1786661455230
+  },
+  "0960": {
+    "unitNumber": "0960",
+    "plate": "CHU-479",
+    "mileage": 86259,
+    "updatedAt": 1786661466401
+  },
+  "0961": {
+    "unitNumber": "0961",
+    "plate": "CHU-135",
+    "mileage": 74492,
+    "updatedAt": 1786661477444
+  },
+  "0962": {
+    "unitNumber": "0962",
+    "plate": "CHY-567",
+    "mileage": 72901,
+    "nextServiceKm": 5649,
+    "updatedAt": 1786661490143
+  },
+  "0963": {
+    "unitNumber": "0963",
+    "plate": "CJI-555",
+    "mileage": 77577,
+    "updatedAt": 1786661501822
+  },
+  "0964": {
+    "unitNumber": "0964",
+    "plate": "CJL-625",
+    "mileage": 75928,
+    "updatedAt": 1786661513215
+  },
+  "0965": {
+    "unitNumber": "0965",
+    "plate": "CJM-159",
+    "mileage": 56176,
+    "updatedAt": 1786661524511
+  },
+  "0966": {
+    "unitNumber": "0966",
+    "plate": "CXL-582",
+    "mileage": 11387,
+    "soatExpiry": "927-10-16",
+    "updatedAt": 1786661534231
+  },
+  "0967": {
+    "unitNumber": "0967",
+    "plate": "CXN-069",
+    "mileage": 7181,
+    "nextServiceKm": 70007,
+    "updatedAt": 1786661545239
+  },
+  "0968": {
+    "unitNumber": "0968",
+    "plate": "CYA-148",
+    "mileage": 9071,
+    "nextMaintenance": "2000-10-02",
+    "updatedAt": 1786661556629
+  },
+  "0969": {
+    "unitNumber": "0969",
+    "plate": "CYA-388",
+    "mileage": 5895,
+    "nextServiceKm": 20363,
+    "updatedAt": 1786661567537
+  }
+}

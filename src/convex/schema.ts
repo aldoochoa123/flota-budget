@@ -4,6 +4,7 @@ import { v } from "convex/values";
 export default defineSchema({
   vehicles: defineTable({
     unitNumber: v.string(),
+    plate: v.optional(v.string()),
     mileage: v.optional(v.number()),
     clean: v.boolean(),
     nextMaintenance: v.optional(v.string()),

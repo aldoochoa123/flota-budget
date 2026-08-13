@@ -7,6 +7,7 @@ import { PAST_FLEET } from "./pastFleet";
 
 const vehicleFields = {
   unitNumber: v.string(),
+  plate: v.optional(v.string()),
   mileage: v.optional(v.number()),
   clean: v.boolean(),
   nextMaintenance: v.optional(v.string()),
@@ -112,6 +113,7 @@ export const applyHistoricalData = mutation({
     const byNumber = new Map(existing.map((v) => [v.unitNumber, v]));
 
     let updated = 0;
+    let plates = 0;
     let soat = 0;
     let revision = 0;
     let nextService = 0;
@@ -123,6 +125,10 @@ export const applyHistoricalData = mutation({
         continue;
       }
       const patch: Record<string, unknown> = {};
+      if (entry.plate && vehicle.plate !== entry.plate) {
+        patch.plate = entry.plate;
+        plates += 1;
+      }
       if (entry.soatExpiry && vehicle.soatExpiry !== entry.soatExpiry) {
         patch.soatExpiry = entry.soatExpiry;
         soat += 1;
@@ -140,25 +146,31 @@ export const applyHistoricalData = mutation({
         updated += 1;
       }
     }
-    return { updated, soat, revision, nextService, total: PAST_FLEET.length, notFound };
+    return { updated, plates, soat, revision, nextService, total: PAST_FLEET.length, notFound };
   },
 });
 
 /**
  * Siembra la flota base (161 unidades) en la base de datos, oculta
- * (todayFleet: false). Es idempotente: solo agrega las unidades que faltan.
+ * (todayFleet: false) con sus placas y datos enriquecidos.
  */
 export const importFleet = mutation({
   args: {},
   handler: async (ctx) => {
     const existing = await ctx.db.query("vehicles").collect();
     const existingNumbers = new Set(existing.map((v) => v.unitNumber));
+    const pastByUnit = new Map(PAST_FLEET.map((p) => [p.unitNumber, p]));
 
     let added = 0;
     for (const unitNumber of FLEET_UNITS) {
       if (existingNumbers.has(unitNumber)) continue;
+      const past = pastByUnit.get(unitNumber);
       await ctx.db.insert("vehicles", {
         unitNumber,
+        plate: past?.plate,
+        nextServiceKm: past?.nextServiceKm,
+        soatExpiry: past?.soatExpiry,
+        revisionExpiry: past?.revisionExpiry,
         clean: true,
         todayFleet: false,
         updatedAt: Date.now(),
@@ -191,6 +203,7 @@ export const updateVehicle = mutation({
     if (!existing) throw new Error("Unidad no encontrada");
     await ctx.db.replace(id, {
       unitNumber: fields.unitNumber,
+      plate: fields.plate,
       clean: fields.clean,
       mileage: fields.mileage,
       nextMaintenance: fields.nextMaintenance,
@@ -210,5 +223,67 @@ export const deleteVehicle = mutation({
     const existing = await ctx.db.get(id);
     if (!existing) throw new Error("Unidad no encontrada");
     await ctx.db.delete(id);
+  },
+});
+
+/**
+ * Importa o enriquece masivamente la flota base (161 unidades) con datos
+ * extraídos del portal de reportes e inspecciones (Placa, SOAT, RT, Próximo servicio).
+ */
+export const importEnrichedFleet = mutation({
+  args: {
+    vehicles: v.array(
+      v.object({
+        unitNumber: v.string(),
+        plate: v.optional(v.string()),
+        mileage: v.optional(v.number()),
+        clean: v.optional(v.boolean()),
+        nextMaintenance: v.optional(v.string()),
+        nextServiceKm: v.optional(v.number()),
+        soatExpiry: v.optional(v.string()),
+        revisionExpiry: v.optional(v.string()),
+        observations: v.optional(v.string()),
+      })
+    ),
+  },
+  handler: async (ctx, { vehicles: items }) => {
+    const existing = await ctx.db.query("vehicles").collect();
+    const byNumber = new Map(existing.map((v) => [v.unitNumber, v]));
+
+    let updated = 0;
+    let added = 0;
+
+    for (const item of items) {
+      const existingVehicle = byNumber.get(item.unitNumber);
+      const fields = {
+        unitNumber: item.unitNumber,
+        plate: item.plate,
+        mileage: item.mileage,
+        clean: item.clean ?? true,
+        nextMaintenance: item.nextMaintenance,
+        nextServiceKm: item.nextServiceKm,
+        soatExpiry: item.soatExpiry,
+        revisionExpiry: item.revisionExpiry,
+        observations: item.observations,
+        updatedAt: Date.now(),
+      };
+
+      if (existingVehicle) {
+        // Preservar todayFleet existente
+        await ctx.db.patch(existingVehicle._id, {
+          ...fields,
+          todayFleet: existingVehicle.todayFleet,
+        });
+        updated++;
+      } else {
+        await ctx.db.insert("vehicles", {
+          ...fields,
+          todayFleet: false,
+        });
+        added++;
+      }
+    }
+
+    return { total: items.length, updated, added };
   },
 });

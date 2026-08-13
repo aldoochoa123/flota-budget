@@ -46,6 +46,7 @@ function unitKey(n: string): string {
 
 const emptyForm = {
   unitNumber: "",
+  plate: "",
   mileage: "",
   clean: true,
   nextMaintenance: "",
@@ -132,12 +133,16 @@ export default function Dashboard() {
   const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
 
-  // Si no hay flota base, siembra las 161 unidades y aplica datos históricos automáticamente.
+  // Siembra las 161 unidades y aplica placas/datos enriquecidos automáticamente si faltan.
   useEffect(() => {
     if (allVehicles === undefined || autoSeeded.current) return;
+    const needsPlates = allVehicles.some((v) => !v.plate);
     if (allVehicles.length === 0) {
       autoSeeded.current = true;
       void importFleet().then(() => applyHistoricalData());
+    } else if (needsPlates) {
+      autoSeeded.current = true;
+      void applyHistoricalData();
     }
   }, [allVehicles, importFleet, applyHistoricalData]);
 
@@ -251,6 +256,7 @@ export default function Dashboard() {
     setEditingId(v._id);
     setForm({
       unitNumber: v.unitNumber,
+      plate: v.plate ?? "",
       mileage: v.mileage === undefined ? "" : String(v.mileage),
       clean: v.clean,
       nextMaintenance: v.nextMaintenance ?? "",
@@ -283,6 +289,7 @@ export default function Dashboard() {
     setError(null);
     const payload = {
       unitNumber: form.unitNumber.trim(),
+      plate: form.plate.trim() ? form.plate.trim().toUpperCase() : undefined,
       mileage: form.mileage === "" ? undefined : Number(form.mileage),
       clean: form.clean,
       nextMaintenance: form.nextMaintenance || undefined,
@@ -646,6 +653,14 @@ export default function Dashboard() {
                     />
                   </div>
                   <div>
+                    <Label>Placa Oficial</Label>
+                    <Input
+                      value={form.plate}
+                      onChange={(e) => setForm({ ...form, plate: e.target.value.toUpperCase() })}
+                      placeholder="Ej: CBB-245"
+                    />
+                  </div>
+                  <div>
                     <Label>Kilometraje Actual</Label>
                     <Input
                       type="number"
@@ -741,6 +756,7 @@ export default function Dashboard() {
                 <thead>
                   <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                     <th className="px-4 py-3">Nº unidad</th>
+                    <th className="px-4 py-3">Placa</th>
                     <th className="px-4 py-3">Próximo servicio</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
@@ -755,6 +771,15 @@ export default function Dashboard() {
                     return (
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
+                        <td className="px-4 py-3 font-mono font-bold text-foreground">
+                          {v.plate ? (
+                            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-muted/60 border border-border/80 tracking-wider">
+                              {v.plate}
+                            </span>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
+                        </td>
                         <td className="px-4 py-3">
                           {v.nextServiceKm ? (
                             <span className="font-medium text-foreground">
