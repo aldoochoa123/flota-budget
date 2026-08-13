@@ -288,6 +288,21 @@ export default function Dashboard() {
     setError(null);
   }
 
+  function openEditUnit(unitNum: string) {
+    const v = vehicleByUnit.get(unitKey(unitNum));
+    if (v) {
+      openEdit(v);
+    } else {
+      setEditingId(null);
+      setForm({
+        ...emptyForm,
+        unitNumber: unitNum,
+      });
+      setShowForm(true);
+      setError(null);
+    }
+  }
+
   async function handleSave(e: FormEvent) {
     e.preventDefault();
     setError(null);
@@ -454,6 +469,7 @@ export default function Dashboard() {
                       <th className="px-4 py-2.5">SOAT</th>
                       <th className="px-4 py-2.5">Revisión técnica</th>
                       <th className="px-4 py-2.5">Observaciones</th>
+                      <th className="px-4 py-2.5 text-right">Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -515,10 +531,19 @@ export default function Dashboard() {
                             </Badge>
                           </td>
                           <td
-                            className="max-w-[220px] truncate px-4 py-2.5 text-muted-foreground"
+                            className="max-w-[200px] truncate px-4 py-2.5 text-muted-foreground"
                             title={veh?.observations}
                           >
                             {veh?.observations || "—"}
+                          </td>
+                          <td className="px-4 py-2.5 text-right">
+                            <Button
+                              variant="outline"
+                              className="px-3 py-1 text-xs font-semibold hover:bg-primary/20 hover:border-primary/50 text-primary border-primary/30 bg-primary/5"
+                              onClick={() => openEditUnit(u.unidad)}
+                            >
+                              Editar
+                            </Button>
                           </td>
                         </tr>
                       );
@@ -774,6 +799,15 @@ export default function Dashboard() {
                       type="date"
                       value={form.revisionExpiry}
                       onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Label>Observaciones / Notas</Label>
+                    <Textarea
+                      rows={3}
+                      value={form.observations}
+                      onChange={(e) => setForm({ ...form, observations: e.target.value })}
+                      placeholder="Ej: Llanta delantera derecha nueva, próximo cambio de aceite, pendiente revisión…"
                     />
                   </div>
 
