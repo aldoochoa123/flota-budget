@@ -4,6 +4,7 @@ import { internalMutation, internalQuery, query } from "./_generated/server";
 export type IntranetUnit = {
   unidad: string;
   ubic: string;
+  ra?: string;
   km: string;
   fuel: string;
   estado: string;
@@ -19,6 +20,7 @@ export type IntranetMovement = {
 const unitFields = v.object({
   unidad: v.string(),
   ubic: v.string(),
+  ra: v.optional(v.string()),
   km: v.string(),
   fuel: v.string(),
   estado: v.string(),

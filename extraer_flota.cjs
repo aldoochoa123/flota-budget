@@ -80,9 +80,9 @@ async function pollUrl(needle, timeoutMs = 60000) {
 }
 
 // Columnas de la tabla (encabezados): ['', 'Unid.', 'Ubic.', 'RA', 'KM', 'Fuel', 'Estado', 'Rev.']
-// → unidad=td[1], select de ubicación en td[2], km=td[4], fuel=td[5], estado=td[6].
+// → unidad=td[1], select de ubicación en td[2], ra=td[3], km=td[4], fuel=td[5], estado=td[6].
 const EXTRACT_JS =
-  "JSON.stringify([...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');var sel=tr.querySelector('select');return {unidad:(tds[1]?tds[1].innerText:'').trim(),ubic:sel?sel.value:'',km:(tds[4]?tds[4].innerText:'').trim(),fuel:(tds[5]?tds[5].innerText:'').trim(),estado:(tds[6]?tds[6].innerText:'').trim()}}))";
+  "JSON.stringify([...document.querySelectorAll('table')[0].querySelectorAll('tbody tr')].map(function(tr){var tds=tr.querySelectorAll('td');var sel=tr.querySelector('select');return {unidad:(tds[1]?tds[1].innerText:'').trim(),ubic:sel?sel.value:'',ra:(tds[3]?tds[3].innerText:'').trim(),km:(tds[4]?tds[4].innerText:'').trim(),fuel:(tds[5]?tds[5].innerText:'').trim(),estado:(tds[6]?tds[6].innerText:'').trim()}}))";
 
 // Extracción defensiva de la tabla de movimientos (inAndOut/list). Mapea columnas
 // por encabezado (unidad/fecha/tipo/reporte). Sin literales de regex ni arrow

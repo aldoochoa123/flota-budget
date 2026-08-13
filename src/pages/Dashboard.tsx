@@ -381,6 +381,7 @@ export default function Dashboard() {
                     <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
                       <th className="px-4 py-2.5">Nº unidad</th>
                       <th className="px-4 py-2.5">Parqueo</th>
+                      <th className="px-4 py-2.5">RA (Contrato)</th>
                       <th className="px-4 py-2.5">Kilometraje</th>
                       <th className="px-4 py-2.5">Combustible</th>
                       <th className="px-4 py-2.5">Estado</th>
@@ -404,6 +405,15 @@ export default function Dashboard() {
                           <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
                           <td className="px-4 py-2.5">
                             <Badge tone="muted">{u.ubic}</Badge>
+                          </td>
+                          <td className="px-4 py-2.5">
+                            {u.ra ? (
+                              <span className="font-mono text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
+                                {u.ra}
+                              </span>
+                            ) : (
+                              <span className="text-muted-foreground">—</span>
+                            )}
                           </td>
                           <td className="px-4 py-2.5 text-muted-foreground">
                             {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
@@ -818,8 +828,8 @@ export default function Dashboard() {
                     <th className="px-4 py-3">Estado</th>
                     <th className="px-4 py-3">SOAT</th>
                     <th className="px-4 py-3">Revisión técnica</th>
+                    <th className="px-4 py-3">RA (Contrato)</th>
                     <th className="px-4 py-3">Observaciones</th>
-                    <th className="px-4 py-3">Taller</th>
                     <th className="px-4 py-3 text-right">Acciones</th>
                   </tr>
                 </thead>
@@ -828,9 +838,10 @@ export default function Dashboard() {
                     const maint = expiryInfo(v.nextMaintenance);
                     const soat = expiryInfo(v.soatExpiry);
                     const rev = expiryInfo(v.revisionExpiry);
-                    const tallerMov = movByUnit.get(v.unitNumber);
-                    const enTallerNow =
-                      tallerMov !== undefined && isEnTaller(tallerMov.tipo);
+                    const snapUnit = snap?.unidades.find(
+                      (u) => unitKey(u.unidad) === unitKey(v.unitNumber),
+                    );
+                    const raVal = snapUnit?.ra?.trim();
                     return (
                       <tr key={v._id} className="border-b border-border last:border-0 hover:bg-muted/30">
                         <td className="px-4 py-3 font-bold">#{v.unitNumber}</td>
@@ -868,17 +879,17 @@ export default function Dashboard() {
                             {rev.tone !== "none" && ` · ${rev.label}`}
                           </Badge>
                         </td>
-                        <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
-                          {v.observations || "—"}
-                        </td>
                         <td className="px-4 py-3">
-                          {enTallerNow ? (
-                            <Badge tone="danger">
-                              🛠️ En taller · {formatMovDate(tallerMov.fecha)}
-                            </Badge>
+                          {raVal ? (
+                            <span className="font-mono text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
+                              {raVal}
+                            </span>
                           ) : (
                             <span className="text-muted-foreground">—</span>
                           )}
+                        </td>
+                        <td className="max-w-[220px] truncate px-4 py-3 text-muted-foreground">
+                          {v.observations || "—"}
                         </td>
                         <td className="px-4 py-3 text-right">
                           <div className="inline-flex gap-2">

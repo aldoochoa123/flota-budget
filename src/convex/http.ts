@@ -107,6 +107,7 @@ http.route({
         return {
           unidad: String(x.unidad ?? ""),
           ubic: String(x.ubic ?? ""),
+          ra: x.ra ? String(x.ra).trim() : undefined,
           km: String(x.km ?? ""),
           fuel: String(x.fuel ?? ""),
           estado: String(x.estado ?? ""),
@@ -146,7 +147,7 @@ http.route({
 
 function buildIntranetMessage(snap: {
   fecha: string;
-  unidades: Array<{ unidad: string; ubic: string; km: string; fuel: string; estado: string }>;
+  unidades: Array<{ unidad: string; ubic: string; ra?: string; km: string; fuel: string; estado: string }>;
 }): string {
   const grupos: Record<string, typeof snap.unidades> = {};
   for (const u of snap.unidades) {
@@ -168,7 +169,8 @@ function buildIntranetMessage(snap: {
       const limpio = /limpio/i.test(u.estado) ? "✅" : "🧼";
       const kmNum = Number(u.km);
       const kmFormatted = Number.isFinite(kmNum) ? `${kmNum.toLocaleString("es-PE")} km` : `${escapeHtml(u.km)} km`;
-      lineas.push(`▸ <b>${escapeHtml(u.unidad)}</b> · ${kmFormatted} · ${escapeHtml(u.fuel)} · ${limpio} ${escapeHtml(u.estado)}`);
+      const raText = u.ra ? ` · RA: <code>${escapeHtml(u.ra)}</code>` : "";
+      lineas.push(`▸ <b>${escapeHtml(u.unidad)}</b>${raText} · ${kmFormatted} · ${escapeHtml(u.fuel)} · ${limpio} ${escapeHtml(u.estado)}`);
     }
     lineas.push("");
   }

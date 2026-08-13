@@ -23,6 +23,7 @@ export default defineSchema({
       v.object({
         unidad: v.string(),
         ubic: v.string(),
+        ra: v.optional(v.string()),
         km: v.string(),
         fuel: v.string(),
         estado: v.string(),
