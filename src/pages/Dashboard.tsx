@@ -13,6 +13,7 @@ import {
   formatMovDate,
   parseMovDate,
 } from "../lib/dates";
+import { downloadFlotaPdf } from "../lib/generatePdf";
 
 type Vehicle = Doc<"vehicles">;
 type Movement = NonNullable<Doc<"intranetSnapshots">["movimientos"]>[number];
@@ -404,6 +405,15 @@ export default function Dashboard() {
             <h2 className="flex items-center gap-2 text-lg font-bold">📡 Flota en parqueo (intranet)</h2>
             <div className="flex flex-wrap items-center gap-3">
               <SyncCountdownWidget syncedAt={snap?.syncedAt} />
+              {snap && (
+                <Button
+                  variant="outline"
+                  onClick={() => downloadFlotaPdf(snap, allVehicles ?? [])}
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/50 transition-all active:scale-95 shadow-sm"
+                >
+                  📥 Descargar PDF
+                </Button>
+              )}
               {snap && (
                 <span className="text-xs text-muted-foreground">
                   Sincronizado {formatLimaDateTime(snap.syncedAt)}
