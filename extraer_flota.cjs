@@ -87,8 +87,10 @@ const EXTRACT_JS =
 // Extracción defensiva de la tabla de movimientos (inAndOut/list). Mapea columnas
 // por encabezado (unidad/fecha/tipo/reporte). Sin literales de regex ni arrow
 // functions: agent-browser@0.34.0 falla con regex y prefiere ES5.
+// Incluye diagnóstico (URL, texto, enlaces, nº de tablas/iframes) para cuando la
+// página no trae tabla: así el log del workflow muestra qué hay realmente.
 const EXTRACT_MOV_JS =
-  "(function(){var sp=function(s){return (s||'').trim()};var out={ok:false,why:'sin tabla',headers:[],rows:[]};var tables=document.querySelectorAll('table');if(!tables||tables.length===0)return JSON.stringify(out);var t=tables[0];out.why='sin filas';var rows=t.querySelectorAll('tbody tr');if(!rows||rows.length===0)return JSON.stringify(out);var thead=t.querySelector('thead');var headers=[];if(thead){var ths=thead.querySelectorAll('th,td');for(var i=0;i<ths.length;i++)headers.push(sp(ths[i].innerText));}out.headers=headers;var idxU=-1,idxF=-1,idxT=-1,idxR=-1;for(var i=0;i<headers.length;i++){var h=headers[i].toLowerCase();if(idxU<0&&h.indexOf('unid')>=0)idxU=i;if(idxF<0&&(h.indexOf('fecha')>=0||h.indexOf('date')>=0))idxF=i;if(idxT<0&&(h.indexOf('tipo')>=0||h.indexOf('mov')>=0||h.indexOf('modalidad')>=0||h.indexOf('ingreso')>=0||h.indexOf('salida')>=0))idxT=i;if(idxR<0&&(h.indexOf('report')>=0||h.indexOf('ra')>=0||h.indexOf('doc')>=0||h.indexOf('codigo')>=0))idxR=i;}var out2=[];for(var i=0;i<rows.length;i++){var tds=rows[i].querySelectorAll('td');if(tds.length===0)continue;var row={};if(idxU>=0)row.unidad=sp(tds[idxU].innerText);else if(tds.length>=1)row.unidad=sp(tds[0].innerText);if(idxF>=0)row.fecha=sp(tds[idxF].innerText);if(idxT>=0)row.tipo=sp(tds[idxT].innerText);if(idxR>=0)row.reportId=sp(tds[idxR].innerText);out2.push(row);}out.ok=out2.length>0;out.why=out.ok?'ok':(out2.length===0?'filas vacías':'sin mapeo');out.rows=out2.slice(0,1500);return JSON.stringify(out)})()";
+  "(function(){var sp=function(s){return (s||'').trim()};var out={ok:false,why:'sin tabla',headers:[],rows:[],url:'',body:'',links:[],nTablas:0,nIframes:0,nSelects:0,nInputs:0};out.url=location.href;var tables=document.querySelectorAll('table');out.nTablas=tables.length;out.nIframes=document.querySelectorAll('iframe').length;out.nSelects=document.querySelectorAll('select').length;out.nInputs=document.querySelectorAll('input').length;var anchors=document.querySelectorAll('a');for(var i=0;i<anchors.length;i++){var h=anchors[i].getAttribute('href')||'';if(h.indexOf('/hiker/')>=0)out.links.push(h+' => '+sp(anchors[i].innerText).slice(0,40));}var body=document.body;if(body)out.body=sp(body.innerText).slice(0,1500);if(!tables||tables.length===0)return JSON.stringify(out);var t=tables[0];out.why='sin filas';var rows=t.querySelectorAll('tbody tr');if(!rows||rows.length===0)return JSON.stringify(out);var thead=t.querySelector('thead');var headers=[];if(thead){var ths=thead.querySelectorAll('th,td');for(var i=0;i<ths.length;i++)headers.push(sp(ths[i].innerText));}out.headers=headers;var idxU=-1,idxF=-1,idxT=-1,idxR=-1;for(var i=0;i<headers.length;i++){var h=headers[i].toLowerCase();if(idxU<0&&h.indexOf('unid')>=0)idxU=i;if(idxF<0&&(h.indexOf('fecha')>=0||h.indexOf('date')>=0))idxF=i;if(idxT<0&&(h.indexOf('tipo')>=0||h.indexOf('mov')>=0||h.indexOf('modalidad')>=0||h.indexOf('ingreso')>=0||h.indexOf('salida')>=0))idxT=i;if(idxR<0&&(h.indexOf('report')>=0||h.indexOf('ra')>=0||h.indexOf('doc')>=0||h.indexOf('codigo')>=0))idxR=i;}var out2=[];for(var i=0;i<rows.length;i++){var tds=rows[i].querySelectorAll('td');if(tds.length===0)continue;var row={};if(idxU>=0)row.unidad=sp(tds[idxU].innerText);else if(tds.length>=1)row.unidad=sp(tds[0].innerText);if(idxF>=0)row.fecha=sp(tds[idxF].innerText);if(idxT>=0)row.tipo=sp(tds[idxT].innerText);if(idxR>=0)row.reportId=sp(tds[idxR].innerText);out2.push(row);}out.ok=out2.length>0;out.why=out.ok?'ok':(out2.length===0?'filas vacías':'sin mapeo');out.rows=out2.slice(0,1500);return JSON.stringify(out)})()";
 
 const fmtKm = v => (+v).toLocaleString('es-PE');
 
@@ -242,6 +244,12 @@ async function extraerMovimientos() {
   }
   if (!d || !d.ok) {
     console.log('    [taller] ⚠️ Sin movimientos (' + (d && d.why ? d.why : 'respuesta vacía') + '). Cabeceras: ' + JSON.stringify((d && d.headers) || []));
+    // Diagnóstico: qué contiene realmente la página de inAndOut/list.
+    if (d) {
+      console.log('    [taller] URL: ' + d.url + ' | tablas: ' + d.nTablas + ' | iframes: ' + d.nIframes + ' | selects: ' + d.nSelects + ' | inputs: ' + d.nInputs);
+      if (d.links && d.links.length) d.links.slice(0, 20).forEach(l => console.log('    [taller] LINK ' + l));
+      if (d.body) console.log('    [taller] BODY: ' + d.body.replace(/\n/g, ' | ').slice(0, 1200));
+    }
     return [];
   }
   const movimientos = d.rows
