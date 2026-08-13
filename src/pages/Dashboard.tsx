@@ -91,6 +91,27 @@ export default function Dashboard() {
     }
   }, [vehicles, importFleet, applyTodayFleet]);
 
+  // Cierre del modal con tecla Escape y bloqueo del scroll de fondo
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && showForm) {
+        setShowForm(false);
+        setEditingId(null);
+        setError(null);
+      }
+    }
+    if (showForm) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showForm]);
+
   // Catálogo: flota de hoy por defecto; con el botón se ve la flota base completa (161).
   const catalogVehicles = showBaseFleet ? allVehicles : vehicles;
 
@@ -595,118 +616,165 @@ export default function Dashboard() {
             </Card>
           </div>
 
-          {/* Form */}
+          {/* Modal Pop-up para Crear / Editar Unidad */}
           {showForm && (
-            <Card className="mb-8">
-              <h2 className="mb-4 text-lg font-bold">
-                {editingId ? `Editar unidad ${form.unitNumber || ""}` : "Nueva unidad"}
-              </h2>
-              <form onSubmit={handleSave} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <div>
-                  <Label>Número de unidad *</Label>
-                  <Input
-                    value={form.unitNumber}
-                    onChange={(e) => setForm({ ...form, unitNumber: e.target.value })}
-                    placeholder="Ej: 42"
-                  />
-                </div>
-                <div>
-                  <Label>Kilometraje</Label>
-                  <Input
-                    type="number"
-                    min={0}
-                    value={form.mileage}
-                    onChange={(e) => setForm({ ...form, mileage: e.target.value })}
-                    placeholder="Ej: 45230"
-                  />
-                </div>
-                <div>
-                  <Label>Próximo servicio (km)</Label>
-                  <Input
-                    type="number"
-                    min={0}
-                    value={form.nextServiceKm}
-                    onChange={(e) => setForm({ ...form, nextServiceKm: e.target.value })}
-                    placeholder="Ej: 75000"
-                  />
-                </div>
-                <div>
-                  <Label>Estado</Label>
-                  <div className="flex gap-2 pt-1">
-                    <Button
-                      type="button"
-                      variant={form.clean ? "primary" : "outline"}
-                      className="flex-1"
-                      onClick={() => setForm({ ...form, clean: true })}
-                    >
-                      🟢 Limpio
-                    </Button>
-                    <Button
-                      type="button"
-                      variant={!form.clean ? "primary" : "outline"}
-                      className="flex-1"
-                      onClick={() => setForm({ ...form, clean: false })}
-                    >
-                      🟡 Sucio
-                    </Button>
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-md animate-in fade-in duration-200"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  setShowForm(false);
+                  setEditingId(null);
+                  setError(null);
+                }
+              }}
+            >
+              <div
+                className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-2xl shadow-black/80 ring-1 ring-white/10"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Header del Modal */}
+                <div className="mb-6 flex items-start justify-between border-b border-border/50 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-2xl text-primary ring-1 ring-primary/20">
+                      🚗
+                    </div>
+                    <div>
+                      <h2 className="text-xl font-black text-foreground">
+                        {editingId ? `Editar Unidad ${form.unitNumber || ""}` : "Agregar Nueva Unidad"}
+                      </h2>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {editingId
+                          ? "Actualiza kilometraje, estado de limpieza y fechas de vencimiento."
+                          : "Ingresa los datos para registrar la unidad en el sistema."}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <Label>Próximo mantenimiento</Label>
-                  <Input
-                    type="date"
-                    value={form.nextMaintenance}
-                    onChange={(e) => setForm({ ...form, nextMaintenance: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <Label>Vencimiento SOAT</Label>
-                  <Input
-                    type="date"
-                    value={form.soatExpiry}
-                    onChange={(e) => setForm({ ...form, soatExpiry: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <Label>Revisión técnica</Label>
-                  <Input
-                    type="date"
-                    value={form.revisionExpiry}
-                    onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
-                  />
-                </div>
-                <div className="sm:col-span-2 lg:col-span-3">
-                  <Label>Observaciones</Label>
-                  <Textarea
-                    rows={2}
-                    value={form.observations}
-                    onChange={(e) => setForm({ ...form, observations: e.target.value })}
-                    placeholder="Ej: cambió de placa, próximo cambio de llantas…"
-                  />
-                </div>
-
-                {error && (
-                  <p className="sm:col-span-2 lg:col-span-3 rounded-xl border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
-                    {error}
-                  </p>
-                )}
-
-                <div className="flex gap-3 sm:col-span-2 lg:col-span-3">
-                  <Button type="submit">{editingId ? "Guardar cambios" : "Agregar unidad"}</Button>
-                  <Button
+                  <button
                     type="button"
-                    variant="ghost"
                     onClick={() => {
                       setShowForm(false);
                       setEditingId(null);
                       setError(null);
                     }}
+                    className="grid h-8 w-8 place-items-center rounded-full bg-muted/60 text-muted-foreground transition hover:bg-muted hover:text-foreground font-bold text-sm"
+                    title="Cerrar (Esc)"
                   >
-                    Cancelar
-                  </Button>
+                    ✕
+                  </button>
                 </div>
-              </form>
-            </Card>
+
+                {/* Formulario */}
+                <form onSubmit={handleSave} className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <Label>Número de unidad *</Label>
+                    <Input
+                      value={form.unitNumber}
+                      onChange={(e) => setForm({ ...form, unitNumber: e.target.value })}
+                      placeholder="Ej: 0909"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label>Kilometraje Actual</Label>
+                    <Input
+                      type="number"
+                      min={0}
+                      value={form.mileage}
+                      onChange={(e) => setForm({ ...form, mileage: e.target.value })}
+                      placeholder="Ej: 75000"
+                    />
+                  </div>
+                  <div>
+                    <Label>Próximo Servicio (km)</Label>
+                    <Input
+                      type="number"
+                      min={0}
+                      value={form.nextServiceKm}
+                      onChange={(e) => setForm({ ...form, nextServiceKm: e.target.value })}
+                      placeholder="Ej: 80000"
+                    />
+                  </div>
+                  <div>
+                    <Label>Estado de la Unidad</Label>
+                    <div className="flex gap-2 pt-1">
+                      <Button
+                        type="button"
+                        variant={form.clean ? "primary" : "outline"}
+                        className={`flex-1 ${form.clean ? "bg-ok/20 border-ok/40 text-ok font-bold" : ""}`}
+                        onClick={() => setForm({ ...form, clean: true })}
+                      >
+                        🟢 Limpio
+                      </Button>
+                      <Button
+                        type="button"
+                        variant={!form.clean ? "primary" : "outline"}
+                        className={`flex-1 ${!form.clean ? "bg-warn/20 border-warn/40 text-warn font-bold" : ""}`}
+                        onClick={() => setForm({ ...form, clean: false })}
+                      >
+                        🟡 Sucio
+                      </Button>
+                    </div>
+                  </div>
+                  <div>
+                    <Label>Próximo Mantenimiento</Label>
+                    <Input
+                      type="date"
+                      value={form.nextMaintenance}
+                      onChange={(e) => setForm({ ...form, nextMaintenance: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <Label>Vencimiento SOAT</Label>
+                    <Input
+                      type="date"
+                      value={form.soatExpiry}
+                      onChange={(e) => setForm({ ...form, soatExpiry: e.target.value })}
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Label>Vencimiento Revisión Técnica (RT)</Label>
+                    <Input
+                      type="date"
+                      value={form.revisionExpiry}
+                      onChange={(e) => setForm({ ...form, revisionExpiry: e.target.value })}
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Label>Observaciones / Notas</Label>
+                    <Textarea
+                      rows={3}
+                      value={form.observations}
+                      onChange={(e) => setForm({ ...form, observations: e.target.value })}
+                      placeholder="Ej: cambió de placa, llanta delantera derecha con clavo, próximo cambio…"
+                    />
+                  </div>
+
+                  {error && (
+                    <div className="sm:col-span-2 rounded-2xl border border-danger/30 bg-danger/10 px-4 py-3 text-sm text-danger flex items-center gap-2">
+                      <span>⚠️</span>
+                      <span>{error}</span>
+                    </div>
+                  )}
+
+                  <div className="sm:col-span-2 mt-4 flex items-center justify-end gap-3 border-t border-border/50 pt-4">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      onClick={() => {
+                        setShowForm(false);
+                        setEditingId(null);
+                        setError(null);
+                      }}
+                    >
+                      Cancelar
+                    </Button>
+                    <Button type="submit" className="px-6 font-semibold">
+                      {editingId ? "💾 Guardar cambios" : "➕ Agregar unidad"}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
           )}
 
           {/* Tabla del catálogo */}
