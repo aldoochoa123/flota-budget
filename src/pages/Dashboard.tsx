@@ -635,8 +635,8 @@ export default function Dashboard() {
                 {/* Header del Modal */}
                 <div className="mb-6 flex items-start justify-between border-b border-border/50 pb-4">
                   <div className="flex items-center gap-3">
-                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-2xl text-primary ring-1 ring-primary/20">
-                      🚗
+                    <div className="flex h-12 w-14 items-center justify-center rounded-2xl bg-white/5 p-2 ring-1 ring-border/60 shadow-md">
+                      <Logo className="h-8 w-auto object-contain" />
                     </div>
                     <div>
                       <h2 className="text-xl font-black text-foreground">
