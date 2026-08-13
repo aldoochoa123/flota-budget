@@ -7,13 +7,19 @@ const http = httpRouter();
 const HELP_TEXT = [
   "🚗 <b>Flota Control — Bot de Telegram</b>",
   "",
-  "Nivel básico: por cada unidad se reporta número de unidad, kilometraje, si está limpio o sucio, próximo servicio/mantenimiento, SOAT, revisión técnica y observaciones.",
+  "Control de inventario y estado de flota Budget Perú.",
   "",
   "Comandos disponibles:",
-  "• /flota — lista la flota de hoy (nivel básico)",
-  "• /unidad &lt;nº o texto&gt; — detalle de una unidad (ej: /unidad 42)",
+  "• /flota — lista la flota en parqueo de hoy",
+  "• /unidad &lt;nº&gt; — buscar vehículo por número de unidad (ej: /unidad 909)",
+  "• /placa &lt;placa&gt; — buscar vehículo por placa oficial (ej: /placa CBB-245)",
   "• /ayuda — muestra esta ayuda",
 ].join("\n");
+
+function unitKey(n: string): string {
+  const num = Number(n);
+  return Number.isFinite(num) ? String(num) : n.trim();
+}
 
 function escapeHtml(value: string): string {
   return value
@@ -230,37 +236,97 @@ http.route({
       }
     } else if (cmd === "/unidad") {
       const snap = await ctx.runQuery(internal.intranet.getLatestSnapshotInternal, {});
-      const vehicles = await ctx.runQuery(internal.vehicles.listAll, {});
+      const vehicles = await ctx.runQuery(internal.vehicles.listAllCatalogInternal, {});
       const needle = arg.toLowerCase().trim();
 
-      const snapUnit = snap?.unidades.find(
-        (u) => u.unidad.toLowerCase() === needle || u.unidad.toLowerCase().includes(needle),
-      );
-      const vehicleUnit = vehicles.find(
-        (v) => v.unitNumber.toLowerCase() === needle || v.unitNumber.toLowerCase().includes(needle),
-      );
-
-      if (!snapUnit && !vehicleUnit) {
-        reply = `No encontré la unidad "${escapeHtml(arg)}". Usa /flota para ver la lista en parqueo.`;
+      if (!needle) {
+        reply = "Por favor indica el número de unidad a buscar. Ej: <code>/unidad 909</code>";
       } else {
-        const lines: string[] = [];
-        const uNum = snapUnit?.unidad || vehicleUnit?.unitNumber || arg;
-        lines.push(`🚗 <b>Unidad ${escapeHtml(uNum)}</b>`);
-        if (snapUnit) {
-          const limpio = /limpio/i.test(snapUnit.estado) ? "✅ Limpio" : "🧼 Sucio";
-          lines.push(`📍 Parqueo: <b>${escapeHtml(snapUnit.ubic)}</b>`);
-          lines.push(`   Kilometraje: <b>${escapeHtml(snapUnit.km)} km</b>`);
-          lines.push(`   Combustible: <b>${escapeHtml(snapUnit.fuel)}</b>`);
-          lines.push(`   Estado: <b>${limpio}</b> (${escapeHtml(snapUnit.estado)})`);
+        const snapUnit = snap?.unidades.find(
+          (u) => unitKey(u.unidad) === unitKey(needle) || u.unidad.toLowerCase() === needle || u.unidad.toLowerCase().includes(needle),
+        );
+        const vehicleUnit = vehicles.find(
+          (v) => unitKey(v.unitNumber) === unitKey(needle) || v.unitNumber.toLowerCase() === needle || v.unitNumber.toLowerCase().includes(needle),
+        );
+
+        if (!snapUnit && !vehicleUnit) {
+          reply = `No encontré la unidad "${escapeHtml(arg)}". Usa /flota para ver la lista en parqueo o /placa para buscar por placa.`;
+        } else {
+          const lines: string[] = [];
+          const uNum = vehicleUnit?.unitNumber || snapUnit?.unidad || arg;
+          const plateInfo = vehicleUnit?.plate ? ` · Placa: <b>${escapeHtml(vehicleUnit.plate)}</b>` : "";
+          lines.push(`🚗 <b>Unidad #${escapeHtml(uNum)}${plateInfo}</b>`);
+          if (snapUnit) {
+            const limpio = /limpio/i.test(snapUnit.estado) ? "🟢 Limpio" : "🟡 Sucio";
+            lines.push(`📍 Parqueo: <b>${escapeHtml(snapUnit.ubic)}</b>`);
+            lines.push(`   Kilometraje: <b>${escapeHtml(snapUnit.km)} km</b>`);
+            lines.push(`   Combustible: <b>${escapeHtml(snapUnit.fuel)}</b>`);
+            lines.push(`   Estado: <b>${limpio}</b> (${escapeHtml(snapUnit.estado)})`);
+          } else {
+            lines.push(`📍 Estado: <i>Fuera de parqueo / En alquiler</i>`);
+            if (vehicleUnit?.mileage) {
+              lines.push(`   Último km registrado: <b>${vehicleUnit.mileage.toLocaleString("es-PE")} km</b>`);
+            }
+          }
+          if (vehicleUnit) {
+            if (vehicleUnit.nextServiceKm) lines.push(`   Próximo servicio: a los ${vehicleUnit.nextServiceKm.toLocaleString("es-PE")} km`);
+            if (vehicleUnit.nextMaintenance) lines.push(`   Próximo mantenimiento: ${expiryTag(vehicleUnit.nextMaintenance)}`);
+            lines.push(`   SOAT: ${expiryTag(vehicleUnit.soatExpiry)}`);
+            lines.push(`   Revisión técnica: ${expiryTag(vehicleUnit.revisionExpiry)}`);
+            if (vehicleUnit.observations) lines.push(`   📝 Observaciones: ${escapeHtml(vehicleUnit.observations)}`);
+          }
+          reply = lines.join("\n");
         }
-        if (vehicleUnit) {
-          if (vehicleUnit.nextServiceKm) lines.push(`   Próximo servicio: a los ${vehicleUnit.nextServiceKm.toLocaleString("es-PE")} km`);
-          if (vehicleUnit.nextMaintenance) lines.push(`   Próximo mantenimiento: ${expiryTag(vehicleUnit.nextMaintenance)}`);
+      }
+    } else if (cmd === "/placa") {
+      const snap = await ctx.runQuery(internal.intranet.getLatestSnapshotInternal, {});
+      const vehicles = await ctx.runQuery(internal.vehicles.listAllCatalogInternal, {});
+      const rawNeedle = arg.trim();
+      const needle = rawNeedle.toUpperCase().replace(/[^A-Z0-9]/g, "");
+
+      if (!needle) {
+        reply = "Por favor indica la placa a buscar. Ej: <code>/placa CBB-245</code>";
+      } else {
+        const vehicleUnit = vehicles.find((v) => {
+          if (!v.plate) return false;
+          const cleanPlate = v.plate.toUpperCase().replace(/[^A-Z0-9]/g, "");
+          return cleanPlate === needle || cleanPlate.includes(needle);
+        });
+
+        if (!vehicleUnit) {
+          reply = `No encontré ninguna unidad con la placa "${escapeHtml(rawNeedle)}". Puedes probar con /unidad o /flota.`;
+        } else {
+          const snapUnit = snap?.unidades.find(
+            (u) => unitKey(u.unidad) === unitKey(vehicleUnit.unitNumber),
+          );
+
+          const lines: string[] = [];
+          lines.push(`🚗 <b>Placa ${escapeHtml(vehicleUnit.plate || rawNeedle)} · Unidad #${escapeHtml(vehicleUnit.unitNumber)}</b>`);
+          if (snapUnit) {
+            const limpio = /limpio/i.test(snapUnit.estado) ? "🟢 Limpio" : "🟡 Sucio";
+            lines.push(`📍 Parqueo: <b>${escapeHtml(snapUnit.ubic)}</b>`);
+            lines.push(`   Kilometraje: <b>${escapeHtml(snapUnit.km)} km</b>`);
+            lines.push(`   Combustible: <b>${escapeHtml(snapUnit.fuel)}</b>`);
+            lines.push(`   Estado: <b>${limpio}</b> (${escapeHtml(snapUnit.estado)})`);
+          } else {
+            lines.push(`📍 Estado: <i>Fuera de parqueo / En alquiler</i>`);
+            if (vehicleUnit.mileage) {
+              lines.push(`   Último km registrado: <b>${vehicleUnit.mileage.toLocaleString("es-PE")} km</b>`);
+            }
+          }
+          if (vehicleUnit.nextServiceKm) {
+            lines.push(`   Próximo servicio: a los ${vehicleUnit.nextServiceKm.toLocaleString("es-PE")} km`);
+          }
+          if (vehicleUnit.nextMaintenance) {
+            lines.push(`   Próximo mantenimiento: ${expiryTag(vehicleUnit.nextMaintenance)}`);
+          }
           lines.push(`   SOAT: ${expiryTag(vehicleUnit.soatExpiry)}`);
           lines.push(`   Revisión técnica: ${expiryTag(vehicleUnit.revisionExpiry)}`);
-          if (vehicleUnit.observations) lines.push(`   📝 Observaciones: ${escapeHtml(vehicleUnit.observations)}`);
+          if (vehicleUnit.observations) {
+            lines.push(`   📝 Observaciones: ${escapeHtml(vehicleUnit.observations)}`);
+          }
+          reply = lines.join("\n");
         }
-        reply = lines.join("\n");
       }
     } else {
       reply = "Comando no reconocido. Usa /ayuda para ver los comandos disponibles.";

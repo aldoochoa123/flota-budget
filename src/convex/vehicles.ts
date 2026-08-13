@@ -39,6 +39,15 @@ export const listAll = internalQuery({
   handler: async (ctx) => todayUnits(ctx),
 });
 
+/** Lista todas las unidades del catálogo base — usada por el bot de Telegram para /unidad y /placa. */
+export const listAllCatalogInternal = internalQuery({
+  args: {},
+  handler: async (ctx) => {
+    const all = await ctx.db.query("vehicles").collect();
+    return all.sort((a, b) => a.unitNumber.localeCompare(b.unitNumber, "es", { numeric: true }));
+  },
+});
+
 /**
  * Todas las unidades registradas (flota base 161 + flota de hoy + agregadas),
  * ordenadas por número. Se usa para el catálogo completo y para cruzar los
