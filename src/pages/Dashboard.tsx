@@ -133,16 +133,12 @@ export default function Dashboard() {
   const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
 
-  // Siembra las 161 unidades y aplica placas/datos enriquecidos automáticamente si faltan.
+  // Si no hay unidades en la base de datos, siembra la flota base (161) una sola vez.
   useEffect(() => {
     if (allVehicles === undefined || autoSeeded.current) return;
-    const needsPlates = allVehicles.some((v) => !v.plate);
+    autoSeeded.current = true;
     if (allVehicles.length === 0) {
-      autoSeeded.current = true;
       void importFleet().then(() => applyHistoricalData());
-    } else if (needsPlates) {
-      autoSeeded.current = true;
-      void applyHistoricalData();
     }
   }, [allVehicles, importFleet, applyHistoricalData]);
 
