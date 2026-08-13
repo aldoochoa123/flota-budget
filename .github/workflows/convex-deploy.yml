@@ -1,0 +1,31 @@
+name: Deploy Convex
+
+on:
+  # Manual: Actions -> "Deploy Convex" -> Run workflow
+  # (después de crear el secreto CONVEX_DEPLOY_KEY)
+  workflow_dispatch:
+  # Automático: cada push que toque el backend
+  push:
+    branches: [main]
+    paths:
+      - 'src/convex/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Desplegar a Convex Cloud
+        run: npx convex deploy
+        env:
+          CONVEX_DEPLOY_KEY: ${{ secrets.CONVEX_DEPLOY_KEY }}
