@@ -456,20 +456,20 @@ export default function Dashboard() {
                 <Badge tone="danger">⛽ {snapPorTanquear} por tanquear</Badge>
               </div>
               <div className="overflow-x-auto rounded-xl border border-border">
-                <table className="w-full min-w-[1150px] text-left text-sm">
+                <table className="w-full text-left text-xs sm:text-sm">
                   <thead>
-                    <tr className="border-b border-border text-xs uppercase tracking-wide text-muted-foreground">
-                      <th className="px-4 py-2.5">Nº unidad</th>
-                      <th className="px-4 py-2.5">Parqueo</th>
-                      <th className="px-4 py-2.5">RA (Contrato)</th>
-                      <th className="px-4 py-2.5">Kilometraje</th>
-                      <th className="px-4 py-2.5">Combustible</th>
-                      <th className="px-4 py-2.5">Estado</th>
-                      <th className="px-4 py-2.5">Próximo servicio</th>
-                      <th className="px-4 py-2.5">SOAT</th>
-                      <th className="px-4 py-2.5">Revisión técnica</th>
-                      <th className="px-4 py-2.5">Observaciones</th>
-                      <th className="px-4 py-2.5 text-right">Acciones</th>
+                    <tr className="border-b border-border text-[11px] uppercase tracking-wider text-muted-foreground">
+                      <th className="px-2.5 py-2.5">Unidad</th>
+                      <th className="px-2 py-2.5">Ubic.</th>
+                      <th className="px-2 py-2.5">RA</th>
+                      <th className="px-2 py-2.5">Kilometraje</th>
+                      <th className="px-2 py-2.5">Fuel</th>
+                      <th className="px-2 py-2.5">Estado</th>
+                      <th className="px-2 py-2.5">Próx. servicio</th>
+                      <th className="px-2 py-2.5">SOAT</th>
+                      <th className="px-2 py-2.5">R. técnica</th>
+                      <th className="px-2 py-2.5">Observaciones</th>
+                      <th className="px-2.5 py-2.5 text-right">Acción</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -483,29 +483,29 @@ export default function Dashboard() {
                           key={`${u.unidad}-${u.ubic}`}
                           className="border-b border-border last:border-0 hover:bg-muted/30"
                         >
-                          <td className="px-4 py-2.5 font-bold">#{u.unidad}</td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2.5 py-2 font-bold whitespace-nowrap">#{u.unidad}</td>
+                          <td className="px-2 py-2">
                             <Badge tone="muted">{u.ubic}</Badge>
                           </td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2 py-2">
                             {u.ra ? (
-                              <span className="font-mono text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
+                              <span className="font-mono text-[11px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20 whitespace-nowrap">
                                 {u.ra}
                               </span>
                             ) : (
                               <span className="text-muted-foreground">—</span>
                             )}
                           </td>
-                          <td className="px-4 py-2.5 text-muted-foreground">
+                          <td className="px-2 py-2 text-muted-foreground whitespace-nowrap">
                             {u.km ? `${Number(u.km).toLocaleString("es-PE")} km` : "—"}
                           </td>
-                          <td className="px-4 py-2.5">{u.fuel || "—"}</td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2 py-2 whitespace-nowrap">{u.fuel || "—"}</td>
+                          <td className="px-2 py-2">
                             <Badge tone={/limpio/i.test(u.estado) ? "ok" : "warn"}>
                               {u.estado}
                             </Badge>
                           </td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2 py-2 whitespace-nowrap">
                             {veh?.nextServiceKm ? (
                               <Badge tone={veh.mileage && veh.nextServiceKm - veh.mileage <= 1500 ? "warn" : "muted"}>
                                 🔧 {formatMileage(veh.nextServiceKm)}
@@ -518,28 +518,28 @@ export default function Dashboard() {
                               <span className="text-muted-foreground">—</span>
                             )}
                           </td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2 py-2 whitespace-nowrap">
                             <Badge tone={soat.tone === "none" ? "muted" : soat.tone}>
                               {formatDate(veh?.soatExpiry)}
                               {soat.tone !== "none" && ` · ${soat.label}`}
                             </Badge>
                           </td>
-                          <td className="px-4 py-2.5">
+                          <td className="px-2 py-2 whitespace-nowrap">
                             <Badge tone={rev.tone === "none" ? "muted" : rev.tone}>
                               {formatDate(veh?.revisionExpiry)}
                               {rev.tone !== "none" && ` · ${rev.label}`}
                             </Badge>
                           </td>
                           <td
-                            className="max-w-[200px] truncate px-4 py-2.5 text-muted-foreground"
+                            className="max-w-[140px] truncate px-2 py-2 text-xs text-muted-foreground"
                             title={veh?.observations}
                           >
                             {veh?.observations || "—"}
                           </td>
-                          <td className="px-4 py-2.5 text-right">
+                          <td className="px-2.5 py-2 text-right whitespace-nowrap">
                             <Button
                               variant="outline"
-                              className="px-3 py-1 text-xs font-semibold hover:bg-primary/20 hover:border-primary/50 text-primary border-primary/30 bg-primary/5"
+                              className="px-2.5 py-1 text-xs font-bold hover:bg-primary/20 hover:border-primary/50 text-primary border-primary/30 bg-primary/5"
                               onClick={() => openEditUnit(u.unidad)}
                             >
                               Editar
