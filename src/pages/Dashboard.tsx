@@ -132,23 +132,14 @@ export default function Dashboard() {
   const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
 
-  // Si no hay flota de hoy, siembra la flota base (161) y aplica la flota del día.
+  // Si no hay flota base, siembra las 161 unidades y aplica datos históricos automáticamente.
   useEffect(() => {
-    if (vehicles === undefined || autoSeeded.current) return;
-    if (vehicles.length === 0) {
+    if (allVehicles === undefined || autoSeeded.current) return;
+    if (allVehicles.length === 0) {
       autoSeeded.current = true;
-      void importFleet()
-        .then(() => applyTodayFleet())
-        .then((r) => {
-          setFleetMsg(
-            `✅ Flota de hoy cargada automáticamente: ${r.total} unidades (flota base de 161 en la base).`,
-          );
-        })
-        .catch(() => {
-          autoSeeded.current = false;
-        });
+      void importFleet().then(() => applyHistoricalData());
     }
-  }, [vehicles, importFleet, applyTodayFleet]);
+  }, [allVehicles, importFleet, applyHistoricalData]);
 
   // Cierre del modal con tecla Escape y bloqueo del scroll de fondo
   useEffect(() => {
@@ -171,8 +162,8 @@ export default function Dashboard() {
     };
   }, [showForm]);
 
-  // Catálogo: flota de hoy por defecto; con el botón se ve la flota base completa (161).
-  const catalogVehicles = showBaseFleet ? allVehicles : vehicles;
+  // Catálogo: muestra siempre la flota base completa (161 unidades).
+  const catalogVehicles = allVehicles;
 
   // Índice por número de unidad normalizado (la intranet omite ceros: "909" = "0909").
   const vehicleByUnit = new Map<string, Vehicle>();
@@ -648,37 +639,19 @@ export default function Dashboard() {
           )}
         </section>
 
-        {/* Catálogo de flota (base 161) — se llena con fotos poco a poco */}
+        {/* Flota base completa */}
         <section className="mt-14">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-extrabold tracking-tight">
-                {showBaseFleet ? "🗂️ Flota base completa" : "🗂️ Catálogo de flota"}
-              </h2>
+              <h2 className="text-2xl font-extrabold tracking-tight">🗂️ Flota base completa</h2>
               <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-                {showBaseFleet
-                  ? `Las 161 unidades de la empresa (flota base). Mostrando ${catalogVehicles?.length ?? "…"} unidades. Se va completando con las fotos que se pasen (SOAT, revisión técnica, kilometraje…).`
-                  : `Flota de hoy: ${catalogVehicles?.length ?? "…"} unidades del inventario diario. Con el botón “Ver flota base (161)” se ve la flota completa de la empresa.`}
+                Las 161 unidades de la empresa. Mostrando {allVehicles?.length ?? "…"} unidades en el catálogo.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                variant="outline"
-                onClick={() => setShowBaseFleet((s) => !s)}
-                disabled={catalogVehicles === undefined}
-              >
-                {showBaseFleet ? "Ver flota de hoy" : "🚗 Ver flota base (161)"}
+            <div className="flex items-center gap-3">
+              <Button onClick={openNew} className="font-semibold shadow-sm">
+                + Nueva unidad
               </Button>
-              <Button variant="outline" onClick={handleApplyTodayFleet} disabled={busy}>
-                {busy ? "Cargando…" : "Cargar flota de hoy"}
-              </Button>
-              <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
-                {busy ? "Cargando…" : "Rellenar datos históricos"}
-              </Button>
-              <Button variant="ghost" onClick={handleImportFleet} disabled={busy}>
-                {busy ? "Cargando…" : "Sembrar flota base (161)"}
-              </Button>
-              <Button onClick={openNew}>+ Nueva unidad</Button>
             </div>
           </div>
 
@@ -833,31 +806,18 @@ export default function Dashboard() {
           )}
 
           {/* Tabla del catálogo */}
-          {vehicles === undefined || (showBaseFleet && allVehicles === undefined) ? (
-            <Card className="p-8 text-center text-sm text-muted-foreground">Cargando unidades…</Card>
-          ) : (catalogVehicles ?? []).length === 0 && !showForm ? (
+          {allVehicles === undefined ? (
+            <Card className="p-8 text-center text-sm text-muted-foreground">Cargando flota base…</Card>
+          ) : (allVehicles ?? []).length === 0 && !showForm ? (
             <Card className="p-10 text-center">
               <div className="mb-3 text-4xl">🚗</div>
-              <p className="font-semibold">
-                {showBaseFleet ? "La flota base aún no está sembrada" : "No hay flota de hoy cargada"}
-              </p>
+              <p className="font-semibold">La flota base aún no está sembrada</p>
               <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-                {showBaseFleet
-                  ? "Usa el botón “Sembrar flota base (161)” para crear las 161 unidades en la base."
-                  : "Carga el inventario diario para poblar el catálogo. La flota base (161 unidades) se siembra con el botón de abajo y se va completando con las fotos."}
+                Haz clic en el botón para cargar las 161 unidades de la flota base.
               </p>
-              <div className="mt-5 flex flex-wrap justify-center gap-3">
-                <Button onClick={handleApplyTodayFleet} disabled={busy}>
-                  {busy ? "Cargando…" : "Cargar flota de hoy"}
-                </Button>
-                <Button variant="outline" onClick={handleApplyHistoricalData} disabled={busy}>
-                  {busy ? "Cargando…" : "Rellenar datos históricos"}
-                </Button>
-                <Button variant="outline" onClick={handleImportFleet} disabled={busy}>
-                  {busy ? "Cargando…" : "Sembrar flota base (161)"}
-                </Button>
-                <Button variant="ghost" onClick={openNew}>
-                  + Nueva unidad
+              <div className="mt-5 flex justify-center">
+                <Button onClick={() => importFleet().then(() => applyHistoricalData())}>
+                  Sembrar flota base (161)
                 </Button>
               </div>
             </Card>
