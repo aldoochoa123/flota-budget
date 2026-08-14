@@ -43,13 +43,15 @@ jobs:
           cp -r dist/* android/app/src/main/assets/public/
           cp capacitor.config.json android/app/src/main/assets/capacitor.config.json
 
-      - name: Dar permisos de ejecución a Gradle
-        run: chmod +x android/gradlew
+      - name: Dar permisos y normalizar gradlew
+        run: |
+          sed -i 's/\r$//' android/gradlew
+          chmod +x android/gradlew
 
       - name: Compilar APK Debug con Gradle
         run: |
           cd android
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Subir instalador APK como artefacto
         uses: actions/upload-artifact@v4
