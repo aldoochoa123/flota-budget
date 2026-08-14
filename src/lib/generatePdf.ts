@@ -1,5 +1,8 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { Capacitor } from "@capacitor/core";
+import { Filesystem, Directory } from "@capacitor/filesystem";
+import { Share } from "@capacitor/share";
 import type { Doc } from "../convex/_generated/dataModel";
 import { formatDate, formatMileage } from "./dates";
 
@@ -11,7 +14,7 @@ function unitKey(n: string): string {
   return Number.isFinite(num) ? String(num) : n.trim();
 }
 
-export function downloadFlotaPdf(
+export async function downloadFlotaPdf(
   snap: IntranetSnapshot,
   allVehicles: Vehicle[] = [],
 ) {
@@ -165,5 +168,30 @@ export function downloadFlotaPdf(
   });
 
   const cleanDateStr = snap.fecha.replace(/[/\\?%*:|"<>]/g, "-").replace(/\s+/g, "_");
-  doc.save(`Flota_Budget_Parqueo_${cleanDateStr}.pdf`);
+  const fileName = `Flota_Budget_Parqueo_${cleanDateStr}.pdf`;
+
+  if (Capacitor.isNativePlatform()) {
+    try {
+      const dataUri = doc.output("datauristring");
+      const base64Data = dataUri.split(",")[1];
+      const writeResult = await Filesystem.writeFile({
+        path: fileName,
+        data: base64Data,
+        directory: Directory.Cache,
+      });
+
+      await Share.share({
+        title: fileName,
+        text: `Reporte de Flota Budget Perú — ${snap.fecha} ${snap.hora}`,
+        url: writeResult.uri,
+        dialogTitle: "Guardar o Compartir Reporte PDF",
+      });
+      return;
+    } catch (err) {
+      console.warn("Capacitor Filesystem / Share error:", err);
+    }
+  }
+
+  // Descarga estándar para navegador web / desktop
+  doc.save(fileName);
 }
