@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as aeropuertoFleet from "../aeropuertoFleet.js";
 import type * as fleetCatalog from "../fleetCatalog.js";
 import type * as http from "../http.js";
 import type * as intranet from "../intranet.js";
@@ -22,6 +23,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  aeropuertoFleet: typeof aeropuertoFleet;
   fleetCatalog: typeof fleetCatalog;
   http: typeof http;
   intranet: typeof intranet;
