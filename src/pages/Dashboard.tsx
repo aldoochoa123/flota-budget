@@ -97,6 +97,7 @@ export default function Dashboard() {
   const deleteVehicle = useMutation(api.vehicles.deleteVehicle);
   const importFleet = useMutation(api.vehicles.importFleet);
   const applyHistoricalData = useMutation(api.vehicles.applyHistoricalData);
+  const applyAeropuertoFleet = useMutation(api.vehicles.applyAeropuertoFleet);
 
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<Id<"vehicles"> | null>(null);
@@ -105,14 +106,16 @@ export default function Dashboard() {
   const [saving, setSaving] = useState(false);
   const autoSeeded = useRef(false);
 
-  // Si no hay unidades en la base de datos, siembra la flota base (161) una sola vez.
+  // Siembra la flota base (161) si está vacía, y aplica la planilla Aeropuerto
+  // (31 unidades del PDF) una sola vez por sesión para mantener al día
+  // próximo servicio, SOAT y revisión técnica.
   useEffect(() => {
     if (allVehicles === undefined || autoSeeded.current) return;
     autoSeeded.current = true;
-    if (allVehicles.length === 0) {
-      void importFleet().then(() => applyHistoricalData());
-    }
-  }, [allVehicles, importFleet, applyHistoricalData]);
+    void importFleet()
+      .then(() => applyHistoricalData())
+      .then(() => applyAeropuertoFleet());
+  }, [allVehicles, importFleet, applyHistoricalData, applyAeropuertoFleet]);
 
   // Cierre del modal con tecla Escape y bloqueo del scroll de fondo
   useEffect(() => {
@@ -655,7 +658,13 @@ export default function Dashboard() {
                 Haz clic en el botón para cargar las 161 unidades de la flota base.
               </p>
               <div className="mt-5 flex justify-center">
-                <Button onClick={() => importFleet().then(() => applyHistoricalData())}>
+                <Button
+                  onClick={() =>
+                    importFleet()
+                      .then(() => applyHistoricalData())
+                      .then(() => applyAeropuertoFleet())
+                  }
+                >
                   Sembrar flota base (161)
                 </Button>
               </div>

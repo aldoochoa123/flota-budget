@@ -4,6 +4,7 @@ import type { QueryCtx } from "./_generated/server";
 import { FLEET_UNITS } from "./fleetCatalog";
 import { TODAY_FLEET } from "./todayFleet";
 import { PAST_FLEET } from "./pastFleet";
+import { AEROPUERTO_FLEET } from "./aeropuertoFleet";
 
 const vehicleFields = {
   unitNumber: v.string(),
@@ -163,6 +164,46 @@ export const applyHistoricalData = mutation({
  * Siembra la flota base (161 unidades) en la base de datos, oculta
  * (todayFleet: false) con sus placas y datos enriquecidos.
  */
+/**
+ * Aplica la planilla "Control Inventario de Flota Aeropuerto" (31 unidades,
+ * transcrita a PDF el 16/08/2026) sobre la flota base. Actualiza próximo
+ * servicio, SOAT y revisión técnica de esas unidades; si una unidad de la
+ * planilla aún no existe (ej: 0952), la crea oculta (flota base). Solo escribe
+ * los campos que la planilla registra: nunca borra datos existentes.
+ */
+export const applyAeropuertoFleet = mutation({
+  args: {},
+  handler: async (ctx) => {
+    const existing = await ctx.db.query("vehicles").collect();
+    const byNumber = new Map(existing.map((v) => [v.unitNumber, v]));
+
+    let updated = 0;
+    let added = 0;
+    for (const entry of AEROPUERTO_FLEET) {
+      const fields: { nextServiceKm?: number; soatExpiry?: string; revisionExpiry?: string } = {};
+      if (entry.nextServiceKm !== undefined) fields.nextServiceKm = entry.nextServiceKm;
+      if (entry.soatExpiry) fields.soatExpiry = entry.soatExpiry;
+      if (entry.revisionExpiry) fields.revisionExpiry = entry.revisionExpiry;
+
+      const existingVehicle = byNumber.get(entry.unitNumber);
+      if (existingVehicle) {
+        await ctx.db.patch(existingVehicle._id, { ...fields, updatedAt: Date.now() });
+        updated += 1;
+      } else {
+        await ctx.db.insert("vehicles", {
+          unitNumber: entry.unitNumber,
+          clean: true,
+          todayFleet: false,
+          ...fields,
+          updatedAt: Date.now(),
+        });
+        added += 1;
+      }
+    }
+    return { total: AEROPUERTO_FLEET.length, updated, added };
+  },
+});
+
 export const importFleet = mutation({
   args: {},
   handler: async (ctx) => {
