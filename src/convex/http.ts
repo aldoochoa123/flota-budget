@@ -46,37 +46,6 @@ function expiryTag(iso?: string): string {
   return `🟢 vence en ${days} días`;
 }
 
-function unitLine(v: {
-  unitNumber: string;
-  clean: boolean;
-  mileage?: number;
-  nextMaintenance?: string;
-  nextServiceKm?: number;
-  soatExpiry?: string;
-  revisionExpiry?: string;
-  observations?: string;
-}): string {
-  const estado = v.clean ? "🟢 Limpio" : "🟡 Sucio";
-  const km = v.mileage ? `${v.mileage.toLocaleString("es-PE")} km` : "—";
-  const lines = [
-    `🚗 <b>Unidad ${escapeHtml(v.unitNumber)}</b>`,
-    `   Kilometraje: ${km}`,
-    `   Estado: ${estado}`,
-  ];
-  if (v.nextServiceKm) {
-    lines.push(`   Próximo servicio: a los ${v.nextServiceKm.toLocaleString("es-PE")} km`);
-  }
-  if (v.nextMaintenance) {
-    lines.push(`   Próximo mantenimiento: ${expiryTag(v.nextMaintenance)}`);
-  }
-  lines.push(`   SOAT: ${expiryTag(v.soatExpiry)}`);
-  lines.push(`   Revisión técnica: ${expiryTag(v.revisionExpiry)}`);
-  if (v.observations) {
-    lines.push(`   📝 Observaciones: ${escapeHtml(v.observations)}`);
-  }
-  return lines.join("\n");
-}
-
 http.route({
   path: "/ingest-flota",
   method: "POST",

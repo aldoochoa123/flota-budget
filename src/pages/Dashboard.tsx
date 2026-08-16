@@ -8,35 +8,12 @@ import {
   daysUntil,
   expiryInfo,
   formatDate,
-  formatLimaDate,
   formatLimaDateTime,
   formatMileage,
-  formatMovDate,
-  parseMovDate,
 } from "../lib/dates";
 import { downloadFlotaPdf } from "../lib/generatePdf";
 
 type Vehicle = Doc<"vehicles">;
-type Movement = NonNullable<Doc<"intranetSnapshots">["movimientos"]>[number];
-
-/** Unidad “en taller” = su último movimiento NO es un retorno (RT Retorno). */
-function isEnTaller(tipo: string): boolean {
-  return !/retorno/i.test(tipo);
-}
-
-function movTone(tipo: string): "ok" | "warn" | "danger" | "muted" {
-  if (/retorno/i.test(tipo)) return "ok";
-  if (/taller/i.test(tipo)) return "danger";
-  if (/salida/i.test(tipo)) return "warn";
-  return "muted";
-}
-
-function movLabel(tipo: string): string {
-  if (/retorno/i.test(tipo)) return "Retorno";
-  if (/taller/i.test(tipo)) return "En taller";
-  if (/salida/i.test(tipo)) return "Salida";
-  return tipo;
-}
 
 /** Normaliza un número de unidad para cruzar fuentes ("0909" de la app = "909" de la intranet). */
 function unitKey(n: string): string {
@@ -113,24 +90,19 @@ function SyncCountdownWidget({ syncedAt }: { syncedAt?: number }) {
 }
 
 export default function Dashboard() {
-  const vehicles = useQuery(api.vehicles.listVehicles);
   const allVehicles = useQuery(api.vehicles.listAllVehicles);
   const intranetSnapshot = useQuery(api.intranet.getLatestSnapshot);
   const addVehicle = useMutation(api.vehicles.addVehicle);
   const updateVehicle = useMutation(api.vehicles.updateVehicle);
   const deleteVehicle = useMutation(api.vehicles.deleteVehicle);
   const importFleet = useMutation(api.vehicles.importFleet);
-  const applyTodayFleet = useMutation(api.vehicles.applyTodayFleet);
   const applyHistoricalData = useMutation(api.vehicles.applyHistoricalData);
 
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<Id<"vehicles"> | null>(null);
   const [form, setForm] = useState(emptyForm);
   const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [fleetMsg, setFleetMsg] = useState<string | null>(null);
-  const [showBaseFleet, setShowBaseFleet] = useState(false);
   const autoSeeded = useRef(false);
 
   // Si no hay unidades en la base de datos, siembra la flota base (161) una sola vez.
@@ -189,57 +161,6 @@ export default function Dashboard() {
   const snapLimpias = snap ? snap.unidades.filter((u) => /limpio/i.test(u.estado)).length : 0;
   const snapSucias = snapTotal - snapLimpias;
   const snapPorTanquear = snap ? snap.unidades.filter((u) => !/full/i.test(u.fuel)).length : 0;
-
-  async function handleImportFleet() {
-    setBusy(true);
-    setFleetMsg(null);
-    try {
-      const result = await importFleet();
-      setFleetMsg(
-        `✅ Flota base sembrada: ${result.added} agregadas, ${result.skipped} ya existían (total: ${result.total}). No se muestra en la flota visible.`,
-      );
-    } catch (err) {
-      setFleetMsg(
-        `No se pudo importar la flota: ${err instanceof Error ? err.message : "error desconocido"}`,
-      );
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  async function handleApplyTodayFleet() {
-    setBusy(true);
-    setFleetMsg(null);
-    try {
-      const result = await applyTodayFleet();
-      setFleetMsg(
-        `✅ Flota de hoy aplicada: ${result.updated} unidades actualizadas, ${result.added} agregadas (total: ${result.total})${result.cleared > 0 ? `, ${result.cleared} fuera de flota` : ""}.`,
-      );
-    } catch (err) {
-      setFleetMsg(
-        `No se pudo aplicar la flota de hoy: ${err instanceof Error ? err.message : "error desconocido"}`,
-      );
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  async function handleApplyHistoricalData() {
-    setBusy(true);
-    setFleetMsg(null);
-    try {
-      const result = await applyHistoricalData();
-      setFleetMsg(
-        `✅ Datos históricos aplicados: ${result.updated} unidades rellenadas (${result.soat} SOAT, ${result.revision} R. técnica, ${result.nextService} próximo servicio). Solo se llenaron campos vacíos — nada se sobrescribió.`,
-      );
-    } catch (err) {
-      setFleetMsg(
-        `No se pudieron aplicar los datos históricos: ${err instanceof Error ? err.message : "error desconocido"}`,
-      );
-    } finally {
-      setBusy(false);
-    }
-  }
 
   function openNew() {
     setEditingId(null);
@@ -562,13 +483,6 @@ export default function Dashboard() {
               </Button>
             </div>
           </div>
-
-          {/* Solo se muestran errores; el aviso de éxito (“29 unidades cargadas”) se oculta */}
-          {fleetMsg?.startsWith("No se pudo") && (
-            <p className="mb-8 rounded-xl border border-danger/30 bg-danger/10 px-4 py-3 text-sm text-danger">
-              {fleetMsg}
-            </p>
-          )}
 
           {/* Stats del catálogo */}
           <div className="mb-8 grid gap-4 sm:grid-cols-2">

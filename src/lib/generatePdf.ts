@@ -182,7 +182,7 @@ export async function downloadFlotaPdf(
 
       await Share.share({
         title: fileName,
-        text: `Reporte de Flota Budget Perú — ${snap.fecha} ${snap.hora}`,
+        text: `Reporte de Flota Budget Perú — ${snap.fecha}`,
         url: writeResult.uri,
         dialogTitle: "Guardar o Compartir Reporte PDF",
       });

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 export function F1RaceTrack() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
-  const [score, setScore] = useState(0);
+  const [, setIsPlaying] = useState(false);
+  const [, setGameOver] = useState(false);
+  const [, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => {
     try {
       return parseInt(localStorage.getItem("f1_dino_highscore") || "0", 10);
