@@ -120,6 +120,50 @@ http.route({
   }),
 });
 
+http.route({
+  path: "/ingest-redis",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    const secret = process.env.FLOTA_SYNC_SECRET;
+    if (!secret) return new Response("FLOTA_SYNC_SECRET no está configurado", { status: 500 });
+    if (request.headers.get("x-flota-secret") !== secret) return new Response("No autorizado", { status: 401 });
+
+    let body: unknown;
+    try { body = await request.json(); } catch {
+      return new Response("JSON inválido", { status: 400 });
+    }
+    const { unidades } = body as { unidades?: unknown };
+    if (!Array.isArray(unidades) || unidades.length === 0) {
+      return new Response("Formato inválido: espera { unidades: [...] }", { status: 400 });
+    }
+
+    const clean = unidades
+      .map((u) => {
+        const x = (u ?? {}) as Record<string, unknown>;
+        return {
+          unidad: String(x.unidad ?? ""),
+          placa: x.placa ? String(x.placa).trim() : undefined,
+          marca: x.marca ? String(x.marca).trim() : undefined,
+          modelo: x.modelo ? String(x.modelo).trim() : undefined,
+          color: x.color ? String(x.color).trim() : undefined,
+          anyo: x.anyo ? String(x.anyo).trim() : undefined,
+          soat: x.soat ? String(x.soat).trim() : undefined,
+          rt: x.rt ? String(x.rt).trim() : undefined,
+          obs: x.obs ? String(x.obs).trim() : undefined,
+        };
+      })
+      .filter((u) => u.unidad.length > 0);
+
+    if (clean.length === 0) return new Response("No hay unidades válidas", { status: 400 });
+
+    const result = await ctx.runMutation(internal.vehicles.applyRedisDataInternal, { unidades: clean });
+    return new Response(JSON.stringify({ ok: true, ...result }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }),
+});
+
 function buildIntranetMessage(snap: {
   fecha: string;
   unidades: Array<{ unidad: string; ubic: string; ra?: string; km: string; fuel: string; estado: string }>;

@@ -12,6 +12,11 @@ export default defineSchema({
     soatExpiry: v.optional(v.string()),
     revisionExpiry: v.optional(v.string()),
     observations: v.optional(v.string()),
+    // Datos del Ticket Center (puerto 82) — fuente de verdad de flota base.
+    color: v.optional(v.string()),
+    marca: v.optional(v.string()),
+    modelo: v.optional(v.string()),
+    anyoFabrica: v.optional(v.string()),
     // true = forma parte de la flota de hoy (visible); la flota base queda oculta.
     todayFleet: v.optional(v.boolean()),
     updatedAt: v.number(),

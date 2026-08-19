@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { internalQuery, mutation, query } from "./_generated/server";
+import { internalQuery, internalMutation, mutation, query } from "./_generated/server";
 import type { QueryCtx } from "./_generated/server";
 import { FLEET_UNITS } from "./fleetCatalog";
 import { TODAY_FLEET } from "./todayFleet";
@@ -280,6 +280,87 @@ export const deleteVehicle = mutation({
  * Importa o enriquece masivamente la flota base (161 unidades) con datos
  * extraídos del portal de reportes e inspecciones (Placa, SOAT, RT, Próximo servicio).
  */
+/**
+ * Aplica datos del Ticket Center (puerto 82) sobre la flota base.
+ * Actualiza SOAT, RT, placa, marca, modelo, color, año y observaciones.
+ * Nunca borra datos existentes: solo escribe campos que la fuente provee.
+ */
+export const applyRedisData = mutation({
+  args: {
+    unidades: v.array(
+      v.object({
+        unidad: v.string(),
+        placa: v.optional(v.string()),
+        marca: v.optional(v.string()),
+        modelo: v.optional(v.string()),
+        color: v.optional(v.string()),
+        anyo: v.optional(v.string()),
+        soat: v.optional(v.string()),
+        rt: v.optional(v.string()),
+        obs: v.optional(v.string()),
+      })
+    ),
+  },
+  handler: async (ctx, { unidades }) => applyRedisDataImpl(ctx, unidades),
+});
+
+export const applyRedisDataInternal = internalMutation({
+  args: {
+    unidades: v.array(
+      v.object({
+        unidad: v.string(),
+        placa: v.optional(v.string()),
+        marca: v.optional(v.string()),
+        modelo: v.optional(v.string()),
+        color: v.optional(v.string()),
+        anyo: v.optional(v.string()),
+        soat: v.optional(v.string()),
+        rt: v.optional(v.string()),
+        obs: v.optional(v.string()),
+      })
+    ),
+  },
+  handler: async (ctx, { unidades }) => applyRedisDataImpl(ctx, unidades),
+});
+
+async function applyRedisDataImpl(
+  ctx: { db: any },
+  unidades: { unidad: string; placa?: string; marca?: string; modelo?: string; color?: string; anyo?: string; soat?: string; rt?: string; obs?: string }[],
+) {
+    const existing: any[] = await ctx.db.query("vehicles").collect();
+    const byNumber = new Map(existing.map((v: any) => [v.unitNumber, v]));
+
+    let updated = 0;
+    let added = 0;
+    for (const entry of unidades) {
+      const unitNum = entry.unidad;
+      const fields: Record<string, unknown> = { updatedAt: Date.now() };
+      if (entry.placa) fields.plate = entry.placa;
+      if (entry.marca) fields.marca = entry.marca;
+      if (entry.modelo) fields.modelo = entry.modelo;
+      if (entry.color) fields.color = entry.color;
+      if (entry.anyo) fields.anyoFabrica = entry.anyo;
+      if (entry.soat) fields.soatExpiry = entry.soat;
+      if (entry.rt) fields.revisionExpiry = entry.rt;
+      if (entry.obs) fields.observations = entry.obs;
+
+      const v: any = byNumber.get(unitNum);
+      if (v) {
+        await ctx.db.patch(v._id, fields);
+        updated += 1;
+      } else {
+        await ctx.db.insert("vehicles", {
+          unitNumber: unitNum,
+          clean: true,
+          todayFleet: false,
+          ...fields,
+        } as any);
+        added += 1;
+      }
+    }
+    return { total: unidades.length, updated, added };
+}
+
 export const importEnrichedFleet = mutation({
   args: {
     vehicles: v.array(

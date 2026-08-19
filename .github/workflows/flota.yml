@@ -84,6 +84,22 @@ jobs:
           done
           [ "$code" = "200" ] || { echo "::error::No se pudo sincronizar con el panel (HTTP $code)"; exit 1; }
 
+      - name: Enviar datos Ticket Center al panel (Convex /ingest-redis)
+        if: hashFiles('public/fleet_redis_data.json') != ''
+        run: |
+          REDIS_URL="$(echo "$CONVEX_SYNC_URL" | sed 's|/ingest-flota|/ingest-redis|')"
+          code=""
+          for i in 1 2 3; do
+            code=$(curl -s -o /tmp/redis_resp.json -w "%{http_code}" -X POST "$REDIS_URL" \
+              -H "Content-Type: application/json" \
+              -H "x-flota-secret: $FLOTA_SYNC_SECRET" \
+              --data-binary @public/fleet_redis_data.json || true)
+            echo "Intento $i: HTTP $code — $(cat /tmp/redis_resp.json)"
+            if [ "$code" = "200" ]; then break; fi
+            sleep 30
+          done
+          [ "$code" = "200" ] || { echo "::warning::No se pudo enviar datos Ticket Center (HTTP $code) — no es crítico"; }
+
       - name: Guardar cambios (si los hay)
         run: |
           git config user.name "github-actions[bot]"

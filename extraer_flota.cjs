@@ -275,6 +275,63 @@ function generarReporte(unidades, fecha, movimientos) {
   console.log('    📄 Snapshot guardado en public/flota_data.json (' + unidades.length + ' unidades, ' + (movimientos ? movimientos.length : 0) + ' movimientos)');
 }
 
+// ---------- Ticket Center (puerto 82) — datos de taller ----------
+// Consulta la API del Ticket Center para obtener SOAT, RT, placa, marca, modelo
+// de cada unidad. El API necesita el número SIN ceros a la izquierda.
+const TICKET_CENTER = 'http://168.181.8.120:82/api/vehiculo';
+
+async function consultarTicketCenter(unidades) {
+  const FLEET_NUMS = [
+    100,101,102,103,104,130,131,132,133,134,135,136,137,138,139,
+    200,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,
+    320,321,322,324,325,326,327,328,
+    445,446,447,448,450,451,452,460,461,
+    470,471,474,475,476,477,478,479,
+    480,481,482,483,484,485,486,488,489,
+    490,491,492,493,494,495,497,498,499,
+    500,501,504,505,506,507,508,509,
+    510,511,512,513,514,515,516,517,519,
+    720,721,722,761,762,763,
+    770,771,772,773,774,775,776,778,
+    780,781,782,783,
+    880,881,882,883,890,891,893,894,895,896,897,898,899,
+    900,901,903,909,915,916,
+    943,944,945,946,947,
+    960,961,962,963,964,965,966,967,968,969,
+    1032,1033,1034,1035,1036,1037,1038,
+    1061,1063,1064,1065,1066,1067,1068,
+    1081,1083,1084,1085,
+  ];
+  console.log('    [redis] Consultando Ticket Center para ' + FLEET_NUMS.length + ' unidades...');
+  const found = [];
+  let ok = 0, fail = 0;
+  for (let i = 0; i < FLEET_NUMS.length; i++) {
+    const num = FLEET_NUMS[i];
+    try {
+      const r = await fetch(TICKET_CENTER + '?unidad=' + num, { signal: AbortSignal.timeout(4000) });
+      const d = await r.json();
+      if (d.success && d.vehiculo) {
+        const v = d.vehiculo;
+        found.push({
+          unidad: String(num).padStart(4, '0'),
+          placa: (v.placa || '').trim(),
+          marca: v.vmarca?.descripcion || '',
+          modelo: v.vmodelo?.descripcion || '',
+          color: (v.color || '').trim(),
+          anyo: (v.anyo_fabrica || '').trim(),
+          soat: (v.fecha_soat || '').trim(),
+          rt: (v.proxima_revisionTecnica || '').trim(),
+          obs: (v.observacion || '').trim(),
+        });
+        ok++;
+      } else { fail++; }
+    } catch (e) { fail++; }
+    if ((i + 1) % 40 === 0) console.log('      ' + (i + 1) + '/' + FLEET_NUMS.length + ' consultadas...');
+  }
+  console.log('    [redis] ✅ ' + ok + ' encontradas, ❌ ' + fail + ' no encontradas');
+  return found;
+}
+
 // ---------- Main ----------
 async function main() {
   const soloMensaje = process.argv.includes('--mensaje');
@@ -326,6 +383,20 @@ async function main() {
     console.log('    ✅ Verificaciones OK — ' + total + ' unidades');
 
     generarReporte(unidades, fecha, movimientos);
+
+    // Ticket Center (puerto 82): consultar SOAT, RT, placa, marca de las 161 unidades.
+    let redisData = [];
+    try {
+      redisData = await consultarTicketCenter(unidades);
+      if (redisData.length > 0) {
+        fs.mkdirSync(PUBLIC, { recursive: true });
+        fs.writeFileSync(path.join(PUBLIC, 'fleet_redis_data.json'),
+          JSON.stringify({ fecha, unidades: redisData }, null, 2));
+        console.log('    📄 Ticket Center guardado en public/fleet_redis_data.json (' + redisData.length + ' unidades)');
+      }
+    } catch (e) {
+      console.log('    [redis] ⚠️ Error consultando Ticket Center: ' + e.message);
+    }
 
     if (DISCOVERY) {
       console.log('[--descubrir] Explorando páginas de la intranet...');
