@@ -7,3 +7,9 @@ dist/
 !.env.example
 # Credenciales locales de la intranet (extraer_flota.js)
 config.json
+# Archivos temporales de exploración
+isolate/
+fleet_redis_data.json
+*.html
+!index.html
+!src/**/*.html
