@@ -1,6 +1,9 @@
 name: Explorar Intranet Taller
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/scrap-taller.yml'
 
 jobs:
   scrape:
