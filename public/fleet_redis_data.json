@@ -1,6 +1,17 @@
 {
-  "fecha": "20/08/26, 2:35 a. m.",
+  "fecha": "20/08/26, 3:29 a. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -365,17 +376,6 @@
       "obs": "LX Full AT/ declarado PERDIDA TOTAL POR ROBO"
     },
     {
-      "unidad": "0324",
-      "placa": "BXS-626",
-      "marca": "KIA",
-      "modelo": "RIO AT",
-      "color": "ROJO",
-      "anyo": "2022",
-      "soat": "2026-12-01",
-      "rt": "2026-09-11",
-      "obs": ""
-    },
-    {
       "unidad": "0325",
       "placa": "BXS-413",
       "marca": "KIA",
@@ -714,6 +714,17 @@
       "anyo": "2024",
       "soat": "2026-11-10",
       "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0491",
+      "placa": "CJN-277",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-11-15",
+      "rt": "2028-10-01",
       "obs": ""
     },
     {
