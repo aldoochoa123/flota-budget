@@ -1,6 +1,17 @@
 {
-  "fecha": "19/08/26, 7:52 p. m.",
+  "fecha": "19/08/26, 9:13 p. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
