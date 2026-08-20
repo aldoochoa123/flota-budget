@@ -1,5 +1,5 @@
 {
-  "fecha": "20/08/26, 3:20 p. m.",
+  "fecha": "20/08/26, 4:21 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -76,28 +76,6 @@
       "anyo": "2026",
       "soat": "2027-06-11",
       "rt": "2030-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0132",
-      "placa": "CTB-302",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0133",
-      "placa": "CTB-413",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-05-01",
       "obs": ""
     },
     {
