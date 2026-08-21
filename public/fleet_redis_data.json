@@ -1,5 +1,5 @@
 {
-  "fecha": "21/08/26, 4:29 a. m.",
+  "fecha": "21/08/26, 5:22 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -1465,17 +1465,6 @@
       "obs": ""
     },
     {
-      "unidad": "0960",
-      "placa": "CHU-479",
-      "marca": "GEELY",
-      "modelo": "OKAVANGO",
-      "color": "SILVER",
-      "anyo": "2023",
-      "soat": "2026-09-15",
-      "rt": "2027-12-01",
-      "obs": ""
-    },
-    {
       "unidad": "0961",
       "placa": "CHU-135",
       "marca": "GEELY",
@@ -1533,17 +1522,6 @@
     {
       "unidad": "0966",
       "placa": "CXL-582",
-      "marca": "GEELY",
-      "modelo": "OKAVANGO",
-      "color": "GRIS",
-      "anyo": "2027",
-      "soat": "2027-03-16",
-      "rt": "2030-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0967",
-      "placa": "CXN-069",
       "marca": "GEELY",
       "modelo": "OKAVANGO",
       "color": "GRIS",
