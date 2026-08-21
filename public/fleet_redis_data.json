@@ -1,5 +1,5 @@
 {
-  "fecha": "21/08/26, 4:17 p. m.",
+  "fecha": "21/08/26, 5:17 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -695,6 +695,17 @@
       "obs": ""
     },
     {
+      "unidad": "0488",
+      "placa": "CJJ-173",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SIL",
+      "anyo": "2024",
+      "soat": "2026-10-31",
+      "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
       "unidad": "0489",
       "placa": "CJJ-200",
       "marca": "KIA",
@@ -923,6 +934,17 @@
       "anyo": "2026",
       "soat": "2027-05-09",
       "rt": "2030-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0513",
+      "placa": "CSO-419",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-05-09",
+      "rt": "2030-12-01",
       "obs": ""
     },
     {
