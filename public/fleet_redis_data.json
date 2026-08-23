@@ -1,5 +1,5 @@
 {
-  "fecha": "22/08/26, 9:22 p. m.",
+  "fecha": "22/08/26, 10:44 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -13,28 +13,6 @@
       "obs": ""
     },
     {
-      "unidad": "0101",
-      "placa": "CJY-259",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0102",
-      "placa": "CJY-282",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
       "unidad": "0103",
       "placa": "CJZ-002",
       "marca": "KIA",
@@ -43,17 +21,6 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0104",
-      "placa": "CJZ-031",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-03-01",
       "obs": ""
     },
     {
@@ -1495,17 +1462,6 @@
       "anyo": "2023",
       "soat": "2026-10-05",
       "rt": "2027-10-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0963",
-      "placa": "CJI-555",
-      "marca": "GEELY",
-      "modelo": "OKAVANGO",
-      "color": "SILVER",
-      "anyo": "2023",
-      "soat": "2026-11-01",
-      "rt": "2027-07-01",
       "obs": ""
     },
     {
