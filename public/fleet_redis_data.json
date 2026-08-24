@@ -1,9 +1,42 @@
 {
-  "fecha": "24/08/26, 8:44 a. m.",
+  "fecha": "24/08/26, 3:22 p. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0101",
+      "placa": "CJY-259",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
     {
       "unidad": "0102",
       "placa": "CJY-282",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0103",
+      "placa": "CJZ-002",
       "marca": "KIA",
       "modelo": "SOLUTO",
       "color": "SILVER",
@@ -189,17 +222,6 @@
       "obs": ""
     },
     {
-      "unidad": "0258",
-      "placa": "CCR-227",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "PLATA",
-      "anyo": "2023",
-      "soat": "2026-11-28",
-      "rt": "2027-10-01",
-      "obs": ""
-    },
-    {
       "unidad": "0259",
       "placa": "CKO-445",
       "marca": "KIA",
@@ -208,28 +230,6 @@
       "anyo": "2024",
       "soat": "2027-02-02",
       "rt": "2028-07-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0260",
-      "placa": "CKP-042",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "GREY",
-      "anyo": "2024",
-      "soat": "2027-02-05",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0261",
-      "placa": "CKP-330",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "GREY",
-      "anyo": "2024",
-      "soat": "2027-02-07",
-      "rt": "2028-01-01",
       "obs": ""
     },
     {
@@ -442,6 +442,17 @@
       "obs": ""
     },
     {
+      "unidad": "0450",
+      "placa": "BZZ-006",
+      "marca": "TOYOTA",
+      "modelo": "YARIS - AT",
+      "color": "GRIS OSCURO METALICO",
+      "anyo": "2023",
+      "soat": "2027-05-12",
+      "rt": "2027-09-01",
+      "obs": ""
+    },
+    {
       "unidad": "0451",
       "placa": "BZZ-188",
       "marca": "TOYOTA",
@@ -450,6 +461,28 @@
       "anyo": "2023",
       "soat": "2027-05-12",
       "rt": "2027-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0452",
+      "placa": "CAA-471",
+      "marca": "TOYOTA",
+      "modelo": "YARIS - AT",
+      "color": "PLATA METALICO",
+      "anyo": "2023",
+      "soat": "2027-05-17",
+      "rt": "2027-03-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0460",
+      "placa": "CCK-222",
+      "marca": "HYUNDAI",
+      "modelo": "ACCENT AT",
+      "color": "GRIS",
+      "anyo": "2023",
+      "soat": "2026-11-10",
+      "rt": "2027-04-01",
       "obs": ""
     },
     {
@@ -970,17 +1003,6 @@
       "obs": ""
     },
     {
-      "unidad": "0761",
-      "placa": "BWK-144",
-      "marca": "NISSAN",
-      "modelo": "VERSA - AT",
-      "color": "NEGRO",
-      "anyo": "2022",
-      "soat": "2026-09-08",
-      "rt": "2026-09-02",
-      "obs": ""
-    },
-    {
       "unidad": "0762",
       "placa": "BXA-122",
       "marca": "NISSAN",
@@ -1011,6 +1033,28 @@
       "anyo": "2024",
       "soat": "2027-01-10",
       "rt": "2028-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0771",
+      "placa": "CKE-572",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2027-01-10",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0772",
+      "placa": "CKK-490",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-01-26",
+      "rt": "2028-01-01",
       "obs": ""
     },
     {
@@ -1077,17 +1121,6 @@
       "anyo": "2025",
       "soat": "2026-12-04",
       "rt": "2029-06-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0782",
-      "placa": "CPJ-086",
-      "marca": "KIA",
-      "modelo": "KIA K3",
-      "color": "GRIS",
-      "anyo": "2025",
-      "soat": "2026-12-04",
-      "rt": "2029-09-01",
       "obs": ""
     },
     {
