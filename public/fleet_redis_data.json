@@ -1,5 +1,5 @@
 {
-  "fecha": "23/08/26, 7:52 p. m.",
+  "fecha": "23/08/26, 9:19 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,6 +10,28 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0101",
+      "placa": "CJY-259",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0102",
+      "placa": "CJY-282",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-04-01",
       "obs": ""
     },
     {
@@ -970,6 +992,28 @@
       "obs": ""
     },
     {
+      "unidad": "0519",
+      "placa": "CTQ-325",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0720",
+      "placa": "BLC-471",
+      "marca": "NISSAN",
+      "modelo": "VERSA - MC",
+      "color": "PLATA",
+      "anyo": "2020",
+      "soat": "2026-07-22",
+      "rt": "2026-02-06",
+      "obs": ""
+    },
+    {
       "unidad": "0721",
       "placa": "BLB-253",
       "marca": "NISSAN",
@@ -978,6 +1022,17 @@
       "anyo": "2020",
       "soat": "2026-07-16",
       "rt": "2026-04-23",
+      "obs": ""
+    },
+    {
+      "unidad": "0722",
+      "placa": "BLB-368",
+      "marca": "NISSAN",
+      "modelo": "VERSA - MC",
+      "color": "PLATA",
+      "anyo": "2020",
+      "soat": "2026-07-16",
+      "rt": "2024-11-01",
       "obs": ""
     },
     {
