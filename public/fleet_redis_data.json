@@ -1,28 +1,6 @@
 {
-  "fecha": "25/08/26, 4:30 a. m.",
+  "fecha": "25/08/26, 5:24 a. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0102",
-      "placa": "CJY-282",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
     {
       "unidad": "0103",
       "placa": "CJZ-002",
@@ -35,83 +13,6 @@
       "obs": ""
     },
     {
-      "unidad": "0104",
-      "placa": "CJZ-031",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0130",
-      "placa": "CTB-069",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0131",
-      "placa": "CTB-119",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0132",
-      "placa": "CTB-302",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0133",
-      "placa": "CTB-413",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-05-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0134",
-      "placa": "CTB-555",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-01",
-      "rt": "2030-07-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0135",
-      "placa": "CYF-161",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
       "unidad": "0136",
       "placa": "CYF-475",
       "marca": "CHERY",
@@ -120,83 +21,6 @@
       "anyo": "2027",
       "soat": "2027-04-01",
       "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0137",
-      "placa": "CYD-139",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0138",
-      "placa": "CYC-682",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0139",
-      "placa": "CYD-131",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0200",
-      "placa": "BZW-251",
-      "marca": "TOYOTA",
-      "modelo": "AGYA",
-      "color": "PLATA METALICO",
-      "anyo": "2023",
-      "soat": "2027-05-06",
-      "rt": "2027-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0254",
-      "placa": "BXN-148",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "BLANCO",
-      "anyo": "2022",
-      "soat": "2027-11-23",
-      "rt": "2026-11-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0255",
-      "placa": "BXN-520",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "ROJO",
-      "anyo": "2022",
-      "soat": "2026-11-22",
-      "rt": "2026-01-13",
-      "obs": ""
-    },
-    {
-      "unidad": "0256",
-      "placa": "CBA-696",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "BLANCO",
-      "anyo": "2023",
-      "soat": "2027-08-04",
-      "rt": "2027-09-01",
       "obs": ""
     },
     {
@@ -846,6 +670,17 @@
       "anyo": "2025",
       "soat": "2026-12-20",
       "rt": "2029-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0506",
+      "placa": "CRO-120",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-01-01",
       "obs": ""
     },
     {
