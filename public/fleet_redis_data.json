@@ -1,5 +1,5 @@
 {
-  "fecha": "25/08/26, 5:20 p. m.",
+  "fecha": "25/08/26, 6:21 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,17 +10,6 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0101",
-      "placa": "CJY-259",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-12-01",
       "obs": ""
     },
     {
@@ -343,6 +332,17 @@
       "obs": ""
     },
     {
+      "unidad": "0320",
+      "placa": "BWR-126",
+      "marca": "KIA",
+      "modelo": "RIO AT",
+      "color": "Blanco",
+      "anyo": "2022",
+      "soat": "2026-09-28",
+      "rt": "2026-09-11",
+      "obs": ""
+    },
+    {
       "unidad": "0321",
       "placa": "BWS-181",
       "marca": "KIA",
@@ -494,17 +494,6 @@
       "anyo": "2023",
       "soat": "2027-05-17",
       "rt": "2027-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0460",
-      "placa": "CCK-222",
-      "marca": "HYUNDAI",
-      "modelo": "ACCENT AT",
-      "color": "GRIS",
-      "anyo": "2023",
-      "soat": "2026-11-10",
-      "rt": "2027-04-01",
       "obs": ""
     },
     {
