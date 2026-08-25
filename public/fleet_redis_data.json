@@ -1,5 +1,5 @@
 {
-  "fecha": "25/08/26, 8:43 a. m.",
+  "fecha": "25/08/26, 3:21 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -816,6 +816,17 @@
       "obs": ""
     },
     {
+      "unidad": "0500",
+      "placa": "CPM-311",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2026-12-16",
+      "rt": "2029-03-01",
+      "obs": ""
+    },
+    {
       "unidad": "0501",
       "placa": "CPM-334",
       "marca": "KIA",
@@ -1143,17 +1154,6 @@
       "anyo": "2025",
       "soat": "2026-09-26",
       "rt": "2029-10-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0780",
-      "placa": "CPH-089",
-      "marca": "KIA",
-      "modelo": "KIA K3",
-      "color": "GRIS",
-      "anyo": "2025",
-      "soat": "2026-12-04",
-      "rt": "2029-12-01",
       "obs": ""
     },
     {
