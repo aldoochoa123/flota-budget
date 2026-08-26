@@ -1,6 +1,17 @@
 {
-  "fecha": "26/08/26, 12:28 a. m.",
+  "fecha": "26/08/26, 1:47 a. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -428,6 +439,17 @@
       "anyo": "2022",
       "soat": "2027-07-23",
       "rt": "2026-03-13",
+      "obs": ""
+    },
+    {
+      "unidad": "0446",
+      "placa": "BVS-421",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "AZUL STREAM",
+      "anyo": "2022",
+      "soat": "2027-07-23",
+      "rt": "2026-03-20",
       "obs": ""
     },
     {
@@ -1726,6 +1748,17 @@
       "anyo": "2022",
       "soat": "2026-12-16",
       "rt": "2026-05-06",
+      "obs": ""
+    },
+    {
+      "unidad": "1084",
+      "placa": "BPD-914",
+      "marca": "FORD",
+      "modelo": "RANGER",
+      "color": "AZUL",
+      "anyo": "2023",
+      "soat": "2027-04-08",
+      "rt": "2027-06-01",
       "obs": ""
     },
     {
