@@ -1,17 +1,6 @@
 {
-  "fecha": "29/08/26, 9:53 a. m.",
+  "fecha": "29/08/26, 5:10 p. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -349,7 +338,7 @@
       "modelo": "RIO AT",
       "color": "Blanco",
       "anyo": "2022",
-      "soat": "2026-09-28",
+      "soat": "2027-09-28",
       "rt": "2026-09-11",
       "obs": ""
     },
@@ -360,7 +349,7 @@
       "modelo": "RIO AT",
       "color": "PLATA",
       "anyo": "2022",
-      "soat": "2026-09-29",
+      "soat": "2027-09-29",
       "rt": "2026-03-08",
       "obs": ""
     },
@@ -459,7 +448,7 @@
       "modelo": "SOLUTO",
       "color": "PLATA",
       "anyo": "2022",
-      "soat": "2026-09-02",
+      "soat": "2027-09-02",
       "rt": "2026-12-01",
       "obs": ""
     },
@@ -470,7 +459,7 @@
       "modelo": "SOLUTO",
       "color": "BLANCO CLARO",
       "anyo": "2022",
-      "soat": "2026-09-07",
+      "soat": "2027-09-07",
       "rt": "2026-04-05",
       "obs": ""
     },
@@ -1042,7 +1031,7 @@
       "modelo": "VERSA - AT",
       "color": "NEGRO",
       "anyo": "2022",
-      "soat": "2026-09-08",
+      "soat": "2027-09-08",
       "rt": "2026-09-02",
       "obs": ""
     },
@@ -1152,7 +1141,7 @@
       "modelo": "KIA K3",
       "color": "PLATA",
       "anyo": "2025",
-      "soat": "2026-09-26",
+      "soat": "2027-09-26",
       "rt": "2029-10-01",
       "obs": ""
     },
@@ -1273,7 +1262,7 @@
       "modelo": "SELTOS",
       "color": "PLATA",
       "anyo": "2025",
-      "soat": "2026-09-30",
+      "soat": "2027-09-30",
       "rt": "2029-12-01",
       "obs": ""
     },
@@ -1471,7 +1460,7 @@
       "modelo": "OKAVANGO",
       "color": "SILVER",
       "anyo": "2023",
-      "soat": "2026-09-15",
+      "soat": "2027-09-15",
       "rt": "2027-12-01",
       "obs": ""
     },
@@ -1482,7 +1471,7 @@
       "modelo": "OKAVANGO",
       "color": "WHITE",
       "anyo": "2023",
-      "soat": "2026-09-15",
+      "soat": "2027-09-15",
       "rt": "2027-07-01",
       "obs": ""
     },
@@ -1735,7 +1724,7 @@
       "modelo": "RANGER",
       "color": "NEGRO",
       "anyo": "2022",
-      "soat": "2026-09-08",
+      "soat": "2027-09-08",
       "rt": "2026-05-09",
       "obs": ""
     },
