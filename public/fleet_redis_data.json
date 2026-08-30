@@ -1,5 +1,5 @@
 {
-  "fecha": "29/08/26, 5:10 p. m.",
+  "fecha": "29/08/26, 7:57 p. m.",
   "unidades": [
     {
       "unidad": "0101",
@@ -1307,17 +1307,6 @@
       "color": "PLATA",
       "anyo": "2026",
       "soat": "2027-01-26",
-      "rt": "2029-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0898",
-      "placa": "CWS-280",
-      "marca": "KIA",
-      "modelo": "SELTOS",
-      "color": "GRIS",
-      "anyo": "2026",
-      "soat": "2027-01-27",
       "rt": "2029-01-01",
       "obs": ""
     },
