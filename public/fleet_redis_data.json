@@ -1,5 +1,5 @@
 {
-  "fecha": "31/08/26, 10:54 a. m.",
+  "fecha": "31/08/26, 6:33 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -739,6 +739,17 @@
       "obs": ""
     },
     {
+      "unidad": "0492",
+      "placa": "CJN-391",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-11-15",
+      "rt": "2028-03-01",
+      "obs": ""
+    },
+    {
       "unidad": "0493",
       "placa": "CJN-501",
       "marca": "KIA",
@@ -747,6 +758,39 @@
       "anyo": "2024",
       "soat": "2026-11-15",
       "rt": "2028-03-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0494",
+      "placa": "CJN-652",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-11-15",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0495",
+      "placa": "CLC-089",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0497",
+      "placa": "CLB-065",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-07-01",
       "obs": ""
     },
     {
@@ -1066,6 +1110,17 @@
       "anyo": "2024",
       "soat": "2027-01-26",
       "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0774",
+      "placa": "CKL-203",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-01-30",
+      "rt": "2028-05-01",
       "obs": ""
     },
     {
