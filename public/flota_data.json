@@ -1,6 +1,22 @@
 {
-  "fecha": "31/08/26, 2:58 a. m.",
+  "fecha": "31/08/26, 10:54 a. m.",
   "unidades": [
+    {
+      "unidad": "950",
+      "ubic": "E1",
+      "ra": "511105604",
+      "km": "82788",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "782",
+      "ubic": "E1",
+      "ra": "511105582",
+      "km": "40958",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
     {
       "unidad": "508",
       "ubic": "E1",
@@ -10,26 +26,10 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "509",
-      "ubic": "E1",
-      "ra": "511105556",
-      "km": "30645",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "951",
       "ubic": "E1",
       "ra": "511105630",
       "km": "80182",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "770",
-      "ubic": "E1",
-      "ra": "511105814",
-      "km": "60779",
       "fuel": "Full",
       "estado": "Limpio"
     },
@@ -90,14 +90,6 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "506",
-      "ubic": "E1",
-      "ra": "511208541",
-      "km": "39204",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "461",
       "ubic": "E1",
       "ra": "511105733",
@@ -138,26 +130,10 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "135",
-      "ubic": "E1",
-      "ra": "509527896",
-      "km": "7806",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "778",
       "ubic": "E7",
       "ra": "",
       "km": "35961",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "761",
-      "ubic": "E7",
-      "ra": "",
-      "km": "76821",
       "fuel": "Full",
       "estado": "Limpio"
     },
@@ -182,14 +158,6 @@
       "ubic": "E7",
       "ra": "",
       "km": "6983",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "776",
-      "ubic": "E7",
-      "ra": "",
-      "km": "55473",
       "fuel": "Full",
       "estado": "Limpio"
     },
