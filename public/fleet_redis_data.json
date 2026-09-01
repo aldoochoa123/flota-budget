@@ -1,5 +1,5 @@
 {
-  "fecha": "1/09/26, 3:23 a. m.",
+  "fecha": "1/09/26, 8:51 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -98,6 +98,17 @@
       "anyo": "2026",
       "soat": "2027-06-11",
       "rt": "2030-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0134",
+      "placa": "CTB-555",
+      "marca": "CHERY",
+      "modelo": "ARRIZO 5 PRO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-06-01",
+      "rt": "2030-07-01",
       "obs": ""
     },
     {
@@ -263,28 +274,6 @@
       "anyo": "2024",
       "soat": "2027-02-07",
       "rt": "2028-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0263",
-      "placa": "CKP-555",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "GREY",
-      "anyo": "2024",
-      "soat": "2027-02-07",
-      "rt": "2028-07-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0264",
-      "placa": "CKV-367",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "NEGRO",
-      "anyo": "2024",
-      "soat": "2027-02-21",
-      "rt": "2028-10-01",
       "obs": ""
     },
     {
@@ -1264,6 +1253,28 @@
       "anyo": "2025",
       "soat": "2027-09-30",
       "rt": "2029-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0894",
+      "placa": "CPI-688",
+      "marca": "KIA",
+      "modelo": "SELTOS",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0895",
+      "placa": "CPJ-351",
+      "marca": "KIA",
+      "modelo": "SELTOS",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-03-01",
       "obs": ""
     },
     {
