@@ -1,5 +1,5 @@
 {
-  "fecha": "1/09/26, 8:51 a. m.",
+  "fecha": "1/09/26, 5:17 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -274,6 +274,28 @@
       "anyo": "2024",
       "soat": "2027-02-07",
       "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0263",
+      "placa": "CKP-555",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-02-07",
+      "rt": "2028-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0264",
+      "placa": "CKV-367",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "NEGRO",
+      "anyo": "2024",
+      "soat": "2027-02-21",
+      "rt": "2028-10-01",
       "obs": ""
     },
     {
@@ -1704,39 +1726,6 @@
       "anyo": "2026",
       "soat": "2027-03-09",
       "rt": "2029-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "1081",
-      "placa": "BLJ-828",
-      "marca": "FORD",
-      "modelo": "RANGER",
-      "color": "NEGRO",
-      "anyo": "2022",
-      "soat": "2027-09-08",
-      "rt": "2026-05-09",
-      "obs": ""
-    },
-    {
-      "unidad": "1083",
-      "placa": "BMS-702",
-      "marca": "FORD",
-      "modelo": "RANGER",
-      "color": "BLANCO",
-      "anyo": "2022",
-      "soat": "2026-12-16",
-      "rt": "2026-05-06",
-      "obs": ""
-    },
-    {
-      "unidad": "1084",
-      "placa": "BPD-914",
-      "marca": "FORD",
-      "modelo": "RANGER",
-      "color": "AZUL",
-      "anyo": "2023",
-      "soat": "2027-04-08",
-      "rt": "2027-06-01",
       "obs": ""
     },
     {
