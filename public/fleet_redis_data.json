@@ -1,5 +1,5 @@
 {
-  "fecha": "3/09/26, 9:50 a. m.",
+  "fecha": "3/09/26, 5:07 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -1179,6 +1179,28 @@
       "obs": ""
     },
     {
+      "unidad": "0782",
+      "placa": "CPJ-086",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-09-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0783",
+      "placa": "CPJ-383",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-05-01",
+      "obs": ""
+    },
+    {
       "unidad": "0880",
       "placa": "CYA-138",
       "marca": "CHERY",
@@ -1498,6 +1520,28 @@
       "obs": ""
     },
     {
+      "unidad": "0965",
+      "placa": "CJM-159",
+      "marca": "GEELY",
+      "modelo": "OKAVANGO",
+      "color": "",
+      "anyo": "2023",
+      "soat": "2026-11-15",
+      "rt": "2027-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0966",
+      "placa": "CXL-582",
+      "marca": "GEELY",
+      "modelo": "OKAVANGO",
+      "color": "GRIS",
+      "anyo": "2027",
+      "soat": "2027-03-16",
+      "rt": "2030-03-01",
+      "obs": ""
+    },
+    {
       "unidad": "0967",
       "placa": "CXN-069",
       "marca": "GEELY",
@@ -1583,6 +1627,17 @@
       "anyo": "2024",
       "soat": "2026-12-05",
       "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "1037",
+      "placa": "CSE-156",
+      "marca": "KIA",
+      "modelo": "SPORTAGE",
+      "color": "WHITE",
+      "anyo": "2026",
+      "soat": "2027-04-11",
+      "rt": "2030-09-01",
       "obs": ""
     },
     {
