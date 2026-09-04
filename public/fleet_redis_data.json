@@ -1,6 +1,17 @@
 {
-  "fecha": "4/09/26, 12:19 a. m.",
+  "fecha": "4/09/26, 5:21 a. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -266,6 +277,17 @@
       "obs": ""
     },
     {
+      "unidad": "0263",
+      "placa": "CKP-555",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-02-07",
+      "rt": "2028-07-01",
+      "obs": ""
+    },
+    {
       "unidad": "0264",
       "placa": "CKV-367",
       "marca": "KIA",
@@ -387,6 +409,17 @@
       "obs": ""
     },
     {
+      "unidad": "0327",
+      "placa": "CBY-481",
+      "marca": "KIA",
+      "modelo": "RIO AT",
+      "color": "PLATA",
+      "anyo": "2023",
+      "soat": "2026-10-07",
+      "rt": "2027-03-01",
+      "obs": ""
+    },
+    {
       "unidad": "0328",
       "placa": "CBY-662",
       "marca": "KIA",
@@ -483,6 +516,17 @@
       "anyo": "2023",
       "soat": "2026-11-10",
       "rt": "2027-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0461",
+      "placa": "CCK-653",
+      "marca": "HYUNDAI",
+      "modelo": "ACCENT AT",
+      "color": "GRIS",
+      "anyo": "2023",
+      "soat": "2026-11-11",
+      "rt": "2027-05-01",
       "obs": ""
     },
     {
@@ -791,6 +835,17 @@
       "anyo": "2025",
       "soat": "2026-12-16",
       "rt": "2029-06-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0504",
+      "placa": "CPN-238",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2026-12-16",
+      "rt": "2029-11-01",
       "obs": ""
     },
     {
@@ -1190,6 +1245,17 @@
       "obs": ""
     },
     {
+      "unidad": "0890",
+      "placa": "CKK-548",
+      "marca": "KIA",
+      "modelo": "SELTOS",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2027-01-26",
+      "rt": "2028-11-01",
+      "obs": ""
+    },
+    {
       "unidad": "0891",
       "placa": "CKL-308",
       "marca": "KIA",
@@ -1300,6 +1366,17 @@
       "obs": ""
     },
     {
+      "unidad": "0903",
+      "placa": "CME-223",
+      "marca": "CHERY",
+      "modelo": "TIGGO 4 PRO",
+      "color": "PLATA",
+      "anyo": "2024",
+      "soat": "2027-06-06",
+      "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
       "unidad": "0909",
       "placa": "CBB-245",
       "marca": "CHERY",
@@ -1363,6 +1440,17 @@
       "anyo": "2024",
       "soat": "2026-10-03",
       "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0946",
+      "placa": "CSC-362",
+      "marca": "MITSUBISHI",
+      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
+      "color": "PLATA",
+      "anyo": "2024",
+      "soat": "2027-04-07",
+      "rt": "2028-04-01",
       "obs": ""
     },
     {
