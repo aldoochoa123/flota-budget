@@ -1,5 +1,5 @@
 {
-  "fecha": "5/09/26, 2:17 a. m.",
+  "fecha": "5/09/26, 6:31 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -1417,6 +1417,17 @@
       "color": "SILVER",
       "anyo": "2024",
       "soat": "2026-11-16",
+      "rt": "2028-09-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0944",
+      "placa": "CNP-026",
+      "marca": "MITSUBISHI",
+      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
+      "color": "PLATA",
+      "anyo": "2024",
+      "soat": "2026-10-03",
       "rt": "2028-09-01",
       "obs": ""
     },
