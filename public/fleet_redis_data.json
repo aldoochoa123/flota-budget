@@ -1,5 +1,5 @@
 {
-  "fecha": "6/09/26, 6:52 a. m.",
+  "fecha": "6/09/26, 9:44 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -363,17 +363,6 @@
       "soat": "2027-09-29",
       "rt": "2026-03-08",
       "obs": ""
-    },
-    {
-      "unidad": "0322",
-      "placa": "BXS-130",
-      "marca": "KIA",
-      "modelo": "RIO AT",
-      "color": "Azul",
-      "anyo": "2022",
-      "soat": "2026-12-01",
-      "rt": "2026-01-13",
-      "obs": "LX Full AT/ declarado PERDIDA TOTAL POR ROBO"
     },
     {
       "unidad": "0324",
