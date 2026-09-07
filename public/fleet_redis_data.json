@@ -1,5 +1,5 @@
 {
-  "fecha": "6/09/26, 6:23 p. m.",
+  "fecha": "6/09/26, 9:15 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -1649,17 +1649,6 @@
       "anyo": "2026",
       "soat": "2027-04-11",
       "rt": "2030-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "1061",
-      "placa": "CKW-212",
-      "marca": "TOYOTA",
-      "modelo": "CROSS HYBRID",
-      "color": "PLATA",
-      "anyo": "2024",
-      "soat": "2027-02-23",
-      "rt": "2028-04-01",
       "obs": ""
     },
     {
