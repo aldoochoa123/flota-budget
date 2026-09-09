@@ -1,5 +1,5 @@
 {
-  "fecha": "8/09/26, 5:15 p. m.",
+  "fecha": "8/09/26, 7:57 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -136,28 +136,6 @@
     {
       "unidad": "0137",
       "placa": "CYD-139",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0138",
-      "placa": "CYC-682",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2027",
-      "soat": "2027-04-01",
-      "rt": "2030-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0139",
-      "placa": "CYD-131",
       "marca": "CHERY",
       "modelo": "ARRIZO 5 PRO",
       "color": "PLATA",
