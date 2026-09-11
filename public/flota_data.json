@@ -1,6 +1,30 @@
 {
-  "fecha": "11/09/26, 9:46 a. m.",
+  "fecha": "11/09/26, 5:08 p. m.",
   "unidades": [
+    {
+      "unidad": "961",
+      "ubic": "E1",
+      "ra": "511106735",
+      "km": "77120",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "133",
+      "ubic": "E1",
+      "ra": "511106606",
+      "km": "31993",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "967",
+      "ubic": "E1",
+      "ra": "",
+      "km": "11306",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
     {
       "unidad": "1061",
       "ubic": "E1",
@@ -8,14 +32,6 @@
       "km": "66638",
       "fuel": "Full",
       "estado": "Limpio"
-    },
-    {
-      "unidad": "484",
-      "ubic": "E7",
-      "ra": "511208692",
-      "km": "62332",
-      "fuel": "Full",
-      "estado": "Sucio"
     },
     {
       "unidad": "960",
@@ -42,34 +58,10 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "100",
-      "ubic": "E7",
-      "ra": "558181516",
-      "km": "76217",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "898",
       "ubic": "E7",
       "ra": "",
       "km": "16532",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "258",
-      "ubic": "E7",
-      "ra": "0000",
-      "km": "93459",
-      "fuel": "7/8",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "486",
-      "ubic": "E1",
-      "ra": "51116680",
-      "km": "69791",
       "fuel": "Full",
       "estado": "Limpio"
     },
@@ -95,14 +87,6 @@
       "ra": "",
       "km": "72729",
       "fuel": "7/8",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "262",
-      "ubic": "E7",
-      "ra": "558181864",
-      "km": "43215",
-      "fuel": "Full",
       "estado": "Limpio"
     },
     {
@@ -142,14 +126,6 @@
       "ubic": "E7",
       "ra": "511106271",
       "km": "75886",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "761",
-      "ubic": "E7",
-      "ra": "",
-      "km": "77117",
       "fuel": "Full",
       "estado": "Limpio"
     },
