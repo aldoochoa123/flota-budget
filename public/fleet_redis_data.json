@@ -1,5 +1,5 @@
 {
-  "fecha": "15/09/26, 2:02 a. m.",
+  "fecha": "15/09/26, 8:03 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -13,8 +13,30 @@
       "obs": ""
     },
     {
+      "unidad": "0101",
+      "placa": "CJY-259",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
       "unidad": "0102",
       "placa": "CJY-282",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0103",
+      "placa": "CJZ-002",
       "marca": "KIA",
       "modelo": "SOLUTO",
       "color": "SILVER",
@@ -37,17 +59,6 @@
     {
       "unidad": "0130",
       "placa": "CTB-069",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-11",
-      "rt": "2030-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0131",
-      "placa": "CTB-119",
       "marca": "CHERY",
       "modelo": "ARRIZO 5 PRO",
       "color": "PLATA",
