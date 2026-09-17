@@ -1,5 +1,5 @@
 {
-  "fecha": "16/09/26, 8:01 p. m.",
+  "fecha": "17/09/26, 12:57 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -219,6 +219,28 @@
       "anyo": "2023",
       "soat": "2026-11-29",
       "rt": "2027-03-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0258",
+      "placa": "CCR-227",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "PLATA",
+      "anyo": "2023",
+      "soat": "2026-11-28",
+      "rt": "2027-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0259",
+      "placa": "CKO-445",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-02-02",
+      "rt": "2028-07-01",
       "obs": ""
     },
     {

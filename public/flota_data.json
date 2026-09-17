@@ -1,17 +1,25 @@
 {
-  "fecha": "16/09/26, 8:01 p. m.",
+  "fecha": "17/09/26, 12:57 a. m.",
   "unidades": [
     {
-      "unidad": "961",
+      "unidad": "506",
       "ubic": "E1",
-      "ra": "558181993",
-      "km": "77256",
-      "fuel": "1/2",
+      "ra": "511107214",
+      "km": "41203",
+      "fuel": "Full",
       "estado": "Limpio"
     },
     {
+      "unidad": "961",
+      "ubic": "E7",
+      "ra": "558181993",
+      "km": "77256",
+      "fuel": "1/2",
+      "estado": "Sucio"
+    },
+    {
       "unidad": "953",
-      "ubic": "E1",
+      "ubic": "E7",
       "ra": "558181960",
       "km": "9801",
       "fuel": "5/8",
@@ -19,7 +27,7 @@
     },
     {
       "unidad": "870",
-      "ubic": "E1",
+      "ubic": "E7",
       "ra": "",
       "km": "51502",
       "fuel": "Full",
@@ -35,7 +43,7 @@
     },
     {
       "unidad": "946",
-      "ubic": "E1",
+      "ubic": "E7",
       "ra": "",
       "km": "47223",
       "fuel": "Full",
@@ -74,22 +82,6 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "489",
-      "ubic": "E1",
-      "ra": "511107100",
-      "km": "58027",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "512",
-      "ubic": "E1",
-      "ra": "511107155",
-      "km": "30616",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "327",
       "ubic": "E1",
       "ra": "511107181",
@@ -98,34 +90,10 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "967",
-      "ubic": "E1",
-      "ra": "511107111",
-      "km": "11990",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "883",
-      "ubic": "E7",
-      "ra": "511106676",
-      "km": "8027",
-      "fuel": "7/8",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "899",
       "ubic": "E7",
       "ra": "",
       "km": "17530",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "901",
-      "ubic": "E7",
-      "ra": "",
-      "km": "55755",
       "fuel": "Full",
       "estado": "Limpio"
     },
