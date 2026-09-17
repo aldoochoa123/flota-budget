@@ -1,5 +1,5 @@
 {
-  "fecha": "16/09/26, 5:32 p. m.",
+  "fecha": "16/09/26, 8:01 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -112,6 +112,17 @@
       "obs": ""
     },
     {
+      "unidad": "0135",
+      "placa": "CYF-161",
+      "marca": "CHERY",
+      "modelo": "ARRIZO 5 PRO",
+      "color": "PLATA",
+      "anyo": "2027",
+      "soat": "2027-04-01",
+      "rt": "2030-04-01",
+      "obs": ""
+    },
+    {
       "unidad": "0136",
       "placa": "CYF-475",
       "marca": "CHERY",
@@ -208,28 +219,6 @@
       "anyo": "2023",
       "soat": "2026-11-29",
       "rt": "2027-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0258",
-      "placa": "CCR-227",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "PLATA",
-      "anyo": "2023",
-      "soat": "2026-11-28",
-      "rt": "2027-10-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0259",
-      "placa": "CKO-445",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "GREY",
-      "anyo": "2024",
-      "soat": "2027-02-02",
-      "rt": "2028-07-01",
       "obs": ""
     },
     {
