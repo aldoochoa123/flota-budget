@@ -1,5 +1,5 @@
 {
-  "fecha": "17/09/26, 10:28 a. m.",
+  "fecha": "17/09/26, 7:56 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -101,6 +101,17 @@
       "obs": ""
     },
     {
+      "unidad": "0134",
+      "placa": "CTB-555",
+      "marca": "CHERY",
+      "modelo": "ARRIZO 5 PRO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-06-01",
+      "rt": "2030-07-01",
+      "obs": ""
+    },
+    {
       "unidad": "0135",
       "placa": "CYF-161",
       "marca": "CHERY",
@@ -175,17 +186,6 @@
       "anyo": "2022",
       "soat": "2027-11-23",
       "rt": "2026-11-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0255",
-      "placa": "BXN-520",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "ROJO",
-      "anyo": "2022",
-      "soat": "2026-11-22",
-      "rt": "2026-01-13",
       "obs": ""
     },
     {
@@ -563,28 +563,6 @@
       "obs": ""
     },
     {
-      "unidad": "0476",
-      "placa": "CHJ-172",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2024",
-      "soat": "2027-08-14",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0477",
-      "placa": "CHJ-376",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2024",
-      "soat": "2027-08-15",
-      "rt": "2028-09-01",
-      "obs": ""
-    },
-    {
       "unidad": "0478",
       "placa": "CHJ-541",
       "marca": "KIA",
@@ -615,17 +593,6 @@
       "anyo": "2024",
       "soat": "2027-08-15",
       "rt": "2028-05-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0481",
-      "placa": "CHK-688",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2024",
-      "soat": "2027-08-17",
-      "rt": "2028-11-01",
       "obs": ""
     },
     {
@@ -730,17 +697,6 @@
     {
       "unidad": "0492",
       "placa": "CJN-391",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-11-15",
-      "rt": "2028-03-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0493",
-      "placa": "CJN-501",
       "marca": "KIA",
       "modelo": "SOLUTO",
       "color": "SILVER",
@@ -934,17 +890,6 @@
       "anyo": "2026",
       "soat": "2027-05-09",
       "rt": "2030-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0514",
-      "placa": "CSP-187",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-05-12",
-      "rt": "2030-10-01",
       "obs": ""
     },
     {
@@ -1165,28 +1110,6 @@
       "anyo": "2025",
       "soat": "2026-12-04",
       "rt": "2029-06-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0782",
-      "placa": "CPJ-086",
-      "marca": "KIA",
-      "modelo": "KIA K3",
-      "color": "GRIS",
-      "anyo": "2025",
-      "soat": "2026-12-04",
-      "rt": "2029-09-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0783",
-      "placa": "CPJ-383",
-      "marca": "KIA",
-      "modelo": "KIA K3",
-      "color": "GRIS",
-      "anyo": "2025",
-      "soat": "2026-12-04",
-      "rt": "2029-05-01",
       "obs": ""
     },
     {
