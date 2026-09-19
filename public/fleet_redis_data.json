@@ -1,17 +1,6 @@
 {
-  "fecha": "18/09/26, 5:09 p. m.",
+  "fecha": "18/09/26, 7:52 p. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -252,6 +241,17 @@
       "anyo": "2024",
       "soat": "2027-02-05",
       "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0261",
+      "placa": "CKP-330",
+      "marca": "KIA",
+      "modelo": "PICANTO - AT",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-02-07",
+      "rt": "2028-01-01",
       "obs": ""
     },
     {
