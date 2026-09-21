@@ -1,17 +1,6 @@
 {
-  "fecha": "21/09/26, 12:45 a. m.",
+  "fecha": "21/09/26, 6:39 a. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -1417,17 +1406,6 @@
       "color": "SILVER",
       "anyo": "2024",
       "soat": "2026-11-16",
-      "rt": "2028-09-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0944",
-      "placa": "CNP-026",
-      "marca": "MITSUBISHI",
-      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
-      "color": "PLATA",
-      "anyo": "2024",
-      "soat": "2026-10-03",
       "rt": "2028-09-01",
       "obs": ""
     },
