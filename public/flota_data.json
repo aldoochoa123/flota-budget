@@ -1,21 +1,21 @@
 {
-  "fecha": "21/09/26, 5:57 p. m.",
+  "fecha": "21/09/26, 8:26 p. m.",
   "unidades": [
     {
-      "unidad": "501",
+      "unidad": "472",
       "ubic": "E1",
-      "ra": "509528972",
-      "km": "41996",
-      "fuel": "Full",
-      "estado": "Sucio"
-    },
-    {
-      "unidad": "483",
-      "ubic": "E1",
-      "ra": "",
-      "km": "75076",
+      "ra": "511107601",
+      "km": "70707",
       "fuel": "Full",
       "estado": "Limpio"
+    },
+    {
+      "unidad": "104",
+      "ubic": "E1",
+      "ra": "558182306",
+      "km": "71208",
+      "fuel": "Full",
+      "estado": "Sucio"
     },
     {
       "unidad": "326",
@@ -39,7 +39,7 @@
       "ra": "511107564",
       "km": "34264",
       "fuel": "Full",
-      "estado": "Sucio"
+      "estado": "Limpio"
     },
     {
       "unidad": "967",
@@ -62,14 +62,6 @@
       "ubic": "E7",
       "ra": "",
       "km": "46189",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "509",
-      "ubic": "E1",
-      "ra": "511107450",
-      "km": "32054",
       "fuel": "Full",
       "estado": "Limpio"
     },

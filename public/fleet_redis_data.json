@@ -1,17 +1,6 @@
 {
-  "fecha": "21/09/26, 5:57 p. m.",
+  "fecha": "21/09/26, 8:26 p. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -970,6 +959,17 @@
       "obs": ""
     },
     {
+      "unidad": "0516",
+      "placa": "CTP-013",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-05-01",
+      "obs": ""
+    },
+    {
       "unidad": "0517",
       "placa": "CTP-695",
       "marca": "KIA",
@@ -1143,6 +1143,17 @@
       "anyo": "2025",
       "soat": "2027-09-26",
       "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0780",
+      "placa": "CPH-089",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-12-01",
       "obs": ""
     },
     {
@@ -1440,6 +1451,17 @@
       "anyo": "2024",
       "soat": "2027-04-07",
       "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0960",
+      "placa": "CHU-479",
+      "marca": "GEELY",
+      "modelo": "OKAVANGO",
+      "color": "SILVER",
+      "anyo": "2023",
+      "soat": "2027-09-15",
+      "rt": "2027-12-01",
       "obs": ""
     },
     {
