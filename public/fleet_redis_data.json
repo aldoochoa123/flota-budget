@@ -1,17 +1,6 @@
 {
-  "fecha": "22/09/26, 8:00 a. m.",
+  "fecha": "22/09/26, 12:35 p. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0102",
       "placa": "CJY-282",
@@ -439,6 +428,17 @@
       "anyo": "2022",
       "soat": "2027-07-23",
       "rt": "2026-03-20",
+      "obs": ""
+    },
+    {
+      "unidad": "0447",
+      "placa": "BWI-189",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2022",
+      "soat": "2027-09-02",
+      "rt": "2026-12-01",
       "obs": ""
     },
     {
