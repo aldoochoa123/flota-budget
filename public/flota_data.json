@@ -1,5 +1,5 @@
 {
-  "fecha": "23/09/26, 2:07 a. m.",
+  "fecha": "23/09/26, 8:12 a. m.",
   "unidades": [
     {
       "unidad": "761",
@@ -7,7 +7,7 @@
       "ra": "558182015",
       "km": "78187",
       "fuel": "Full",
-      "estado": "Sucio"
+      "estado": "Limpio"
     },
     {
       "unidad": "496",
@@ -23,7 +23,7 @@
       "ra": "540438614",
       "km": "81437",
       "fuel": "Full",
-      "estado": "Sucio"
+      "estado": "Limpio"
     },
     {
       "unidad": "255",
