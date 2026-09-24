@@ -1,6 +1,17 @@
 {
-  "fecha": "24/09/26, 6:09 a. m.",
+  "fecha": "24/09/26, 11:16 a. m.",
   "unidades": [
+    {
+      "unidad": "0100",
+      "placa": "CJX-370",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -404,7 +415,7 @@
       "modelo": "RIO AT",
       "color": "PLATA",
       "anyo": "2023",
-      "soat": "2026-10-07",
+      "soat": "2027-10-07",
       "rt": "2027-03-01",
       "obs": ""
     },
@@ -415,7 +426,7 @@
       "modelo": "RIO AT",
       "color": "PLATA",
       "anyo": "2023",
-      "soat": "2026-10-07",
+      "soat": "2027-10-07",
       "rt": "2027-04-01",
       "obs": ""
     },
@@ -668,7 +679,7 @@
       "modelo": "SOLUTO",
       "color": "PLOMO",
       "anyo": "2024",
-      "soat": "2026-10-26",
+      "soat": "2027-10-26",
       "rt": "2028-10-01",
       "obs": ""
     },
@@ -679,7 +690,7 @@
       "modelo": "SOLUTO",
       "color": "PLOMO",
       "anyo": "2024",
-      "soat": "2026-10-26",
+      "soat": "2027-10-26",
       "rt": "2028-06-01",
       "obs": ""
     },
@@ -690,7 +701,7 @@
       "modelo": "SOLUTO",
       "color": "SIL",
       "anyo": "2024",
-      "soat": "2026-10-31",
+      "soat": "2027-10-31",
       "rt": "2028-05-01",
       "obs": ""
     },
@@ -701,7 +712,7 @@
       "modelo": "SOLUTO",
       "color": "SIL",
       "anyo": "2024",
-      "soat": "2026-10-31",
+      "soat": "2027-10-31",
       "rt": "2028-01-01",
       "obs": ""
     },
@@ -1416,7 +1427,7 @@
       "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
       "color": "PLATA",
       "anyo": "2024",
-      "soat": "2026-10-03",
+      "soat": "2027-10-03",
       "rt": "2028-09-01",
       "obs": ""
     },
@@ -1427,7 +1438,7 @@
       "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
       "color": "PLATA",
       "anyo": "2024",
-      "soat": "2026-10-03",
+      "soat": "2027-10-03",
       "rt": "2028-05-01",
       "obs": ""
     },
@@ -1482,7 +1493,7 @@
       "modelo": "OKAVANGO",
       "color": "BLANCO",
       "anyo": "2023",
-      "soat": "2026-10-05",
+      "soat": "2027-10-05",
       "rt": "2027-10-01",
       "obs": ""
     },
