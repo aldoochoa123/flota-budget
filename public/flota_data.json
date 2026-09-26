@@ -1,13 +1,69 @@
 {
-  "fecha": "26/09/26, 11:50 a. m.",
+  "fecha": "26/09/26, 5:18 p. m.",
   "unidades": [
     {
-      "unidad": "484",
+      "unidad": "474",
+      "ubic": "E1",
+      "ra": "511107472",
+      "km": "75024",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "509",
+      "ubic": "E1",
+      "ra": "558182365",
+      "km": "33013",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "944",
       "ubic": "E7",
       "ra": "",
-      "km": "65968",
-      "fuel": "7/8",
+      "km": "66173",
+      "fuel": "Full",
       "estado": "Limpio"
+    },
+    {
+      "unidad": "326",
+      "ubic": "E7",
+      "ra": "0000",
+      "km": "84778",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "1083",
+      "ubic": "E7",
+      "ra": "558182181",
+      "km": "120626",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "967",
+      "ubic": "E1",
+      "ra": "511107833",
+      "km": "12381",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "901",
+      "ubic": "E1",
+      "ra": "511107866",
+      "km": "55925",
+      "fuel": "3/4",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "961",
+      "ubic": "E1",
+      "ra": "511107811",
+      "km": "78188",
+      "fuel": "Full",
+      "estado": "Sucio"
     },
     {
       "unidad": "777",
@@ -18,20 +74,12 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "493",
-      "ubic": "E1",
-      "ra": "558182332",
-      "km": "59371",
-      "fuel": "Full",
-      "estado": "Sucio"
-    },
-    {
       "unidad": "952",
       "ubic": "E7",
       "ra": "511107925",
       "km": "10810",
       "fuel": "Full",
-      "estado": "Sucio"
+      "estado": "Limpio"
     },
     {
       "unidad": "511",
@@ -95,14 +143,6 @@
       "ra": "",
       "km": "17779",
       "fuel": "7/8",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "327",
-      "ubic": "E7",
-      "ra": "511107365",
-      "km": "78733",
-      "fuel": "3/4",
       "estado": "Limpio"
     },
     {
