@@ -1,5 +1,5 @@
 {
-  "fecha": "25/09/26, 6:00 p. m.",
+  "fecha": "25/09/26, 8:21 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,17 +10,6 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0101",
-      "placa": "CJY-259",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-12-01",
       "obs": ""
     },
     {
@@ -981,6 +970,17 @@
       "obs": ""
     },
     {
+      "unidad": "0517",
+      "placa": "CTP-695",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-07-01",
+      "obs": ""
+    },
+    {
       "unidad": "0519",
       "placa": "CTQ-325",
       "marca": "KIA",
@@ -1693,17 +1693,6 @@
       "anyo": "2024",
       "soat": "2027-07-11",
       "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "1067",
-      "placa": "CXJ-115",
-      "marca": "TOYOTA",
-      "modelo": "CROSS HYBRID",
-      "color": "BLANCO",
-      "anyo": "2026",
-      "soat": "2027-02-26",
-      "rt": "2029-03-01",
       "obs": ""
     },
     {
