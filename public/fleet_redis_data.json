@@ -1,5 +1,5 @@
 {
-  "fecha": "30/09/26, 6:22 p. m.",
+  "fecha": "30/09/26, 10:30 p. m.",
   "unidades": [
     {
       "unidad": "0101",
@@ -706,6 +706,17 @@
       "obs": ""
     },
     {
+      "unidad": "0490",
+      "placa": "CJN-042",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-11-10",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
       "unidad": "0491",
       "placa": "CJN-277",
       "marca": "KIA",
@@ -1198,6 +1209,17 @@
       "anyo": "2027",
       "soat": "2027-03-31",
       "rt": "2031-06-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0882",
+      "placa": "CYB-000",
+      "marca": "CHERY",
+      "modelo": "TIGGO 4 PRO",
+      "color": "PLATA",
+      "anyo": "2027",
+      "soat": "2027-03-31",
+      "rt": "2031-01-01",
       "obs": ""
     },
     {
