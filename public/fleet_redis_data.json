@@ -1,17 +1,6 @@
 {
-  "fecha": "2/10/26, 11:27 a. m.",
+  "fecha": "2/10/26, 6:30 p. m.",
   "unidades": [
-    {
-      "unidad": "0100",
-      "placa": "CJX-370",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-01-01",
-      "obs": ""
-    },
     {
       "unidad": "0101",
       "placa": "CJY-259",
@@ -98,17 +87,6 @@
       "anyo": "2026",
       "soat": "2027-06-11",
       "rt": "2030-05-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0134",
-      "placa": "CTB-555",
-      "marca": "CHERY",
-      "modelo": "ARRIZO 5 PRO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-06-01",
-      "rt": "2030-07-01",
       "obs": ""
     },
     {
