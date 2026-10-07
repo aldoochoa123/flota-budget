@@ -1,37 +1,61 @@
 {
-  "fecha": "7/10/26, 5:45 a. m.",
+  "fecha": "7/10/26, 12:41 p. m.",
   "unidades": [
     {
-      "unidad": "468",
+      "unidad": "447",
       "ubic": "E1",
-      "ra": "511108404",
-      "km": "46577",
-      "fuel": "7/8",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "506",
-      "ubic": "E1",
-      "ra": "511108301",
-      "km": "42647",
+      "ra": "",
+      "km": "119139",
       "fuel": "Full",
       "estado": "Limpio"
     },
     {
-      "unidad": "511",
+      "unidad": "777",
       "ubic": "E1",
-      "ra": "511108080",
-      "km": "33272",
-      "fuel": "1/4",
+      "ra": "511108102",
+      "km": "63106",
+      "fuel": "7/8",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "969",
+      "ubic": "E1",
+      "ra": "",
+      "km": "8617",
+      "fuel": "Full",
       "estado": "Limpio"
     },
     {
-      "unidad": "100",
+      "unidad": "951",
       "ubic": "E1",
-      "ra": "558182290",
-      "km": "78240",
-      "fuel": "7/8",
-      "estado": "Limpio"
+      "ra": "511108614",
+      "km": "82548",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "487",
+      "ubic": "E1",
+      "ra": "511108581",
+      "km": "68505",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "265",
+      "ubic": "E1",
+      "ra": "511108382",
+      "km": "50258",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "254",
+      "ubic": "E1",
+      "ra": "511108765",
+      "km": "71698",
+      "fuel": "Full",
+      "estado": "Sucio"
     },
     {
       "unidad": "327",
@@ -46,22 +70,6 @@
       "ubic": "E1",
       "ra": "",
       "km": "58159",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "771",
-      "ubic": "E1",
-      "ra": "511108813",
-      "km": "75810",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "776",
-      "ubic": "E1",
-      "ra": "",
-      "km": "57834",
       "fuel": "Full",
       "estado": "Limpio"
     },
