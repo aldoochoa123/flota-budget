@@ -1,33 +1,57 @@
 {
-  "fecha": "7/10/26, 12:41 p. m.",
+  "fecha": "7/10/26, 6:58 p. m.",
   "unidades": [
     {
-      "unidad": "447",
+      "unidad": "138",
       "ubic": "E1",
+      "ra": "511108824",
+      "km": "11357",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "1085",
+      "ubic": "E7",
       "ra": "",
-      "km": "119139",
+      "km": "125159",
+      "fuel": "7/8",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "965",
+      "ubic": "E7",
+      "ra": "",
+      "km": "61786",
+      "fuel": "Full",
+      "estado": "Limpio"
+    },
+    {
+      "unidad": "257",
+      "ubic": "E7",
+      "ra": "558182564",
+      "km": "61568",
+      "fuel": "Full",
+      "estado": "Sucio"
+    },
+    {
+      "unidad": "890",
+      "ubic": "E1",
+      "ra": "511108264",
+      "km": "69689",
       "fuel": "Full",
       "estado": "Limpio"
     },
     {
       "unidad": "777",
-      "ubic": "E1",
+      "ubic": "E7",
       "ra": "511108102",
       "km": "63106",
       "fuel": "7/8",
-      "estado": "Sucio"
-    },
-    {
-      "unidad": "969",
-      "ubic": "E1",
-      "ra": "",
-      "km": "8617",
-      "fuel": "Full",
       "estado": "Limpio"
     },
     {
       "unidad": "951",
-      "ubic": "E1",
+      "ubic": "E7",
       "ra": "511108614",
       "km": "82548",
       "fuel": "Full",
@@ -90,14 +114,6 @@
       "estado": "Limpio"
     },
     {
-      "unidad": "1033",
-      "ubic": "E7",
-      "ra": "",
-      "km": "80545",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
       "unidad": "916",
       "ubic": "E7",
       "ra": "511108566",
@@ -110,14 +126,6 @@
       "ubic": "E7",
       "ra": "",
       "km": "57123",
-      "fuel": "Full",
-      "estado": "Limpio"
-    },
-    {
-      "unidad": "1035",
-      "ubic": "E7",
-      "ra": "",
-      "km": "62311",
       "fuel": "Full",
       "estado": "Limpio"
     },
