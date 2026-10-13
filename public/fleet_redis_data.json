@@ -1,5 +1,5 @@
 {
-  "fecha": "12/10/26, 3:42 p. m.",
+  "fecha": "12/10/26, 9:21 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,17 +10,6 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0101",
-      "placa": "CJY-259",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-12-01",
       "obs": ""
     },
     {
@@ -772,6 +761,413 @@
       "obs": ""
     },
     {
+      "unidad": "0495",
+      "placa": "CLC-089",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0497",
+      "placa": "CLB-065",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0498",
+      "placa": "CLB-566",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-09-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0499",
+      "placa": "CLB-630",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2024",
+      "soat": "2027-03-12",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0500",
+      "placa": "CPM-311",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2026-12-16",
+      "rt": "2029-03-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0501",
+      "placa": "CPM-334",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2026-12-16",
+      "rt": "2029-06-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0504",
+      "placa": "CPN-238",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2026-12-16",
+      "rt": "2029-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0505",
+      "placa": "CPP-192",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2025",
+      "soat": "2026-12-20",
+      "rt": "2029-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0506",
+      "placa": "CRO-120",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0507",
+      "placa": "CRO-157",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0508",
+      "placa": "CRO-456",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-09-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0509",
+      "placa": "CRP-203",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0510",
+      "placa": "CRQ-147",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2027-03-04",
+      "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0511",
+      "placa": "CRS-517",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2025",
+      "soat": "2027-03-12",
+      "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0512",
+      "placa": "CSO-288",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-05-09",
+      "rt": "2030-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0513",
+      "placa": "CSO-419",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-05-09",
+      "rt": "2030-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0514",
+      "placa": "CSP-187",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-05-12",
+      "rt": "2030-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0515",
+      "placa": "CSP-547",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "PLATA",
+      "anyo": "2026",
+      "soat": "2027-05-12",
+      "rt": "2030-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0516",
+      "placa": "CTP-013",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0517",
+      "placa": "CTP-695",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "BLANCO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0519",
+      "placa": "CTQ-325",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "ROJO",
+      "anyo": "2026",
+      "soat": "2027-07-17",
+      "rt": "2030-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0720",
+      "placa": "BLC-471",
+      "marca": "NISSAN",
+      "modelo": "VERSA - MC",
+      "color": "PLATA",
+      "anyo": "2020",
+      "soat": "2026-07-22",
+      "rt": "2026-02-06",
+      "obs": ""
+    },
+    {
+      "unidad": "0721",
+      "placa": "BLB-253",
+      "marca": "NISSAN",
+      "modelo": "VERSA - MC",
+      "color": "PLATA",
+      "anyo": "2020",
+      "soat": "2026-07-16",
+      "rt": "2026-04-23",
+      "obs": ""
+    },
+    {
+      "unidad": "0722",
+      "placa": "BLB-368",
+      "marca": "NISSAN",
+      "modelo": "VERSA - MC",
+      "color": "PLATA",
+      "anyo": "2020",
+      "soat": "2026-07-16",
+      "rt": "2024-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0761",
+      "placa": "BWK-144",
+      "marca": "NISSAN",
+      "modelo": "VERSA - AT",
+      "color": "NEGRO",
+      "anyo": "2022",
+      "soat": "2027-09-08",
+      "rt": "2027-08-22",
+      "obs": ""
+    },
+    {
+      "unidad": "0762",
+      "placa": "BXA-122",
+      "marca": "NISSAN",
+      "modelo": "VERSA - AT",
+      "color": "",
+      "anyo": "2022",
+      "soat": "2026-10-22",
+      "rt": "2026-03-26",
+      "obs": ""
+    },
+    {
+      "unidad": "0763",
+      "placa": "BWZ-624",
+      "marca": "NISSAN",
+      "modelo": "VERSA - AT",
+      "color": "",
+      "anyo": "2022",
+      "soat": "2026-10-21",
+      "rt": "2026-07-19",
+      "obs": ""
+    },
+    {
+      "unidad": "0770",
+      "placa": "CKE-457",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2027-01-10",
+      "rt": "2028-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0771",
+      "placa": "CKE-572",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2027-01-10",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0772",
+      "placa": "CKK-490",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-01-26",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0773",
+      "placa": "CKK-560",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-01-26",
+      "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0774",
+      "placa": "CKL-203",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2027-01-30",
+      "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0775",
+      "placa": "CMF-306",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2025",
+      "soat": "2027-06-12",
+      "rt": "2029-09-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0776",
+      "placa": "CMF-437",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GREY",
+      "anyo": "2025",
+      "soat": "2027-06-12",
+      "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0778",
+      "placa": "CNL-417",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "PLATA",
+      "anyo": "2025",
+      "soat": "2027-09-26",
+      "rt": "2029-10-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0780",
+      "placa": "CPH-089",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0781",
+      "placa": "CPI-664",
+      "marca": "KIA",
+      "modelo": "KIA K3",
+      "color": "GRIS",
+      "anyo": "2025",
+      "soat": "2026-12-04",
+      "rt": "2029-06-01",
+      "obs": ""
+    },
+    {
       "unidad": "0782",
       "placa": "CPJ-086",
       "marca": "KIA",
@@ -945,6 +1341,17 @@
       "anyo": "2024",
       "soat": "2027-06-05",
       "rt": "2028-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0901",
+      "placa": "CMC-619",
+      "marca": "CHERY",
+      "modelo": "TIGGO 4 PRO",
+      "color": "PLATA",
+      "anyo": "2024",
+      "soat": "2027-06-05",
+      "rt": "2028-12-01",
       "obs": ""
     },
     {
