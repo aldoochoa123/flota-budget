@@ -1,5 +1,5 @@
 {
-  "fecha": "13/10/26, 12:20 p. m.",
+  "fecha": "13/10/26, 6:33 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -981,17 +981,6 @@
       "obs": ""
     },
     {
-      "unidad": "0517",
-      "placa": "CTP-695",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2026",
-      "soat": "2027-07-17",
-      "rt": "2030-07-01",
-      "obs": ""
-    },
-    {
       "unidad": "0519",
       "placa": "CTQ-325",
       "marca": "KIA",
@@ -1322,6 +1311,17 @@
       "obs": ""
     },
     {
+      "unidad": "0898",
+      "placa": "CWS-280",
+      "marca": "KIA",
+      "modelo": "SELTOS",
+      "color": "GRIS",
+      "anyo": "2026",
+      "soat": "2027-01-27",
+      "rt": "2030-01-01",
+      "obs": ""
+    },
+    {
       "unidad": "0899",
       "placa": "CWT-291",
       "marca": "KIA",
@@ -1539,6 +1539,28 @@
       "anyo": "2027",
       "soat": "2027-03-16",
       "rt": "2031-12-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0968",
+      "placa": "CYA-148",
+      "marca": "GEELY",
+      "modelo": "OKAVANGO",
+      "color": "GRIS",
+      "anyo": "2027",
+      "soat": "2027-03-31",
+      "rt": "2031-11-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0969",
+      "placa": "CYA-388",
+      "marca": "GEELY",
+      "modelo": "OKAVANGO",
+      "color": "GRIS",
+      "anyo": "2027",
+      "soat": "2027-03-31",
+      "rt": "2031-11-01",
       "obs": ""
     },
     {
