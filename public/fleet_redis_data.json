@@ -1,5 +1,5 @@
 {
-  "fecha": "12/10/26, 9:21 p. m.",
+  "fecha": "13/10/26, 4:56 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,6 +10,17 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0101",
+      "placa": "CJY-259",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-12-01",
       "obs": ""
     },
     {
@@ -156,17 +167,6 @@
       "obs": ""
     },
     {
-      "unidad": "0200",
-      "placa": "BZW-251",
-      "marca": "TOYOTA",
-      "modelo": "AGYA",
-      "color": "PLATA METALICO",
-      "anyo": "2023",
-      "soat": "2027-05-06",
-      "rt": "2027-03-01",
-      "obs": ""
-    },
-    {
       "unidad": "0254",
       "placa": "BXN-148",
       "marca": "KIA",
@@ -175,17 +175,6 @@
       "anyo": "2022",
       "soat": "2027-11-23",
       "rt": "2026-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0255",
-      "placa": "BXN-520",
-      "marca": "KIA",
-      "modelo": "PICANTO - AT",
-      "color": "ROJO",
-      "anyo": "2022",
-      "soat": "2026-11-22",
-      "rt": "2027-01-10",
       "obs": ""
     },
     {
@@ -827,17 +816,6 @@
       "obs": ""
     },
     {
-      "unidad": "0504",
-      "placa": "CPN-238",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2025",
-      "soat": "2026-12-16",
-      "rt": "2029-11-01",
-      "obs": ""
-    },
-    {
       "unidad": "0505",
       "placa": "CPP-192",
       "marca": "KIA",
@@ -1102,17 +1080,6 @@
       "obs": ""
     },
     {
-      "unidad": "0774",
-      "placa": "CKL-203",
-      "marca": "KIA",
-      "modelo": "KIA K3",
-      "color": "GREY",
-      "anyo": "2024",
-      "soat": "2027-01-30",
-      "rt": "2028-05-01",
-      "obs": ""
-    },
-    {
       "unidad": "0775",
       "placa": "CMF-306",
       "marca": "KIA",
@@ -1366,17 +1333,6 @@
       "obs": ""
     },
     {
-      "unidad": "0909",
-      "placa": "CBB-245",
-      "marca": "CHERY",
-      "modelo": "TIGGO 4 PRO",
-      "color": "NEGRO AZABACHE",
-      "anyo": "2023",
-      "soat": "2027-08-05",
-      "rt": "2027-07-10",
-      "obs": ""
-    },
-    {
       "unidad": "0915",
       "placa": "CPM-145",
       "marca": "TOYOTA",
@@ -1542,17 +1498,6 @@
       "obs": ""
     },
     {
-      "unidad": "0968",
-      "placa": "CYA-148",
-      "marca": "GEELY",
-      "modelo": "OKAVANGO",
-      "color": "GRIS",
-      "anyo": "2027",
-      "soat": "2027-03-31",
-      "rt": "2031-11-01",
-      "obs": ""
-    },
-    {
       "unidad": "0969",
       "placa": "CYA-388",
       "marca": "GEELY",
@@ -1649,17 +1594,6 @@
       "anyo": "2024",
       "soat": "2027-02-23",
       "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "1063",
-      "placa": "CMO-371",
-      "marca": "TOYOTA",
-      "modelo": "CROSS HYBRID",
-      "color": "GRIS",
-      "anyo": "2024",
-      "soat": "2027-07-11",
-      "rt": "2028-03-01",
       "obs": ""
     },
     {
