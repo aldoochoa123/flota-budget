@@ -1,5 +1,5 @@
 {
-  "fecha": "15/10/26, 7:23 a. m.",
+  "fecha": "15/10/26, 12:33 p. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -703,6 +703,17 @@
       "anyo": "2024",
       "soat": "2027-10-31",
       "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0489",
+      "placa": "CJJ-200",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SIL",
+      "anyo": "2024",
+      "soat": "2027-10-31",
+      "rt": "2028-01-01",
       "obs": ""
     },
     {
@@ -1575,6 +1586,17 @@
       "obs": ""
     },
     {
+      "unidad": "1033",
+      "placa": "CHB-409",
+      "marca": "KIA",
+      "modelo": "SPORTAGE",
+      "color": "GRIS",
+      "anyo": "2024",
+      "soat": "2027-07-20",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
       "unidad": "1034",
       "placa": "CHB-625",
       "marca": "KIA",
@@ -1583,6 +1605,17 @@
       "anyo": "2024",
       "soat": "2027-07-21",
       "rt": "2028-07-01",
+      "obs": ""
+    },
+    {
+      "unidad": "1035",
+      "placa": "CJT-220",
+      "marca": "KIA",
+      "modelo": "SPORTAGE",
+      "color": "GREY",
+      "anyo": "2024",
+      "soat": "2026-12-05",
+      "rt": "2028-01-01",
       "obs": ""
     },
     {
