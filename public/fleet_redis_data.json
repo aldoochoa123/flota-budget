@@ -1,20 +1,31 @@
 {
-  "fecha": "19/10/26, 1:06 p. m.",
+  "fecha": "19/10/26, 6:15 p. m.",
   "unidades": [
     {
-      "unidad": "0100",
-      "placa": "CJX-370",
+      "unidad": "0101",
+      "placa": "CJY-259",
       "marca": "KIA",
       "modelo": "SOLUTO",
       "color": "SILVER",
       "anyo": "2024",
       "soat": "2026-12-21",
-      "rt": "2028-01-01",
+      "rt": "2028-12-01",
       "obs": ""
     },
     {
       "unidad": "0102",
       "placa": "CJY-282",
+      "marca": "KIA",
+      "modelo": "SOLUTO",
+      "color": "SILVER",
+      "anyo": "2024",
+      "soat": "2026-12-21",
+      "rt": "2028-04-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0103",
+      "placa": "CJZ-002",
       "marca": "KIA",
       "modelo": "SOLUTO",
       "color": "SILVER",
@@ -717,17 +728,6 @@
       "obs": ""
     },
     {
-      "unidad": "0492",
-      "placa": "CJN-391",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-11-15",
-      "rt": "2028-03-01",
-      "obs": ""
-    },
-    {
       "unidad": "0493",
       "placa": "CJN-501",
       "marca": "KIA",
@@ -1333,6 +1333,17 @@
       "obs": ""
     },
     {
+      "unidad": "0901",
+      "placa": "CMC-619",
+      "marca": "CHERY",
+      "modelo": "TIGGO 4 PRO",
+      "color": "PLATA",
+      "anyo": "2024",
+      "soat": "2027-06-05",
+      "rt": "2028-12-01",
+      "obs": ""
+    },
+    {
       "unidad": "0903",
       "placa": "CME-223",
       "marca": "CHERY",
@@ -1341,6 +1352,17 @@
       "anyo": "2024",
       "soat": "2027-06-06",
       "rt": "2028-05-01",
+      "obs": ""
+    },
+    {
+      "unidad": "0909",
+      "placa": "CBB-245",
+      "marca": "CHERY",
+      "modelo": "TIGGO 4 PRO",
+      "color": "NEGRO AZABACHE",
+      "anyo": "2023",
+      "soat": "2027-08-05",
+      "rt": "2027-07-10",
       "obs": ""
     },
     {
