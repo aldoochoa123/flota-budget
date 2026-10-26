@@ -1,5 +1,5 @@
 {
-  "fecha": "26/10/26, 12:41 a. m.",
+  "fecha": "26/10/26, 7:02 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -10,50 +10,6 @@
       "anyo": "2024",
       "soat": "2026-12-21",
       "rt": "2028-01-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0101",
-      "placa": "CJY-259",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-12-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0102",
-      "placa": "CJY-282",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0103",
-      "placa": "CJZ-002",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0104",
-      "placa": "CJZ-031",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-12-21",
-      "rt": "2028-03-01",
       "obs": ""
     },
     {
@@ -827,39 +783,6 @@
       "obs": ""
     },
     {
-      "unidad": "0501",
-      "placa": "CPM-334",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2025",
-      "soat": "2026-12-16",
-      "rt": "2029-06-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0504",
-      "placa": "CPN-238",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2025",
-      "soat": "2026-12-16",
-      "rt": "2029-11-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0505",
-      "placa": "CPP-192",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "SILVER",
-      "anyo": "2025",
-      "soat": "2026-12-20",
-      "rt": "2029-04-01",
-      "obs": ""
-    },
-    {
       "unidad": "0506",
       "placa": "CRO-120",
       "marca": "KIA",
@@ -1410,28 +1333,6 @@
       "obs": ""
     },
     {
-      "unidad": "0943",
-      "placa": "CJO-426",
-      "marca": "MITSUBISHI",
-      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
-      "color": "SILVER",
-      "anyo": "2024",
-      "soat": "2026-11-16",
-      "rt": "2028-09-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0944",
-      "placa": "CNP-026",
-      "marca": "MITSUBISHI",
-      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
-      "color": "PLATA",
-      "anyo": "2024",
-      "soat": "2027-10-03",
-      "rt": "2028-09-01",
-      "obs": ""
-    },
-    {
       "unidad": "0945",
       "placa": "CNP-053",
       "marca": "MITSUBISHI",
@@ -1440,39 +1341,6 @@
       "anyo": "2024",
       "soat": "2027-10-03",
       "rt": "2028-05-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0946",
-      "placa": "CSC-362",
-      "marca": "MITSUBISHI",
-      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
-      "color": "PLATA",
-      "anyo": "2024",
-      "soat": "2027-04-07",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0947",
-      "placa": "CSD-192",
-      "marca": "MITSUBISHI",
-      "modelo": "MONTERO SPORT 4x4 3.0 GLS AT",
-      "color": "BLANCA",
-      "anyo": "2024",
-      "soat": "2027-04-07",
-      "rt": "2028-04-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0960",
-      "placa": "CHU-479",
-      "marca": "GEELY",
-      "modelo": "OKAVANGO",
-      "color": "SILVER",
-      "anyo": "2023",
-      "soat": "2027-09-15",
-      "rt": "2027-12-01",
       "obs": ""
     },
     {
