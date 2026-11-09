@@ -1,5 +1,5 @@
 {
-  "fecha": "8/11/26, 10:58 p. m.",
+  "fecha": "9/11/26, 7:36 a. m.",
   "unidades": [
     {
       "unidad": "0100",
@@ -948,17 +948,6 @@
       "obs": ""
     },
     {
-      "unidad": "0514",
-      "placa": "CSP-187",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "PLATA",
-      "anyo": "2026",
-      "soat": "2027-05-12",
-      "rt": "2030-10-01",
-      "obs": ""
-    },
-    {
       "unidad": "0515",
       "placa": "CSP-547",
       "marca": "KIA",
@@ -967,28 +956,6 @@
       "anyo": "2026",
       "soat": "2027-05-12",
       "rt": "2030-10-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0516",
-      "placa": "CTP-013",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "ROJO",
-      "anyo": "2026",
-      "soat": "2027-07-17",
-      "rt": "2030-05-01",
-      "obs": ""
-    },
-    {
-      "unidad": "0517",
-      "placa": "CTP-695",
-      "marca": "KIA",
-      "modelo": "SOLUTO",
-      "color": "BLANCO",
-      "anyo": "2026",
-      "soat": "2027-07-17",
-      "rt": "2030-07-01",
       "obs": ""
     },
     {
